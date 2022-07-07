@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+    margin: auto;
+}
+
+body{
+    background-image: url(https://wallpaperaccess.com/full/343289.jpg);
+}
+
+main{
+    padding: 10px;
+}
+
+section{
+    margin: 10px;
+    border: solid 5px white;
+    color: white;
+}
+
+div{
+    margin: 5px;
+    border: solid 5px white;
+    color: white;
+}
+
+.header{
+    width: 100%;
+    height: 200px;
+}
+
+.box{
+    width: 95%;
+    height: 200px;
+    margin: 5px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.box2{
+    border: solid 5px white;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.content{
+    height: 500px;
+}
+
+.content2{
+    height: 250px;
+}
+
+#footer{
+    background-color: black;
+    background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 50vh 0 50vh #000;
+}
