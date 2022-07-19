@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            border:none;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  border:none;
 }
 
-button {
+a {
     width:200px;
     height:55px;
     margin:30px;
+    
 
     text-transform: uppercase;
+    text-align: center;
     font-style: italic;
     font-size:1.7rem;
     font-weight: 800;
-                font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: 0.1rem;
-    background-color: #020303;
+    
+    background-color: #050404;
     color:white;
     
 
@@ -27,7 +30,7 @@ button {
     z-index:3;
   }
 
-  button::before {
+a::before {
     content:'';
     position:absolute;
     width:200px;
@@ -43,7 +46,7 @@ button {
 }
 
 
-button::after {
+a::after {
     content:'';
     position:absolute;
     background-color: #020303;
@@ -58,35 +61,23 @@ button::after {
 
 /* hover effect */
 
-button:hover::before
+a:hover::before
 {
-  filter:blur(10px);
+  filter:blur(5px);
   
 }
 
-button:hover::after
+a:hover::after
 {
   border: 1px solid silver;
 }
 
-.btn-2:hover::before
+.button:hover::before
 {
-  background:linear-gradient(45deg, #ff075b, #0e1538,#1aff22);
+  background:linear-gradient(45deg, #ff0707, #ff920c,#ffee00);
   transform: rotate(-4deg);
 }
-
-/* media Q*/
-
-@media only screen and (max-width: 992px){
-  
-  .container{
-    flex-direction: column;
-  }
-}
-
 /* END of button highlight code */
-
-
 
 body{
     background-color: black;
@@ -107,14 +98,16 @@ body{
     border-right: 10px dotted green;
     border-bottom-color: yellow;
     border-radius: 25px;
+
+    font-family: 'Poppins', sans-serif;
   /*   text-size: 40px; */
     text-align: center;
+
     margin: auto;
     width: 400px;
     height: 500px;
+
     color: white;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: underline;
   }
 
   #box2 {
