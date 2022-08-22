@@ -238,6 +238,7 @@ main{
 
 #center_art {
   grid-area: code-holder;
+  justify-self: center;
 
     background-image: url(./images/CodeHolder.png);
     background-size:     cover;
