@@ -1,22 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@media (max-width: 860px){
+  #center_art{
+    width: 250px;
+    height: 250px;
+  }
+  a {
+    width:90px;
+    height:50px;
+    margin: 15px;
+    font-size:1.1rem;
+  }
+  a::before{
+    width:90px;
+    height:50px;
+  }
+  a::after{
+    width:90px;
+    height:50px;
+    border: 2px solid rgb(255, 255, 255);
+  }
+  a:hover::after{
+  border: 2px solid rgb(255, 0, 0);
+}
+}
+
+@media (min-width: 861px){
+  #center_art{
+    width: 400px;
+    height: 400px;
+  }
+  a {
+    width:170px;
+    height:120px;
+    margin: 30px;
+    padding: 15px;
+    font-size:2rem;
+  }
+  a::before{
+    width:170px;
+    height:120px;
+  }
+  a::after{
+    width:170px;
+    height:120px;
+    border: 5px solid rgb(255, 255, 255);
+  }
+  a:hover::after{
+  border: 5px solid rgb(255, 0, 0);
+}
+}
+
+@media (min-width: 1301px){
+  #center_art{
+    width: 600px;
+    height: 600px;
+  }
+  a {
+    width:230px;
+    height:170px;
+    margin: 60px;
+    padding: 15px;
+    font-size:3rem;
+  }
+  a::before{
+    width:230px;
+    height:170px;
+  }
+  a::after{
+    width:230px;
+    height:170px;
+    border: 8px solid rgb(255, 255, 255);
+  }
+  a:hover::after{
+  border: 8px solid rgb(255, 0, 0);
+}
+}
+
+@media (min-width: 1801px){
+  #center_art{
+    width: 853px;
+    height: 853px;
+  }
+  a {
+    width:300px;
+    height:220px;
+    margin: 90px;
+    padding: 15px;
+    font-size:4rem;
+  }
+  a::before{
+    width:300px;
+    height:220px;
+  }
+  a::after{
+    width:300px;
+    height:220px;
+    border: 12px solid rgb(255, 255, 255);
+  }
+  a:hover::after{
+  border: 12px solid rgb(255, 0, 0);
+}
+  a .one{
+    padding: 50px;
+  }
+}
+
+@media (min-width: 2200px){
+  #center_art{
+    width: 1213px;
+    height: 1213px;
+  }
+  a {
+    width:350px;
+    height:250px;
+    margin: 90px;
+    padding: 15px;
+    font-size:5rem;
+  }
+  a::before{
+    width:350px;
+    height:250px;
+  }
+  a::after{
+    width:350px;
+    height:250px;
+    border: 15px solid rgb(255, 255, 255);
+  }
+  a:hover::after{
+  border: 15px solid rgb(255, 0, 0);
+}
+  a .one{
+    padding: 50px;
+  }
+}
+
 *{
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   box-sizing:border-box;
   border:none;
 }
 
 a {
-    width:200px;
-    height:55px;
-    margin:30px;
-    
-
     text-transform: uppercase;
     text-align: center;
     font-style: italic;
-    font-size:1.7rem;
     font-weight: 800;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 0.1rem;
@@ -28,13 +157,12 @@ a {
     cursor:pointer;
     position:relative;
     z-index:3;
+    display: block;
   }
 
 a::before {
     content:'';
     position:absolute;
-    width:200px;
-    height:55px;
    
     top:0;
     left:0;
@@ -50,9 +178,6 @@ a::after {
     content:'';
     position:absolute;
     background-color: #020303;
-    
-    width:200px;
-    height:55px;
 
     top:0;
     left:0;
@@ -67,10 +192,10 @@ a:hover::before
   
 }
 
-a:hover::after
+/* a:hover::after
 {
-  border: 1px solid rgb(255, 0, 0);
-}
+  border: 5px solid rgb(255, 0, 0);
+} */
 
 .button:hover::before
 {
@@ -89,59 +214,41 @@ body{
 
 main{
   display: grid;
-  grid-template-columns: first-start 25% first-end mid-start auto mid-end last-start 25%;
-  grid-template-rows: first-start 25% first-end mid-start auto mid-end last-start 25%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "resume code-holder code-holder about-me"
+    "the-blog code-holder code-holder reach-me";
 }
 
-/* #box1 {
-    margin: auto;
-    width: 500px;
-    height: 250px;
-
-    font-family: 'Poppins', sans-serif;
-    text-size: 40px;
-    text-align: center;
-
-    color: white;
-  } */
-
 .button .one{
-  grid-column-start: first-start;
-  grid-column-end: first-end;
-  grid-row-start: first-start;
-  grid-row-end: first-end;
+  grid-area: resume;
+  justify-self: center;
 }
 
 .button .two{
-  grid-column-start: span last-start;
-  grid-row-start: first-start;
-  grid-row-end: first-end;
+  grid-area: about-me;
+  justify-self: center;
 }
 
 .button .three{
-  grid-column-start: first-start;
-  grid-column-end: first-end;
-  grid-row-start: span last-start;
+  grid-area: the-blog;
+  justify-self: center;
 }
 
 .button .four{
-  grid-column-start: span last-start;
-  grid-row-start: span last-start;
+  grid-area: reach-me;
+  justify-self: center;
 }
 
-  #box2 {
-    border: 15px outset rgb(95, 95, 95);
-    border-radius: 75px;
-    text-align: center;
-    margin: auto;
-    width: 900px;
-    height: 900px;
+#center_art {
+  grid-area: code-holder;
 
     background-image: url(images/CodeHolder.png);
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;
-  }
+}
 
 .footer{
     margin: auto;
