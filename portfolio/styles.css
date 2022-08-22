@@ -192,11 +192,6 @@ a:hover::before
   
 }
 
-/* a:hover::after
-{
-  border: 5px solid rgb(255, 0, 0);
-} */
-
 .button:hover::before
 {
   background:linear-gradient(45deg, #ff0707, #ff920c,#ffee00);
@@ -244,7 +239,7 @@ main{
 #center_art {
   grid-area: code-holder;
 
-    background-image: url(images/CodeHolder.png);
+    background-image: url(./images/CodeHolder.png);
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;
