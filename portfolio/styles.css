@@ -69,7 +69,7 @@ a:hover::before
 
 a:hover::after
 {
-  border: 1px solid silver;
+  border: 1px solid rgb(255, 0, 0);
 }
 
 .button:hover::before
@@ -81,41 +81,83 @@ a:hover::after
 
 body{
     background-color: black;
-    background-image: url("https://wallpaperaccess.com/full/343289.jpg");
+    background-image: url("https://cutewallpaper.org/21/cool-red-and-black-background/Free-black-and-red-background-Images-Pictures-and-Royalty-.jpg");
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
 }
 
-#logo {
-    margin-left: 10px;
-    margin-top: 10px;
-    width: 125px;
-    height: 125px;
-    background-image: url(https://bootcamprankings.com/wp-content/uploads/2021/02/austin-coding-academy-logo.png);
+main{
+  display: grid;
+  grid-template-columns: first-start 25% first-end mid-start auto mid-end last-start 25%;
+  grid-template-rows: first-start 25% first-end mid-start auto mid-end last-start 25%;
 }
 
-#box1 {
-    border: 10px double red;
-    border-left: 10px dotted orange;
-    border-right: 10px dotted green;
-    border-bottom-color: yellow;
-    border-radius: 25px;
+/* #box1 {
+    margin: auto;
+    width: 500px;
+    height: 250px;
 
     font-family: 'Poppins', sans-serif;
-  /*   text-size: 40px; */
+    text-size: 40px;
     text-align: center;
 
-    margin: auto;
-    width: 400px;
-    height: 500px;
-
     color: white;
-  }
+  } */
+
+.button .one{
+  grid-column-start: first-start;
+  grid-column-end: first-end;
+  grid-row-start: first-start;
+  grid-row-end: first-end;
+}
+
+.button .two{
+  grid-column-start: span last-start;
+  grid-row-start: first-start;
+  grid-row-end: first-end;
+}
+
+.button .three{
+  grid-column-start: first-start;
+  grid-column-end: first-end;
+  grid-row-start: span last-start;
+}
+
+.button .four{
+  grid-column-start: span last-start;
+  grid-row-start: span last-start;
+}
 
   #box2 {
-    border: 15px outset silver;
-  border-radius: 75px;
-  text-align: center;
-  margin: auto;
-  width: 900px;
-  height: 900px;
-    background-image: url(https://yt3.ggpht.com/ytc/AKedOLSbYr8DEIDl5FPpz3uPrCMItkI6QSgTlY3cyDt0ww=s900-c-k-c0x00ffffff-no-rj);
+    border: 15px outset rgb(95, 95, 95);
+    border-radius: 75px;
+    text-align: center;
+    margin: auto;
+    width: 900px;
+    height: 900px;
+
+    background-image: url(images/CodeHolder.png);
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
   }
+
+.footer{
+    margin: auto;
+    margin-left: 40%;
+}
+
+#footer{
+    background-color: black;
+    background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 275px 275px, 175px 175px, 125px 125px, 75px 75px;
+    background-position: 0 0, 20px 30px, 65px 135px, 35px 50px;
+    color: white;
+    box-shadow: 0 50vh 0 50vh #000;
+}
+
