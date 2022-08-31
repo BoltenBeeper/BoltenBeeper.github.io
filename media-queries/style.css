@@ -5,6 +5,9 @@
 
 body{
     background-image: url(https://wallpaperaccess.com/full/343289.jpg);
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
     text-align: center;
 }
 

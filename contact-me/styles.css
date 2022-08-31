@@ -1,0 +1,47 @@
+@media (max-width: 750px) { /* Accounts for mobile users. */
+    .background-video { display: none; }
+    body {
+      background: url("../images/StreamEndThumbnail.png") no-repeat;
+      background-size: cover;
+    }
+}
+
+* {
+  color: white;
+}
+
+.background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+main {
+}
+
+.whole {
+  width: 100vw;
+  height: 120vh; /* Change this to 120vh if using scroll mechanic.*/
+  justify-self: center;
+  /* position: fixed; */
+
+  background-image: url(../images/Border1.png);
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: center center;
+
+  margin-top: 41%;
+}
+
+.inner-whole {
+  margin-top: 28%;
+  padding-top: 20%;
+  margin-left: 43%;
+  /* position: fixed; */
+}

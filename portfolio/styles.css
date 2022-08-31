@@ -101,9 +101,9 @@
   a:hover::after{
   border: 12px solid rgb(255, 0, 0);
 }
-  a .one{
+  /* a .one{
     padding: 50px;
-  }
+  } */
 }
 
 @media (min-width: 2200px){
@@ -130,9 +130,9 @@
   a:hover::after{
   border: 15px solid rgb(255, 0, 0);
 }
-  a .one{
+  /* a .one{
     padding: 50px;
-  }
+  } */
 }
 
 *{
@@ -146,11 +146,11 @@ a {
     text-transform: uppercase;
     text-align: center;
     font-style: italic;
-    font-weight: 800;
+    font-weight: 200;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 0.1rem;
     
-    background-color: #050404;
+    /* background-color: #050404; */
     color:white;
     
 
@@ -161,13 +161,15 @@ a {
   }
 
 a::before {
+    border-radius: 25%;
+
     content:'';
     position:absolute;
    
     top:0;
     left:0;
     
-    transition: .5s linear; /* Defines how long the button effect will take place for. */
+    transition: .0s linear; /* Defines how long the button effect will take place for. */
     
     
     z-index: -2;
@@ -178,6 +180,7 @@ a::after {
     content:'';
     position:absolute;
     background-color: #020303;
+    border-radius: 25%;
 
     top:0;
     left:0;
@@ -188,15 +191,20 @@ a::after {
 
 a:hover::before
 {
-  filter:blur(5px);
+  background:linear-gradient(45deg, #ff0707, #ff920c,#ffee00);
+  border-radius: 25%;
+  transform: rotate(0deg) scale(2);
+  filter:blur(75px);
   
 }
 
-.button:hover::before
+/* .button:hover::before
 {
   background:linear-gradient(45deg, #ff0707, #ff920c,#ffee00);
+  border-radius: 25%;
   transform: rotate(-4deg);
-}
+} */
+
 /* END of button highlight code */
 
 body{
@@ -240,7 +248,7 @@ main{
   grid-area: code-holder;
   justify-self: center;
 
-    background-image: url(./images/CodeHolder.png);
+    background-image: url(../images/CodeHolder.png);
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;
