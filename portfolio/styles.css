@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@media (max-width: 860px){
+  #center_art{
+    width: 250px;
+    height: 250px;
+  }
+  a {
+    width:90px;
+    height:50px;
+    margin: 15px;
+    font-size:1.1rem;
+  }
+  a::before{
+    width:90px;
+    height:50px;
+  }
+  a::after{
+    width:90px;
+    height:50px;
+    border: 2px solid rgb(255, 255, 255);
+  }
+  a:hover::after{
+  border: 2px solid rgb(255, 0, 0);
+}
+}
+
+@media (min-width: 861px){
+  #center_art{
+    width: 400px;
+    height: 400px;
+  }
+  a {
+    width:170px;
+    height:120px;
+    margin: 30px;
+    padding: 15px;
+    font-size:2rem;
+  }
+  a::before{
+    width:170px;
+    height:120px;
+  }
+  a::after{
+    width:170px;
+    height:120px;
+    border: 5px solid rgb(255, 255, 255);
+  }
+  a:hover::after{
+  border: 5px solid rgb(255, 0, 0);
+}
+}
+
+@media (min-width: 1301px){
+  #center_art{
+    width: 600px;
+    height: 600px;
+  }
+  a {
+    width:230px;
+    height:170px;
+    margin: 60px;
+    padding: 15px;
+    font-size:3rem;
+  }
+  a::before{
+    width:230px;
+    height:170px;
+  }
+  a::after{
+    width:230px;
+    height:170px;
+    border: 8px solid rgb(255, 255, 255);
+  }
+  a:hover::after{
+  border: 8px solid rgb(255, 0, 0);
+}
+}
+
+@media (min-width: 1801px){
+  #center_art{
+    width: 853px;
+    height: 853px;
+  }
+  a {
+    width:300px;
+    height:220px;
+    margin: 90px;
+    padding: 15px;
+    font-size:4rem;
+  }
+  a::before{
+    width:300px;
+    height:220px;
+  }
+  a::after{
+    width:300px;
+    height:220px;
+    border: 12px solid rgb(255, 255, 255);
+  }
+  a:hover::after{
+  border: 12px solid rgb(255, 0, 0);
+}
+  /* a .one{
+    padding: 50px;
+  } */
+}
+
+@media (min-width: 2200px){
+  #center_art{
+    width: 1213px;
+    height: 1213px;
+  }
+  a {
+    width:350px;
+    height:250px;
+    margin: 90px;
+    padding: 15px;
+    font-size:5rem;
+  }
+  a::before{
+    width:350px;
+    height:250px;
+  }
+  a::after{
+    width:350px;
+    height:250px;
+    border: 15px solid rgb(255, 255, 255);
+  }
+  a:hover::after{
+  border: 15px solid rgb(255, 0, 0);
+}
+  /* a .one{
+    padding: 50px;
+  } */
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  border:none;
+}
+
+a {
+    text-transform: uppercase;
+    text-align: center;
+    font-style: italic;
+    font-weight: 200;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1rem;
+    
+    /* background-color: #050404; */
+    color:white;
+    
+
+    cursor:pointer;
+    position:relative;
+    z-index:3;
+    display: block;
+  }
+
+a::before {
+    border-radius: 25%;
+
+    content:'';
+    position:absolute;
+   
+    top:0;
+    left:0;
+    
+    transition: .1s linear; /* Defines how long the button effect will take place for. */
+    
+    
+    z-index: -2;
+}
+
+
+a::after {
+    content:'';
+    position:absolute;
+    background-color: #020303;
+    border-radius: 25%;
+
+    top:0;
+    left:0;
+    z-index: -1;
+}
+
+/* hover effect */
+
+a:hover::before
+{
+  background:linear-gradient(45deg, #ff0707, #ff920c,#ffee00);
+  border-radius: 25%;
+  transform: rotate(0deg) scale(2);
+  filter:blur(75px);
+  
+}
+
+/* .button:hover::before
+{
+  background:linear-gradient(45deg, #ff0707, #ff920c,#ffee00);
+  border-radius: 25%;
+  transform: rotate(-4deg);
+} */
+
+/* END of button highlight code */
+
+body{
+    background-color: black;
+    background-image: url("https://cutewallpaper.org/21/cool-red-and-black-background/Free-black-and-red-background-Images-Pictures-and-Royalty-.jpg");
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "resume code-holder code-holder about-me"
+    "the-blog code-holder code-holder reach-me";
+}
+
+.button .one{
+  grid-area: resume;
+  justify-self: center;
+}
+
+.button .two{
+  grid-area: about-me;
+  justify-self: center;
+}
+
+.button .three{
+  grid-area: the-blog;
+  justify-self: center;
+}
+
+.button .four{
+  grid-area: reach-me;
+  justify-self: center;
+}
+
+#center_art {
+  grid-area: code-holder;
+  justify-self: center;
+
+    background-image: url(../images/CodeHolder.png);
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+.footer{
+    margin: auto;
+    margin-left: 40%;
+}
+
+#footer{
+    background-color: black;
+    background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 275px 275px, 175px 175px, 125px 125px, 75px 75px;
+    background-position: 0 0, 20px 30px, 65px 135px, 35px 50px;
+    color: white;
+    box-shadow: 0 50vh 0 50vh #000;
+}
+

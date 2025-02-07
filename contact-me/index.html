@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio - Contact Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<video class="background-video" autoplay loop muted poster="../images/StreamEndThumbnail.png">
+    <source src="../videos/StreamEndingEdit.mp4" type="video/mp4">
+</video>
+<div class="whole stretch">
+    <div class="inner-whole">
+    <h1 class="Prompt">Send me a message!</h3>
+
+    <form id="form" class="form" method="post">
+        
+        <div class="input_box name">
+            <label for="Name" class="name">[Name] Who was this from again?</label>
+            <div>
+                <input type="text" id="name" name="Name" class="name" required>
+            </div>
+        </div>
+
+        <div class="input_box email">
+            <label for="Email" class="email">[Email] And your email?</label>
+            <div>
+                <input type="email" id="email" name="Email" class="email" required>
+            </div>
+        </div>
+
+        <div class="input_box phone">
+            <label for="Phone" class="phone">[Phone number] Lemme get those digits. (Optional)</label>
+            <div>
+                <input type="text" id="email" name="Phone" class="phone">
+            </div>
+        </div>
+
+        <div class="input_box date">
+            <label for="Date" class="date">[Date] When are you sending this?</label>
+            <div>
+                <input type="date" id="date" name="Date" class="date">
+            </div>
+        </div>
+
+        <div class="text_box message">
+            <label for="Message" class="message">[Message] Say somn'!</label>
+            <div>
+                <textarea id="message" name="Message" class="message" rows="6" maxlength="3000" required></textarea>
+            </div>
+        </div>
+
+        <div class="button submit">
+            <button type="submit" id="button" class="button submit">Send</button>
+        </div>
+
+    </form>
+    </div>
+
+</div>
+
+</body>
+</html>
