@@ -6,7 +6,6 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     color: white;
-    font-size: 1vw; /* Base font size */
 }
 
 body{
@@ -65,28 +64,31 @@ header{
 .portrait{
     border: inset 0.52vw rgb(200, 0, 0);
     margin: auto;
-    width: 10.42vw;
-    height: 10.42vw;
+    width: 11vw;
+    height: 11vw;
     background-size: cover;
     border-radius: 50%;
     background-image: url(https://yt3.ggpht.com/ytc/AKedOLSbYr8DEIDl5FPpz3uPrCMItkI6QSgTlY3cyDt0ww=s900-c-k-c0x00ffffff-no-rj); /* My Logo as a fallback */
 }
 
 .summary-text{
-    padding-left: 0.78vw;
-    padding-right: 0.78vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
     font-size: 1.2vw;
 }
 
-.box{
+.profile-box{
+    background: rgb(117,8,8);
+    background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
     border-left: outset 0.52vw grey;
     border-bottom: outset 0.52vw grey;
     border-right: outset 0.52vw grey;
     border-bottom-left-radius: 25%;
     border-bottom-right-radius: 25%;
     width: 95%;
-    height: 37.04vh;
-    padding: 0.78vw;
+    /* height: 37vh; */
+    padding: 1vw;
+    padding-bottom: 4vw;
     margin: auto;
     font-size: 1.2vw;
 }
@@ -95,7 +97,7 @@ header{
     font-size: 1.8vw;
 }
 
-.box2_header{
+.box2-header{
     border: outset 0.52vw white;
     background-size: cover;
     padding: 2.6vw;
@@ -120,6 +122,10 @@ header{
     grid-template-columns: 50% 50%;
 }
 
+.box3-header{
+    font-size: 1.5vw;
+}
+
 .content{
     height: 46.3vh;
     font-size: 1.2vw; /* Adjust font size */
@@ -132,8 +138,8 @@ header{
 
 .footer{
     margin: auto;
-    padding-top: 10vh;
-    padding-bottom: 5vh;
+    padding-top: 8%;
+    padding-bottom: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -142,7 +148,6 @@ header{
 
 #footer{
     background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png);
-    /* background: radial-gradient(circle, rgba(157,110,16,1) 0%, rgba(121,9,9,1) 35%, rgba(0,0,0,0) 100%); */
     background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     color: white;
     /* box-shadow: 0 46.3vh 0 46.3vh #000; */
@@ -160,33 +165,249 @@ header{
 }
 
 /* Media Queries for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .header {
         grid-template-columns: 1fr;
         height: auto;
     }
 
     .portrait {
-        width: 20.83vw;
-        height: 20.83vw;
+        width: 25vw;
+        height: 25vw;
     }
 
-    .box {
-        height: 20vw;
+    .summary-text {
+        min-height: 20vw;
+        font-size: 1.5vw;
     }
 
-    .content {
-        height: 46.3vw;
+    .profile-box {
+        background: rgb(117,8,8);
+        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+        height: auto;
+        font-size: 1.5vw;
     }
 
-    .content2 {
-        height: 20.83vw
+    .profile-text {
+        font-size: 2vw;
+    }
+
+    .box2-header, .box3-header {
+        font-size: 1.8vw;
+    }
+
+    .box2-0 {
+        font-size: 1.5vw;
+    }
+
+    .content, .content2 {
+        font-size: 1.5vw;
     }
 
     .footer {
-        margin-left: 0;
-        height: 5vh;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .summary-text {
+        font-size: 1.8vw;
+    }
+
+    .profile-box {
+        background: rgb(117,8,8);
+        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+        height: auto;
+        border-bottom-left-radius: 20%;
+        border-bottom-right-radius: 20%;
+        font-size: 1.8vw;
+    }
+
+    .profile-text {
+        font-size: 2.2vw;
+    }
+
+    .box2-header, .box3-header {
+        font-size: 2vw;
+    }
+
+    .box2-0 {
+        font-size: 1.8vw;
+    }
+
+    .content, .content2 {
+        font-size: 1.8vw;
+    }
+
+    .footer {
+        font-size: 1.8vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .summary-text {
+        font-size: 2vw;
+    }
+
+    .profile-box {
+        background: rgb(117,8,8);
+        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+        height: auto;
+        font-size: 2vw;
+    }
+
+    .profile-text {
+        font-size: 2.5vw;
+    }
+
+    .box2-header {
+        padding-left: 40vw;
+        padding-right: 40vw;
+        font-size: 2.2vw;
+    }
+
+    .box3-header{
+        font-size: 2.2vw;
+    }
+
+    .box2-0 {
+        font-size: 2vw;
+    }
+
+    .content, .content2 {
+        font-size: 2vw;
+    }
+
+    .footer {
+        font-size: 2vw;
+    }
+
+    .box2 {
+        grid-template-columns: 1fr;
+    }
+
+    .education-proof {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .summary-text {
+        font-size: 2.5vw;
+    }
+
+    .profile-box {
+        background: rgb(117,8,8);
+        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+        height: auto;
+        padding-bottom: 6vw;
+        font-size: 2.5vw;
+    }
+
+    .profile-text {
+        font-size: 3vw;
+    }
+
+    .box2-header {
+        padding-left: 40vw;
+        padding-right: 40vw;
+        font-size: 2.2vw;
+    }
+
+    .box3-header{
+        font-size: 2.2vw;
+    }
+
+    .box2-0 {
+        font-size: 2.5vw;
+    }
+
+    .content, .content2 {
+        font-size: 2.5vw;
+    }
+
+    .footer {
+        font-size: 2.5vw;
+    }
+
+    .box2 {
+        grid-template-columns: 1fr;
+    }
+
+    .education-proof {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .summary-text {
+        font-size: 3vw;
+    }
+
+    .profile-box {
+        background: rgb(117,8,8);
+        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+        height: auto;
+        padding-bottom: 8vw;
+        border-bottom-left-radius: 15%;
+        border-bottom-right-radius: 15%;
+        font-size: 3vw;
+    }
+
+    .profile-text {
+        font-size: 3.5vw;
+    }
+
+    .box2-header {
+        padding-left: 40vw;
+        padding-right: 40vw;
+        font-size: 2.2vw;
+    }
+
+    .box3-header{
+        font-size: 2.2vw;
+    }
+
+    .box2-0 {
+        font-size: 3vw;
+    }
+
+    .content, .content2 {
+        font-size: 3vw;
+    }
+
+    .footer {
+        font-size: 3vw;
+    }
+
+    .box2 {
+        grid-template-columns: 1fr;
+    }
+
+    .education-proof {
+        display: flex;
+        flex-direction: column;
     }
 }
