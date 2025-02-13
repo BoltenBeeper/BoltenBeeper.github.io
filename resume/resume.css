@@ -24,12 +24,8 @@ body{
 }
 
 main{
-<<<<<<< HEAD
-    padding: 10px;
-=======
     padding: 1%;
     min-height: 100vh;
->>>>>>> overhaul
 }
 
 header{
