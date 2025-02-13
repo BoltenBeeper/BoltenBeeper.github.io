@@ -9,125 +9,409 @@
 }
 
 body{
-    background-image: url(https://wallpaperaccess.com/full/1157063.jpg);
+    /* background-color: #af0f0f; */
+    background-color:black;
+    background-image:
+    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    /* background: rgb(157,110,16); */
+    background: radial-gradient(circle, rgba(157,110,16,1) 0%, rgba(121,9,9,1) 35%, rgba(0,0,0,1) 100%);
+    min-height: 100vh;
 }
 
 main{
+<<<<<<< HEAD
     padding: 10px;
+=======
+    padding: 1%;
+    min-height: 100vh;
+>>>>>>> overhaul
 }
 
 header{
-    border: ridge 10px White;
+    border: ridge 0.52vw White;
 }
-
-div{
-    margin: 5px;
-    /* border: solid 5px blue; */
-}
-
-/* v--[Class selectors]--v */
 
 .header{
-    padding: 10px;
     width: 100%;
-    height: 250px;
-    background-image: url(https://image.freepik.com/free-vector/black-red-metal-background_71775-391.jpg);
+    height: auto;
+    aspect-ratio: 7 / 1; /* Maintains aspect ratio so background image never leaks over borders */
     background-size: 50%;
     display: grid;
     grid-template-columns: 50% 50%;
+    background-color: #000;
 }
 
 .header-content{
-    margin: 10px;
+    margin: 0.52vw;
     width: 100%;
     height: 100%;
 }
 
-.header-portrait{
-    border: inset 10px rgb(200, 0, 0);
+.portrait-box{
+    width: 100%;
+    height: 100%;
     margin: auto;
-    width: 200px;
-    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://image.freepik.com/free-vector/black-red-metal-background_71775-391.jpg);
+    background-size: cover;
+    background-clip: content-box;
+    aspect-ratio: 3 / 1; /* Maintains aspect ratio so background image never leaks over borders */
+}
+
+.portrait{
+    border: inset 0.52vw rgb(200, 0, 0);
+    margin: auto;
+    width: 11vw;
+    height: 11vw;
     background-size: cover;
     border-radius: 50%;
-    background-image: url(https://yt3.ggpht.com/ytc/AKedOLSbYr8DEIDl5FPpz3uPrCMItkI6QSgTlY3cyDt0ww=s900-c-k-c0x00ffffff-no-rj);
+    background-image: url(https://yt3.ggpht.com/ytc/AKedOLSbYr8DEIDl5FPpz3uPrCMItkI6QSgTlY3cyDt0ww=s900-c-k-c0x00ffffff-no-rj); /* My Logo as a fallback */
 }
 
-.header-text{
-    padding-left: 15px;
+.summary-text{
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 1.2vw;
 }
 
-.box{
-    border-left: outset 10px grey;
-    border-bottom: outset 10px grey;
-    border-right: outset 10px grey;
+.profile-box{
+    background: rgb(117,8,8);
+    background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+    border-left: outset 0.52vw grey;
+    border-bottom: outset 0.52vw grey;
+    border-right: outset 0.52vw grey;
     border-bottom-left-radius: 25%;
     border-bottom-right-radius: 25%;
     width: 95%;
-    height: 400px;
+    /* height: 37vh; */
+    padding: 1vw;
+    padding-bottom: 4vw;
     margin: auto;
+    font-size: 1.2vw;
 }
 
-.box{
-    width: 95%;
-    height: 400px;
-    padding: 15px;
-    margin: auto;
+.profile-text{
+    font-size: 1.8vw;
 }
 
-.box2_header{
-    border: outset 10px white;
-    /* background-image: url(https://image.freepik.com/free-vector/black-red-metal-background_71775-391.jpg); */
+.box2-header{
+    border: outset 0.52vw white;
     background-size: cover;
-    padding: 50px;
+    padding: 2.6vw;
+    font-size: 1.5vw;
 }
 
 .box2-0{
-    padding: 15px;
+    padding: 0.78vw;
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
     text-align: center;
     text-decoration: underline;
+    font-size: 1.2vw;
 }
 
 .box2{
-    /* border: double 15px green; */
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
 }
 
+.box3-header{
+    font-size: 1.5vw;
+}
+
 .content{
-    height: 500px;
+    height: 46.3vh;
+    font-size: 1.2vw; /* Adjust font size */
 }
 
 .content2{
-    height: 250px;
+    height: 23.15vh;
+    font-size: 1.2vw; /* Adjust font size */
 }
 
 .footer{
     margin: auto;
-    margin-left: 40%;
+    padding-top: 8%;
+    padding-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2vw; /* Adjust font size */
 }
-
-.centered-text{
-    /* text-align: center; */
-}
-
-/* v--[ID selectors]--v */
 
 #footer{
-    background-color: black;
-    background-image:
-    radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-    radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-    radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-    radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
-    background-size: 275px 275px, 175px 175px, 125px 125px, 75px 75px;
-    background-position: 0 0, 20px 30px, 65px 135px, 35px 50px;
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     color: white;
-    box-shadow: 0 50vh 0 50vh #000;
+    /* box-shadow: 0 46.3vh 0 46.3vh #000; */
+}
+
+.education-proof {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 0.52vw;
+}
+
+.education, .proof-of-work {
+    padding: 0.78vw;
+    font-size: 1.2vw; /* Adjust font size */
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 1200px) {
+    .header {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .portrait {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .summary-text {
+        min-height: 20vw;
+        font-size: 1.5vw;
+    }
+
+    .profile-box {
+        background: rgb(117,8,8);
+        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+        height: auto;
+        font-size: 1.5vw;
+    }
+
+    .profile-text {
+        font-size: 2vw;
+    }
+
+    .box2-header, .box3-header {
+        font-size: 1.8vw;
+    }
+
+    .box2-0 {
+        font-size: 1.5vw;
+    }
+
+    .content, .content2 {
+        font-size: 1.5vw;
+    }
+
+    .footer {
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .summary-text {
+        font-size: 1.8vw;
+    }
+
+    .profile-box {
+        background: rgb(117,8,8);
+        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+        height: auto;
+        border-bottom-left-radius: 20%;
+        border-bottom-right-radius: 20%;
+        font-size: 1.8vw;
+    }
+
+    .profile-text {
+        font-size: 2.2vw;
+    }
+
+    .box2-header, .box3-header {
+        font-size: 2vw;
+    }
+
+    .box2-0 {
+        font-size: 1.8vw;
+    }
+
+    .content, .content2 {
+        font-size: 1.8vw;
+    }
+
+    .footer {
+        font-size: 1.8vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .summary-text {
+        font-size: 2vw;
+    }
+
+    .profile-box {
+        background: rgb(117,8,8);
+        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+        height: auto;
+        font-size: 2vw;
+    }
+
+    .profile-text {
+        font-size: 2.5vw;
+    }
+
+    .box2-header {
+        padding-left: 40vw;
+        padding-right: 40vw;
+        font-size: 2.2vw;
+    }
+
+    .box3-header{
+        font-size: 2.2vw;
+    }
+
+    .box2-0 {
+        font-size: 2vw;
+    }
+
+    .content, .content2 {
+        font-size: 2vw;
+    }
+
+    .footer {
+        font-size: 2vw;
+    }
+
+    .box2 {
+        grid-template-columns: 1fr;
+    }
+
+    .education-proof {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .summary-text {
+        font-size: 2.5vw;
+    }
+
+    .profile-box {
+        background: rgb(117,8,8);
+        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+        height: auto;
+        padding-bottom: 6vw;
+        font-size: 2.5vw;
+    }
+
+    .profile-text {
+        font-size: 3vw;
+    }
+
+    .box2-header {
+        padding-left: 40vw;
+        padding-right: 40vw;
+        font-size: 2.2vw;
+    }
+
+    .box3-header{
+        font-size: 2.2vw;
+    }
+
+    .box2-0 {
+        font-size: 2.5vw;
+    }
+
+    .content, .content2 {
+        font-size: 2.5vw;
+    }
+
+    .footer {
+        font-size: 2.5vw;
+    }
+
+    .box2 {
+        grid-template-columns: 1fr;
+    }
+
+    .education-proof {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .summary-text {
+        font-size: 3vw;
+    }
+
+    .profile-box {
+        background: rgb(117,8,8);
+        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+        height: auto;
+        padding-bottom: 8vw;
+        border-bottom-left-radius: 15%;
+        border-bottom-right-radius: 15%;
+        font-size: 3vw;
+    }
+
+    .profile-text {
+        font-size: 3.5vw;
+    }
+
+    .box2-header {
+        padding-left: 40vw;
+        padding-right: 40vw;
+        font-size: 2.2vw;
+    }
+
+    .box3-header{
+        font-size: 2.2vw;
+    }
+
+    .box2-0 {
+        font-size: 3vw;
+    }
+
+    .content, .content2 {
+        font-size: 3vw;
+    }
+
+    .footer {
+        font-size: 3vw;
+    }
+
+    .box2 {
+        grid-template-columns: 1fr;
+    }
+
+    .education-proof {
+        display: flex;
+        flex-direction: column;
+    }
 }
