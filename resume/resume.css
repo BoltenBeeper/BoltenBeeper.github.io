@@ -156,12 +156,106 @@ header{
 .education-proof {
     display: grid;
     grid-template-columns: 50% 50%;
-    gap: 0.52vw;
+    align-items: start; /* Align items to the start to ensure titles are on the same y-coordinate */
 }
 
 .education, .proof-of-work {
     padding: 0.78vw;
     font-size: 1.2vw; /* Adjust font size */
+}
+.education {
+    margin-top: 0;
+}
+
+.projects {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1vw;
+}
+
+.project {
+    text-align: center;
+    width: 30%;
+    border: 0.2vw solid white;
+    border-radius: 1vw;
+    padding: 1vw;
+}
+
+.project-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 0.2vw solid white;
+}
+
+.project p {
+    margin-top: 1vw;
+    font-size: 1.2vw;
+}
+
+.proof-of-work h2, .education h2 {
+    text-align: center;
+}
+
+.education-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+}
+
+.education-card {
+    width: calc(50% - 1vw);
+    border: 0.2vw solid rgb(92, 9, 9);
+    border-radius: 1vw;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    background: rgb(117,8,8);
+    background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+}
+
+.education-card-header {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1vw;
+    background: rgb(157,110,16);
+    background: radial-gradient(circle, rgba(157,110,16,1) 0%, rgba(0,0,0,0) 100%);
+}
+
+.school-logo {
+    width: 20%;
+    padding-top: 20%; /* 1:1 Aspect Ratio */
+    border-radius: 0.5vw;
+    background-size: cover;
+    background-position: center;
+    margin-right: 1vw;
+}
+
+.school-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.school-name {
+    font-size: 1.2vw;
+    margin: 0;
+}
+
+.school-duration {
+    font-size: 1vw;
+    margin: 0;
+}
+
+.school-description {
+    font-size: 1.2vw;
+    flex-grow: 1;
 }
 
 /* Media Queries for smaller screens */
@@ -207,6 +301,10 @@ header{
     .footer {
         font-size: 1.5vw;
     }
+
+    .education-card {
+        width: 100%;
+    }
 }
 
 @media (max-width: 992px) {
@@ -246,6 +344,10 @@ header{
 
     .footer {
         font-size: 1.8vw;
+    }
+
+    .education-card {
+        width: 100%;
     }
 }
 
@@ -300,6 +402,18 @@ header{
         display: flex;
         flex-direction: column;
     }
+
+    .projects {
+        flex-direction: column;
+    }
+
+    .project {
+        width: 80%;
+    }
+
+    .education-card {
+        width: 100%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -353,6 +467,18 @@ header{
     .education-proof {
         display: flex;
         flex-direction: column;
+    }
+
+    .projects {
+        flex-direction: column;
+    }
+
+    .project {
+        width: 80%;
+    }
+
+    .education-card {
+        width: 100%;
     }
 }
 
@@ -409,5 +535,17 @@ header{
     .education-proof {
         display: flex;
         flex-direction: column;
+    }
+
+    .projects {
+        flex-direction: column;
+    }
+
+    .project {
+        width: 80%;
+    }
+
+    .education-card {
+        width: 100%;
     }
 }
