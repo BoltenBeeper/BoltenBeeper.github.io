@@ -29,7 +29,7 @@ main{
 }
 
 header{
-    border: ridge 0.52vw White;
+    border: ridge 0.52vw rgb(196, 196, 196);
 }
 
 .header{
@@ -80,9 +80,9 @@ header{
 .profile-box{
     background: rgb(117,8,8);
     background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
-    border-left: outset 0.52vw grey;
-    border-bottom: outset 0.52vw grey;
-    border-right: outset 0.52vw grey;
+    border-left: dotted 0.52vw grey;
+    border-bottom: dotted 0.52vw grey;
+    border-right: dotted 0.52vw grey;
     border-bottom-left-radius: 25%;
     border-bottom-right-radius: 25%;
     width: 95%;
@@ -96,6 +96,8 @@ header{
 .profile-text{
     font-size: 1.8vw;
 }
+
+
 
 .box2-header{
     border: outset 0.52vw white;
@@ -115,9 +117,10 @@ header{
     font-size: 1.2vw;
 }
 
-.box2{
+.experience-capabilities {
     width: 100%;
     height: 100%;
+    padding: 2vw;
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -201,13 +204,13 @@ header{
     text-align: center;
 }
 
-.education-cards {
+.education-cards, .experience-cards {
     display: flex;
     flex-wrap: wrap;
     gap: 1vw;
 }
 
-.education-card {
+.card-type1 {
     width: calc(50% - 1vw);
     border: 0.2vw solid rgb(92, 9, 9);
     border-radius: 1vw;
@@ -218,7 +221,7 @@ header{
     background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
 }
 
-.education-card-header {
+.card-type1-header {
     display: flex;
     align-items: center;
     margin-left: 0;
@@ -228,7 +231,7 @@ header{
     background: radial-gradient(circle, rgba(157,110,16,1) 0%, rgba(0,0,0,0) 100%);
 }
 
-.school-logo {
+.card-type1-logo {
     width: 20%;
     padding-top: 20%; /* 1:1 Aspect Ratio */
     border-radius: 0.5vw;
@@ -237,23 +240,23 @@ header{
     margin-right: 1vw;
 }
 
-.school-info {
+.card-type1-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.school-name {
+.card-type1-name {
     font-size: 1.2vw;
     margin: 0;
 }
 
-.school-duration {
+.card-type1-duration {
     font-size: 1vw;
     margin: 0;
 }
 
-.school-description {
+.card-type1-description {
     font-size: 1.2vw;
     flex-grow: 1;
 }
@@ -302,7 +305,7 @@ header{
         font-size: 1.5vw;
     }
 
-    .education-card {
+    .card-type1 {
         width: 100%;
     }
 }
@@ -346,7 +349,7 @@ header{
         font-size: 1.8vw;
     }
 
-    .education-card {
+    .card-type1 {
         width: 100%;
     }
 }
@@ -394,7 +397,7 @@ header{
         font-size: 2vw;
     }
 
-    .box2 {
+    .experience-capabilities {
         grid-template-columns: 1fr;
     }
 
@@ -411,7 +414,7 @@ header{
         width: 80%;
     }
 
-    .education-card {
+    .card-type1 {
         width: 100%;
     }
 }
@@ -460,7 +463,7 @@ header{
         font-size: 2.5vw;
     }
 
-    .box2 {
+    .experience-capabilities {
         grid-template-columns: 1fr;
     }
 
@@ -477,7 +480,7 @@ header{
         width: 80%;
     }
 
-    .education-card {
+    .card-type1 {
         width: 100%;
     }
 }
@@ -528,7 +531,7 @@ header{
         font-size: 3vw;
     }
 
-    .box2 {
+    .experience-capabilities {
         grid-template-columns: 1fr;
     }
 
@@ -545,7 +548,7 @@ header{
         width: 80%;
     }
 
-    .education-card {
+    .card-type1 {
         width: 100%;
     }
 }
