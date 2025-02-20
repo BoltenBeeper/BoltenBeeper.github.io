@@ -110,7 +110,7 @@ header{
 }
 
 .box2-header{
-    border: outset 0.5vw white;
+    /* border: outset 0.5vw white; */
     background-size: cover;
     padding: 2.6vw;
     font-size: 1.5vw;
@@ -122,6 +122,19 @@ header{
     padding: 2vw;
     display: grid;
     grid-template-rows: 50% 50%;
+}
+
+.skills-lists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 1vw;
+}
+
+.skills-list {
+    width: 30%;
+    padding: 1vw;
+    text-align: left;
 }
 
 .box3-header{
@@ -180,7 +193,7 @@ header{
 .project {
     text-align: center;
     width: 30%;
-    border: 0.2vw solid white;
+    border: 0.2vw solid rgb(92, 9, 9);
     border-radius: 1vw;
     padding: 1vw;
 }
@@ -211,7 +224,7 @@ header{
 
 .card-type1 {
     width: calc(50% - 1vw);
-    border: 0.2vw solid rgb(92, 9, 9);
+    /* border: 0.2vw solid rgb(92, 9, 9); */
     border-radius: 1vw;
     padding: 1vw;
     display: flex;
@@ -394,6 +407,10 @@ header{
 
     .footer {
         font-size: 2vw;
+    }
+
+    .experience, .capabilities {
+        grid-template-columns: 1fr;
     }
 
     .experience-capabilities {
