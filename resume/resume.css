@@ -47,7 +47,7 @@ header{
 }
 
 .portrait{
-    border: inset 0.52vw rgb(200, 0, 0);
+    border: inset 10px rgb(200, 0, 0);
     margin: auto;
     width: 11vw;
     height: 11vw;
@@ -104,7 +104,7 @@ header{
     margin-top: 5vw;
     margin-bottom: 5vw;
     display: grid;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: auto auto;
 }
 
 .experience, .skills {
@@ -214,8 +214,17 @@ header{
 }
 
 .card-type1-description {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-type1-bullet {
     font-size: 1.2vw;
     flex-grow: 1;
+    padding-bottom: 1vw;
 }
 
 .skills-lists {
@@ -232,15 +241,15 @@ header{
 .skills-list {
     width: 30%;
     padding: 1vw;
-    margin-top: 10%;
+    margin-top: 3%;
     text-align: left;
+    font-size: 1.5vw;
 }
 
 .education-proof {
     display: grid;
     grid-template-columns: 50% 50%;
     margin-bottom: 5vw;
-    align-items: start; /* Align items to the start to ensure titles are on the same y-coordinate */
 }
 
 .education, .proof-of-work {
@@ -340,10 +349,6 @@ header{
         font-size: 2vw;
     }
 
-    .skills-list {
-        margin-top: 20%;
-    }
-
     .footer {
         font-size: 1.5vw;
     }
@@ -373,10 +378,6 @@ header{
         font-size: 1.8vw;
     }
 
-    .skills-list {
-        margin-top: 30%;
-    }
-
     .footer {
         font-size: 1.8vw;
     }
@@ -391,7 +392,9 @@ header{
     }
 
     .summary-text {
-        font-size: 2vw;
+        font-size: 3vw;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .profile-box {
@@ -399,50 +402,65 @@ header{
     }
 
     .profile-text {
-        font-size: 2.5vw;
+        font-size: 3.5vw;
     }
 
     .box2-header {
         padding: 0;
         padding-bottom: 5vw;
         border: none;
-        font-size: 10vw;
+        font-size: 12vw;
         text-decoration:overline;
     }
 
     .box3-header {
-        font-size: 10vw;
+        font-size: 12vw;
         text-decoration:overline;
     }
 
     .experience-skills {
         grid-template-columns: 1fr;
-        min-height: 250vh;
+        margin-top: 10vw;
+        margin-bottom: 10vw;
     }
 
     .experience, .skills {
         grid-template-columns: 1fr;
         height: auto;
+        margin-top: 10vw;
+        margin-bottom: 10vw;
     }
 
     .card-type1{
+        padding: 3vw;
         font-size: 4vw;
     }
 
     .card-type1 p {
-        font-size: 2.5vw;
+        font-size: 3.5vw;
     }
 
     .skills-lists {
-        padding-left: 30%;
-        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .skills-list ul {
+        list-style: none;
     }
 
     .skills-list {
         width: 100%;
+        text-align: center;
         height: auto;
         margin-top: 0;
         font-size: 3.5vw;
+    }
+
+    .experience-cards, .education-cards {
+        gap: 5vw;
     }
 
     .education-proof {
@@ -453,14 +471,41 @@ header{
     .proof-of-work {
         min-width: 90vw;
         max-width: 100%;
+        margin-top: 10vw;
+        margin-bottom: 10vw;
+    }
+
+    .education {
+        margin-top: 10vw;
+        margin-bottom: 10vw;
     }
 
     .projects {
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        gap: 10vw;
     }
 
     .project {
-        width: 80%;
+        width: 90%;
+    }
+
+    .project-image {
+        width: 75%;
+    }
+
+    .project h3 {
+        font-size: 7vw;
+    }
+
+    .project p {
+        padding: 5%;
+        border-left:rgb(150, 8, 8) 10px double;
+        border-top: rgb(150, 8, 8) 10px double;
+        border-top-right-radius: 10%;
+        border-bottom-left-radius: 10%;
+        font-size: 5vw;
     }
 
     .project-image {
@@ -472,126 +517,28 @@ header{
     }
 
     .footer {
-        font-size: 2vw;
+        font-size: 3vw;
     }
 }
 
 @media (max-width: 576px) {
-    .header {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-
-    .summary-text {
-        font-size: 2.5vw;
-    }
 
     .profile-box {
         height: auto;
         padding-bottom: 6vw;
     }
 
-    .profile-text {
-        font-size: 3vw;
-    }
-
-    .box2-header {
-        padding-left: 40vw;
-        padding-right: 40vw;
-        font-size: 2.2vw;
-    }
-
-    .box3-header{
-        font-size: 2.2vw;
-    }
-
-    .box2-0 {
-        font-size: 2.5vw;
-    }
-
     .footer {
         font-size: 2.5vw;
-    }
-
-    .experience-skills {
-        grid-template-columns: 1fr;
-    }
-
-    .education-proof {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .projects {
-        flex-direction: column;
-    }
-
-    .project {
-        width: 80%;
-    }
-
-    .card-type1 {
-        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .header {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-
-    .summary-text {
-        font-size: 3vw;
-    }
 
     .profile-box {
         height: auto;
         padding-bottom: 8vw;
         border-bottom-left-radius: 15%;
         border-bottom-right-radius: 15%;
-    }
-
-    .profile-text {
-        font-size: 3.5vw;
-    }
-
-    .box2-header {
-        padding-left: 40vw;
-        padding-right: 40vw;
-        font-size: 2.2vw;
-    }
-
-    .box3-header{
-        font-size: 2.2vw;
-    }
-
-    .box2-0 {
-        font-size: 3vw;
-    }
-
-    .footer {
-        font-size: 3vw;
-    }
-
-    .experience-skills {
-        grid-template-columns: 1fr;
-    }
-
-    .education-proof {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .projects {
-        flex-direction: column;
-    }
-
-    .project {
-        width: 80%;
-    }
-
-    .card-type1 {
-        width: 100%;
     }
 }
