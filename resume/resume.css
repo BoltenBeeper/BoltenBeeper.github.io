@@ -19,10 +19,6 @@ main{
     min-height: 100vh;
 }
 
-header{
-    /* border: ridge 0.52vw rgb(196, 196, 196); */
-}
-
 .header{
     width: 100%;
     height: auto;
@@ -123,6 +119,7 @@ header{
     padding-top: 25%;
     padding-bottom: 25%;
     font-size: 3vw;
+    box-shadow: 0vw 1vw 1vw rgba(0, 0, 0, .2);
 }
 
 .experience-header {
@@ -289,14 +286,32 @@ header{
     padding: 1vw;
 }
 
+.project-image-container {
+    width: 100%;
+    position: relative; /* Needed for absolute positioning */
+    display: inline-block; /* Ensures it only wraps around the content */
+}
+
 .project-image {
     width: 100%;
-    margin-bottom: 1vw;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
     border: 0.2vw solid white;
+}
+
+.project-language-logo {
+    position: absolute;
+    bottom: 0%; /* use + to move up and - to move down */
+    right: 0%; /* use + to move left and - to move right */
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: 0px 0px .3vw rgba(0, 0, 0, 1);
+    align-items: center;
 }
 
 .project p {
@@ -411,6 +426,7 @@ header{
         border: none;
         font-size: 12vw;
         text-decoration:overline;
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
     }
 
     .box3-header {
@@ -456,7 +472,7 @@ header{
         text-align: center;
         height: auto;
         margin-top: 0;
-        font-size: 3.5vw;
+        font-size: 4.5vw;
     }
 
     .experience-cards, .education-cards {
@@ -495,8 +511,16 @@ header{
         width: 75%;
     }
 
+    .project-language-logo {
+        width: 25%;
+        bottom: 0%; /* use + to move up and - to move down */
+        right: 10%; /* use + to move left and - to move right */
+        box-shadow: 0px 0px 2vw rgba(0, 0, 0, 1);
+    }
+
     .project h3 {
         font-size: 7vw;
+        margin-bottom: 5vw;
     }
 
     .project p {
