@@ -16,7 +16,6 @@ body{
 }
 
 main{
-    padding: 1%;
     min-height: 100vh;
 }
 
@@ -95,9 +94,12 @@ header{
     font-size: 1.8vw;
 }
 
+.everything-else {
+    padding: 1%;
+}
+
 .experience-skills {
     width: 100%;
-    height: 100%;
     padding: 2vw;
     margin-top: 5vw;
     margin-bottom: 5vw;
@@ -107,14 +109,12 @@ header{
 
 .experience, .skills {
     width: 100%;
-    height: 100%;
     padding-top: 2vw;
     padding-bottom: 2vw;
     display: grid;
     grid-template-columns: 40% 60%;
     text-align: center;
     font-size: 1.2vw;
-    min-height: 50vh;
 }
 
 .box2-header{
@@ -126,7 +126,6 @@ header{
 }
 
 .experience-header {
-    height: 100%;
     width: 75%;
     border-top: rgb(200, 150, 150) 0.2vw solid;
     border-bottom: rgb(63, 8, 8) 0.2vw solid;
@@ -134,7 +133,6 @@ header{
 }
 
 .skills-header {
-    height: 100%;
     width: 75%;
     border-top: rgb(200, 150, 150) 0.2vw solid;
     border-bottom: rgb(63, 8, 8) 0.2vw solid;
@@ -316,6 +314,9 @@ header{
 }
 
 /* Media Queries for smaller screens */
+
+/* TABLET FORMAT */
+
 @media (max-width: 1200px) {
     .header {
         grid-template-columns: 1fr;
@@ -328,35 +329,23 @@ header{
     }
 
     .summary-text {
-        min-height: 20vw;
         font-size: 1.5vw;
     }
 
     .profile-box {
-        background: rgb(117,8,8);
-        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
         height: auto;
-        font-size: 1.5vw;
     }
 
     .profile-text {
         font-size: 2vw;
     }
 
-    .box2-header, .box3-header {
-        font-size: 1.8vw;
-    }
-
-    .box2-0 {
-        font-size: 1.5vw;
+    .skills-list {
+        margin-top: 20%;
     }
 
     .footer {
         font-size: 1.5vw;
-    }
-
-    .card-type1 {
-        width: 100%;
     }
 }
 
@@ -371,34 +360,29 @@ header{
     }
 
     .profile-box {
-        background: rgb(117,8,8);
-        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
         height: auto;
         border-bottom-left-radius: 20%;
         border-bottom-right-radius: 20%;
-        font-size: 1.8vw;
     }
 
     .profile-text {
         font-size: 2.2vw;
     }
 
-    .box2-header, .box3-header {
-        font-size: 2vw;
-    }
-
     .box2-0 {
         font-size: 1.8vw;
+    }
+
+    .skills-list {
+        margin-top: 30%;
     }
 
     .footer {
         font-size: 1.8vw;
     }
-
-    .card-type1 {
-        width: 100%;
-    }
 }
+
+/* PHONE FORMAT */
 
 @media (max-width: 768px) {
     .header {
@@ -411,10 +395,7 @@ header{
     }
 
     .profile-box {
-        background: rgb(117,8,8);
-        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
         height: auto;
-        font-size: 2vw;
     }
 
     .profile-text {
@@ -422,34 +403,56 @@ header{
     }
 
     .box2-header {
-        padding-left: 40vw;
-        padding-right: 40vw;
-        font-size: 2.2vw;
+        padding: 0;
+        padding-bottom: 5vw;
+        border: none;
+        font-size: 10vw;
+        text-decoration:overline;
     }
 
-    .box3-header{
-        font-size: 2.2vw;
-    }
-
-    .box2-0 {
-        font-size: 2vw;
-    }
-
-    .footer {
-        font-size: 2vw;
-    }
-
-    .experience, .skills {
-        grid-template-columns: 1fr;
+    .box3-header {
+        font-size: 10vw;
+        text-decoration:overline;
     }
 
     .experience-skills {
         grid-template-columns: 1fr;
+        min-height: 250vh;
+    }
+
+    .experience, .skills {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .card-type1{
+        font-size: 4vw;
+    }
+
+    .card-type1 p {
+        font-size: 2.5vw;
+    }
+
+    .skills-lists {
+        padding-left: 30%;
+        justify-content: center;
+    }
+
+    .skills-list {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        font-size: 3.5vw;
     }
 
     .education-proof {
         display: flex;
         flex-direction: column;
+    }
+
+    .proof-of-work {
+        min-width: 90vw;
+        max-width: 100%;
     }
 
     .projects {
@@ -460,8 +463,16 @@ header{
         width: 80%;
     }
 
+    .project-image {
+        border-width: 5px;
+    }
+
     .card-type1 {
-        width: 100%;
+        width: 80%;
+    }
+
+    .footer {
+        font-size: 2vw;
     }
 }
 
@@ -476,11 +487,8 @@ header{
     }
 
     .profile-box {
-        background: rgb(117,8,8);
-        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
         height: auto;
         padding-bottom: 6vw;
-        font-size: 2.5vw;
     }
 
     .profile-text {
@@ -538,13 +546,10 @@ header{
     }
 
     .profile-box {
-        background: rgb(117,8,8);
-        background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
         height: auto;
         padding-bottom: 8vw;
         border-bottom-left-radius: 15%;
         border-bottom-right-radius: 15%;
-        font-size: 3vw;
     }
 
     .profile-text {
