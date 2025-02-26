@@ -54,13 +54,14 @@ main {
     "the-blog code-holder code-holder reach-me";
 }
 
-#fire-container {
-  font-size: 24px;
+#fire-container{
+  font-size: 2vw;
 	filter: blur(var(--blur));
 	-webkit-filter: blur(var(--blur));
 	position: relative;
   top: 13vw;
-	width: 20vw;
+  left: 2.5vw;
+	width: 23vw;
 	height: 0;
 }
 
