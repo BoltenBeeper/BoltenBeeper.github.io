@@ -286,6 +286,9 @@ main{
     padding: 1vw;
 }
 
+.project-link {
+}
+
 .project-image-container {
     width: 100%;
     position: relative; /* Needed for absolute positioning */
@@ -298,8 +301,34 @@ main{
     border-radius: 50%;
     background-size: cover;
     background-position: center;
+    position:relative;
     border: 0.2vw solid rgb(128, 128, 128);
 }
+
+/* hover effect */
+
+.project-image::before {
+    content:'';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    border-radius: 100%;
+    transition: 2s linear; /* Defines how long the button effect will take place for. */
+    z-index: -2;
+    filter:blur(.5vw);
+  }
+  
+.project-image::after {
+    z-index: -1;
+  }   
+  
+.project-image:hover::before {
+     filter:blur(100vw);
+     background:linear-gradient(45deg, #ff0707, #ff920c,#ffee00);
+     transform: rotate(-4deg);
+  }
 
 .project-language-logo {
     position: absolute;
@@ -370,13 +399,9 @@ main{
     flex-direction: column;
     align-items: center;
     font-size: 1.2vw; /* Adjust font size */
-}
-
-#footer{
     background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png);
     background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     color: white;
-    /* box-shadow: 0 46.3vh 0 46.3vh #000; */
 }
 
 .footer-content {
