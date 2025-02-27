@@ -3,7 +3,7 @@
 :root {
   --fireColor1: #ff5000;
   --fireColor2: rgba(255,80,0,0);
-  --fireDuration: 1s;
+  --fireDuration: 3s;
   --fireSize: 5vw;
   --blur: 0.4px;
 }
@@ -28,11 +28,14 @@ a {
   font-family: 'Poppins', sans-serif;
   letter-spacing: 0.1rem;
   border: .5vw solid rgb(255, 255, 255);
+  box-shadow: 0px 1vw 2vw 0px rgba(255,255,255,0.2);
   border-radius: 25%;
   color: white;
   cursor: pointer;
   position: relative;
   display: block;
+  z-index: 1;
+  transition: transform .5s;
 }
 
 body {
@@ -54,33 +57,45 @@ main {
     "the-blog code-holder code-holder reach-me";
 }
 
-#fire-container{
+#fire-container {
   font-size: 2vw;
-	filter: blur(var(--blur));
-	-webkit-filter: blur(var(--blur));
-	position: relative;
+  filter: blur(var(--blur));
+  -webkit-filter: blur(var(--blur));
+  position: relative;
   top: 13vw;
   left: 2.5vw;
-	width: 23vw;
-	height: 0;
+  width: 23vw;
+  height: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 #fire-container .particle {
-	animation: rise var(--fireDuration) ease-in infinite;
-	background-image: radial-gradient(var(--fireColor1) 30%,var(--fireColor2) 70%);
-	border-radius: 50%;
-	mix-blend-mode: screen;
-	opacity: 0;
-	position: absolute;
-	bottom: 0;
-	width: var(--fireSize);
-	height: var(--fireSize);
+  animation: rise var(--fireDuration) ease-in;
+  background-image: radial-gradient(var(--fireColor1) 30%, var(--fireColor2) 70%);
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  width: var(--fireSize);
+  height: var(--fireSize);
+  pointer-events: none;
 }
 
 .button-container-one {
   margin: auto;
   grid-area: resume;
   justify-self: center;
+  position: relative;
+}
+
+.button-container-one:hover #fire-container {
+  display: block;
+}
+
+.button-container-one:hover .button.one {
+  transform: scale(1.05);
 }
 
 .button .two {
@@ -127,17 +142,17 @@ main {
 }
 
 @keyframes rise {
-	from {
-		opacity: 0;
-		transform: translateY(0) scale(1);
-	}
-	25% {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-		transform: translateY(-10em) scale(0);
-	}
+  from {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10em) scale(0);
+  }
 }
 
 @keyframes fly-away {
