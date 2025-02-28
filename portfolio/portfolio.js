@@ -1,20 +1,40 @@
+// Fire animation code adapted from: https://codepen.io/LiaTsernant/pen/KKvMyLp
+
 let fireContainer = document.getElementById("fire-container");
 let particleInterval;
+let audioContext = new (window.AudioContext || window.webkitAudioContext)();
+let audioElement = document.getElementById("fire-sound-loop");
+let track = audioContext.createMediaElementSource(audioElement);
+let gainNode = audioContext.createGain();
+track.connect(gainNode).connect(audioContext.destination);
+
+// Set initial gain value to a higher level
+gainNode.gain.value = 1;
+let isPlaying = false;
+let fadeOutTimeout;
+
+// Ensure AudioContext is resumed on first user interaction
+function resumeAudioContext() {
+  if (audioContext.state === 'suspended') {
+    audioContext.resume().then(() => {
+      console.log("Audio context resumed");
+    }).catch((error) => {
+      console.error("Error resuming audio context:", error);
+    });
+  }
+}
+
+document.addEventListener('click', resumeAudioContext, { once: true });
+document.addEventListener('keydown', resumeAudioContext, { once: true });
 
 function createParticle(fireContainer) {
   let particle = document.createElement("div");
-
-  
-  particle.style.left = `calc((100% - 5em) * ${Math.random()})`; // Randomize the horizontal position of the particle.
-  // particle.style.width = 2 + Math.random() + "em"; // Randomize the width of the particle.
-  particle.style.height = 2 + Math.random() + "em"; // Randomize the height of the particle.
-  // particle.style.opacity = .5; // Make the particle fully opaque.
-  particle.style.backgroundColor = `hsl(${Math.random() * 50}, 0%, 0%)`; // Randomize the background color of the particle.
-
-
-  particle.setAttribute("class", "particle"); // Add the class of "particle" to the particle.
-  particle.style.animationDelay = .01 * Math.random() + "s"; // Randomize the delay of the start and end of animation. This keeps different particles from starting at the same time.
-  particle.style.animationDuration = 1 + Math.random() + "s"; // Randomize the duration of the animation. This keeps different particles moving at different speeds.
+  particle.style.left = `calc((100% - 5em) * ${Math.random()})`;
+  particle.style.height = 2 + Math.random() + "em";
+  particle.style.backgroundColor = `hsl(${Math.random() * 50}, 0%, 0%)`;
+  particle.setAttribute("class", "particle");
+  particle.style.animationDelay = .01 * Math.random() + "s";
+  particle.style.animationDuration = 1 + Math.random() + "s";
   fireContainer.appendChild(particle);
 
   // Remove particle after animation ends
@@ -24,6 +44,8 @@ function createParticle(fireContainer) {
 }
 
 function startCreatingParticles() {
+  resumeAudioContext();
+  fadeInSound();
   particleInterval = setInterval(() => {
     createParticle(fireContainer);
   }, 10); // Create a particle every 10ms
@@ -31,7 +53,43 @@ function startCreatingParticles() {
 
 function stopCreatingParticles() {
   clearInterval(particleInterval);
+  fadeOutSound();
 }
+
+function fadeInSound() {
+  if (fadeOutTimeout) {
+    clearTimeout(fadeOutTimeout);
+    fadeOutTimeout = null;
+  }
+  gainNode.gain.cancelScheduledValues(audioContext.currentTime);
+  gainNode.gain.setValueAtTime(gainNode.gain.value, audioContext.currentTime);
+  gainNode.gain.linearRampToValueAtTime(1, audioContext.currentTime + 0.5);
+  if (!isPlaying) {
+    isPlaying = true;
+    audioElement.play();
+  }
+}
+
+function fadeOutSound() {
+  if (isPlaying) {
+    gainNode.gain.cancelScheduledValues(audioContext.currentTime);
+    gainNode.gain.setValueAtTime(gainNode.gain.value, audioContext.currentTime);
+    gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.5);
+    fadeOutTimeout = setTimeout(() => {
+      audioElement.pause();
+      isPlaying = false;
+    }, 500);
+  }
+}
+
+// Hide overlay and resume AudioContext on user interaction
+function hideOverlay() {
+  document.getElementById('overlay').style.display = 'none';
+  resumeAudioContext();
+}
+
+document.getElementById('overlay').addEventListener('click', hideOverlay);
+document.addEventListener('keydown', hideOverlay, { once: true });
 
 document.querySelector('.button-container-one').addEventListener('mouseenter', startCreatingParticles);
 document.querySelector('.button-container-one').addEventListener('mouseleave', stopCreatingParticles);
