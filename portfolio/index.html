@@ -9,14 +9,23 @@
 </head>
 <body>
     <div id="overlay">
-        <h1>Click or press any key to continue.</h1>
-        <p>Welcome to my virtual portfolio. Feel free to look around and see what I'm about.</p>
+        <h1 class="overlay-header"></h1>
+        <p>Welcome to my virtual portfolio!</p>
         <ul>
-            <li>Find infomation about me and my work history in my resume.</li>
-            <li>See a comprehensive list of my work along with links to check it out for yourself.</li>
-            <li>Feel free to use the given contact imformation at the bottom of each page to connect.</li>
+            <li>Check out my <span class="underline">resume</span> for information about me and my work history.</li>
+            <li>See a comprehensive list of <span class="underline">my work</span> along with links to check them out for yourself.</li>
+            <li>Feel free to <span class="underline">reach out</span> with questions, offers, or notes on how I could improve this page.</li>
         </ul>
     </div>
+    <header>
+        <div class="sound-switch">
+            <input type="checkbox" id="sound-toggle" class="sound-toggle">
+            <label for="sound-toggle" class="sound-toggle-label">
+                <span class="mute-icon">🔊</span>
+                <span class="unmute-icon">🔇</span>
+            </label>
+        </div>
+    </header>
     <main>
         <div class="button-container-one">
             <div id="fire-container"></div>
@@ -33,12 +42,14 @@
         <div class="center_art"></div>
     </main>
     <footer class="footer">
-        <p class="centered-text" >Contact me! You know you want to.</p>
-        <ul>
-            <li>Phone: (512) 949-8243</li>
-            <li>Email: moltencreeper25@gmail.com</li>
-            <li>LinkedIn: https://www.linkedin.com/in/riley-underwood-774aaa191/</li>
-        </ul>
+        <div class="contact-info">
+            <p class="centered-text">Contact me! You know you want to.</p>
+            <ul>
+                <li>Phone: (512) 949-8243</li>
+                <li>Email: <a href="mailto:rileybusinesswood@gmail.com">rileybusinesswood@gmail.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/riley-underwood-774aaa191/" target="_blank">Riley Underwood</a></li>
+            </ul>
+        </div>
     </footer>
 
     <script src="portfolio.js"></script>

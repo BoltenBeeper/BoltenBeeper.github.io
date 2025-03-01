@@ -15,7 +15,7 @@
   border: none;
 }
 
-a {
+main a {
   width: 17vw;
   height: 12vw;
   margin: auto;
@@ -135,7 +135,10 @@ main {
   flex-direction: column;
   align-items: center;
   font-size: 1.2vw;
-  /* Adjust font size */
+  font-style: italic;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.1rem;
   background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png);
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
   color: white;
@@ -175,7 +178,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   color: white;
   display: flex;
   flex-direction: column;
@@ -184,17 +187,80 @@ main {
   justify-content: center;
   align-items: center;
   font-size: 2vw;
+  font-style: italic;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.1rem;
   z-index: 1000;
 }
 
-#overlay h1 {
+#overlay p {
+  font-size: 2.5vw;
+  font-weight: 500;
+}
+
+.overlay-header {
+  color: grey;
   font-size: 4vw;
+  text-decoration: underline;
+  font-weight: 700;
 }
 
 #overlay ul {
   display: flex;
   flex-direction: column;
   gap: 2vw;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.sound-switch {
+  position: fixed;
+  top: 2vw;
+  left: 2vw;
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+}
+
+.sound-toggle {
+  display: none;
+}
+
+.sound-toggle-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mute-icon,
+.unmute-icon {
+  font-size: 2rem;
+  color: white;
+  display: none;
+}
+
+.sound-toggle:checked + .sound-toggle-label .unmute-icon {
+  display: block;
+}
+
+.sound-toggle:not(:checked) + .sound-toggle-label .mute-icon {
+  display: block;
+}
+
+/* PHONE FORMAT */
+@media (max-width: 768px) {
+  .overlay-header::after {
+    content: "Tap anywhere to continue";
+  }
+}
+
+@media (min-width: 769px) {
+  .overlay-header::after {
+    content: "Click or press any key to continue";
+  }
 }
