@@ -36,6 +36,7 @@ main a {
   display: block;
   z-index: 1;
   transition: transform .5s;
+  user-select: none;
 }
 
 body {
@@ -57,7 +58,10 @@ main {
     "the-blog code-holder code-holder reach-me";
 }
 
-#fire-container {
+#fire-container-one,
+#fire-container-two,
+#fire-container-three,
+#fire-container-four {
   font-size: 2vw;
   filter: blur(var(--blur));
   -webkit-filter: blur(var(--blur));
@@ -70,7 +74,10 @@ main {
   pointer-events: none;
 }
 
-#fire-container .particle {
+#fire-container-one .particle,
+#fire-container-two .particle,
+#fire-container-three .particle,
+#fire-container-four .particle {
   animation: rise var(--fireDuration) ease-in;
   background-image: radial-gradient(var(--fireColor1) 30%, var(--fireColor2) 70%);
   border-radius: 50%;
@@ -98,6 +105,26 @@ main {
   transform: scale(1.05);
 }
 
+.button-container-two,
+.button-container-three,
+.button-container-four {
+  margin: auto;
+  justify-self: center;
+  position: relative;
+}
+
+.button-container-two:hover #fire-container,
+.button-container-three:hover #fire-container,
+.button-container-four:hover #fire-container {
+  display: block;
+}
+
+.button-container-two:hover .button.two,
+.button-container-three:hover .button.three,
+.button-container-four:hover .button.four {
+  transform: scale(1.05);
+}
+
 .button .two {
   grid-area: about-me;
   justify-self: center;
@@ -114,14 +141,14 @@ main {
 }
 
 .center_art {
-  height: 45vw;
-  width: 45vw;
+  height: 40vw;
+  width: 40vw;
   margin: auto;
   grid-area: code-holder;
   justify-self: center;
   align-self: center;
 
-  background-image: url(../images/CodeHolder.png);
+  background-image: url(../images/Holder3.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -182,7 +209,7 @@ main {
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 5vw;
+  gap: 4vw;
   padding: 5vw;
   justify-content: center;
   align-items: center;
@@ -220,8 +247,8 @@ main {
 
 .sound-switch {
   position: fixed;
-  top: 2vw;
-  left: 2vw;
+  top: 3.5vh;
+  left: 15vw;
   display: flex;
   align-items: center;
   z-index: 1001;
@@ -235,13 +262,40 @@ main {
   display: flex;
   align-items: center;
   cursor: pointer;
+  width: 3vw;
+  height: 1.5vw;
+  background-color: white;
+  border-radius: 2vw;
+  position: relative;
+  transition: background-color 0.3s;
 }
 
-.mute-icon,
-.unmute-icon {
-  font-size: 2rem;
-  color: white;
+.sound-toggle-label::before {
+  content: '';
+  position: absolute;
+  top: 0.1vw;
+  left: 0.1vw;
+  width: 1.3vw;
+  height: 1.3vw;
+  background-color: black;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.sound-toggle:checked + .sound-toggle-label::before {
+  transform: translateX(1.5vw);
+}
+
+.sound-toggle-label .mute-icon,
+.sound-toggle-label .unmute-icon {
+  position: absolute;
+  right: -2.5vw;
+  font-size: 1.5vw;
+  max-width: 2vw;
+  max-height: 2vw;
+  color: black;
   display: none;
+  user-select: none;
 }
 
 .sound-toggle:checked + .sound-toggle-label .unmute-icon {
@@ -250,6 +304,32 @@ main {
 
 .sound-toggle:not(:checked) + .sound-toggle-label .mute-icon {
   display: block;
+}
+
+.sound-toggle-label .mute-icon img,
+.sound-toggle-label .unmute-icon img {
+  width: 2vw;
+  height: 2vw;
+  pointer-events: none;
+}
+
+#welcome-button {
+  position: fixed;
+  top: 1vh;
+  left: 2vw;
+  font-size: 2vw;
+  font-style: italic;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.1rem;
+  background-color: black;
+  border-radius: 25%;
+  /* box-shadow: 0px 1vw 2vw 0px rgba(255,255,255,0.2); */
+  color: rgb(50, 50, 50);
+  cursor: pointer;
+  padding: .45vw;
+  z-index: 1001;
+  user-select: none;
 }
 
 /* PHONE FORMAT */
@@ -263,4 +343,23 @@ main {
   .overlay-header::after {
     content: "Click or press any key to continue";
   }
+}
+
+.button-container-one:hover #fire-container-one,
+.button-container-two:hover #fire-container-two,
+.button-container-three:hover #fire-container-three,
+.button-container-four:hover #fire-container-four {
+  display: block;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  z-index: 1001;
 }

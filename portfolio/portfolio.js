@@ -31,7 +31,7 @@ function resumeAudioContext() {
 document.addEventListener('click', resumeAudioContext, { once: true });
 document.addEventListener('keydown', resumeAudioContext, { once: true });
 
-// Function to create a particle element and add it to the fire container
+// Function to create a particle element and add it to the specific fire container
 function createParticle(fireContainer) {
   let particle = document.createElement("div");
   particle.style.left = `calc((100% - 5em) * ${Math.random()})`;
@@ -48,8 +48,8 @@ function createParticle(fireContainer) {
   });
 }
 
-// Function to start creating particles and play the fire sound
-function startCreatingParticles() {
+// Function to start creating particles and play the fire sound for a specific container
+function startCreatingParticles(fireContainer) {
   if (!document.getElementById('sound-toggle').checked) {
     resumeAudioContext();
     fadeInSound();
@@ -124,14 +124,26 @@ document.addEventListener('keydown', hideOverlay, { once: true });
 
 // Add event listener to show the overlay on pressing the "o" key
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'o') {
+  if (event.key === 'w') {
     showOverlay();
   }
 });
 
-// Add event listeners to start and stop creating particles on hover
-document.querySelector('.button-container-one').addEventListener('mouseenter', startCreatingParticles);
+// Add event listener to show the overlay when the welcome button is clicked
+document.getElementById('welcome-button').addEventListener('click', showOverlay);
+
+// Add event listeners to start and stop creating particles on hover for each button
+document.querySelector('.button-container-one').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-one')));
 document.querySelector('.button-container-one').addEventListener('mouseleave', stopCreatingParticles);
+
+document.querySelector('.button-container-two').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-two')));
+document.querySelector('.button-container-two').addEventListener('mouseleave', stopCreatingParticles);
+
+document.querySelector('.button-container-three').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-three')));
+document.querySelector('.button-container-three').addEventListener('mouseleave', stopCreatingParticles);
+
+document.querySelector('.button-container-four').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-four')));
+document.querySelector('.button-container-four').addEventListener('mouseleave', stopCreatingParticles);
 
 // Update overlay header text on load and resize
 window.addEventListener('load', updateOverlayHeader);
