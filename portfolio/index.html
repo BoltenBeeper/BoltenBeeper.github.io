@@ -30,7 +30,7 @@
     <main>
         <div class="button-container-one">
             <div id="fire-container-one"></div>
-            <a class="button one" href="../resume/index.html">Resume</a>
+            <a class="journey-button button one" href="../resume/index.html" data-destination="resume">Resume</a>
             <audio id="fire-sound-loop" loop preload="auto">
                 <source src="../images/crackling-fire.ogg" type="audio/ogg">
                 <source src="../images/crackling-fire.mp3" type="audio/mpeg">
@@ -39,17 +39,23 @@
         </div>
         <div class="button-container-two">
             <div id="fire-container-two"></div>
-            <a class="button two" href="../media-queries/index.html">My Work</a>
+            <a class="journey-button button two" href="../media-queries/index.html"  data-destination="my-work">My Work</a>
         </div>
         <div class="button-container-three">
             <div id="fire-container-three"></div>
-            <a class="button three" href="https://medium.com/@moltencreeper25" target="https://medium.com/@moltencreeper25">The Blog</a>
+            <a class="journey-button button three" href="https://medium.com/@moltencreeper25" data-destination="blog" target="https://medium.com/@moltencreeper25">The Blog</a>
         </div>
         <div class="button-container-four">
             <div id="fire-container-four"></div>
-            <a class="button four" href="../contact-me/index.html">Reach Me</a>
+            <a class="journey-button button four" href="../contact-me/index.html" data-destination="contact">Reach Me</a>
         </div>
-        <div class="center_art"></div>
+        <div class="center-art-container">
+            <div id="welcome" class="center-art active" style="background-image: url('../images/Holder3.png')"></div>
+            <div id="blog" class="center-art" style="background-image: url('../images/blog-image.png'); background-color: #ff0000;"></div>
+            <div id="resume" class="center-art" style="background-image: url('../images/resume-image.png'); background-color: #ffff00;"></div>
+            <div id="contact" class="center-art" style="background-image: url('../images/contact-image.png'); background-color: #00ff00; "></div>
+            <div id="my-work" class="center-art" style="background-image: url('../images/my-work-image.png'); background-color: #0000ff;"></div>
+        </div>
     </main>
     <footer class="footer">
         <div class="contact-info">
@@ -63,6 +69,7 @@
     </footer>
 
     <script src="portfolio.js"></script>
+    <script src="handleHover.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 </html>

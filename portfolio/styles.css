@@ -140,18 +140,46 @@ main {
   justify-self: center;
 }
 
-.center_art {
+.center-art-container {
+  position: relative;
   height: 40vw;
   width: 40vw;
   margin: auto;
   grid-area: code-holder;
   justify-self: center;
   align-self: center;
+}
 
-  background-image: url(../images/Holder3.png);
+@keyframes slide-in {
+  from {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.center-art {
+  --animation-duration: 300ms;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translate(-30px, -30px);
+  transition-duration: var(--animation-duration);
+  transition-property: opacity, transform;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.center-art.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .footer {
