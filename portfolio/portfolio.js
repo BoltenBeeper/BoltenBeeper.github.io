@@ -132,9 +132,22 @@ document.addEventListener('keydown', (event) => {
 // Add event listener to show the overlay when the welcome button is clicked
 document.getElementById('welcome-button').addEventListener('click', showOverlay);
 
+// Add event listeners to start and stop creating particles on hover for each button
+document.querySelector('.button-container-one').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-one')));
+document.querySelector('.button-container-one').addEventListener('mouseleave', stopCreatingParticles);
+
+document.querySelector('.button-container-two').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-two')));
+document.querySelector('.button-container-two').addEventListener('mouseleave', stopCreatingParticles);
+
+document.querySelector('.button-container-three').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-three')));
+document.querySelector('.button-container-three').addEventListener('mouseleave', stopCreatingParticles);
+
+document.querySelector('.button-container-four').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-four')));
+document.querySelector('.button-container-four').addEventListener('mouseleave', stopCreatingParticles);
+
 // Update overlay header text on load and resize
-window.addEventListener('load', updateOverlayHeader);
-window.addEventListener('resize', updateOverlayHeader);
+// window.addEventListener('load', updateOverlayHeader);
+// window.addEventListener('resize', updateOverlayHeader);
 
 // Set the sound toggle to mute on page load
 window.addEventListener('load', () => {
