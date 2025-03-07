@@ -182,6 +182,16 @@ main {
   transform: translateY(0);
 }
 
+.center-art.fading-in {
+  opacity: 1;
+  transform: translate(30px, 30px);
+}
+
+.center-art.fading-out {
+  opacity: 1;
+  transform: translate(-30px, -30px);
+}
+
 .footer {
   margin: auto;
   padding-top: 8%;

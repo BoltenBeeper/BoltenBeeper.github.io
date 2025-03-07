@@ -13,16 +13,19 @@ const handleHover = (element) => {
 
   element.addEventListener('mouseenter', () => {
     console.log('start hover button:', destination);
-    destinationElement.classList.remove('idle');
     destinationElement.classList.add('active');
+    destinationElement.classList.remove('fading-out');
+    destinationElement.classList.add('fading-in');
   });
 
   element.addEventListener('mouseleave', () => {
     console.log('stop hover button:', destination);
-    destinationElement.classList.add('idle');
     destinationElement.classList.remove('active');
+    destinationElement.classList.remove('fading-in');
+    destinationElement.classList.add('fading-out');
   });
 }
 
 const buttons = document.querySelectorAll('.journey-button');
 buttons.forEach(button => handleHover(button));
+
