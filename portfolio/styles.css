@@ -140,9 +140,9 @@ main {
   justify-self: center;
 }
 
-@keyframes slide-in {
+@keyframes fading-in {
   from {
-    transform: translate(-30px, -30px);
+    transform: translate(150px, 0px);
     opacity: 0;
   }
   to {
@@ -151,13 +151,13 @@ main {
   }
 }
 
-@keyframes slide-out {
+@keyframes fading-out {
   from {
     transform: translate(0);
     opacity: 1;
   }
   to {
-    transform: translate(30px, 30px);
+    transform: translate(-150px, 0px);
     opacity: 0;
   }
 }
@@ -177,34 +177,35 @@ main {
 }
 
 .preview-icon {
-  --animation-duration: 300ms;
+  /* --animation-duration: 300ms; */
   visibility: hidden;
   position: absolute;
   justify-self: center;
   align-self: center;
   inset: 0;
-  top: 1vw;
-  left: 1vw;
   opacity: 0;
-  animation-duration: calc(var(--animation-duration) * 1ms);
+  animation-duration: calc(var(--animation-duration) * 1ms); /* Animation duration defined in javascript from parent, center-art data element. */
   animation-direction: forwards;
   animation-timing-function: ease-in-out;
   width: 10vw;
   height: 10vw;
 }
 
-.preview-icon.active {
+.preview-icon.active { /* Preview-icon classes are given an additional class called "active" for entire time icon is shown. */
   visibility: visible;
   opacity: 1;
-  transform: none;
 }
 
-.preview-icon.fading-in {
-  animation-name: slide-in;
+.preview-icon.fading-in { /* Preview-icon classes are given an additional class called "fading in" which is how css knows when to play animation. */
+  /* animation-name: fading-in; */
+  transform: translate(-150px, 0px);
+  opacity: 1;
 }
 
-.preview-icon.fading-out {
-  animation-name: slide-out;
+.preview-icon.fading-out { /* Preview-icon classes are given an additional class called "fading out" which is how css knows when to play animation. */
+  /* animation-name: fading-out; */
+  transform: translate(150px, 0px);
+  opacity: 0;
 }
 
 .footer {

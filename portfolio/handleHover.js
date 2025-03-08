@@ -1,44 +1,52 @@
 let animationQueue = [];
-const processQueue = (name) => {
-  console.log('Currently rocessing:', name);
-}
+let currentAnimation = null;
 
-// for buttons with a class of 'journey-button' and a data-destination attribute
-// will effect elements with an id that matches the data-destination value
+const processQueue = () => {
+  if (animationQueue.length === 0 || currentAnimation) return;
+
+  const { element, action } = animationQueue.shift();
+  currentAnimation = element;
+
+  if (action === 'fade-in') {
+    element.classList.add('active');
+    element.classList.remove('fading-out');
+    setTimeout(() => {
+      element.classList.add('fading-in');
+    }, 1);
+    setTimeout(() => {
+      element.classList.remove('fading-in');
+      currentAnimation = null;
+      processQueue();
+    }, Number(document.querySelector(".icon-container").dataset.duration) + 1);
+  } else if (action === 'fade-out') {
+    element.classList.remove('fading-in');
+    setTimeout(() => {
+      element.classList.add('fading-out');
+    }, 1);
+    setTimeout(() => {
+      element.classList.remove('fading-out');
+      element.classList.remove('active');
+      currentAnimation = null;
+      processQueue();
+    }, Number(document.querySelector(".icon-container").dataset.duration) + 1);
+  }
+};
 
 const handleHover = (element) => {
-  const duration = Number(document.querySelector(".icon-container").dataset.duration);
-  const destination = element.dataset.destination; // String from data-destination attribute
-  const destinationElement = document.querySelector(`#${destination}`); // Image element to fade in/out
-  destinationElement.style.setProperty("--animation-duration", duration);
-  console.log('duration:', duration);
+  const destination = element.dataset.destination;
+  const destinationElement = document.querySelector(`#${destination}`);
 
   element.addEventListener('mouseenter', () => {
-    console.log('start hover button:', destination);
     if (destinationElement.classList.contains('active')) return;
-    destinationElement.classList.add('active');
-    destinationElement.classList.remove('fading-out');
-    setTimeout(() => {destinationElement.classList.add('fading-in');}, 1);
-    setTimeout(() => {
-      destinationElement.classList.remove('fading-in');
-    }, duration + 1);
+    animationQueue = [{ element: destinationElement, action: 'fade-in' }];
+    processQueue();
   });
 
   element.addEventListener('mouseleave', () => {
-    console.log('stop hover button:', destination);
-    destinationElement.classList.remove('fading-in');
-    setTimeout(() => {destinationElement.classList.add('fading-out');}, 1);
-    setTimeout(() => {
-      destinationElement.classList.remove('fading-out');
-      destinationElement.classList.remove('active');
-    }, duration + 1);
+    animationQueue.push({ element: destinationElement, action: 'fade-out' });
+    processQueue();
   });
-}
+};
 
 const buttons = document.querySelectorAll('.journey-button');
 buttons.forEach(button => handleHover(button));
-
-// setTimeout(() => {
-//   animationQueue.push({ image: destinationElement, action: 'fade-in' });
-//   processQueue(destination);
-// }, ANIMATION_DURATION);
