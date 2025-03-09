@@ -1,15 +1,32 @@
 let animationQueue = [];
 let currentAnimation = null;
 
+function keepFirstTwo(arr) {
+  arr.splice(2); // Removes all elements starting from index 2
+  return arr;
+}
+
+// Function to process the animation queue
 const processQueue = () => {
   if (animationQueue.length === 0 || currentAnimation) return;
 
   const { element, action } = animationQueue.shift();
   currentAnimation = element;
 
+  // Remove active class from all other icons except the current one
+  document.querySelectorAll('.preview-icon').forEach(icon => {
+    if (icon !== element) {
+      // if (icon.classList.contains('active')) {
+      //   animationQueue.push({ element: icon, action: 'fade-out' }) };
+      icon.classList.remove('active');
+      // icon.classList.remove('fading-in');
+      // icon.classList.remove('fading-out');
+    }
+  });
+
   if (action === 'fade-in') {
     element.classList.add('active');
-    element.classList.remove('fading-out');
+    // element.classList.remove('fading-out');
     requestAnimationFrame(() => {
       element.classList.add('fading-in');
     });
@@ -33,12 +50,15 @@ const processQueue = () => {
 };
 
 const handleHover = (element) => {
+  keepFirstTwo(animationQueue);
   const destination = element.dataset.destination;
   const destinationElement = document.querySelector(`#${destination}`);
 
   element.addEventListener('mouseenter', () => {
-    if (destinationElement.classList.contains('active') || destinationElement.classList.contains('fading-in')) return;
+    console.log('mouseenter', animationQueue[0]);
+    // if (destinationElement.classList.contains('active') || destinationElement.classList.contains('fading-in') || destinationElement.classList.contains('fading-out')) return;
     animationQueue = [{ element: destinationElement, action: 'fade-in' }];
+    console.log('replaced with:', animationQueue[0]);
     processQueue();
   });
 
