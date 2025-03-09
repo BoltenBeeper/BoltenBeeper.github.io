@@ -142,22 +142,22 @@ main {
 
 @keyframes fading-in {
   from {
-    transform: translate(150px, 0px);
+    transform: translate(150px, 0px) scale(.75);
     opacity: 0;
   }
   to {
-    transform: translate(0);
+    transform: translate(0) scale(1);
     opacity: 1;
   }
 }
 
 @keyframes fading-out {
   from {
-    transform: translate(0);
+    transform: translate(0) scale(1);
     opacity: 1;
   }
   to {
-    transform: translate(-150px, 0px);
+    transform: translate(-150px, 0px) scale(.75);
     opacity: 0;
   }
 }
@@ -177,35 +177,32 @@ main {
 }
 
 .preview-icon {
-  /* --animation-duration: 300ms; */
-  visibility: hidden;
+  --animation-duration: 500ms;
   position: absolute;
   justify-self: center;
   align-self: center;
-  inset: 0;
   opacity: 0;
-  animation-duration: calc(var(--animation-duration) * 1ms); /* Animation duration defined in javascript from parent, center-art data element. */
-  animation-direction: forwards;
+  margin-left: 2.5vw;
+  margin-top: 15vw;
+  /* transform: translate(150px, 0px); Ensure initial transform state */
+  /* transition: opacity var(--animation-duration) ease-in-out, transform var(--animation-duration) ease-in-out; */
+  animation-duration: var(--animation-duration);
   animation-timing-function: ease-in-out;
+  animation-direction: forwards;
   width: 10vw;
   height: 10vw;
 }
 
-.preview-icon.active { /* Preview-icon classes are given an additional class called "active" for entire time icon is shown. */
-  visibility: visible;
+.preview-icon.active { /* This class is added to the icon when the user hovers over the button */
   opacity: 1;
 }
 
-.preview-icon.fading-in { /* Preview-icon classes are given an additional class called "fading in" which is how css knows when to play animation. */
-  /* animation-name: fading-in; */
-  transform: translate(-150px, 0px);
-  opacity: 1;
+.preview-icon.fading-in { /* This class is added to the icon when the user hovers over the button */
+  animation-name: fading-in;
 }
 
-.preview-icon.fading-out { /* Preview-icon classes are given an additional class called "fading out" which is how css knows when to play animation. */
-  /* animation-name: fading-out; */
-  transform: translate(150px, 0px);
-  opacity: 0;
+.preview-icon.fading-out { /* This class is added to the icon when the user hovers over the button */
+  animation-name: fading-out;
 }
 
 .footer {

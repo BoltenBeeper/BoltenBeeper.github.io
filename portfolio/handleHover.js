@@ -10,25 +10,25 @@ const processQueue = () => {
   if (action === 'fade-in') {
     element.classList.add('active');
     element.classList.remove('fading-out');
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       element.classList.add('fading-in');
-    }, 1);
+    });
     setTimeout(() => {
       element.classList.remove('fading-in');
       currentAnimation = null;
       processQueue();
-    }, Number(document.querySelector(".icon-container").dataset.duration) + 1);
+    }, parseInt(getComputedStyle(element).getPropertyValue('--animation-duration')));
   } else if (action === 'fade-out') {
     element.classList.remove('fading-in');
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       element.classList.add('fading-out');
-    }, 1);
+    });
     setTimeout(() => {
       element.classList.remove('fading-out');
       element.classList.remove('active');
       currentAnimation = null;
       processQueue();
-    }, Number(document.querySelector(".icon-container").dataset.duration) + 1);
+    }, parseInt(getComputedStyle(element).getPropertyValue('--animation-duration')));
   }
 };
 
@@ -37,12 +37,13 @@ const handleHover = (element) => {
   const destinationElement = document.querySelector(`#${destination}`);
 
   element.addEventListener('mouseenter', () => {
-    if (destinationElement.classList.contains('active')) return;
+    if (destinationElement.classList.contains('active') || destinationElement.classList.contains('fading-in')) return;
     animationQueue = [{ element: destinationElement, action: 'fade-in' }];
     processQueue();
   });
 
   element.addEventListener('mouseleave', () => {
+    if (!destinationElement.classList.contains('active')) return;
     animationQueue.push({ element: destinationElement, action: 'fade-out' });
     processQueue();
   });
