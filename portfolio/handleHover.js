@@ -1,5 +1,6 @@
 let animationQueue = [];
 let currentAnimation = null;
+let mouseIsHovering
 
 function keepFirstTwo(arr) {
   arr.splice(2); // Removes all elements starting from index 2
@@ -33,16 +34,20 @@ const processQueue = () => {
     setTimeout(() => {
       element.classList.remove('fading-in');
       currentAnimation = null;
+      if (!mouseIsHovering) {
+        animationQueue = [{ element: element, action: 'fade-out' }];
+        console.log("MOUSE IS NOT HOVERING");
+      }
       processQueue();
     }, parseInt(getComputedStyle(element).getPropertyValue('--animation-duration')));
   } else if (action === 'fade-out') {
     element.classList.remove('fading-in');
     requestAnimationFrame(() => {
       element.classList.add('fading-out');
+      element.classList.remove('active');
     });
     setTimeout(() => {
       element.classList.remove('fading-out');
-      element.classList.remove('active');
       currentAnimation = null;
       processQueue();
     }, parseInt(getComputedStyle(element).getPropertyValue('--animation-duration')));
@@ -50,7 +55,7 @@ const processQueue = () => {
 };
 
 const handleHover = (element) => {
-  keepFirstTwo(animationQueue);
+  // keepFirstTwo(animationQueue);
   const destination = element.dataset.destination;
   const destinationElement = document.querySelector(`#${destination}`);
 
@@ -59,15 +64,23 @@ const handleHover = (element) => {
     // if (destinationElement.classList.contains('active') || destinationElement.classList.contains('fading-in') || destinationElement.classList.contains('fading-out')) return;
     animationQueue = [{ element: destinationElement, action: 'fade-in' }];
     console.log('replaced with:', animationQueue[0]);
+    mouseIsHovering = true;
     processQueue();
   });
 
   element.addEventListener('mouseleave', () => {
     if (!destinationElement.classList.contains('active')) return;
     animationQueue.push({ element: destinationElement, action: 'fade-out' });
+    mouseIsHovering = false;
     processQueue();
   });
 };
 
 const buttons = document.querySelectorAll('.journey-button');
 buttons.forEach(button => handleHover(button));
+
+
+
+// Unused code to copy/paste:
+
+// document.querySelectorAll('.preview-icon').forEach(icon => {icon.classList.remove('active');});
