@@ -11,66 +11,74 @@ function keepFirstTwo(arr) {
 const processQueue = () => {
   if (animationQueue.length === 0 || currentAnimation) return;
 
-  const { element, action } = animationQueue.shift();
-  currentAnimation = element;
+  const { buttonElement, iconElement, action } = animationQueue.shift();
+  currentAnimation = iconElement;
 
   // Remove active class from all other icons except the current one
   document.querySelectorAll('.preview-icon').forEach(icon => {
-    if (icon !== element) {
+    if (icon !== iconElement) {
       // if (icon.classList.contains('active')) {
-      //   animationQueue.push({ element: icon, action: 'fade-out' }) };
+      //   animationQueue.push({ iconElement: iconElement, action: 'fade-out' }) };
       icon.classList.remove('active');
       // icon.classList.remove('fading-in');
       // icon.classList.remove('fading-out');
     }
   });
+  
+  document.querySelectorAll('.journey-button').forEach(button => {
+    if (button == buttonElement) {
+      if (button.matches(':hover')) {
+        mouseIsHovering = true;
+      } else {
+        mouseIsHovering = false;
+      }
+    }
+  });
 
   if (action === 'fade-in') {
-    element.classList.add('active');
-    // element.classList.remove('fading-out');
+    iconElement.classList.add('active');
+    // iconElement.classList.remove('fading-out');
     requestAnimationFrame(() => {
-      element.classList.add('fading-in');
+      iconElement.classList.add('fading-in');
     });
     setTimeout(() => {
-      element.classList.remove('fading-in');
-      currentAnimation = null;
+      iconElement.classList.remove('fading-in');
       if (!mouseIsHovering) {
-        animationQueue = [{ element: element, action: 'fade-out' }];
-        console.log("MOUSE IS NOT HOVERING");
+        animationQueue = [{ buttonElement: buttonElement, iconElement: iconElement, action: 'fade-out' }];
       }
-      processQueue();
-    }, parseInt(getComputedStyle(element).getPropertyValue('--animation-duration')));
-  } else if (action === 'fade-out') {
-    element.classList.remove('fading-in');
-    requestAnimationFrame(() => {
-      element.classList.add('fading-out');
-      element.classList.remove('active');
-    });
-    setTimeout(() => {
-      element.classList.remove('fading-out');
       currentAnimation = null;
       processQueue();
-    }, parseInt(getComputedStyle(element).getPropertyValue('--animation-duration')));
+    }, parseInt(getComputedStyle(iconElement).getPropertyValue('--animation-duration')));
+  } else if (action === 'fade-out') {
+    iconElement.classList.remove('fading-in');
+    requestAnimationFrame(() => {
+      iconElement.classList.add('fading-out');
+      iconElement.classList.remove('active');
+    });
+    setTimeout(() => {
+      iconElement.classList.remove('fading-out');
+      currentAnimation = null;
+      processQueue();
+    }, parseInt(getComputedStyle(iconElement).getPropertyValue('--animation-duration')));
   }
 };
 
-const handleHover = (element) => {
+const handleHover = (buttonElement) => {
   // keepFirstTwo(animationQueue);
-  const destination = element.dataset.destination;
-  const destinationElement = document.querySelector(`#${destination}`);
+  const destination = buttonElement.dataset.destination;
+  const iconElement = document.querySelector(`#${destination}`);
 
-  element.addEventListener('mouseenter', () => {
+  buttonElement.addEventListener('mouseenter', () => {
     console.log('mouseenter', animationQueue[0]);
-    // if (destinationElement.classList.contains('active') || destinationElement.classList.contains('fading-in') || destinationElement.classList.contains('fading-out')) return;
-    animationQueue = [{ element: destinationElement, action: 'fade-in' }];
-    console.log('replaced with:', animationQueue[0]);
+    // if (iconElement.classList.contains('active') || iconElement.classList.contains('fading-in') || iconElement.classList.contains('fading-out')) return;
+    animationQueue = [{ buttonElement: buttonElement, iconElement: iconElement, action: 'fade-in' }];
     mouseIsHovering = true;
     processQueue();
   });
 
-  element.addEventListener('mouseleave', () => {
-    if (!destinationElement.classList.contains('active')) return;
-    animationQueue.push({ element: destinationElement, action: 'fade-out' });
+  buttonElement.addEventListener('mouseleave', () => {
+    if (!iconElement.classList.contains('active')) return;
+    animationQueue = [{ buttonElement: buttonElement, iconElement: iconElement, action: 'fade-out' }];
     mouseIsHovering = false;
     processQueue();
   });
@@ -84,3 +92,15 @@ buttons.forEach(button => handleHover(button));
 // Unused code to copy/paste:
 
 // document.querySelectorAll('.preview-icon').forEach(icon => {icon.classList.remove('active');});
+
+// if (!mouseIsHovering) {
+//   animationQueue = [{ iconElement: iconElement, action: 'fade-out' }];
+//   console.log("MOUSE IS NOT HOVERING");
+// }
+
+// if (iconElement.matches(':hover')) {
+//   console.log('Mouse is over the iconElement now.');
+// } else {
+//   console.log('Mouse is not over the iconElement now.');
+//   animationQueue = [{ iconElement: iconElement, action: 'fade-out' }];
+// }
