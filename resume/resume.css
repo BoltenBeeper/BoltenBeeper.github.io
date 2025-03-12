@@ -58,10 +58,11 @@ main{
     padding-bottom: 5%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .summary-text{
-    margin: 0.52vw;
+    margin: 0.5vw;
     width: 100%;
     height: 100%;
     padding-left: 1vw;
@@ -445,9 +446,19 @@ main{
         height: 25vw;
     }
 
+    .summary-box {
+        margin-top: 0vw;
+        margin-bottom: 0vw;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
     .summary-text {
         font-size: 1.5vw;
+        padding-top: 2%;
+        padding-bottom: 2%;
     }
+
 
     .profile-box {
         height: auto;
@@ -491,8 +502,9 @@ main{
     }
 }
 
-/* PHONE FORMAT */
 
+
+/* PHONE FORMAT */
 @media (max-width: 768px) {
     .header {
         grid-template-columns: 1fr;
@@ -500,9 +512,7 @@ main{
     }
 
     .summary-text {
-        font-size: 3vw;
-        padding-left: 5%;
-        padding-right: 5%;
+        font-size: 2vw;
     }
 
     .profile-box {
@@ -510,7 +520,7 @@ main{
     }
 
     .profile-text {
-        font-size: 3.5vw;
+        font-size: 3vw;
     }
 
     .box2-header {
@@ -625,6 +635,14 @@ main{
         border-top-right-radius: 10%;
         border-bottom-left-radius: 10%;
         font-size: 5vw;
+    }
+
+    .project .one {
+        border-color: rgb(200, 10, 10);
+    }
+
+    .project .two {
+        border-color: rgb(175, 9, 9);
     }
 
     .project-image {

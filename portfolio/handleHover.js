@@ -1,6 +1,7 @@
 let animationQueue = [];
 let currentAnimation = null;
 let mouseIsHovering
+let currentlyFadingOut = false
 
 function keepFirstTwo(arr) {
   arr.splice(2); // Removes all elements starting from index 2

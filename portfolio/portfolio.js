@@ -133,17 +133,17 @@ document.addEventListener('keydown', (event) => {
 document.getElementById('welcome-button').addEventListener('click', showOverlay);
 
 // Add event listeners to start and stop creating particles on hover for each button
-document.querySelector('.button-container-one').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-one')));
-document.querySelector('.button-container-one').addEventListener('mouseleave', stopCreatingParticles);
+document.querySelector('.one').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-one')));
+document.querySelector('.one').addEventListener('mouseleave', stopCreatingParticles);
 
-document.querySelector('.button-container-two').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-two')));
-document.querySelector('.button-container-two').addEventListener('mouseleave', stopCreatingParticles);
+document.querySelector('.two').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-two')));
+document.querySelector('.two').addEventListener('mouseleave', stopCreatingParticles);
 
-document.querySelector('.button-container-three').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-three')));
-document.querySelector('.button-container-three').addEventListener('mouseleave', stopCreatingParticles);
+document.querySelector('.three').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-three')));
+document.querySelector('.three').addEventListener('mouseleave', stopCreatingParticles);
 
-document.querySelector('.button-container-four').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-four')));
-document.querySelector('.button-container-four').addEventListener('mouseleave', stopCreatingParticles);
+document.querySelector('.four').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-four')));
+document.querySelector('.four').addEventListener('mouseleave', stopCreatingParticles);
 
 // Update overlay header text on load and resize
 // window.addEventListener('load', updateOverlayHeader);
