@@ -69,7 +69,6 @@ const handleHover = (buttonElement) => {
   const iconElement = document.querySelector(`#${destination}`);
 
   buttonElement.addEventListener('mouseenter', () => {
-    console.log('mouseenter', animationQueue[0]);
     // if (iconElement.classList.contains('active') || iconElement.classList.contains('fading-in') || iconElement.classList.contains('fading-out')) return;
     animationQueue = [{ buttonElement: buttonElement, iconElement: iconElement, action: 'fade-in' }];
     mouseIsHovering = true;
