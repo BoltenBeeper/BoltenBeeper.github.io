@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-    color: white;
 }
 
 body{
@@ -10,6 +9,62 @@ body{
     background-position: center center;
     text-align: center;
 }
+
+/* OVERLAY */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+    padding: 5vw;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    font-style: italic;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1rem;
+    z-index: 1000;
+  }
+  
+  #overlay p {
+    font-size: 2.5vw;
+    font-weight: 500;
+  }
+  
+  .overlay-header {
+    color: grey;
+    font-size: 4vw;
+    text-decoration: underline;
+    font-weight: 700;
+    border: .5vw solid pink;
+    border-image: repeating-linear-gradient(
+        -55deg,
+        #000,
+        #000 1vw,
+        #ffb101 1vw,
+        #ffb101 2vw
+    ) 10;
+  }
+  
+  #overlay ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+  
+  .underline {
+    text-decoration: underline;
+  }
 
 @media (max-width: 576px) {
     body{

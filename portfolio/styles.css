@@ -9,6 +9,7 @@
 }
 
 * {
+  color: white;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -83,6 +84,17 @@ main {
 
 .underline {
   text-decoration: underline;
+}
+
+.under-construction {
+  border: .5vw solid pink;
+  border-image: repeating-linear-gradient(
+      -55deg,
+      #000,
+      #000 1vw,
+      #ffb101 1vw,
+      #ffb101 2vw
+  ) 10;
 }
 
 

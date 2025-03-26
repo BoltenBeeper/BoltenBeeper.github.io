@@ -1,47 +1,55 @@
-@media (max-width: 750px) { /* Accounts for mobile users. */
-    .background-video { display: none; }
-    body {
-      background: url("../images/StreamEndThumbnail.png") no-repeat;
-      background-size: cover;
-    }
-}
+/* OVERLAY */
 
-* {
-  color: white;
-}
-
-.background-video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
+#overlay {
   position: fixed;
-  left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
-  z-index: -1;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 1);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 4vw;
+  padding: 5vw;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vw;
+  font-style: italic;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.1rem;
+  z-index: 1000;
 }
 
-main {
+#overlay p {
+  font-size: 2.5vw;
+  font-weight: 500;
 }
 
-.whole {
-  width: 100vw;
-  height: 120vh; /* Change this to 120vh if using scroll mechanic.*/
-  justify-self: center;
-  /* position: fixed; */
-
-  background-image: url(../images/Border1.png);
-  background-size:     cover;
-  background-repeat:   no-repeat;
-  background-position: center center;
-
-  margin-top: 41%;
+.overlay-header {
+  color: grey;
+  font-size: 4vw;
+  text-decoration: underline;
+  font-weight: 700;
+  border: .5vw solid pink;
+  border-image: repeating-linear-gradient(
+      -55deg,
+      #000,
+      #000 1vw,
+      #ffb101 1vw,
+      #ffb101 2vw
+  ) 10;
 }
 
-.inner-whole {
-  margin-top: 28%;
-  padding-top: 20%;
-  margin-left: 43%;
-  /* position: fixed; */
+#overlay ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.underline {
+  text-decoration: underline;
 }
