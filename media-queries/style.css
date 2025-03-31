@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* GLOBAL STYLES */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: white;
+    overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+}
+h1 {
+    font-size: 8vw;
+    font-weight: 200;
+    text-shadow: 0vw -1vw 1vw rgba(0, 0, 0, 1);
+}
+
 /* OVERLAY */
 
 #overlay {
@@ -53,3 +79,137 @@
   .underline {
     text-decoration: underline;
   }
+
+  .background-container {
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(117,8,8,1) 50%, rgba(0,0,0,1) 100%);
+  }
+
+  /* top 3 projects */
+
+  .top-3-projects {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5vw;
+    gap: 1vw;
+}
+
+.top-3-project {
+    text-align: center;
+    width: 25%;
+    margin-top: 0%;
+    padding: 1vw;
+}
+
+.top-3-project-1, .top-3-project-3 {
+  margin-top: 10vw;
+}
+
+.top-3-project-2 {
+  margin-bottom: 10vw;
+}
+
+.top-3-project-image-container {
+    width: 100%;
+    position: relative; /* Needed for absolute positioning */
+    display: inline-block; /* Ensures it only wraps around the content */
+}
+
+.top-3-project-image {
+    width: 100%;
+    aspect-ratio: 1 / .66;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0px .5vw 1vw 1vw rgba(40, 40, 40, .5);
+    box-shadow: 0vw 0vw 2vw rgba(0, 0, 0, 1);
+    position:relative;
+}
+
+/* hover effect */
+
+.top-3-project-image::before {
+    content:'';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    border-radius: 100%;
+    transition: 2s linear; /* Defines how long the button effect will take place for. */
+    z-index: -2;
+    filter:blur(.5vw);
+  }
+  
+.top-3-project-image::after {
+    z-index: -1;
+  }   
+  
+/* .top-3-project-image:hover::before {
+     filter:blur(100vw);
+     background:linear-gradient(45deg, #ff0707, #ff920c,#ffee00);
+     transform: rotate(-4deg);
+  } */
+
+.top-3-project-language-logo {
+    position: absolute;
+    bottom: 0%; /* use + to move up and - to move down */
+    right: 0%; /* use + to move left and - to move right */
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: 0px 0px .3vw rgba(0, 0, 0, 1);
+    align-items: center;
+}
+
+.top-3-project p {
+    text-align: left;
+    margin-top: 1vw;
+    font-size: 1.2vw;
+}
+
+.top-3-project-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 1vw;
+    gap: 1vw;
+}
+
+.top-3-project-button-taped-over {
+    padding: 0vw 1vw;
+    font-size: 1vw;
+    color: white;
+    width: 100%;
+    background-color: rgb(100, 8, 8);
+    text-decoration: none;
+    text-align: center;
+    border: .5vw solid pink;
+    border-image: repeating-linear-gradient(
+        -55deg,
+        #000,
+        #000 1vw,
+        #ffb101 1vw,
+        #ffb101 2vw
+    ) 10;
+}
+
+.top-3-project-button {
+    padding: .5vw 1vw;
+    font-size: 1vw;
+    color: white;
+    width: 100%;
+    background-color: rgb(100, 8, 8);
+    border-radius: 0.5vw;
+    text-decoration: none;
+    text-align: center;
+}
+
+.top-3-project-button:hover {
+    background-color: rgb(0, 0, 0, 0);
+}
