@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* GLOBAL STYLES */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(30, 40, 75);
+    background-image:
+        radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
+        radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px),
+        linear-gradient(180deg, rgba(30,40,75,1) 0%, rgba(25,30,60,1) 100%);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    color: rgb(64, 135, 64);
+    overflow-x: hidden;
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255, 220, 50);
+    text-align: center;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2vw;
+    font-weight: 600;
+    text-align: left;
+}
+
+.preview-image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30vw;
+}
+
+.preview-image {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-size: cover;
+    background-position: center 0vw;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
+    z-index: -1;
+}
+
+.preview-image-section h1 {
+    position: absolute;
+    font-size: 6vw;
+    font-weight: 100;
+    cursor: default;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    z-index: 1;
+}
+
+.preview-image-section:hover .preview-image {
+    filter: blur(0.5rem);
+    transition: all 0.5s ease-in-out;
+}
+.preview-image-section:hover .preview-image:hover {
+    filter: blur(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.below-preview {
+    background-color: rgb(30, 40, 75);
+    background-image:
+        radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
+        radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px),
+        linear-gradient(180deg, rgba(30,40,75,1) 0%, rgba(25,30,60,1) 100%);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    padding: 5vw 10vw;
+}
+
+.summary-content h2 {
+    font-size: 4vw;
+    font-weight: 200;
+    text-shadow: 0vw -1vw 1vw rgba(0, 0, 0, 1);
+}
