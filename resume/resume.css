@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     box-sizing: border-box;
     margin: auto;
     padding: 0;
@@ -8,18 +8,67 @@
     color: white;
 }
 
-body{
+body {
     /* background: radial-gradient(circle, rgba(157,110,16,1) 0%, rgba(121,9,9,1) 35%, rgba(0,0,0,1) 100%); */
     background: rgb(0,0,0);
     background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(117,8,8,1) 50%, rgba(0,0,0,1) 100%);
     min-height: 100vh;
 }
 
-main{
+main {
     min-height: 100vh;
 }
 
-.header{
+/* HEADER */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4vw;
+    background-color: black;
+    display: flex;
+    flex-direction: row;;
+    align-items: center;
+    justify-content: center;
+    border-bottom: grey 0.2vw solid;
+    z-index: 1001;
+}
+  
+header li {
+    text-decoration: none;
+    color: white;
+    list-style: none;
+    display: inline-block;
+    margin-left: 2vw;
+    font-size: 1.5vw;
+    font-style: italic;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1rem;
+}
+  
+header a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+header a:hover {
+    font-size: 1.75vw;
+    text-decoration: underline;
+    color: rgb(200, 64, 64);
+    transition: all 0.2s ease-in-out;
+}
+  
+header li + li a {
+    margin-left: 2vw;
+}
+
+/* Used to be: header */
+.profile {
     width: 100%;
     height: auto;
     aspect-ratio: 7 / 1; /* Maintains aspect ratio so background image never leaks over borders */
@@ -29,7 +78,8 @@ main{
     background-color: #000;
 }
 
-.portrait-box{
+/* Used to be: portrait-box */
+.portrait-box {
     width: 100%;
     height: 100%;
     margin: auto;
@@ -42,7 +92,8 @@ main{
     aspect-ratio: 3 / 1; /* Maintains aspect ratio so background image never leaks over borders */
 }
 
-.portrait{
+/* Used to be: portrait */
+.portrait {
     border: inset 10px rgb(200, 0, 0);
     margin: auto;
     width: 11vw;
@@ -52,7 +103,8 @@ main{
     background-image: url(https://yt3.ggpht.com/ytc/AKedOLSbYr8DEIDl5FPpz3uPrCMItkI6QSgTlY3cyDt0ww=s900-c-k-c0x00ffffff-no-rj); /* My Logo as a fallback */
 }
 
-.summary-box {
+/* Used to be: summary-box */
+.profile-box {
     height: 100%;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -61,7 +113,8 @@ main{
     justify-content: space-between;
 }
 
-.summary-text{
+/* Used to be: summary-text */
+.profile-text{
     margin: 0.5vw;
     width: 100%;
     height: 100%;
@@ -70,7 +123,8 @@ main{
     font-size: 1.2vw;
 }
 
-.profile-box{
+/* Used to be: profile-box */
+.summary-box{
     background: rgb(117,8,8);
     background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
     /* border-left: dotted 0.52vw grey;
@@ -86,7 +140,8 @@ main{
     font-size: 1.2vw;
 }
 
-.profile-text{
+/* Used to be: profile-text */
+.summary-text{
     padding-left: 2vw;
     font-size: 1.8vw;
 }
@@ -433,7 +488,19 @@ main{
 /* TABLET FORMAT */
 
 @media (max-width: 1200px) {
-    .header {
+    header {
+        height: 6vw;
+    }
+
+    header li {
+        font-size: 1.8vw;
+    }
+
+    header a:hover {
+        font-size: 2vw;
+    }
+
+    .profile {
         grid-template-columns: 1fr;
         height: auto;
     }
@@ -443,25 +510,25 @@ main{
         height: 25vw;
     }
 
-    .summary-box {
+    .profile-box {
         margin-top: 0vw;
         margin-bottom: 0vw;
         padding-top: 2%;
         padding-bottom: 2%;
     }
 
-    .summary-text {
+    .profile-text {
         font-size: 1.5vw;
         padding-top: 2%;
         padding-bottom: 2%;
     }
 
 
-    .profile-box {
+    .summary-box {
         height: auto;
     }
 
-    .profile-text {
+    .summary-text {
         font-size: 2vw;
     }
 
@@ -471,22 +538,34 @@ main{
 }
 
 @media (max-width: 992px) {
-    .header {
+    header {
+        height: 7vw;
+    }
+
+    header li {
+        font-size: 2vw;
+    }
+
+    header a:hover {
+        font-size: 2.2vw;
+    }
+
+    .profile {
         grid-template-columns: 1fr;
         height: auto;
     }
 
-    .summary-text {
+    .profile-text {
         font-size: 1.8vw;
     }
 
-    .profile-box {
+    .summary-box {
         height: auto;
         border-bottom-left-radius: 20%;
         border-bottom-right-radius: 20%;
     }
 
-    .profile-text {
+    .summary-text {
         font-size: 2.2vw;
     }
 
@@ -503,20 +582,32 @@ main{
 
 /* PHONE FORMAT */
 @media (max-width: 768px) {
-    .header {
+    header {
+        height: 10vw;
+    }
+
+    header li {
+        font-size: 3vw;
+    }
+
+    header a:hover {
+        font-size: 3.5vw;
+    }
+
+    .profile {
         grid-template-columns: 1fr;
         height: auto;
     }
 
-    .summary-text {
+    .profile-text {
         font-size: 2vw;
     }
 
-    .profile-box {
+    .summary-box {
         height: auto;
     }
 
-    .profile-text {
+    .summary-text {
         font-size: 3vw;
     }
 
@@ -686,8 +777,19 @@ main{
 }
 
 @media (max-width: 576px) {
+    header {
+        height: 12vw;
+    }
 
-    .profile-box {
+    header li {
+        font-size: 3.5vw;
+    }
+
+    header a:hover {
+        font-size: 4vw;
+    }
+
+    .summary-box {
         height: auto;
         padding-bottom: 6vw;
     }
@@ -704,8 +806,19 @@ main{
 }
 
 @media (max-width: 480px) {
+    header {
+        height: 14vw;
+    }
 
-    .profile-box {
+    header li {
+        font-size: 3.8vw;
+    }
+
+    header a:hover {
+        font-size: 4.5vw;
+    }
+
+    .summary-box {
         height: auto;
         padding-bottom: 8vw;
         border-bottom-left-radius: 15%;

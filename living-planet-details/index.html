@@ -8,20 +8,22 @@
     <link rel="stylesheet" href="styles.css?v=1.0"> <!-- The ?v=1.0 ensures the latest version of the css file is used when updated. This is to solve an issue I was having with the CSS not rendering when reloading the html or the page. -->
 </head>
 <body>
-    <header>
-        <!-- <h1>Living Planet Project Details</h1>
-        <nav>
-            <ul>
-                <li><a href="../portfolio/index.html">Home</a></li>
-                <li><a href="../resume/index.html">Resume</a></li>
-                <li><a href="../media-queries/index.html">My Work</a></li>
-                <li><a href="../contact-me/index.html">Reach Me</a></li>
-            </ul>
-        </nav> -->
-    </header>
     <main>
+
+        <!-- Header Section -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../portfolio/index.html">Home</a></li>
+                    <li><a href="../resume/index.html">Resume</a></li>
+                    <li><a href="../media-queries/index.html">My Work</a></li>
+                    <li><a href="../contact-me/index.html">Reach Me</a></li>
+                </ul>
+            </nav>
+        </header>
+
         <section class="preview-image-section">
-            <div class="preview-image" style="background-image: url('../images/LP_Title_Screen.png');"></div>
+            <div class="preview-image" style="background-image: url('../images/LP_Title_Loop.gif');"></div>
             <h1 class="project-name">Living Planet</h1>
         </section>
         <div class="below-preview">
@@ -35,7 +37,7 @@
             <section class="details-section">
                 <div class="info-card">
                     <div class="image-container">
-                        <div class="image one" style="background-color: green; background-image: url(../images/Charging_Station_Thumbnail.png);"></div>
+                        <img class="image one" src="../images/LP_Title_Screen.png"></img>
                     </div>
                     <div class="info-content">
                         <p class="info-description"><span class="info-hook">Custom Engine</span>I created the engine for this game myself. This is more information about how I did it.</p>
@@ -46,15 +48,15 @@
                         <p class="info-description"><span class="info-hook">Custom Engine</span>I created the engine for this game myself. This is more information about how I did it.</p>
                     </div>
                     <div class="image-container">
-                        <div class="image two" style="background-color: green; background-image: url(../images/Charging_Station_Thumbnail.png);"></div>
+                        <img class="image two" src="../images/Charging_Station_Thumbnail.png"></img>
                     </div>
                 </div>
                 <div class="info-card">
                     <div class="image-container">
-                        <div class="image three" style="background-color: green; background-image: url(../images/Charging_Station_Thumbnail.png);"></div>
+                        <img class="image three" src="../images/LP_Player_Idle_Loop.gif"></img>
                     </div>
                     <div class="info-content">
-                        <p class="info-description"><span class="info-hook">Custom Engine</span>I created the engine for this game myself. This is more information about how I did it.</p>
+                        <p class="info-description"><span class="info-hook">My Animations</span>Fun fact: This is only a placeholder character, but it's modeled after me.</p>
                     </div>
                 </div>
                 <!-- <ul class="details-list">
@@ -64,10 +66,31 @@
                     <li><strong>Platforms:</strong> PC, Mac</li>
                 </ul> -->
             </section>
+    
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="contact-info">
+                        <p class="centered-text">Contact me! You know you want to.</p>
+                        <ul>
+                            <li>Phone: (512) 949-8243</li>
+                            <li>Email: <a href="mailto:rileybusinesswood@gmail.com">rileybusinesswood@gmail.com</a></li>
+                            <li>LinkedIn: <a href="https://www.linkedin.com/in/riley-underwood-774aaa191/" target="_blank">Riley Underwood</a></li>
+                        </ul>
+                    </div>
+                    <div class="resume-button">
+                        <a href="../images/Riley Underwood Resume.pdf" target="_blank">
+                            <img src="../images/Resume_Icon.png" alt="Resume Icon" class="resume-icon">
+                        </a>
+                        <p>Downloadable PDF</p>
+                    </div>
+                </div>
+            </footer>
         </div>
     </main>
-    <footer>
-    </footer>
+
+    <!-- JavaScript for the page -->
     <script src="detail-page-script.js"></script>
+
 </body>
 </html>

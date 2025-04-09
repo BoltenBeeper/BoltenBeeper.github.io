@@ -25,6 +25,11 @@ function updateBlur(imageBlur) {
     }
 }
 
+document.querySelector('header').addEventListener('mouseenter', () => {
+    imageBlur = false;
+    updateBlur(imageBlur);
+});
+
 document.querySelector('.preview-image-section').addEventListener('mouseenter', () => {
     imageBlur = true;
     updateBlur(imageBlur);
