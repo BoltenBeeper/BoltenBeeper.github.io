@@ -112,7 +112,7 @@ header li + li a {
     z-index: 1;
 }
 
-.project-name {
+/* .project-name {
   filter:blur(0vw);
   transition: all 0.5s ease-in-out;
 }
@@ -120,7 +120,7 @@ header li + li a {
 .project-name:hover {
   filter:blur(100vw);
   transition: all 0.5s ease-in-out;
-}
+} */
 
 /* SUMMARY SECTION */
 

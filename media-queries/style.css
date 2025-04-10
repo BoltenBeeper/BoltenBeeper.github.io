@@ -287,15 +287,25 @@ background-size: 100px 100px;
 
 .seemless-background-transition {
   position: relative;
-  padding-bottom: 22.5vw;
+  padding-bottom: 30vw;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%);
+}
+
+.gallary-garnish {
+  position: absolute;
+  margin: auto;
+  padding: auto;
+  width: 30vw;
+  top: 7vw;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for element's width */
 }
 
 .seemless-background-transition h2 {
   position: absolute;
   margin: auto;
   padding: auto;
-  top: 6vw;
+  top: 13vw;
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Adjust for element's width */
 }
@@ -304,9 +314,10 @@ background-size: 100px 100px;
   position: absolute;
   margin: auto;
   padding: auto;
-  top: 15vw;
+  top: 23vw;
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Adjust for element's width */
+  color: rgb(255, 255, 255, .75);
 }
 
 .listed-projects {

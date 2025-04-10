@@ -12,40 +12,31 @@
 //     window.scrollTo({ top: 0, behavior: 'smooth' });
 // });
 
-let imageBlur;
-
-function updateBlur(imageBlur) {
-    if (imageBlur == true) {
-        document.querySelector('.preview-image').style.filter = 'blur(1vw)';
-        document.querySelector('.preview-image').style.transition = 'all 0.5s ease-in-out';
-    }
-    if (imageBlur == false) {
-        document.querySelector('.preview-image').style.filter = 'blur(0vw)';
-        document.querySelector('.preview-image').style.transition = 'all 0.5s ease-in-out';
-    }
-}
-
-document.querySelector('header').addEventListener('mouseenter', () => {
-    imageBlur = false;
-    updateBlur(imageBlur);
-});
-
 document.querySelector('.preview-image-section').addEventListener('mouseenter', () => {
-    imageBlur = true;
-    updateBlur(imageBlur);
+    document.querySelector('.preview-image').style.filter = 'blur(0vw)';
+    document.querySelector('.preview-image').style.transition = 'all 0.5s ease-in-out';
+
+    document.querySelector('.project-name').style.color = 'rgb(255, 220, 50, 0.3)';
+    document.querySelector('.project-name').style.transition = 'all 0.5s ease-in-out';
 });
 
-document.querySelector('.summary-section').addEventListener('mouseenter', () => {
-    imageBlur = false;
-    updateBlur(imageBlur);
+document.querySelector('.preview-image-section').addEventListener('mouseleave', () => {
+    document.querySelector('.project-name').style.color = 'rgb(255, 220, 50, 1)';
+    document.querySelector('.project-name').style.transition = 'all 0.5s ease-in-out';
 });
 
 document.querySelector('.project-name').addEventListener('mouseenter', () => {
-    imageBlur = false;
-    updateBlur(imageBlur);
+    document.querySelector('.preview-image').style.filter = 'blur(1vw)';
+    document.querySelector('.preview-image').style.transition = 'all 0.5s ease-in-out';
+
+    document.querySelector('.project-name').style.color = 'rgb(255, 220, 50, 1)';
+    document.querySelector('.project-name').style.transition = 'all 0.5s ease-in-out';
 });
 
 document.querySelector('.project-name').addEventListener('mouseleave', () => {
-    imageBlur = true;
-    updateBlur(imageBlur);
+    document.querySelector('.preview-image').style.filter = 'blur(0vw)';
+    document.querySelector('.preview-image').style.transition = 'all 0.5s ease-in-out';
+    
+    document.querySelector('.project-name').style.color = 'rgb(255, 220, 50, 0.3)';
+    document.querySelector('.project-name').style.transition = 'all 0.5s ease-in-out';
 });
