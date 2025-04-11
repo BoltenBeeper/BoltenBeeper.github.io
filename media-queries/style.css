@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 8vw;
+  font-size: 9vw;
   font-weight: 200;
   text-shadow: 0vw -1vw 1vw rgba(0, 0, 0, 1);
 }
@@ -148,7 +148,13 @@ header li + li a {
 /* top 3 projects */
 
 .top-3-section {
-  margin-bottom: 10vw;
+  min-height: 60vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+
+.header-container {
+  margin-top: 3vw;
 }
 
 .top-3-projects {
@@ -198,7 +204,7 @@ header li + li a {
 .top-3-project-image {
   width: 100%;
   aspect-ratio: 1 / .66;
-  border-radius: 40%;
+  border-radius: 25%;
   background-size: cover;
   background-position: center;
   box-shadow: inset 0px .5vw 1vw 1vw rgba(40, 40, 40, .5);
@@ -255,7 +261,7 @@ header li + li a {
   font-size: 1vw;
   color: white;
   width: 100%;
-  background-color: rgb(100, 8, 8);
+  background-color: rgb(150, 8, 8);
   border-radius: 0.5vw;
   text-decoration: none;
   text-align: center;
