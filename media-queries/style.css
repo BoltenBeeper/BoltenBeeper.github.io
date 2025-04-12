@@ -2,6 +2,10 @@
 
 /* GLOBAL STYLES */
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +17,7 @@ body {
   background-color: #000;
   color: white;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -93,11 +98,6 @@ h3 {
   text-decoration: underline;
 }
 
-.background-container {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(117, 8, 8, 1) 50%, rgba(0, 0, 0, 1) 100%);
-}
-
 /* HEADER */
 
 header {
@@ -119,7 +119,6 @@ header li {
   color: white;
   list-style: none;
   display: inline-block;
-  margin-left: 2vw;
   font-size: 1.5vw;
   font-style: italic;
   font-weight: 500;
@@ -142,10 +141,15 @@ header a:hover {
 }
 
 header li + li a {
-  margin-left: 2vw;
+  margin-left: 4vw;
 }
 
 /* top 3 projects */
+
+.background-container-top {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(117, 8, 8, 1) 50%, rgba(0, 0, 0, 1) 100%);
+}
 
 .top-3-section {
   min-height: 60vw;
@@ -245,7 +249,7 @@ header li + li a {
   font-size: 1vw;
   color: white;
   width: 100%;
-  background-color: rgb(100, 8, 8);
+  background-color: rgb(25, 8, 8);
   text-decoration: none;
   text-align: center;
   border: .5vw solid pink;
@@ -261,7 +265,7 @@ header li + li a {
   font-size: 1vw;
   color: white;
   width: 100%;
-  background-color: rgb(150, 8, 8);
+  background-color: rgb(50, 8, 8);
   border-radius: 0.5vw;
   text-decoration: none;
   text-align: center;
@@ -275,7 +279,7 @@ header li + li a {
 
 /* WORK LIST SECTION */
 
-.work-list {
+.background-container-bottom {
   background:
 radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0,
 radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 8%, hsla(0, 100%, 20%, 0) 10%) 50px 50px,
@@ -433,4 +437,47 @@ background-size: 100px 100px;
   margin-right: 1vw;
   font-style: italic;
   text-decoration: underline;
+}
+
+/* FOOTER */
+
+.footer {
+  margin: auto;
+  padding-top: 15%;
+  padding-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2vw; /* Adjust font size */
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  color: white;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  gap: auto;
+}
+
+.contact-info {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.resume-button {
+  margin: auto;
+  text-align: center;
+}
+
+.resume-icon {
+  width: 7vw;
+  height: 7vw;
+  border-radius: 25%;
+  border: white 0.2vw solid;
 }

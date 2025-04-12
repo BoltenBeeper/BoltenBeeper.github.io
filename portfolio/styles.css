@@ -10,7 +10,7 @@
 
 * {
   color: white;
-  margin: 0;
+  margin: auto;
   padding: 0;
   box-sizing: border-box;
   border: none;
@@ -35,6 +35,30 @@ main {
     "resume code-holder code-holder about-me"
     "the-blog code-holder code-holder reach-me";
 }
+
+.background-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.background {
+  width: 40vw;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: calc((50vh - 40vw) + 20vw); /* Since I'm using a fixed position, I have to account for any view width or height. This calculation keeps the glowing radial right above the hand no matter the screen size. */
+  left: 17vw;
+  /* background-image: url(https://64.media.tumblr.com/44364f0340c92c70fdff257a202cb373/0457d04d130e4332-8e/s500x750/2b283a0af6b008bd951be0a88ad6aa712ba41835.gif); */
+  background-image: radial-gradient(rgb(120, 0, 0), rgba(0, 0, 0, 1) 20vw, transparent 40vw);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1000
+}
+
+/* background-image: radial-gradient(rgb(120, 0, 0), rgba(0, 0, 0, 0) 20vw, transparent 40vw);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -12.5vw -5vw;
+  top: -20vw; */
 
 
 
@@ -101,7 +125,7 @@ main {
 
 /* NAVIGATION BUTTONS */
 
-main a {
+.journey-button a {
   width: 17vw;
   height: 12vw;
   margin: auto;
@@ -394,22 +418,34 @@ header {
 
 .footer {
   margin: auto;
-  padding-top: 8%;
+  padding-top: 0%;
   padding-bottom: 2%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.2vw;
-  font-style: italic;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.1rem;
-  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  font-size: 1.2vw; /* Adjust font size */
+  background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
   color: white;
 }
 
+.footer-content {
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  gap: auto;
+}
 
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
 
 /* MEDIA QUERIES */
 

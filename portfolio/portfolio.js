@@ -36,7 +36,7 @@ function createParticle(fireContainer) {
   let particle = document.createElement("div");
   particle.style.left = `calc((100% - 5em) * ${Math.random()})`;
   particle.style.height = 2 + Math.random() + "em";
-  particle.style.backgroundColor = `hsl(${Math.random() * 50}, 0%, 0%)`;
+  // particle.style.backgroundColor = `hsl(${Math.random() * 50}, 0%, 0%)`;
   particle.setAttribute("class", "particle");
   particle.style.animationDelay = .01 * Math.random() + "s";
   particle.style.animationDuration = 1 + Math.random() + "s";

@@ -41,7 +41,6 @@ header li {
     color: white;
     list-style: none;
     display: inline-block;
-    margin-left: 2vw;
     font-size: 1.5vw;
     font-style: italic;
     font-weight: 500;
@@ -64,7 +63,7 @@ header a:hover {
 }
   
 header li + li a {
-    margin-left: 2vw;
+    margin-left: 4vw;
 }
 
 /* Used to be: header */
