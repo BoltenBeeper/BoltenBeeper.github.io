@@ -122,12 +122,12 @@ if (!localStorage.getItem('overlayShown')) {
 document.getElementById('overlay').addEventListener('click', hideOverlay);
 document.addEventListener('keydown', hideOverlay, { once: true });
 
-// Add event listener to show the overlay on pressing the "o" key
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'w') {
-    showOverlay();
-  }
-});
+// Add event listener to show the overlay on pressing the "w" key
+// document.addEventListener('keydown', (event) => {
+//   if (event.key === 'w') {
+//     showOverlay();
+//   }
+// });
 
 // Add event listener to show the overlay when the welcome button is clicked
 document.getElementById('welcome-button').addEventListener('click', showOverlay);

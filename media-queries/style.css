@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 9vw;
-  font-weight: 200;
+  font-weight: 500;
   text-shadow: 0vw -1vw 1vw rgba(0, 0, 0, 1);
 }
 
@@ -147,7 +147,7 @@ header li + li a {
 .nav-map {
   position: fixed;
   top: 1vw;
-  right: 2vw;
+  right: 3vw;
   display: flex;
   justify-content: center;
   align-items:last baseline;
@@ -176,7 +176,7 @@ header li + li a {
   position: fixed;
   width: 10vw;
   top: 10vw;
-  right: 1vw;
+  right: 2vw;
   background-color: rgba(0, 0, 0, .5);
   padding: 1vw;
   border-radius: 1vw;
@@ -208,138 +208,76 @@ header li + li a {
   text-align: center;
 }
 
-/* top 3 projects */
+/* MY Work Header */
 
 .background-container-top {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(117, 8, 8, 1) 50%, rgba(0, 0, 0, 1) 100%);
-}
-
-.top-3-section {
-  min-height: 60vw;
-  margin-top: 5vw;
-  margin-bottom: 5vw;
+  background: black;
 }
 
 .header-container {
   margin-top: 3vw;
+  background: black;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(117, 8, 8, 1) 50%, rgba(0, 0, 0, 1) 100%);
 }
 
-.top-3-projects {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  padding-right: 5vw;
-  padding-left: 5vw;
-}
+/* INTRODUCTION SECTION */
+/* CREDIT: Stack container section code taken from www.joelperezdev.com */
+/* Icons used were taken from devicon.dev. */
+/* All listed technologies are included as a deliberate descision based on my personal familiarities and proficiencies. */
 
-.top-3-project {
-  text-align: center;
-  width: 33.33%;
-  margin-top: 0%;
-  padding: 1vw;
-}
-
-.top-3-project-1 {
-  margin-bottom: 10vw;
-}
-
-.top-3-project-2 {
-  margin-top: 5vw;
-  margin-bottom: 5vw;
-}
-
-.top-3-project-3 {
-  margin-top: 10vw;
-}
-
-.top-3-content-wrapper {
+.introduction-section {
+  width: 100%;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  text-align: center;
-  margin: auto;
-  width: 75%;
-}
-
-.top-3-project-image-container {
-  width: 100%;
-  position: relative; /* Needed for absolute positioning */
-  display: inline-block; /* Ensures it only wraps around the content */
-}
-
-.top-3-project-image {
-  width: 100%;
-  aspect-ratio: 1 / .66;
-  border-radius: 25%;
-  background-size: cover;
-  background-position: center;
-  box-shadow: inset 0px .5vw 1vw 1vw rgba(40, 40, 40, .5);
-  box-shadow: 0vw 0vw 2vw rgba(0, 0, 0, 1);
+  align-items: center;
+  justify-content: space-between;
   position: relative;
 }
 
-.top-3-project-language-logo {
-  position: absolute;
-  bottom: -3%; /* use + to move up and - to move down */
-  right: -3%; /* use + to move left and - to move right */
-  width: 25%;
-  aspect-ratio: 1 / 1;
-  background-size: contain;
-  background-repeat: no-repeat;
-  border-radius: 50%;
-  box-shadow: 0px 0px .3vw rgba(0, 0, 0, 1);
+.introduction-section p {
+  margin: auto;
+}
+
+.introduction-section .stack-container {
+  max-width: 900px;
+  width: 50%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  row-gap: 2rem;
+  justify-content: center;
   align-items: center;
 }
 
-.top-3-project p {
-  text-align: left;
-  margin-top: 1vw;
-  font-size: 1.2vw;
-}
-
-.top-3-project-buttons {
+.icon-container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  padding-top: 1vw;
-  gap: 1vw;
 }
 
-.top-3-project-button-taped-over {
-  padding: 0vw 1vw;
-  font-size: 1vw;
-  color: white;
-  width: 100%;
-  background-color: rgb(25, 8, 8);
-  text-decoration: none;
-  text-align: center;
-  border: .5vw solid pink;
-  border-image: repeating-linear-gradient(-55deg,
-      #000,
-      #000 1vw,
-      #ffb101 1vw,
-      #ffb101 2vw) 10;
+.icon-image {
+  width: 50px;
+  height: 50px;
+  overflow-clip-margin: content-box;
+  overflow: clip;
 }
 
-.top-3-project-button {
-  padding: .5vw 1vw;
-  font-size: 1vw;
-  color: white;
-  width: 100%;
-  background-color: rgb(50, 8, 8);
-  border-radius: 0.5vw;
-  text-decoration: none;
-  text-align: center;
+.icon-container p {
+  margin: 0;
+  padding: .5rem;
+
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
 }
 
-.top-3-project-button:hover {
-  background-color: rgb(0, 0, 0, 0);
-}
-
-
+/* Specific image hovers */
 
 /* WORK LIST SECTION */
 
