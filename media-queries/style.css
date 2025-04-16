@@ -154,7 +154,7 @@ header li + li a {
   padding: 0;
   margin: 0;
   gap: 0;
-  z-index: 1000;
+  z-index: 999 ;
 
   width: 8vw;
   height: auto;
@@ -163,32 +163,103 @@ header li + li a {
   background-position: center;
 }
 
+.nav-map-overflow-container {
+  position: fixed;
+  top: 1vw;
+  right: 8vw;
+  display: flex;
+  justify-content: center;
+  align-items:last baseline;
+  padding: 0;
+  margin: 0;
+  gap: 0;
+
+  width: 8vw;
+  height: 8vw;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  pointer-events: none;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.nav-map:hover .nav-map-overflow-container {
+  right: 3vw;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.nav-map-image {
+  position: absolute;
+  top: 0vw;
+  right: -8vw;
+  
+  width: 8vw;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.nav-map:hover .nav-map-image {
+  right: 0vw;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.nav-rolled-map-image {
+  position: absolute;
+  top: 0vw;
+  right: 0vw;
+
+  width: 8vw;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.nav-map:hover .nav-rolled-map-image {
+  right: -3vw;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
 .nav-map:after {
   content: "Map";
-  position: relative;
-  top: 1vw;
+  position: fixed;
+  top: 8vw;
+  width: 8vw;;
+  height: 3vw;
   text-align: center;
   font-size: 1.5vw;
+  overflow: visible;
 }
 
 .nav-map-list {
-  display: none;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   width: 10vw;
-  top: 10vw;
+  top: 11vw;
   right: 2vw;
+  bottom: 2vw;
   background-color: rgba(0, 0, 0, .5);
   padding: 1vw;
   border-radius: 1vw;
   box-shadow: inset 0vw 0vw .5vw .5vw rgba(80, 80, 80, .5);
   margin: 0;
   gap: .5vw;
+  opacity: 0;
   z-index: 1001;
+  pointer-events: none;
+  transition: all var(--transition-speed) ease-in-out;
 }
 
 .nav-map:hover .nav-map-list {
-  display: flex;
-  flex-direction: column;
+  pointer-events: all;
+  opacity: 1;
+  transition: all var(--transition-speed) ease-in-out;
 }
 
 .nav-map-list li:hover {
