@@ -11,7 +11,7 @@
 body {
     /* background: radial-gradient(circle, rgba(157,110,16,1) 0%, rgba(121,9,9,1) 35%, rgba(0,0,0,1) 100%); */
     background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(117,8,8,1) 50%, rgba(0,0,0,1) 100%);
+    background-image: linear-gradient(0deg, rgba(30, 10, 10, .5) 0%, rgba(40, 10, 10, 1) 50%, rgba(30, 10, 10, .3) 100%);
     min-height: 100vh;
 }
 
@@ -131,10 +131,12 @@ header li + li a {
     border-right: dotted 0.52vw grey; */
     border-bottom-left-radius: 25%;
     border-bottom-right-radius: 25%;
-    width: 95%;
+    width: 90%;
     /* height: 37vh; */
-    padding: 1vw;
-    padding-bottom: 4vw;
+    padding: 3vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-bottom: 5vw;
     margin: auto;
     font-size: 1.2vw;
 }
@@ -142,7 +144,7 @@ header li + li a {
 /* Used to be: profile-text */
 .summary-text{
     padding-left: 2vw;
-    font-size: 1.8vw;
+    font-size: 1.6vw;
 }
 
 .everything-else {
@@ -174,20 +176,24 @@ header li + li a {
     padding-top: 25%;
     padding-bottom: 25%;
     font-size: 3vw;
+    /* background-color: rgba(70,8,8,1); */
+    background: linear-gradient(0deg, rgba(40,8,8,1) 0%, rgba(60,8,8,1) 70%, rgba(80,8,8,1) 100%);
     box-shadow: 0vw 1vw 1vw rgba(0, 0, 0, .2);
 }
 
 .experience-header {
     width: 75%;
-    border-top: rgb(200, 150, 150) 0.2vw solid;
-    border-bottom: rgb(63, 8, 8) 0.2vw solid;
+    border-top: rgb(125, 75, 75) 0.2vw solid;
+    border-bottom: rgb(20, 8, 8) 0.2vw solid;
     border-radius: 25%;
 }
 
 .skills-header {
     width: 75%;
-    border-top: rgb(200, 150, 150) 0.2vw solid;
-    border-bottom: rgb(63, 8, 8) 0.2vw solid;
+    /* border-top: rgb(200, 150, 150) 0.2vw solid;
+    border-bottom: rgb(63, 8, 8) 0.2vw solid; */
+    border-top: rgb(125, 75, 75) 0.2vw solid;
+    border-bottom: rgb(20, 8, 8) 0.2vw solid;
     border-radius: 25%;
 }
 
@@ -354,7 +360,8 @@ header li + li a {
     background-size: cover;
     background-position: center;
     position:relative;
-    border: 0.2vw solid rgb(128, 128, 128);
+    /* border: 0.2vw solid rgb(128, 16, 16); */
+    box-shadow: 0px 0px 3vw rgba(128, 16, 16);
 }
 
 /* hover effect */
@@ -616,6 +623,7 @@ header li + li a {
         border: none;
         font-size: 12vw;
         text-decoration:overline;
+        background: rgb(0, 0, 0, 0);
         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
     }
 

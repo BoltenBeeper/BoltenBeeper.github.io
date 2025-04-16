@@ -253,6 +253,7 @@ header li + li a {
 
 .icon-container {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -261,23 +262,40 @@ header li + li a {
 .icon-image {
   width: 50px;
   height: 50px;
-  overflow-clip-margin: content-box;
-  overflow: clip;
+  /* overflow-clip-margin: content-box;
+  overflow: clip; */
 }
 
 .icon-container p {
   margin: 0;
   padding: .5rem;
-
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  unicode-bidi: isolate;
 }
 
 /* Specific image hovers */
+
+.icon-container:after {
+  content: attr(data-years);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgb(0, 0, 0, 0);
+  font-size: 1em;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon-container:hover::after {
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
 
 /* WORK LIST SECTION */
 
