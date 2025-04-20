@@ -25,3 +25,5 @@ window.addEventListener('load', () => { // Handles nav map text disappearing aft
         message.style.opacity = '0';
     }, 5000);
 });
+
+// TEST
