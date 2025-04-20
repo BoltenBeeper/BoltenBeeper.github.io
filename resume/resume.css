@@ -66,7 +66,6 @@ header li + li a {
     margin-left: 4vw;
 }
 
-/* Used to be: header */
 .profile {
     width: 100%;
     height: auto;
@@ -77,11 +76,11 @@ header li + li a {
     background-color: #000;
 }
 
-/* Used to be: portrait-box */
 .portrait-box {
     width: 100%;
     height: 100%;
     margin: auto;
+    box-shadow: inset 0vw 0vw 1vw 1vw rgba(100, 40, 40, .3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,40 +88,97 @@ header li + li a {
     background-size: cover;
     background-clip: content-box;
     aspect-ratio: 3 / 1; /* Maintains aspect ratio so background image never leaks over borders */
+    transition: all .2s ease-in-out;
 }
 
-/* Used to be: portrait */
+.portrait-box:hover {
+    box-shadow: inset 0vw 0vw 1vw 1vw rgba(100, 40, 40, .5);
+    transition: all .2s ease-in-out;
+}
+
 .portrait {
-    border: inset 10px rgb(200, 0, 0);
+    border: inset .5vw rgb(200, 0, 0);
+    box-shadow: 0px 0px 3vw rgba(128, 16, 16);
     margin: auto;
     width: 11vw;
     height: 11vw;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 50%;
     background-image: url(https://yt3.ggpht.com/ytc/AKedOLSbYr8DEIDl5FPpz3uPrCMItkI6QSgTlY3cyDt0ww=s900-c-k-c0x00ffffff-no-rj); /* My Logo as a fallback */
 }
 
-/* Used to be: summary-box */
 .profile-box {
     height: 100%;
+    width: 100%;
     padding-top: 5%;
     padding-bottom: 5%;
+    box-shadow: inset 0vw 0vw 1vw 1vw rgba(80, 80, 80, .3);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all .2s ease-in-out;
 }
 
-/* Used to be: summary-text */
+.profile-box:hover {
+    box-shadow: inset 0vw 0vw 1vw 1vw rgba(80, 80, 80, .5);
+    transition: all .2s ease-in-out;
+}
+
+.profile-box h1 {
+    margin: 0;
+    font-size: 2.5vw;
+    text-align: center;
+    color: rgb(200, 80, 80)
+    /* text-decoration: underline; */
+}
+
+/* CREDIT: Shiney text code taken from Andreas Storm at https://codepen.io/avstorm/pen/WNrMqjG */
+.profile-box h1 {
+    color: #ffffff;
+    background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0 }
+    25% {
+        background-position: calc((15/100)*var(--nameWidth)) }
+    75% {
+        background-position: calc((85/100)*var(--nameWidth)) }
+    100% {
+        background-position: var(--nameWidth) }
+}
+
+.profile-box h2 {
+    margin-top: 0px;
+    font-size: 1.3vw;
+    text-align: center;
+    /* text-decoration: overline; */
+}
+
 .profile-text{
-    margin: 0.5vw;
-    width: 100%;
-    height: 100%;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    font-size: 1.2vw;
+    display: flex;
+    margin: auto;
+    /* width: 100%; */
+    padding-left: 5vw;
+    padding-right: 5vw;
+    text-align: left;
+    font-size: 1vw;
 }
 
-/* Used to be: profile-box */
 .summary-box{
     background: rgb(117,8,8);
     background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
@@ -141,7 +197,6 @@ header li + li a {
     font-size: 1.2vw;
 }
 
-/* Used to be: profile-text */
 .summary-text{
     padding-left: 2vw;
     font-size: 1.6vw;
@@ -171,14 +226,19 @@ header li + li a {
 }
 
 .box2-header{
-    /* border: outset 0.5vw white; */
     background-size: cover;
     padding-top: 25%;
     padding-bottom: 25%;
     font-size: 3vw;
     /* background-color: rgba(70,8,8,1); */
-    background: linear-gradient(0deg, rgba(40,8,8,1) 0%, rgba(60,8,8,1) 70%, rgba(80,8,8,1) 100%);
+    background: linear-gradient(0deg, rgba(40,8,8,1) 0%, rgba(80,8,8,1) 70%, rgba(100,8,8,1) 100%);
     box-shadow: 0vw 1vw 1vw rgba(0, 0, 0, .2);
+    transition: all .2s ease-in-out;
+}
+
+.box2-header:hover {
+    box-shadow: 0px 0px 3vw rgba(128, 16, 16);
+    transition: all .2s ease-in-out;
 }
 
 .experience-header {
@@ -218,6 +278,12 @@ header li + li a {
     text-align: left;
     background: rgb(117,8,8);
     background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 70%, rgba(0,0,0,1) 100%);
+    transition: all .2s ease-in-out;
+}
+
+.card-type1:hover {
+    box-shadow: 0px 0px 3vw rgba(128, 16, 16);
+    transition: all .2s ease-in-out;
 }
 
 .experience-card {
@@ -514,6 +580,7 @@ header li + li a {
     .portrait {
         width: 25vw;
         height: 25vw;
+        border: inset 1vw rgb(200, 0, 0);
     }
 
     .profile-box {
@@ -521,6 +588,23 @@ header li + li a {
         margin-bottom: 0vw;
         padding-top: 2%;
         padding-bottom: 2%;
+    }
+
+    .profile-box h1 {
+        font-size: 5vw;
+    }
+    
+    @keyframes shine {
+        25% {
+            background-position: calc((15/100)*var(--doubleNameWidth)) }
+        75% {
+            background-position: calc((85/100)*var(--doubleNameWidth)) }
+        100% {
+            background-position: var(--doubleNameWidth) }
+    }
+
+    .profile-box h2 {
+        font-size: 2.6vw;
     }
 
     .profile-text {
@@ -709,7 +793,12 @@ header li + li a {
 
     .project-image {
         width: 75%;
+        box-shadow: 0px 0px 10vw rgba(128, 16, 16);
     }
+
+    .project-image:hover::before {
+        filter:blur(300vh);
+     }
 
     .project-language-logo {
         width: 25%;
