@@ -129,14 +129,14 @@ header li + li a {
 .disappear-on-load {
   position: absolute;
   top: 50%;
-  left: -100%;
+  left: -19vw;
   width: max-content;
-  transform: translateX(-50%);
-  /* background-color: rgba(0, 0, 0, 0.8); */
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
   color: white;
-  padding: 1rem 2rem;
+  padding: .5vw 1.5vw;
   border-radius: 5px;
-  font-size: 1.5rem;
+  font-size: 1.25vw;
   text-align: center;
   pointer-events: none;;
   z-index: 1001;
@@ -288,21 +288,28 @@ header li + li a {
 }
 
 .introduction-content {
-  width: 75%;
+  /* width: 75%; */
   margin: auto;
-  margin-top: 5vw;
-  margin-bottom: 5vw;
+  margin-block: 5vw;
+  padding-inline: 12.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  background-image: url(../images/Background_Map_Alt.png);
+  background-size: cover;
+  background-position: center;
 }
+
+/* .introduction-section h3 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+} */
 
 .introduction-section p {
   margin: auto;
   text-align: left;
-
+  /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
 }
 
 .introduction-section .stack-container {
