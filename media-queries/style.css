@@ -76,10 +76,13 @@ header li + li a {
   margin-left: 4vw;
 }
 
+
+/* Nav map icon and animations are all scalable. The only thing that needs to be adjusted is the "top", "right", and "font-size" properties under the .nav-map class to move the icon around and change the size. */
 .nav-map {
   position: fixed;
-  top: 1vw;
+  /* top: 1vw; */
   right: 3vw;
+  font-size: 1vw;
   display: flex;
   justify-content: center;
   align-items:last baseline;
@@ -88,7 +91,7 @@ header li + li a {
   gap: 0;
   z-index: 999 ;
 
-  width: 8vw;
+  width: 8em;
   height: auto;
   aspect-ratio: 1 / 1;
   background-size: cover;
@@ -98,14 +101,13 @@ header li + li a {
 .disappear-on-load {
   position: absolute;
   top: 50%;
-  left: -19vw;
+  left: -16em;
   width: max-content;
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
+  border-radius: 7px;
   color: white;
-  padding: .5vw 1.5vw;
-  border-radius: 5px;
-  font-size: 1.25vw;
+  padding: .5em 1.5em;
+  font-size: 1.25em;
   text-align: center;
   pointer-events: none;;
   z-index: 1001;
@@ -114,9 +116,9 @@ header li + li a {
 }
 
 .nav-map-overflow-container {
-  position: fixed;
-  top: 1vw;
-  right: 8vw;
+  position: absolute;
+  top: 0;
+  right: 5em;
   display: flex;
   justify-content: center;
   align-items:last baseline;
@@ -124,8 +126,8 @@ header li + li a {
   margin: 0;
   gap: 0;
 
-  width: 8vw;
-  height: 8vw;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -134,17 +136,17 @@ header li + li a {
 }
 
 .nav-map:hover .nav-map-overflow-container {
-  right: 3vw;
+  right: 0;
   transition: all var(--transition-speed) ease-in-out;
 }
 
 .nav-map-image {
   position: absolute;
-  top: 0vw;
-  right: -8vw;
+  top: 0;
+  right: -8em;
   
-  width: 8vw;
-  height: auto;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
   background-size: cover;
   background-position: center;
@@ -152,17 +154,17 @@ header li + li a {
 }
 
 .nav-map:hover .nav-map-image {
-  right: 0vw;
+  right: 0em;
   transition: all var(--transition-speed) ease-in-out;
 }
 
 .nav-rolled-map-image {
   position: absolute;
-  top: 0vw;
-  right: 0vw;
+  top: 0em;
+  right: 0em;
 
-  width: 8vw;
-  height: auto;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
   background-size: cover;
   background-position: center;
@@ -171,35 +173,34 @@ header li + li a {
 }
 
 .nav-map:hover .nav-rolled-map-image {
-  right: -3vw;
+  right: -3em;
   transition: all var(--transition-speed) ease-in-out;
 }
 
 .nav-map:after {
   content: "Map";
-  position: fixed;
-  top: 8vw;
-  width: 8vw;;
-  height: 3vw;
+  position: absolute;
+  /* top: 4.6em; */
+  width: 8em;
+  height: 3em;
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1.5em;
   overflow: visible;
 }
 
 .nav-map-list {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  width: 10vw;
-  top: 11vw;
-  right: 2vw;
-  bottom: 2vw;
+  position: absolute;
+  width: max-content;
+  min-height: min-content;
+  /* top: 10em; */
   background-color: rgba(0, 0, 0, .65);
-  padding: 1vw;
-  border-radius: 1vw;
-  box-shadow: inset 0vw 0vw .5vw .5vw rgba(80, 80, 80, .5);
+  padding: 1em;
+  border-radius: 20px;
+  box-shadow: inset 0vw 0vw .5em .5em rgba(80, 80, 80, .5);
   margin: 0;
-  gap: .5vw;
+  gap: .5em;
   opacity: 0;
   z-index: 1001;
   pointer-events: none;
@@ -221,7 +222,7 @@ header li + li a {
 
 .nav-map-list li {
   list-style: none;
-  font-size: 1vw;
+  font-size: 1em;
   font-style: italic;
   font-weight: 500;
   font-family: 'Poppins', sans-serif;
@@ -236,13 +237,14 @@ header li + li a {
 }
 
 .header-container {
+  font-size: 1vw;
   margin-top: 3vw;
   background: black;
   background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(117, 8, 8, 1) 50%, rgba(0, 0, 0, 1) 100%);
 }
 
 .header-container h1 {
-  font-size: 10rem;
+  font-size: 10em;
   font-weight: 500;
   text-shadow: 0vw -1vw 1vw rgba(0, 0, 0, 1);
 }
@@ -307,14 +309,13 @@ p .emphasise {
 }
 
 .introduction-section .stack-container {
-  max-width: 900px;
-  min-width: 350px;
-  width: 50%;
+  max-width: 1000px;
+  /* min-width: 350px; */
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
-  row-gap: 2rem;
+  gap: 2.5em;
+  row-gap: 2em;
   justify-content: center;
   align-items: center;
 }
@@ -328,15 +329,16 @@ p .emphasise {
 }
 
 .icon-image {
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   /* overflow-clip-margin: content-box;
   overflow: clip; */
 }
 
 .icon-container p {
   margin: 0;
-  padding: .5rem;
+  font-size: 1.2em;
+  padding: .5em;
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -354,7 +356,7 @@ p .emphasise {
   margin: auto;
   background-color: rgba(0, 0, 0, 0);
   color: rgb(0, 0, 0, 0);
-  font-size: 1em;
+  font-size: 1.2em;
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
@@ -384,6 +386,7 @@ background-size: 100px 100px;
 }
 
 .seemless-background-transition {
+  font-size: 1vw;
   position: relative;
   padding-bottom: 30rem;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%);
@@ -552,7 +555,7 @@ background-size: 100px 100px;
 }
 
 .listed-project-language-logo {
-  width: 1.5em;
+  width: 1.4em;
   /* font-size: 10px; */
   aspect-ratio: 1 / 1;
   background-size: contain;
@@ -642,92 +645,150 @@ background-size: 100px 100px;
 
 @media (max-width: 1200px) {
   header {
-      height: 6vw;
+    height: 6vw;
   }
 
   header li {
-      font-size: 1.8vw;
+    font-size: 1.8vw;
   }
 
   header a:hover {
-      font-size: 2vw;
+    font-size: 2vw;
   }
 
   .footer {
-      font-size: 1.5vw;
+    font-size: 1.5vw;
   }
 }
 
 @media (max-width: 992px) {
   header {
-      height: 7vw;
+    height: 7vw;
   }
 
   header li {
-      font-size: 2vw;
+    font-size: 2vw;
   }
 
   header a:hover {
-      font-size: 2.2vw;
+    font-size: 2.2vw;
+  }
+
+  .stack-container {
+    width: 92vw;
   }
 
   .footer {
-      font-size: 1.8vw;
+    font-size: 1.8vw;
   }
 }
 
+/* ANYTHING LARGER THAN PHONE */
+@media (min-width: 769px) {
+  .nav-map {
+    top: 1vw;
+  }
 
+  .nav-map:after {
+    top: 4.6em;
+  }
+
+  .nav-map-list {
+    top: 10em;
+  }
+}
 
 /* PHONE FORMAT */
 @media (max-width: 768px) {
   header {
-      height: 10vw;
+    height: 10vw;
   }
 
   header li {
-      font-size: 3vw;
+    font-size: 3vw;
   }
 
   header a:hover {
-      font-size: 3.5vw;
+    font-size: 3.5vw;
+  }
+
+  .nav-map {
+    font-size: 3vw;
+    bottom: 0vw;
+    right: 5vw;
+  }
+
+  .nav-map:after {
+    bottom: 4.6em;
+    height: auto;
+    padding-top: 1em;
+    text-shadow: -.1em -.1em rgba(0, 0, 0, 1), .1em -.1em rgba(0, 0, 0, 1), -.1em .1em rgba(0, 0, 0, 1), .1em .1em rgba(0, 0, 0, 1),
+    0 -.1em rgba(0, 0, 0, 1), .1em 0 rgba(0, 0, 0, 1), -.1em 0 rgba(0, 0, 0, 1), 0 .1em rgba(0, 0, 0, 1);
+  }
+
+  .nav-map-list {
+    bottom: 10em;
+  }
+
+  .header-container {
+    font-size: 1.8vw;
+  }
+
+  .introduction-content {
+    font-size: 3vw;
+  }
+
+  .gallary-garnish {
+    width: 80em;
+    top: 20em;
+  }
+  
+  .seemless-background-transition h2 {
+    font-size: 20em;
+    top: 1.8em;
+  }
+  
+  .seemless-background-transition p {
+    font-size: 3em;
+    top: 22em;
   }
 
   .footer {
-      font-size: 2.5vw;
+    font-size: 2.5vw;
   }
 
   .resume-icon {
-      width: 15vw;
-      height: 15vw;
-      border-radius: 25%;
-      border: white .5vw solid;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 25%;
+    border: white .5vw solid;
   }
 }
 
 @media (max-width: 576px) {
   header {
-      height: 12vw;
+    height: 12vw;
   }
 
   header li {
-      font-size: 3.5vw;
+    font-size: 3.5vw;
   }
 
   header a:hover {
-      font-size: 4vw;
+    font-size: 4vw;
   }
 }
 
 @media (max-width: 480px) {
   header {
-      height: 14vw;
+    height: 14vw;
   }
 
   header li {
-      font-size: 3.8vw;
+    font-size: 3.8vw;
   }
 
   header a:hover {
-      font-size: 4.5vw;
+    font-size: 4.5vw;
   }
 }
