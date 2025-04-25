@@ -694,11 +694,11 @@ header {
   }
 
   .journey-button {
+      width: 60vw;
       padding-block: 2vw;
   }
 
   .journey-button a {
-      width: 60vw;
       height: 20vw;
       font-size: 5vw;
       font-weight: 400;
