@@ -133,7 +133,6 @@ header li + li a {
     margin: 0;
     font-size: 2.5vw;
     text-align: center;
-    color: rgb(200, 80, 80)
     /* text-decoration: underline; */
 }
 
@@ -540,6 +539,11 @@ header li + li a {
     width: 90%;
     margin: auto;
     gap: auto;
+}
+
+.footer-content p {
+  text-align: left;
+  margin-left: 0;
 }
 
 .contact-info {

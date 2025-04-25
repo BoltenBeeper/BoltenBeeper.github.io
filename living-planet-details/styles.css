@@ -28,12 +28,12 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-p {
+/* p {
     cursor: default;
     font-size: 1.2vw;
     font-weight: 600;
     text-align: left;
-}
+} */
 
 /* HEADER */
 
@@ -242,6 +242,19 @@ header li + li a {
   gap: auto;
 }
 
+.footer-content p {
+  text-align: left;
+  margin-left: 0;
+}
+
+.footer-content a:link {
+  color: white;
+}
+
+.footer-content a:active {
+  color: red;
+}
+
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -297,4 +310,100 @@ header a:hover {
 
 .info-hook {
   color: rgb(255, 220, 50);
+}
+
+/* Media Queries for smaller screens */
+
+/* TABLET FORMAT */
+
+@media (max-width: 1200px) {
+  header {
+      height: 6vw;
+  }
+
+  header li {
+      font-size: 1.8vw;
+  }
+
+  header a:hover {
+      font-size: 2vw;
+  }
+
+  .footer {
+      font-size: 1.5vw;
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+      height: 7vw;
+  }
+
+  header li {
+      font-size: 2vw;
+  }
+
+  header a:hover {
+      font-size: 2.2vw;
+  }
+
+  .footer {
+      font-size: 1.8vw;
+  }
+}
+
+
+
+/* PHONE FORMAT */
+@media (max-width: 768px) {
+  header {
+      height: 10vw;
+  }
+
+  header li {
+      font-size: 3vw;
+  }
+
+  header a:hover {
+      font-size: 3.5vw;
+  }
+
+  .footer {
+      font-size: 2.5vw;
+  }
+
+  .resume-icon {
+      width: 15vw;
+      height: 15vw;
+      border-radius: 25%;
+      border: white .5vw solid;
+  }
+}
+
+@media (max-width: 576px) {
+  header {
+      height: 12vw;
+  }
+
+  header li {
+      font-size: 3.5vw;
+  }
+
+  header a:hover {
+      font-size: 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+      height: 14vw;
+  }
+
+  header li {
+      font-size: 3.8vw;
+  }
+
+  header a:hover {
+      font-size: 4.5vw;
+  }
 }

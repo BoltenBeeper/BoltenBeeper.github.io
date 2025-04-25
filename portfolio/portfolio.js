@@ -31,6 +31,22 @@ function resumeAudioContext() {
 document.addEventListener('click', resumeAudioContext, { once: true });
 document.addEventListener('keydown', resumeAudioContext, { once: true });
 
+// Set the sound toggle to mute on page load
+window.addEventListener('load', () => {
+  if (document.getElementById('overlay').style.display === 'none') {
+    document.getElementById('sound-toggle').checked = true; // Mute
+  }
+});
+
+// Ensure the sound toggle resets to mute when the user returns to the page
+window.addEventListener('pageshow', () => {
+  if (document.getElementById('overlay').style.display === 'none') {
+    document.getElementById('sound-toggle').checked = true; // Mute
+  }
+});
+
+// FIRE EFFECT CODE
+
 // Function to create a particle element and add it to the specific fire container
 function createParticle(fireContainer) {
   let particle = document.createElement("div");
@@ -67,6 +83,19 @@ function stopCreatingParticles() {
   }
 }
 
+// Add event listeners to start and stop creating particles on hover for each button
+document.querySelector('.one').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-one')));
+document.querySelector('.one').addEventListener('mouseleave', stopCreatingParticles);
+
+document.querySelector('.two').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-two')));
+document.querySelector('.two').addEventListener('mouseleave', stopCreatingParticles);
+
+document.querySelector('.three').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-three')));
+document.querySelector('.three').addEventListener('mouseleave', stopCreatingParticles);
+
+document.querySelector('.four').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-four')));
+document.querySelector('.four').addEventListener('mouseleave', stopCreatingParticles);
+
 // Function to fade in the fire sound
 function fadeInSound() {
   if (fadeOutTimeout) {
@@ -95,11 +124,14 @@ function fadeOutSound() {
   }
 }
 
+// OVERLAY CODE
+
 // Function to hide the overlay and resume AudioContext on user interaction
 function hideOverlay() {
   document.getElementById('overlay').style.display = 'none';
   resumeAudioContext();
   localStorage.setItem('overlayShown', 'true'); // Set flag in localStorage
+  // document.getElementById('welcome-button').style.border = 'none'; //FOR SOME REASON PRESSING A KEY WHILE OVERLAY IS UP GIVES A BORDER TO THE BUTTON. This line doesn't fix it.
 }
 
 // Function to show the overlay and unset the flag in localStorage
@@ -120,7 +152,7 @@ if (!localStorage.getItem('overlayShown')) {
 
 // Add event listeners to hide the overlay on click or keydown
 document.getElementById('overlay').addEventListener('click', hideOverlay);
-document.addEventListener('keydown', hideOverlay, { once: true });
+document.addEventListener('keydown', hideOverlay, {}); // { once: true }); to make the key down only work one time
 
 // Add event listener to show the overlay on pressing the "w" key
 // document.addEventListener('keydown', (event) => {
@@ -132,33 +164,6 @@ document.addEventListener('keydown', hideOverlay, { once: true });
 // Add event listener to show the overlay when the welcome button is clicked
 document.getElementById('welcome-button').addEventListener('click', showOverlay);
 
-// Add event listeners to start and stop creating particles on hover for each button
-document.querySelector('.one').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-one')));
-document.querySelector('.one').addEventListener('mouseleave', stopCreatingParticles);
-
-document.querySelector('.two').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-two')));
-document.querySelector('.two').addEventListener('mouseleave', stopCreatingParticles);
-
-document.querySelector('.three').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-three')));
-document.querySelector('.three').addEventListener('mouseleave', stopCreatingParticles);
-
-document.querySelector('.four').addEventListener('mouseenter', () => startCreatingParticles(document.getElementById('fire-container-four')));
-document.querySelector('.four').addEventListener('mouseleave', stopCreatingParticles);
-
 // Update overlay header text on load and resize
 // window.addEventListener('load', updateOverlayHeader);
 // window.addEventListener('resize', updateOverlayHeader);
-
-// Set the sound toggle to mute on page load
-window.addEventListener('load', () => {
-  if (document.getElementById('overlay').style.display === 'none') {
-    document.getElementById('sound-toggle').checked = true; // Mute
-  }
-});
-
-// Ensure the sound toggle resets to mute when the user returns to the page
-window.addEventListener('pageshow', () => {
-  if (document.getElementById('overlay').style.display === 'none') {
-    document.getElementById('sound-toggle').checked = true; // Mute
-  }
-});

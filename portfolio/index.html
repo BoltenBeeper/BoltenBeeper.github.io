@@ -19,48 +19,52 @@
         <button id="welcome-button">Welcome</button>
     </header>
     <div id="overlay">
-        <h1 class="overlay-header"></h1>
-        <p>Welcome to my virtual portfolio!</p>
-        <ul>
-            <li>This site is currently in the process of being completely redone.</li>
-            <li>There may be serioius visual errors especially on phone so it's recommended to view this site on a computer for now.</li>
-            <!-- <li>Check out my <span class="underline"><a href="../resume/index.html">resume</a></span> for information about me and my work history.</li> -->
-            <!-- <li>See a comprehensive list of <span class="underline"><a href="../media-queries/index.html">my work</a></span> along with links to check them out for yourself. <span class="under-construction">[UNDER CONSTRUCTION]</span></li> -->
-            <li>Feel free to <span class="underline">reach out</span> with questions, offers, or notes on how I could improve this page.</li>
-        </ul>
+        <div class="overlay-container">
+            <h1 class="overlay-header"></h1>
+            <p>Welcome to my virtual portfolio!</p>
+            <ul>
+                <li>This site is currently in the process of being completely redone.</li>
+                <li>There may be serioius visual errors especially on phone so it's recommended to view this site on a computer for now.</li>
+                <!-- <li>Check out my <span class="underline"><a href="../resume/index.html">resume</a></span> for information about me and my work history.</li> -->
+                <!-- <li>See a comprehensive list of <span class="underline"><a href="../media-queries/index.html">my work</a></span> along with links to check them out for yourself. <span class="under-construction">[UNDER CONSTRUCTION]</span></li> -->
+                <li>Feel free to <span class="underline">reach out</span> with questions, offers, or notes on how I could improve this page.</li>
+            </ul>
+        </div>
     </div>
     <div class="background-container">
         <div class="background"></div>
-        <div class="my-name">
-            <h1 class="name">Riley Underwood</h1>
-        </div>
         <main>
-            <div class="journey-button button-container-one" data-destination="resume">
-                <div id="fire-container-one"></div>
-                <a class="button one" href="../resume/index.html">Resume</a>
-                <audio id="fire-sound-loop" loop preload="auto">
-                    <source src="../images/crackling-fire.ogg" type="audio/ogg">
-                    <source src="../images/crackling-fire.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-            <div class="journey-button button-container-two" data-destination="my-work">
-                <div id="fire-container-two"></div>
-                <a class="button two" href="../media-queries/index.html">My Work</a>
-            </div>
-            <div class="journey-button button-container-three" data-destination="blog" >
-                <div id="fire-container-three"></div>
-                <a class="button three" href="https://medium.com/@moltencreeper25" target="https://medium.com/@moltencreeper25">The Blog</a>
-            </div>
-            <div class="journey-button button-container-four" data-destination="contact">
-                <div id="fire-container-four"></div>
-                <a class="button four" href="../contact-me/index.html">Reach Me</a>
-            </div>
-            <div class="center-art icon-container" style="background-image: url('../images/Holder3.png');" data-duration="500">
-                <div id="resume" class="preview-icon resume-icon" style="background-image: url('../images/Resume_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
-                <div id="my-work" class="preview-icon my-work-icon" style="background-image: url('../images/Nega_Player_Idle_Loop.gif'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
-                <div id="blog" class="preview-icon blog-icon" style="background-image: url('../images/Blog_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
-                <div id="contact" class="preview-icon contact-icon" style="background-image: url('../images/Mail_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
+            <div class="main-container">
+                <div class="my-name" style="--nameWidth: 90vw;">
+                    <h1 class="name">Riley Underwood</h1>
+                </div>
+                <div class="center-art icon-container" data-duration="500">
+                    <div id="resume" class="preview-icon resume-icon" style="background-image: url('../images/Resume_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
+                    <div id="my-work" class="preview-icon my-work-icon" style="background-image: url('../images/Nega_Player_Idle_Loop.gif'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
+                    <div id="blog" class="preview-icon blog-icon" style="background-image: url('../images/Blog_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
+                    <div id="contact" class="preview-icon contact-icon" style="background-image: url('../images/Mail_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
+                </div>
+                <div class="journey-button button-container-one" data-destination="resume">
+                    <div id="fire-container-one"></div>
+                    <a class="button one" href="../resume/index.html">Resume</a>
+                    <audio id="fire-sound-loop" loop preload="auto">
+                        <source src="../images/crackling-fire.ogg" type="audio/ogg">
+                        <source src="../images/crackling-fire.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="journey-button button-container-two" data-destination="my-work">
+                    <div id="fire-container-two"></div>
+                    <a class="button two" href="../media-queries/index.html">My Work</a>
+                </div>
+                <div class="journey-button button-container-three" data-destination="blog" >
+                    <div id="fire-container-three"></div>
+                    <a class="button three" href="https://medium.com/@moltencreeper25" target="https://medium.com/@moltencreeper25">The Blog</a>
+                </div>
+                <div class="journey-button button-container-four" data-destination="contact">
+                    <div id="fire-container-four"></div>
+                    <a class="button four" href="../contact-me/index.html">Reach Me</a>
+                </div>
             </div>
         </main>
         <footer class="footer">
@@ -72,6 +76,7 @@
                         <li>Email: <a href="mailto:rileybusinesswood@gmail.com">rileybusinesswood@gmail.com</a></li>
                         <li>LinkedIn: <a href="https://www.linkedin.com/in/riley-underwood-774aaa191/" target="_blank">Riley Underwood</a></li>
                     </ul>
+                    <br>
                 </div>
             </div>
         </footer>
