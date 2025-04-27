@@ -545,17 +545,13 @@ background-size: 100px 100px;
   margin-left: 0%;
 }
 
-.further-details ul {
-  /* list-style: none; */
-}
-
 .further-details li {
   display: flex;
   flex-direction: row;
 }
 
 .listed-project-language-logo {
-  width: 1.4em;
+  width: 1.5em;
   /* font-size: 10px; */
   aspect-ratio: 1 / 1;
   background-size: contain;
@@ -738,6 +734,11 @@ background-size: 100px 100px;
     font-size: 3vw;
   }
 
+  .introduction-content p {
+    font-size: 1em;
+    line-height: 1.8em;
+  }
+
   .gallary-garnish {
     width: 80em;
     top: 20em;
@@ -752,6 +753,8 @@ background-size: 100px 100px;
     font-size: 3em;
     top: 22em;
   }
+
+  .listed-projects {
 
   .footer {
     font-size: 2.5vw;

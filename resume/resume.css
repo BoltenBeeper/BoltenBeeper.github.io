@@ -138,8 +138,13 @@ header li + li a {
 
 /* CREDIT: Shiney text code taken from Andreas Storm at https://codepen.io/avstorm/pen/WNrMqjG */
 .profile-box h1 {
-    color: #ffffff;
-    background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+    /* color: #ffffff;
+    text-shadow: 0vw -.1vw .1vw rgba(59, 59, 59, 0.623);
+    background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%); */
+    color: #530000;
+    text-shadow: 0vw -.1vw .1vw rgba(158, 12, 12, 0.623);
+    background: linear-gradient(to right, #4d1212 0, white 10%, #530000 20%);
+    font-style: italic;
     /* background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png); */
     background-size: cover;
     background-position: center;

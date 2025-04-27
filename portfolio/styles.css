@@ -271,6 +271,7 @@ header {
   border: .5vw solid rgb(255, 255, 255);
   box-shadow: 0vw 1vw 2vw 0vw rgba(255,255,255,0.2);
   border-radius: 25%;
+  /* border-radius: 99999px; */
   color: white;
   cursor: pointer;
   position: relative;
