@@ -100,7 +100,7 @@ header li + li a {
 
 .disappear-on-load {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 1.25em);
   left: -16em;
   width: max-content;
   background-color: rgba(0, 0, 0, 0.5);
@@ -283,7 +283,6 @@ header li + li a {
 .introduction-section h3 {
   font-size: 2.5em;
   font-weight: 500;
-  text-shadow: 0vw -1vw 1vw rgba(0, 0, 0, 1);
   width: max-content;
   /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 }
@@ -298,7 +297,7 @@ header li + li a {
   margin: auto;
   padding: 0;
   padding-bottom: 3rem;
-  text-shadow: 0vw -.3vw .3vw rgba(0, 0, 0, 1);
+  text-shadow: .3vw -.3vw .5vw rgba(0, 0, 0, 1);
   /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
 }
 
@@ -388,7 +387,7 @@ background-size: 100px 100px;
 .seemless-background-transition {
   font-size: 1vw;
   position: relative;
-  padding-bottom: 30rem;
+  padding-bottom: 40rem;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%);
 }
 
@@ -396,21 +395,21 @@ background-size: 100px 100px;
   position: absolute;
   margin: auto;
   padding: auto;
-  width: 30rem;
+  width: 40rem;
   top: 7rem;
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Adjust for element's width */
 }
 
 .seemless-background-transition h2 {
-  font-size: 7rem;
+  font-size: 10rem;
   font-weight: 200;
   text-shadow: 0vw -1vw 1vw rgba(0, 0, 0, 1);
 
   position: absolute;
   margin: auto;
   padding: auto;
-  top: 13rem;
+  top: 15rem;
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Adjust for element's width */
 }
@@ -420,10 +419,10 @@ background-size: 100px 100px;
   margin: auto;
   padding: auto;
   width: max-content;
-  top: 23rem;
+  top: 30rem;
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Adjust for element's width */
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: rgb(255, 255, 255, .75);
 }
 
@@ -449,60 +448,61 @@ background-size: 100px 100px;
 
 .listed-project-image-container {
   width: 100%;
-  position: relative; /* Needed for absolute positioning */
+  font-size: 1vw;  /* Only thing needing adjustment for changing thickness of frame. Maintains scalability for any size with one quick adjustment. */
+  position: relative;
   display: inline-block; /* Ensures it only wraps around the content */
 
   background-color: #ddc;
-  border: solid 2.5vw #eee;
-  border-bottom-color: #fff;
-  border-left-color: #eee;
-  border-radius: 2px;
-  border-right-color: #eee;
-  border-top-color: #ddd;
-  box-shadow: 0 0 1vw 0 rgba(0, 0, 0, .25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+  border: solid 2.5em #eee;
+  border-radius: .5em;
+  border-bottom-color: #fff; /* #fff (old colors for reference)*/
+  border-left-color: #eee;  /* #eee */
+  border-right-color: #eee; /* #eee */
+  border-top-color: #fff; /* #ddd */
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, .25) inset, 1em -1.5em .5em .1em rgba(0, 0, 0, .25);
 
   box-sizing: border-box;
   margin: auto;
   aspect-ratio: 1 / 1;
-  padding: 1.5vw;
+  padding: 1.5em;
   position: relative;
   text-align: center;
 
   &:before {
-    border-radius: 2px;
-    bottom: -1vw;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25) inset;
-    content: "";
-    left: -1vw;
     position: absolute;
-    right: -1vw;
-    top: -1vw;
+    border-radius: .3em;
+    bottom: -1.25em;
+    box-shadow: .25em -.5em 1.25em 0 rgba(0, 0, 0, .25);
+    content: "";
+    left: -1.25em;
+    right: -1.25em;
+    top: -1.25em;
   }
   
   &:after {
-    border-radius: 2px;
-    bottom: -1.25vw;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .25);
-    content: "";
-    left: -1.25vw;
     position: absolute;
-    right: -1.25vw;
-    top: -1.25vw;
+    border-radius: .3em;
+    bottom: -1.25em;
+    box-shadow: .25em -.5em 1.25em 0 rgba(0, 0, 0, .25) inset;
+    content: "";
+    left: -1.25em;
+    right: -1.25em;
+    top: -1.25em;
   }
 }
 
 .listed-project-image {
-  width: 20vw;
+  width: 20em;
   aspect-ratio: 1 / 1;
   border-radius: 0%;
   background-size: cover;
   background-position: center;
-  position:relative;
-  border:solid 3px;
-  border-bottom-color:#ffe;
-  border-left-color:#eed;
-  border-right-color:#eed;
-  border-top-color:#ccb;
+  position: relative;
+  border: solid .5em;
+  border-bottom-color: #ccb;
+  border-left-color: #eed;
+  border-right-color: #eed;
+  border-top-color: #ffe;
 }
 
 .listed-project-content {
@@ -517,7 +517,7 @@ background-size: 100px 100px;
   margin-top: 1vw;
   font-size: 1em;
   line-height: 1.6em;
-  text-shadow: 0vw -.3vw .3vw rgba(0, 0, 0, 1);
+  text-shadow: .3vw -.3vw .5vw rgba(0, 0, 0, 1);
 }
 
 .listed-project-name {
@@ -537,7 +537,7 @@ background-size: 100px 100px;
   margin-right: 1vw;
   /* text-decoration: underline; */
   color: rgb(200, 200, 200);
-  text-shadow: 0vw -.3vw .3vw rgba(0, 0, 0, 1);
+  text-shadow: .3vw -.3vw .5vw rgba(0, 0, 0, 1);
 }
 
 .further-detail-item {
@@ -764,10 +764,15 @@ background-size: 100px 100px;
 
   .listed-project {
     flex-direction: column;
+    margin-bottom: 15vw;
   }
 
   .listed-project-link {
     margin-bottom: 5vw;
+  }
+
+  .listed-project-image-container {
+    font-size: 2vw;
   }
 
   .listed-project-image {

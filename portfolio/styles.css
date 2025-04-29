@@ -309,7 +309,7 @@ header {
 
 .button:hover {
   transform: scale(1.10);
-  font-weight: 400;;
+  font-weight: 400;
   transition: all 0.2s ease-in-out;
 }
 
@@ -317,13 +317,13 @@ header {
 #fire-container-two,
 #fire-container-three,
 #fire-container-four {
-  font-size: 2vw;
+  font-size: 1vw;
   filter: blur(var(--blur));
   -webkit-filter: blur(var(--blur));
   position: relative;
-  top: 13vw;
-  left: -1vw;
-  width: 30vw;
+  top: 13em;
+  left: -.5em;
+  width: 24em;
   height: 0;
   z-index: 0;
   pointer-events: none;

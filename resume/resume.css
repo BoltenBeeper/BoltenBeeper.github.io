@@ -244,11 +244,6 @@ header li + li a {
     transition: all .2s ease-in-out;
 }
 
-.box2-header:hover {
-    box-shadow: 0px 0px 3vw rgba(128, 16, 16);
-    transition: all .2s ease-in-out;
-}
-
 .experience-header {
     width: 75%;
     border-top: rgb(125, 75, 75) 0.2vw solid;
@@ -681,7 +676,13 @@ header li + li a {
     }
 }
 
-
+/* ANYTHING LARGER THAN PHONE */
+@media (min-width: 769px) {
+    .box2-header:hover {
+        box-shadow: 0px 0px 3vw rgba(128, 16, 16);
+        transition: all .2s ease-in-out;
+    }
+  }
 
 /* PHONE FORMAT */
 @media (max-width: 768px) {
@@ -760,16 +761,35 @@ header li + li a {
         width: 100%;
     }
 
-    .skills-list ul {
-        list-style: none;
-    }
-
     .skills-list {
         width: 100%;
         text-align: center;
         height: auto;
         margin-top: 0;
+        margin-bottom: 5vw;
         font-size: 4.5vw;
+    }
+
+    .skills-list h3{
+        margin-bottom: 5vw;
+    }
+
+    .skills-list ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: left;
+        text-align: left;
+        width: fit-content;
+        padding: 4vw;
+        border-inline: white .3vw solid;
+        border-radius: 10vw;
+        gap: 1em;
+    }
+
+    .skills-list li {
+        display: flex;
+        margin: 0;
     }
 
     .experience-cards, .education-cards {
