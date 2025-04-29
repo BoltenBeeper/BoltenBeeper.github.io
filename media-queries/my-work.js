@@ -25,3 +25,11 @@ window.addEventListener('load', () => { // Handles nav map text disappearing aft
         message.style.opacity = '0';
     }, 5000);
 });
+
+// Toggle the hover-simulated class on tap for touch screens (only for resolutions 768px or lower)
+if (window.matchMedia('(max-width: 768px)').matches) {
+    const navMap = document.querySelector('.nav-map');
+    navMap.addEventListener('click', () => {
+        navMap.classList.toggle('hover-simulated');
+    });
+}

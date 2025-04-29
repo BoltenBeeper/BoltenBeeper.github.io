@@ -89,7 +89,7 @@ header li + li a {
   padding: 0;
   margin: 0;
   gap: 0;
-  z-index: 999 ;
+  z-index: 999;
 
   width: 8em;
   height: auto;
@@ -135,11 +135,6 @@ header li + li a {
   transition: all var(--transition-speed) ease-in-out;
 }
 
-.nav-map:hover .nav-map-overflow-container {
-  right: 0;
-  transition: all var(--transition-speed) ease-in-out;
-}
-
 .nav-map-image {
   position: absolute;
   top: 0;
@@ -150,11 +145,6 @@ header li + li a {
   aspect-ratio: 1 / 1;
   background-size: cover;
   background-position: center;
-  transition: all var(--transition-speed) ease-in-out;
-}
-
-.nav-map:hover .nav-map-image {
-  right: 0em;
   transition: all var(--transition-speed) ease-in-out;
 }
 
@@ -169,11 +159,6 @@ header li + li a {
   background-size: cover;
   background-position: center;
   pointer-events: none;
-  transition: all var(--transition-speed) ease-in-out;
-}
-
-.nav-map:hover .nav-rolled-map-image {
-  right: -3em;
   transition: all var(--transition-speed) ease-in-out;
 }
 
@@ -205,19 +190,6 @@ header li + li a {
   z-index: 1001;
   pointer-events: none;
   transition: all var(--transition-speed) ease-in-out;
-}
-
-.nav-map:hover .nav-map-list {
-  pointer-events: all;
-  opacity: 1;
-  transition: all var(--transition-speed) ease-in-out;
-}
-
-.nav-map-list li:hover {
-  background-color: rgba(0, 0, 0, .5);
-  color: rgb(200, 45, 45);
-  transition: all 0.2s ease-in-out;
-  cursor: default;
 }
 
 .nav-map-list li {
@@ -446,6 +418,8 @@ background-size: 100px 100px;
   margin-bottom: 7.5vw;;
 }
 
+/* CREDIT: Picture frame styling code adapted from Saidel López at https://medium.com/@saishaddai/til-css-to-draw-a-frame-from-a-picture-2b0cfcf67c9a */
+
 .listed-project-image-container {
   width: 100%;
   font-size: 1vw;  /* Only thing needing adjustment for changing thickness of frame. Maintains scalability for any size with one quick adjustment. */
@@ -582,6 +556,7 @@ background-size: 100px 100px;
 /* FOOTER */
 
 .footer {
+  position: relative;
   margin: auto;
   padding-top: 25%;
   padding-bottom: 2%;
@@ -592,6 +567,7 @@ background-size: 100px 100px;
   background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png);
   background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
   color: white;
+  z-index: 1001;
 }
 
 .footer-content {
@@ -692,6 +668,34 @@ background-size: 100px 100px;
   .nav-map-list {
     top: 10em;
   }
+
+  .nav-map:hover .nav-map-overflow-container {
+    right: 0;
+    transition: all var(--transition-speed) ease-in-out;
+  }
+  
+  .nav-map:hover .nav-map-image {
+    right: 0;
+    transition: all var(--transition-speed) ease-in-out;
+  }
+  
+  .nav-map:hover .nav-rolled-map-image {
+    right: -3em;
+    transition: all var(--transition-speed) ease-in-out;
+  }
+  
+  .nav-map:hover .nav-map-list {
+    pointer-events: all;
+    opacity: 1;
+    transition: all var(--transition-speed) ease-in-out;
+  }
+  
+  .nav-map-list li:hover {
+    background-color: rgba(0, 0, 0, .5);
+    color: rgb(200, 45, 45);
+    transition: all 0.2s ease-in-out;
+    cursor: default;
+  }
 }
 
 /* PHONE FORMAT */
@@ -724,6 +728,27 @@ background-size: 100px 100px;
 
   .nav-map-list {
     bottom: 10em;
+  }
+
+  .nav-map.hover-simulated .nav-map-overflow-container {
+    right: 0;
+    transition: all var(--transition-speed) ease-in-out;
+  }
+
+  .nav-map.hover-simulated .nav-map-image {
+    right: 0em;
+    transition: all var(--transition-speed) ease-in-out;
+  }
+
+  .nav-map.hover-simulated .nav-rolled-map-image {
+    right: -3em;
+    transition: all var(--transition-speed) ease-in-out;
+  }
+
+  .nav-map.hover-simulated .nav-map-list {
+    pointer-events: all;
+    opacity: 1;
+    transition: all var(--transition-speed) ease-in-out;
   }
 
   .header-container {
