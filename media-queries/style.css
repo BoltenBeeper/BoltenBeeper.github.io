@@ -228,7 +228,6 @@ header li + li a {
 
 .introduction-section {
   width: 100%;
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -237,7 +236,6 @@ header li + li a {
 }
 
 .introduction-content {
-  /* width: 75%; */
   margin: auto;
   margin-block: 5vw;
   padding-inline: 12.5%;
@@ -411,7 +409,7 @@ background-size: 100px 100px;
   display: flex;
   flex-direction: row;
   text-align: center;
-  width: 80%;
+  width: 75%;
   height: min-content;
   margin-top: 0%;
   padding: 1vw;
@@ -433,7 +431,7 @@ background-size: 100px 100px;
   border-left-color: #eee;  /* #eee */
   border-right-color: #eee; /* #eee */
   border-top-color: #fff; /* #ddd */
-  box-shadow: 0 0 1em 0 rgba(0, 0, 0, .25) inset, 1em -1.5em .5em .1em rgba(0, 0, 0, .25);
+  box-shadow: .4em -.6em 1em 0 rgba(0, 0, 0, .25) inset, 1em -1.5em .5em .1em rgba(0, 0, 0, .25);
 
   box-sizing: border-box;
   margin: auto;
@@ -497,7 +495,6 @@ background-size: 100px 100px;
 .listed-project-name {
   font-size: 1.9em;
   font-weight: 500;
-  margin-right: 1vw;
   font-style: italic;
   text-decoration: underline;
 }
@@ -508,7 +505,6 @@ background-size: 100px 100px;
   justify-content: space-between;
   font-size: 1em;
   font-weight: 300;
-  margin-right: 1vw;
   /* text-decoration: underline; */
   color: rgb(200, 200, 200);
   text-shadow: .3vw -.3vw .5vw rgba(0, 0, 0, 1);
@@ -526,13 +522,34 @@ background-size: 100px 100px;
 
 .listed-project-language-logo {
   width: 1.5em;
-  /* font-size: 10px; */
   aspect-ratio: 1 / 1;
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 50%;
-  /* box-shadow: 0px 0px .3vw rgba(0, 0, 0, 1); */
   align-items: center;
+}
+
+.project-buttons {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 1vw;
+}
+
+.project-button {
+    padding: .5em 1em;
+    font-size: .8em;
+    font-weight: 500;
+    color: white;
+    width: 100%;
+    background-color: rgb(100, 8, 8);
+    border-radius: 0.5em;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: none;
+    box-shadow: -.4em .6em 1em 0 rgba(0, 0, 0, .25) inset, .2em -.3em .5em .1em rgba(0, 0, 0, .25);
 }
 
 /* .listed-project-link {
