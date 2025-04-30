@@ -340,10 +340,10 @@ p .emphasise {
 
 .background-container-bottom {
   background:
-radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0,
-radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 8%, hsla(0, 100%, 20%, 0) 10%) 50px 50px,
-radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 50px 0,
-radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 0 50px,
+radial-gradient(hsl(0, 100%, 18%) 4%, hsl(0, 100%, 18%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0,
+radial-gradient(hsl(0, 100%, 18%) 4%, hsl(0, 100%, 18%) 8%, hsla(0, 100%, 20%, 0) 10%) 50px 50px,
+radial-gradient(hsla(0, 100%, 14%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 50px 0,
+radial-gradient(hsla(0, 100%, 14%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 0 50px,
 radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 50px 0,
 radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 100px 50px,
 radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 0 0,
@@ -559,10 +559,11 @@ background-size: 100px 100px;
 .project-button {
   padding: .5em .5em;
   font-size: .8em;
-  font-weight: 500;
+  font-weight: 200;
+  font-style: italic;
   color: white;
   width: 100%;
-  background-color: rgb(100, 8, 8);
+  background-color: rgb(25, 8, 8);
   border-radius: 0.5em;
   text-decoration: none;
   text-align: center;
@@ -583,27 +584,37 @@ background-size: 100px 100px;
 
 .project-button-glow, .project-button-container-glow {
   overflow: hidden;
-  height: 2.5em;
-  background-color: rgba(100, 8, 8, 0);
   border-radius: 0.5em;
   /* box-shadow: 0 0 .2em .1em rgba(0, 0, 0, .25); */
   /* z-index: 0; */
 }
 
-/* .project-button.glow {
-  height: 200px;
-  padding: .5em .5em;
-} */
-
 .project-button-container-glow {
   overflow: hidden;
-  box-shadow: .2em -.3em .5em .1em rgba(0, 0, 0, .25);
+  height: 2.025em;
+  background-color: rgb(25, 8, 8);
+  box-shadow: -.4em .6em .5em 0 rgba(0, 0, 0, .25) inset, .4em -.6em .5em 0 rgba(70, 70, 70, 0.25) inset, .2em -.3em .5em .1em rgba(0, 0, 0, .25);
   /* Glow Blur */
   filter: blur(0px);
+  transition: all 0.2s ease-in-out;
+}
+
+.project-button-container-glow:hover {
+  box-shadow: -.4em .6em .3em 0 rgba(0, 0, 0, .25) inset, .4em -.6em .3em 0 rgba(0, 0, 0, .25) inset, 0 0 .2em .1em rgba(0, 0, 0, .25);
+  transition: all 0.3s ease-in-out;
+}
+
+.project-button-container-glow:hover .project-button-glow {
+  font-size: .78em;
+  transition: all 0.3s ease-in-out;
+}
+
+.project-button-container-glow:hover .project-button-glow:after {
+  box-shadow: -.205em .405em .3em 0 rgba(0, 0, 0, .25) inset, .205em -.405em .3em 0 rgba(0, 0, 0, .25) inset, 0 0 .2em .1em rgba(0, 0, 0, .25);
+  transition: all 0.3s ease-in-out;
 }
 
 .project-button-glow {
-  padding: .5em .5em;
   font-size: .8em;
   font-weight: 500;
   color: white;
@@ -612,7 +623,6 @@ background-size: 100px 100px;
   text-align: center;
   text-shadow: none;
   /* box-shadow: -.4em .6em 1em 0 rgba(0, 0, 0, .25) inset, .2em -.3em .5em .1em rgba(0, 0, 0, .25); */
-  transition: all 0.2s ease-in-out;
 }
 
 .project-button-glow:before, .project-button-container-glow:before {
@@ -628,7 +638,7 @@ background-size: 100px 100px;
 	background-repeat: no-repeat;
 	background-position: 0 0;
   /*border color, change middle color*/
-	background-image: conic-gradient(rgba(0,0,0,0), #ed1919, rgba(0,0,0,0) 25%);
+	background-image: conic-gradient(rgba(0,0,0,0), #ff0000, rgba(0,0,0,0) 25%);
   /* change speed here */
 	animation: rotate 3s linear infinite;
 }
@@ -637,19 +647,22 @@ background-size: 100px 100px;
 	content: 'Read More';
   /* z-index: -1; */
   text-align: center;
+  font-weight: 200;
+  font-style: italic;
   align-content: center;
 	position: absolute;
 	/* z-index: -1; */
   /* border width */
-	left: 5px;
-	top: 5px;
+	left: .195em; /* 5px on a 2k screen */
+	top: .195em;
   /* double the px from the border width left */
-	width: calc(100% - 10px);
-	height: calc(100% - 10px);
+	width: calc(100% - .39em); /* 10px */
+	height: calc(100% - .39em);
   
-	background: rgb(100, 8, 8);
-  box-shadow: -.4em .6em .5em 0 rgba(0, 0, 0, .25) inset, .4em -.6em .5em 0 rgba(70, 70, 70, 0.25) inset, .2em -.3em .5em .1em rgba(0, 0, 0, .25);
+	background: rgb(25, 8, 8);
+  box-shadow: -.205em .405em .5em 0 rgba(0, 0, 0, .25) inset, .205em -.405em .5em 0 rgba(70, 70, 70, 0.25) inset, .2em -.3em .5em .1em rgba(0, 0, 0, .25);
   border-radius: 0.5em;
+  transition: all 0.2s ease-in-out;
 }
 
 @keyframes rotate {
@@ -944,6 +957,7 @@ background-size: 100px 100px;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
     margin-block: 2vw;
     padding-inline: 0;
   }
@@ -954,6 +968,22 @@ background-size: 100px 100px;
 
   .project-button:hover {
     font-size: .88em;
+  }
+
+  .project-button-container-glow {
+    width: 30%;
+    height: 2.256em;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .project-button-glow {
+    font-size: .9em;
+  }
+  
+  .project-button-container-glow:hover .project-button-glow {
+    font-size: .88em;
+    transition: all 0.3s ease-in-out;
   }
 
   .footer {
