@@ -493,10 +493,10 @@ background-size: 100px 100px;
 
 .listed-project-description {
   padding: 2%;
-  border-left:rgb(150, 8, 8) .4em double;
+  border-right:rgb(150, 8, 8) .4em double;
   border-top: rgb(150, 8, 8) .4em double;
-  border-top-right-radius: 2em;
-  border-bottom-left-radius: 10%;
+  border-top-left-radius: 10%;
+  border-bottom-right-radius: 2em;
 }
 
 .listed-project-name {
@@ -554,11 +554,11 @@ background-size: 100px 100px;
   padding-inline: 1em;
   gap: 1em;
   
-  padding: 2%;
+  /* padding: 2%;
   border-left:rgb(150, 8, 8) .4em double;
   border-top: rgb(150, 8, 8) .4em double;
   border-top-right-radius: 10%;
-  border-bottom-left-radius: 10%;
+  border-bottom-left-radius: 10%; */
 }
   
 .project-button-container {
@@ -948,6 +948,12 @@ background-size: 100px 100px;
   .listed-project-content {
     margin-left: 0vw;
   }
+
+  
+
+.listed-project-description {
+  padding-left: 5%;
+}
   
   .listed-project-details {
     display: flex;
