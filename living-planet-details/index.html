@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="styles.css?v=1.0"> <!-- The ?v=1.0 ensures the latest version of the css file is used when updated. This is to solve an issue I was having with the CSS not rendering when reloading the html or the page. -->
 </head>
 <body>
+
+    <div id="image-overlay" class="hidden">
+        <div class="overlay-content">
+            <button id="prev-image" class="nav-arrow">&lt;</button>
+            <img id="overlay-image" src="" alt="Enlarged Preview">
+            <button id="next-image" class="nav-arrow">&gt;</button>
+        </div>
+        <button id="close-overlay" class="close-button">X</button>
+    </div>
+    
     <main>
 
         <!-- Header Section -->

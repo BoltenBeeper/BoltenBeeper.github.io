@@ -35,6 +35,70 @@ h1, h2, h3, h4, h5, h6 {
     text-align: left;
 } */
 
+/* OVERLAY STYLES */
+
+#image-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+#image-overlay.hidden {
+    display: none;
+}
+
+.overlay-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+}
+
+#overlay-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.nav-arrow {
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+#prev-image {
+    left: 10px;
+}
+
+#next-image {
+    right: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2001;
+}
+
 /* HEADER */
 
 header {
@@ -356,6 +420,22 @@ header a:hover {
 
 /* PHONE FORMAT */
 @media (max-width: 768px) {
+    .nav-arrow {
+        font-size: 5rem;
+    }
+
+    #prev-image {
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #next-image {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
   header {
       height: 10vw;
   }
