@@ -10,6 +10,9 @@
 }
 
 body {
+    --header-height: 4vw;
+    font-size: 1vw;
+    
     background-color: rgb(30, 40, 75);
     background-image:
         radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
@@ -38,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 /* OVERLAY STYLES */
 
 #image-overlay {
+    font-size: 1vw;
     position: fixed;
     top: 0;
     left: 0;
@@ -59,14 +63,18 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
 }
 
 #overlay-image {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 70vw;
+    max-height: 75vh;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    margin: auto;
+    user-select: none;
 }
 
 .nav-arrow {
@@ -74,27 +82,34 @@ h1, h2, h3, h4, h5, h6 {
     background: none;
     border: none;
     color: white;
-    font-size: 3rem;
+    font-size: 12em;
+    /* margin-inline: .2em; */
     cursor: pointer;
+    user-select: none;
     z-index: 2001;
 }
 
 #prev-image {
-    left: 10px;
+    left: 5vw;
 }
 
 #next-image {
-    right: 10px;
+    right: 5vw;
 }
 
 .close-button {
     position: absolute;
-    top: 5vh;
-    right: 5vw;
-    background: none;
+    top: 3em;
+    right: 4em;
+
+    width: 3em;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center 0vw;
+    background-repeat: no-repeat;
+
     border: none;
     color: white;
-    font-size: 2rem;
     cursor: pointer;
     z-index: 2001;
 }
@@ -102,11 +117,11 @@ h1, h2, h3, h4, h5, h6 {
 /* HEADER */
 
 header {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    height: 4vw;
+    height: var(--header-height);
     background-color: black;
     display: flex;
     flex-direction: row;
@@ -151,7 +166,7 @@ header li + li a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 35vw;
+    height: calc(100vh - var(--header-height, 4vw));
 }
 
 .preview-image {
@@ -166,24 +181,25 @@ header li + li a {
 }
 
 .preview-image-section h1 {
-    position: absolute;
+
     text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 1);
     font-size: 6vw;
     font-weight: 100;
-    cursor: default;
     font-family: Georgia, 'Times New Roman', Times, serif;
+
+    cursor: default;
     z-index: 1;
 }
 
-/* .project-name {
+.project-name {
   filter:blur(0vw);
   transition: all 0.5s ease-in-out;
 }
 
 .project-name:hover {
-  filter:blur(100vw);
+  filter:blur(10vw);
   transition: all 0.5s ease-in-out;
-} */
+}
 
 /* SUMMARY SECTION */
 
@@ -356,7 +372,7 @@ header a:hover {
   color: rgb(64, 135, 64);
 }
 
-.preview-image {
+.preview-image-section {
     box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
 }
 
@@ -378,112 +394,127 @@ header a:hover {
 
 /* Media Queries for smaller screens */
 
+@media (max-aspect-ratio: 1.4 / 1) {
+
+    .preview-image-section {
+        height: 40vw;
+    }
+
+    .preview-image {
+        background-size: contain;
+    }
+}
+
 /* TABLET FORMAT */
 
 @media (max-width: 1200px) {
-  header {
-      height: 6vw;
-  }
+    body {
+        --header-height: 6vw;
+    }
 
-  header li {
-      font-size: 1.8vw;
-  }
+    header li {
+        font-size: 1.8vw;
+    }
 
-  header a:hover {
-      font-size: 2vw;
-  }
+    header a:hover {
+        font-size: 2vw;
+    }
 
-  .footer {
-      font-size: 1.5vw;
-  }
+    .footer {
+        font-size: 1.5vw;
+    }
 }
 
 @media (max-width: 992px) {
-  header {
-      height: 7vw;
-  }
+    body {
+        --header-height: 7vw;
+    }
 
-  header li {
-      font-size: 2vw;
-  }
+    header li {
+        font-size: 2vw;
+    }
 
-  header a:hover {
-      font-size: 2.2vw;
-  }
+    header a:hover {
+        font-size: 2.2vw;
+    }
 
-  .footer {
-      font-size: 1.8vw;
-  }
+    .footer {
+        font-size: 1.8vw;
+    }
 }
 
 
 
 /* PHONE FORMAT */
 @media (max-width: 768px) {
+    body {
+        --header-height: 10vw;
+    }
+
     .nav-arrow {
         font-size: 5rem;
     }
 
     #prev-image {
-        top: 10px;
+        top: 10vh;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) rotate(90deg);
     }
 
     #next-image {
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: 10vh;
+        right: 50%;
+        transform: translateX(50%) rotate(90deg);
     }
 
-  header {
-      height: 10vw;
-  }
+    header li {
+        font-size: 3vw;
+    }
 
-  header li {
-      font-size: 3vw;
-  }
+    header a:hover {
+        font-size: 3.5vw;
+    }
 
-  header a:hover {
-      font-size: 3.5vw;
-  }
+    .preview-image-section h1 {
+        font-size: 12vw;
+    }
 
-  .footer {
-      font-size: 2.5vw;
-  }
+    .footer {
+        font-size: 2.5vw;
+    }
 
-  .resume-icon {
-      width: 15vw;
-      height: 15vw;
-      border-radius: 25%;
-      border: white .5vw solid;
-  }
+    .resume-icon {
+        width: 15vw;
+        height: 15vw;
+        border-radius: 25%;
+        border: white .5vw solid;
+    }
 }
 
 @media (max-width: 576px) {
-  header {
-      height: 12vw;
-  }
+    body {
+        --header-height: 12vw;
+    }
 
-  header li {
-      font-size: 3.5vw;
-  }
+    header li {
+        font-size: 3.5vw;
+    }
 
-  header a:hover {
-      font-size: 4vw;
-  }
+    header a:hover {
+        font-size: 4vw;
+    }
 }
 
 @media (max-width: 480px) {
-  header {
-      height: 14vw;
-  }
+    body {
+        --header-height: 14vw;
+    }
 
-  header li {
-      font-size: 3.8vw;
-  }
+    header li {
+        font-size: 3.8vw;
+    }
 
-  header a:hover {
-      font-size: 4.5vw;
-  }
+    header a:hover {
+        font-size: 4.5vw;
+    }
 }
