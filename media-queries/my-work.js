@@ -5,17 +5,14 @@ document.querySelector('.NM0').addEventListener('click', () => {
 
 // Function to handle the click event on the "Read More" button
 document.querySelector('.NM1').addEventListener('click', () => {
-    // Scroll to the summary section
     document.querySelector('.living-planet').scrollIntoView({ behavior: 'smooth' });
 });
 
 document.querySelector('.NM2').addEventListener('click', () => {
-    // Scroll to the summary section
     document.querySelector('.max1m').scrollIntoView({ behavior: 'smooth' });
 });
 
 document.querySelector('.NM3').addEventListener('click', () => {
-    // Scroll to the summary section
     document.querySelector('.charging-box').scrollIntoView({ behavior: 'smooth' });
 });
 

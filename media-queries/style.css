@@ -415,8 +415,8 @@ background-size: 100px 100px;
   text-align: center;
   width: 75%;
   height: min-content;
-  margin-top: 0%;
   padding: 1vw;
+  padding-top: 7.5vw;
   margin-bottom: 7.5vw;;
 }
 
@@ -467,7 +467,7 @@ background-size: 100px 100px;
   }
 }
 
-/* CREDIT: Picture frame styling code taken from an anonymous Fiddle user at https://jsfiddle.net/cybPh/ */
+/* CREDIT: String and nail styling code taken from an anonymous Fiddle user at https://jsfiddle.net/cybPh/ */
 
 /* String */
 .listed-project-image:before {
@@ -488,8 +488,8 @@ background-size: 100px 100px;
 .listed-project-image:after {
     background: #555;
     border-radius: 50%;
-    box-shadow: inset 0 .1em .1em hsla(0,0%,100%,.3),
-                .075em -.1em .4em hsla(0,0%,0%,.6);
+    box-shadow: inset 0 .1em .1em hsla(0, 0%, 100%, .3),
+                .075em -.1em .4em hsla(0, 0%, 0%, .6);
     content: '';
     height: .6em;
     aspect-ratio: 1 / 1;
@@ -965,6 +965,7 @@ background-size: 100px 100px;
 
   .listed-project {
     flex-direction: column;
+    padding-top: 20vw;
     margin-bottom: 20vw;
   }
 
