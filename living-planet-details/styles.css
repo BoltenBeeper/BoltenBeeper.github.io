@@ -231,16 +231,17 @@ header li + li a {
 /* SUMMARY SECTION */
 
 .summary-section {
+    font-size: 1vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2vw;
-    padding: 5vw 20vw;
+    padding: 5vw 15vw;
 }
 
 .summary-section h2 {
-    font-size: 4vw;
+    font-size: 4em;
     font-weight: 200;
     text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 1);
 
@@ -262,8 +263,8 @@ header li + li a {
     flex-direction: row;
     justify-content: left;
     align-items: start;
+    margin-block: 5vw;
     gap: 10vw;
-    /* padding: 5vw 5vw; */
 }
 
 .summary-content p {
@@ -295,43 +296,30 @@ header li + li a {
 }
   
 .info-card {
+    font-size: 1vw;
     display: flex;
     flex-direction: row;
     text-align: center;
-    width: 80%;
+    width: 90%;
     margin-top: 0%;
     padding: 1vw;
     margin-bottom: 7.5vw;;
 }
   
-/* .image-container {
-    width: 30vw;
-    height: 30vw;
-    display: flex;
-    margin: auto;
-    padding: 1.5vw;
-}
-  
-.image {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    margin: auto;
-    background-size: cover;
-    background-position: center;
-} */
-  
 .image-container {
     width: 100%;
-    height: 25vw;
+    max-width: 30vw;
+    max-height: fit-content;
     display: flex;
     margin: auto;
-    padding: 1.5vw;
+    margin-inline: 1.5vw;
 }
   
 .image {
-    width: auto;
-    height: 100%;
+    width: 30vw;
+    max-height: fit-content;
+    aspect-ratio: initial;
+    max-height: fit-content;
     display: flex;
     margin: auto;
     background-size: cover;
@@ -349,6 +337,7 @@ header li + li a {
     margin-top: 1vw;
     font-size: 1.5em;
     line-height: 1.8em;
+    margin-inline: 1.5vw;
 }
   
 .info-hook {
@@ -374,7 +363,7 @@ header li + li a {
 
 .footer {
   margin: auto;
-  padding-top: 8%;
+  padding-top: 25%;
   padding-bottom: 2%;
   display: flex;
   flex-direction: column;
@@ -559,6 +548,47 @@ header a:hover {
 
     .preview-image-section h1 {
         font-size: 12vw;
+    }
+
+    .summary-section {
+        font-size: 2vw;
+        padding: 5vw 5vw;
+    }
+
+    .summary-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5vw;
+        /* padding: 5vw 5vw; */
+    }
+
+    .info-card {
+        font-size: 2vw;
+        flex-direction: column;
+        align-items: center;
+        width: 75vw;
+    }
+
+    .info-card.right{
+        flex-direction:column-reverse;
+        align-items: center;
+    }
+  
+    .image-container {
+        max-width: 75vw;
+        height: 75vw;
+        max-height: fit-content;
+        margin-block: 5vw;
+    }
+  
+    .image {
+        width: 75vw;
+        max-height: fit-content;
+    }
+    
+    .info-card p {
+        margin-block: 5vw;
     }
 
     .footer {
