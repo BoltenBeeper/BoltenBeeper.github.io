@@ -571,12 +571,11 @@ background-size: 100px 100px;
 }
 
 .listed-project-language-logo {
-  width: 1.5em;
+  width: 1.3em;
   aspect-ratio: 1 / 1;
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 50%;
-  align-items: center;
 }
 
 .project-buttons {

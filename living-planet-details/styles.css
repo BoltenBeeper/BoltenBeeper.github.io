@@ -242,8 +242,7 @@ header li + li a {
 
 .summary-section h2 {
     font-size: 4em;
-    font-weight: 200;
-    text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 1);
+    font-weight: 500;
 
     transition: all 0.3s ease-in-out;
 }
@@ -251,7 +250,6 @@ header li + li a {
 .summary-section h2:hover {
   cursor: default;
   font-size: 4.2vw;
-  font-weight: 500;
   text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 1);
 
   transition: all 0.3s ease-in-out;
@@ -260,29 +258,56 @@ header li + li a {
 .summary-content {
     font-size: 1.4em;
     display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-block: 5vw;
-    gap: 10vw;
+    gap: 5vw;
 }
 
 .summary-content p {
-    width: 75%;
     margin: 0;
+    text-shadow: 0vw 0vw 1vw rgb(64, 135, 64);
 }
 
 .summary-content ul {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5em;
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: left;
     justify-self: left;
-    min-width: max-content;
-    margin: 0;
+    margin: auto;
     padding: 0;
 }
 
 .summary-content ul li {
+    display: flex;
+    flex-direction: row;
     font-weight: 500;
-    margin-bottom: 1vw;
+    margin: auto;
+    margin-left: 0;
+    margin-bottom: 1em;
     text-align: left;
+    justify-self: left;
+    text-shadow: 0 1em 1em rgba(0, 0, 0, 1);
+}
+
+.summary-content ul li strong{
+    margin-left: 0;
+    text-align: left;
+    justify-self: left;
+}
+
+.listed-project-language-logo {
+  width: 1.4em;
+  aspect-ratio: 1 / 1;
+  margin: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
 }
 
 /* DETAILS SECTION */
@@ -342,7 +367,7 @@ header li + li a {
   
 .info-hook {
     cursor: default;
-    font-size: 3vw;
+    font-size: 2em;
     font-weight: 500;
     margin-right: 1vw;
     font-style: italic;
@@ -423,18 +448,25 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     color: rgb(255, 220, 50);
+    text-shadow: 0 0 1em rgb(255, 220, 50);
 }
 
 p {
-  font-family: 'Poppins', sans-serif;
+    line-height: 1.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 0 0 1em rgb(64, 135, 64);
 }
 
 header a:hover {
-  color: rgb(64, 135, 64);
+    color: rgb(64, 135, 64);
 }
 
 .preview-image-section {
     box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
+}
+
+.summary-section h2:hover {
+  text-shadow: 0 0 1em rgb(255, 220, 50), 0 1em 1em rgba(0, 0, 0, 1);
 }
 
 .below-preview {
@@ -447,10 +479,24 @@ header a:hover {
       linear-gradient(180deg, rgba(30,40,75,1) 0%, rgb(20, 25, 50) 100%);
   background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
   background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
+}
+
+.summary-content ul li {
+    display: flex;
+    flex-direction: row;
+    font-weight: 500;
+    margin: auto;
+    margin-left: 0;
+    margin-bottom: 1em;
+    text-align: left;
+    justify-self: left;
+    text-shadow: 0 0 1em rgb(64, 135, 64);
 }
 
 .info-hook {
-  color: rgb(255, 220, 50);
+    color: rgb(255, 220, 50);
+    text-shadow: 0 0 1em rgb(255, 220, 50);
 }
 
 /* Media Queries for smaller screens */
@@ -552,7 +598,7 @@ header a:hover {
 
     .summary-section {
         font-size: 2vw;
-        padding: 5vw 5vw;
+        padding: 5vw 12.5vw;
     }
 
     .summary-content {
