@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Last Defence</title>
+    <link rel="stylesheet" href="styles.css?v=1.0"> <!-- The ?v=1.0 ensures the latest version of the css file is used when updated. This is to solve an issue I was having with the CSS not rendering when reloading the html or the page. -->
+</head>
+<body>
+
+    <div id="image-overlay" class="hidden">
+        <div class="overlay-content">
+            <h3>Scroll to sooom and click and hold to drag image around.</h3>
+            <button id="prev-image" class="nav-arrow">&lt;</button>
+            <div id="zoom-container">
+                <img id="overlay-image" src="" alt="Enlarged Preview">
+            </div>
+            <button id="next-image" class="nav-arrow">&gt;</button>
+        </div>
+        <button id="close-overlay" class="close-button" style="background-color: rgba(0, 0, 0, 0); background-image: url(../images/X_Icon.png);"></button>
+    </div>
+    
+    <main>
+
+        <!-- Header Section -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../portfolio/index.html">Home</a></li>
+                    <li><a href="../resume/index.html">Resume</a></li>
+                    <li><a href="../media-queries/index.html">My Work</a></li>
+                    <li><a href="../contact-me/index.html">Reach Me</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="preview-image-section">
+            <div class="preview-image" style="background-image: url('../images/LD_Gameplay_Loop.gif');"></div>
+            <h1 class="project-name">Last Defence</h1>
+        </section>
+        <div class="below-preview">
+            <section class="summary-section">
+                <h2>Project Summary</h2>
+                    <div class="summary-content">
+                        <ul class="details-list">
+                            <li><strong>Languages Used</strong>: Python [<span><div class="listed-project-language-logo" style="background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg)"></div></span>]</li>
+                            <li><strong>Engine</strong>: Custom Engine</li>
+                            <li><strong>Art Style</strong>: Pixel Art</li>
+                            <li><strong>Platforms</strong>: PC, Mac</li>
+                        </ul>
+                        <p>This is a space game I made for school originally called Star Battles, with the new update came a name change. The goal of the game is to get as many points as possible before the time runs out. Any score 0 or below is considered a loss, and a score above that counts as a win. Right now the time limit is short for show, but in the final version it will be extended.</p>
+                    </div>
+            </section>
+    
+            <section class="details-section">
+                <div class="info-card left">
+                    <div class="image-container">
+                        <img class="image one" src="../images/Last_Defence_Title_Screen.png"></img>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-description"><span class="info-hook">Custom Engine</span>I created the engine for this game myself. This text will include more information about how I did it.</p>
+                    </div>
+                </div>
+                <div class="info-card right">
+                    <div class="info-content">
+                        <p class="info-description"><span class="info-hook">Lighting Simulation</span>This game uses a system for lighting by my design which plays a role in gameplay. Light sources light up caves and dark structures, but if an area is too dark, the light wont illuminate everything. This creates a mechanic where the player can see that there is light in the distance, but must get closer to see what the light covers.</p>
+                    </div>
+                    <div class="image-container">
+                        <img class="image two" src="../images/LD_Gameplay_2.png"></img>
+                    </div>
+                </div>
+                <div class="info-card left">
+                    <div class="image-container">
+                        <img class="image three" src="../images/LD_Pause_Screen.png"></img>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-description"><span class="info-hook">My Animations</span>Fun fact: This is only a placeholder character, but it's modeled after me.</p>
+                    </div>
+                </div>
+                <div class="info-card right">
+                    <div class="info-content">
+                        <p class="info-description"><span class="info-hook">New File Type</span>The maps in this game use a file type I invented that can be read and edited through a text editor. The game reads this file to know how to construct each level of the game.</p>
+                    </div>
+                    <div class="image-container">
+                        <img class="image four" src="../images/LD_Spaceship_Sheet.webp"></img>
+                    </div>
+                </div>
+                <div class="info-card left">
+                    <div class="image-container">
+                        <img class="image five" src="../images/LD_Fuel_Powerup.png"></img>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-description"><span class="info-hook">Level Generation</span>If you look closely at the text file, you'll see it's made up of tons of bracket squares '[ ]' that make up a grid. The filled in grid spaces make up an image of the stage, with each different character occupieing a space correlating to a different block sprite to put in that space. This image shows how the same part of the level looks both in the map files and in game. Notice the '[p]' grid space in the middle of the top image that relates to where the player spawns.</p>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="contact-info">
+                        <p class="centered-text">Contact me! You know you want to.</p>
+                        <ul>
+                            <li>Phone: (512) 949-8243</li>
+                            <li>Email: <a href="mailto:rileybusinesswood@gmail.com">rileybusinesswood@gmail.com</a></li>
+                            <li>LinkedIn: <a href="https://www.linkedin.com/in/riguy/" target="_blank">Riley Underwood</a></li>
+                        </ul>
+                    </div>
+                    <div class="resume-button">
+                        <a href="../images/Riley Underwood Resume.pdf" target="_blank">
+                            <img src="../images/Resume_Icon.png" alt="Resume Icon" class="resume-icon">
+                        </a>
+                        <p>Resume PDF</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- JavaScript for the page -->
+    <script src="detail-page-script.js"></script>
+
+</body>
+</html>

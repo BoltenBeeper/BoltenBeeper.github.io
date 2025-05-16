@@ -212,7 +212,6 @@ header li + li a {
     text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 1);
     font-size: 6vw;
     font-weight: 100;
-    font-family: Georgia, 'Times New Roman', Times, serif;
 
     cursor: default;
     z-index: 1;
@@ -378,12 +377,6 @@ header li + li a {
     transition: all 0.3s ease-in-out;
 }
 
-.info-hook:hover {
-    font-size: 3.1vw;
-    text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 1);
-    transition: all 0.3s ease-in-out;
-}
-
 /* FOOTER */
 
 .footer {
@@ -445,7 +438,7 @@ body {
     color: rgb(64, 135, 64);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .info-hook {
     font-family: 'Poppins', sans-serif;
     color: rgb(255, 220, 50);
     text-shadow: 0 0 1em rgb(255, 220, 50);
@@ -465,8 +458,8 @@ header a:hover {
     box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
 }
 
-.summary-section h2:hover {
-  text-shadow: 0 0 1em rgb(255, 220, 50), 0 1em 1em rgba(0, 0, 0, 1);
+.preview-image-section h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .below-preview {
@@ -482,6 +475,10 @@ header a:hover {
 box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
 }
 
+.summary-section h2:hover {
+  text-shadow: 0 0 1em rgb(255, 220, 50), 0 1em 1em rgba(0, 0, 0, 1);
+}
+
 .summary-content ul li {
     display: flex;
     flex-direction: row;
@@ -492,11 +489,6 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
     text-align: left;
     justify-self: left;
     text-shadow: 0 0 1em rgb(64, 135, 64);
-}
-
-.info-hook {
-    color: rgb(255, 220, 50);
-    text-shadow: 0 0 1em rgb(255, 220, 50);
 }
 
 /* Media Queries for smaller screens */
@@ -555,7 +547,14 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
     }
 }
 
-
+/* ANYTHING LARGER THAN PHONE */
+@media (min-width: 769px) {
+    .info-hook:hover {
+        font-size: 3.1vw;
+        text-shadow: 0 0 .5em rgb(255, 213, 0), 0vw 1vw 1vw rgba(0, 0, 0, 1);
+        transition: all 0.3s ease-in-out;
+    }
+}
 
 /* PHONE FORMAT */
 @media (max-width: 768px) {

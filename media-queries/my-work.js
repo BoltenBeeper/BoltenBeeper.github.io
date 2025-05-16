@@ -13,6 +13,10 @@ document.querySelector('.NM2').addEventListener('click', () => {
 });
 
 document.querySelector('.NM3').addEventListener('click', () => {
+    document.querySelector('.last-defence').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('.NM4').addEventListener('click', () => {
     document.querySelector('.charging-box').scrollIntoView({ behavior: 'smooth' });
 });
 
