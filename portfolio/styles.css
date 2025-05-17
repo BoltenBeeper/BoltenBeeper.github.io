@@ -255,7 +255,7 @@ header {
   font-style: italic;
   font-weight: 200;
   font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.1em;
 
   border: .5vw solid rgb(255, 255, 255);
   box-shadow: 0vw 1vw 2vw 0vw rgba(255,255,255,0.2);
@@ -440,7 +440,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.2vw; /* Adjust font size */
+  font-size: 1.2vw;
   background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
   color: white;
 }

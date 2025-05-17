@@ -3,10 +3,9 @@
 /* GLOBAL STYLES */
 
 * {
-  box-sizing: border-box;
-  margin: auto;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0;
 }
 
 body {
@@ -198,11 +197,6 @@ header li + li a {
 }
 
 .preview-image-section h1 {
-
-    text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 1);
-    font-size: 6vw;
-    font-weight: 100;
-
     cursor: default;
     z-index: 1;
 }
@@ -231,7 +225,6 @@ header li + li a {
 
 .summary-section h2 {
     font-size: 4em;
-    font-weight: 500;
 
     transition: all 0.3s ease-in-out;
 }
@@ -256,7 +249,7 @@ header li + li a {
 
 .summary-content p {
     margin: 0;
-    text-shadow: 0vw 0vw 1vw rgb(64, 135, 64);
+    line-height: 1.8em;
 }
 
 .summary-content ul {
@@ -357,7 +350,6 @@ header li + li a {
 .info-hook {
     cursor: default;
     font-size: 2em;
-    font-weight: 500;
     margin-right: 1vw;
     font-style: italic;
     text-decoration: underline;
@@ -376,7 +368,8 @@ header li + li a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.2vw; /* Adjust font size */
+  font-size: 1.2vw;
+  letter-spacing: 0.1em;
   background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png);
   background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
   color: white;
@@ -423,9 +416,13 @@ header li + li a {
 
   /* QUICK COLOR PALETTE AND FONT CUSTOMIZATION FOR ALL DETAILS PAGES */
 
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
-    color: rgb(64, 135, 64);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 220, 50);
     background-color: rgb(30, 40, 75);
     background-image:
         radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
@@ -438,9 +435,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .info-hook {
-    font-family: 'Poppins', sans-serif;
-    color: rgb(255, 220, 50);
-    text-shadow: 0 0 1em rgb(255, 220, 50);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(64, 135, 64);
+    text-shadow: 0 0 1em rgb(64, 135, 64);
+    /* color: rgb(94, 58, 18);
+    text-shadow: 0 0 1em rgb(94, 58, 18); */
+    font-weight: 600;
 }
 
 p {
@@ -458,7 +458,11 @@ header a:hover {
 }
 
 .preview-image-section h1 {
+    color: rgb(255, 220, 50);
+    text-shadow: 0 0 1em rgb(255, 220, 50);
+    font-size: 6vw;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
 }
 
 .below-preview {
@@ -550,7 +554,7 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
 @media (min-width: 769px) {
     .info-hook:hover {
         font-size: 3.1vw;
-        text-shadow: 0 0 .5em rgb(255, 213, 0), 0vw 1vw 1vw rgba(0, 0, 0, 1);
+        text-shadow: 0 0 .5em rgb(255, 213, 0);
         transition: all 0.3s ease-in-out;
     }
 }

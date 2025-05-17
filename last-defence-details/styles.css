@@ -4,10 +4,9 @@
 /* GLOBAL STYLES */
 
 * {
-  box-sizing: border-box;
-  margin: auto;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0;
 }
 
 body {
@@ -199,10 +198,7 @@ header li + li a {
 }
 
 .preview-image-section h1 {
-
-    text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 1);
     font-size: 6vw;
-    font-weight: 800;
 
     cursor: default;
     z-index: 1;
@@ -232,7 +228,6 @@ header li + li a {
 
 .summary-section h2 {
     font-size: 4em;
-    font-weight: 500;
 
     transition: all 0.3s ease-in-out;
 }
@@ -257,7 +252,7 @@ header li + li a {
 
 .summary-content p {
     margin: 0;
-    text-shadow: 0vw 0vw 1vw rgb(64, 135, 64);
+    line-height: 1.8em;
 }
 
 .summary-content ul {
@@ -377,7 +372,8 @@ header li + li a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.2vw; /* Adjust font size */
+  font-size: 1.2vw;
+  letter-spacing: 0.1em;
   background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png);
   background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
   color: white;
@@ -424,6 +420,10 @@ header li + li a {
 
   /* QUICK COLOR PALETTE AND FONT CUSTOMIZATION FOR ALL DETAILS PAGES */
 
+* {
+    font-family: 'Orbitron', sans-serif;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: rgb(255, 255, 255);
@@ -440,9 +440,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .info-hook {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     color: rgb(248, 205, 12);
     text-shadow: 0 0 1em rgb(248, 205, 12);
+    font-weight: 800;
 }
 
 p {
@@ -463,6 +464,7 @@ header a:hover {
     color: white;
     text-shadow: 0 0 1em white;
     font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
 }
 
 .below-preview {
