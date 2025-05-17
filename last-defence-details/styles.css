@@ -251,8 +251,10 @@ header li + li a {
 
 .summary-content p {
     margin: 0;
-    padding-inline: 15vw;
     line-height: 1.8em;
+    padding-inline: 2vw;
+    padding-block: 2vw;
+    margin-inline: 13vw;
 }
 
 .details-lists {
@@ -369,7 +371,6 @@ header li + li a {
 .info-content {
     display: flex;
     text-align: left;
-    margin-left: 2vw;
 }
   
 .info-card p {
@@ -377,13 +378,13 @@ header li + li a {
     margin-top: 1vw;
     font-size: 1.5em;
     line-height: 1.8em;
-    margin-inline: 1.5vw;
+    margin-inline: 2vw;
 }
   
 .info-hook {
     cursor: default;
     font-size: 2em;
-    font-weight: 500;
+    min-width: max-content;
     margin-right: 1vw;
     font-style: italic;
     text-decoration: underline;
@@ -480,6 +481,13 @@ p {
     line-height: 1.5em;
     font-family: 'Orbitron', sans-serif;
     text-shadow: 0 0 1em rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) { /*Without boxes around paragraphs this margining is better */
+    .info-hook {
+        margin:auto;
+        margin-block: 5vw;
+    }
 }
 
 header a:hover {
@@ -592,6 +600,10 @@ header a:hover {
 
 /* ANYTHING LARGER THAN PHONE */
 @media (min-width: 769px) {
+    .info-content {
+        margin-left: 2vw;
+    }
+
     .info-hook:hover {
         font-size: 3.1vw;
         text-shadow: 0 0 .5em rgb(255, 213, 0);
@@ -643,7 +655,8 @@ header a:hover {
     }
 
     .summary-content p {
-        padding-inline: 12.5vw;
+        padding-inline: 3.5vw;
+        margin-inline: 9vw;
     }
 
     .details-lists {
@@ -678,6 +691,8 @@ header a:hover {
     
     .info-card p {
         margin-block: 5vw;
+        display: flex;
+        flex-direction: column;
     }
 
     .footer {

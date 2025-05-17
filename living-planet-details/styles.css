@@ -248,8 +248,10 @@ header li + li a {
 
 .summary-content p {
     margin: 0;
-    padding-inline: 15vw;
     line-height: 1.8em;
+    padding-inline: 2vw;
+    padding-block: 2vw;
+    margin-inline: 13vw;
 }
 
 .details-lists {
@@ -366,7 +368,6 @@ header li + li a {
 .info-content {
     display: flex;
     text-align: left;
-    margin-left: 2vw;
 }
   
 .info-card p {
@@ -374,12 +375,13 @@ header li + li a {
     margin-top: 1vw;
     font-size: 1.5em;
     line-height: 1.8em;
-    margin-inline: 1.5vw;
+    margin-inline: 2vw;
 }
   
 .info-hook {
     cursor: default;
     font-size: 2em;
+    min-width: max-content;
     margin-right: 1vw;
     font-style: italic;
     text-decoration: underline;
@@ -452,22 +454,24 @@ header li + li a {
 
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: rgb(255, 220, 50);
-    background-color: rgb(30, 40, 75);
+    color: rgb(255, 216, 0);
+    /* color: rgb(255, 220, 50); */
+    background-color: rgb(0, 6, 41);
     background-image:
         radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
         radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
         radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
         radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px),
-        linear-gradient(180deg, rgba(30,40,75,1) 0%, rgba(25,30,60,1) 100%);
+        linear-gradient(180deg, rgba(0, 6, 41, 1) 0%, rgb(0, 4, 32) 100%);
     background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
     background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }
 
 h1, h2, h3, h4, h5, h6, .info-hook {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: rgb(64, 135, 64);
-    text-shadow: 0 0 1em rgb(64, 135, 64);
+    color: rgb(44, 112, 17);
+    /* color: rgb(64, 135, 64); */
+    text-shadow: 0 0 1em rgb(44, 112, 17);
     /* color: rgb(94, 58, 18);
     text-shadow: 0 0 1em rgb(94, 58, 18); */
     font-weight: 600;
@@ -476,11 +480,39 @@ h1, h2, h3, h4, h5, h6, .info-hook {
 p {
     line-height: 1.5em;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 0 0 1em rgb(64, 135, 64);
+    text-shadow: 0 0 1em rgb(255, 216, 0);
 }
 
+/* vvv If you want boxes around paragraphs vvv */
+
+.summary-content p, .info-card p {
+    /* border: 0.3em solid rgb(158, 66, 15); */
+    background: rgb(127, 51, 0);
+    border-radius: 25px;
+    box-shadow: inset 0 0 .5em .5em rgb(107, 43, 0), 0 0 .3em .5em rgb(158, 66, 15);
+}
+
+.info-card p {
+    padding-inline: 1vw;
+    padding-block: 1vw;
+}
+
+@media (max-width: 768px) {
+    .info-card p {
+        padding-inline: 3.5vw;
+        padding-block: 2vw;
+    }
+
+    .info-hook {
+        margin:auto;
+        margin-block: 2vw;
+    }
+}
+
+/* ^^^ End of paragraph box special styles ^^^ */
+
 header a:hover {
-    color: rgb(64, 135, 64);
+    color: rgb(44, 112, 17);
 }
 
 .preview-image-section {
@@ -488,28 +520,32 @@ header a:hover {
 }
 
 .preview-image-section h1 {
-    color: rgb(255, 220, 50);
-    text-shadow: 0 0 1em rgb(255, 220, 50);
+    color: rgb(255, 216, 0);
+    text-shadow: 0 0 1em rgb(255, 216, 0);
     font-size: 6vw;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 100;
 }
 
 .below-preview {
-  background-color: rgb(30, 40, 75);
+  background-color: rgb(0, 6, 41);
   background-image:
       radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
       radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
       radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
       radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px),
-      linear-gradient(180deg, rgba(30,40,75,1) 0%, rgb(20, 25, 50) 100%);
+      linear-gradient(180deg, rgba(0, 6, 41, 1) 0%, rgb(0, 4, 32) 100%);
   background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
   background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
 }
 
+.summary-section h2 {
+    font-style: italic;
+}
+
 .summary-section h2:hover {
-  text-shadow: 0 0 1em rgb(255, 220, 50), 0 1em 1em rgba(0, 0, 0, 1);
+  text-shadow: 0 0 1em rgb(255, 216, 0), 0 1em 1em rgba(0, 0, 0, 1);
 }
 
 .summary-content ul li {
@@ -521,11 +557,15 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
     margin-bottom: 1em;
     text-align: left;
     justify-self: left;
-    text-shadow: 0 0 1em rgb(64, 135, 64);
+    text-shadow: 0 0 1em rgb(44, 112, 17);
 }
 
 .summary-content ul li strong{
     font-weight: 800;
+}
+
+.image {
+    box-shadow: 0 0 1.5em .1em rgb(255, 255, 255);
 }
 
 /* Media Queries for smaller screens */
@@ -586,8 +626,11 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
 
 /* ANYTHING LARGER THAN PHONE */
 @media (min-width: 769px) {
+    .info-content {
+        margin-left: 2vw;
+    }
+
     .info-hook:hover {
-        font-size: 3.1vw;
         text-shadow: 0 0 .5em rgb(255, 213, 0);
         transition: all 0.3s ease-in-out;
     }
@@ -637,7 +680,8 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
     }
 
     .summary-content p {
-        padding-inline: 12.5vw;
+        padding-inline: 3.5vw;
+        margin-inline: 9vw;
     }
 
     .details-lists {
@@ -672,6 +716,8 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
     
     .info-card p {
         margin-block: 5vw;
+        display: flex;
+        flex-direction: column;
     }
 
     .footer {
