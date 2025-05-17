@@ -222,8 +222,7 @@ header li + li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2vw;
-    padding: 5vw 15vw;
+    padding-top: 5vw;
 }
 
 .summary-section h2 {
@@ -234,7 +233,7 @@ header li + li a {
 
 .summary-section h2:hover {
   cursor: default;
-  font-size: 4.2vw;
+  font-size: 4.2em;
   text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 1);
 
   transition: all 0.3s ease-in-out;
@@ -246,25 +245,39 @@ header li + li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-block: 5vw;
-    gap: 5vw;
+    margin-block: 7vw;
+    gap: 7vw;
 }
 
 .summary-content p {
     margin: 0;
+    padding-inline: 15vw;
     line-height: 1.8em;
 }
 
-.summary-content ul {
+.details-lists {
     display: flex;
     flex-direction: row;
-    font-size: 1.5em;
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    max-width: 100vw;
+    gap: 10vw;
+    margin: auto;
+    padding-inline: 15vw;
+}
+
+.details-list.right, .details-list.left{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
     flex-wrap: wrap;
     text-align: left;
     justify-content: left;
     justify-self: left;
     margin: auto;
+    margin-left: 0;;
+    margin-top: 0;
     padding: 0;
 }
 
@@ -282,8 +295,25 @@ header li + li a {
 
 .summary-content ul li strong{
     margin-left: 0;
+    margin-top: 0;
     text-align: left;
     justify-self: left;
+    text-decoration: underline;
+}
+
+.summary-content ul li ul {
+    display: flex;
+    flex-direction: column;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    font-weight: 500;
+    margin: auto;
+    margin-bottom: 0;
+}
+
+.summary-content ul li ul li {
+    margin-left: .3em;
+    margin-bottom: 0;
 }
 
 .listed-project-language-logo {
@@ -496,6 +526,10 @@ header a:hover {
     text-shadow: 0 0 1em rgb(255, 255, 255);
 }
 
+.summary-content ul li strong{
+    font-weight: 800;
+}
+
 .image {
     box-shadow: 0 0 2.5em .3em rgb(255, 255, 255);
 }
@@ -606,15 +640,16 @@ header a:hover {
 
     .summary-section {
         font-size: 2vw;
-        padding: 5vw 12.5vw;
     }
 
-    .summary-content {
+    .summary-content p {
+        padding-inline: 12.5vw;
+    }
+
+    .details-lists {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5vw;
-        /* padding: 5vw 5vw; */
+        gap: 6vw;
+        padding-inline: 12.5vw;
     }
 
     .info-card {
