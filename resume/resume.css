@@ -546,6 +546,22 @@ header li + li a {
   margin-left: 0;
 }
 
+.footer-content a:link {
+  color: white;
+}
+
+.footer-content a:active {
+  color: red;
+}
+
+.footer-content a:visited {
+  color: white;
+}
+
+.footer-content a:hover {
+  color: red;
+}
+
 .contact-info {
     display: flex;
     flex-direction: column;

@@ -427,6 +427,14 @@ header li + li a {
   color: red;
 }
 
+.footer-content a:visited {
+  color: white;
+}
+
+.footer-content a:hover {
+  color: red;
+}
+
 .contact-info {
   display: flex;
   flex-direction: column;

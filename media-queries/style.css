@@ -575,7 +575,16 @@ background-size: 100px 100px;
   aspect-ratio: 1 / 1;
   background-size: contain;
   background-repeat: no-repeat;
-  border-radius: 50%;
+  translate: .3em 0;
+}
+
+.spotify-logo {
+  width: 1.2em;
+  translate: .3em .15em;
+}
+
+.scratch-logo {
+  margin-right: .3em;
 }
 
 .project-buttons {
@@ -756,6 +765,14 @@ background-size: 100px 100px;
 }
 
 .footer-content a:active {
+  color: red;
+}
+
+.footer-content a:visited {
+  color: white;
+}
+
+.footer-content a:hover {
   color: red;
 }
 
