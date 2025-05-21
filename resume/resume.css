@@ -425,7 +425,7 @@ header li + li a {
 .project-image {
     width: 100%;
     aspect-ratio: 1 / 1;
-    border-radius: 50%;
+    border-radius: 25%;
     background-size: cover;
     background-position: center;
     position:relative;
@@ -442,7 +442,7 @@ header li + li a {
     height: 120%;
     top: -10%;
     left: -10%;
-    border-radius: 100%;
+    border-radius: 25%;
     transition: 2s linear; /* Defines how long the button effect will take place for. */
     z-index: -2;
     filter:blur(.5vw);
@@ -474,7 +474,7 @@ header li + li a {
 .project p {
     text-align: left;
     margin-top: 1vw;
-    font-size: 1.2vw;
+    font-size: 1vw;
 }
 
 .project-buttons {
@@ -728,7 +728,8 @@ header li + li a {
     }
 
     .summary-text {
-        font-size: 3vw;
+        font-size: 3.5vw;
+        line-height: 1.6;
     }
 
     .box2-header {
@@ -774,7 +775,7 @@ header li + li a {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        width: 85%;
     }
 
     .skills-list {
@@ -783,7 +784,7 @@ header li + li a {
         height: auto;
         margin-top: 0;
         margin-bottom: 5vw;
-        font-size: 4.5vw;
+        font-size: 4vw;
     }
 
     .skills-list h3{
@@ -837,7 +838,7 @@ header li + li a {
     }
 
     .project {
-        width: 90%;
+        width: 75%;
     }
 
     .project-image {
@@ -867,7 +868,7 @@ header li + li a {
         border-top: rgb(150, 8, 8) 10px double;
         border-top-right-radius: 10%;
         border-bottom-left-radius: 10%;
-        font-size: 5vw;
+        font-size: 4vw;
     }
 
     .project .one {
