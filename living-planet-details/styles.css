@@ -249,9 +249,6 @@ header li + li a {
 .summary-content p {
     margin: 0;
     line-height: 1.8em;
-    padding-inline: 2vw;
-    padding-block: 2vw;
-    margin-inline: 13vw;
 }
 
 .details-lists {
@@ -283,7 +280,6 @@ header li + li a {
 .summary-content ul li {
     display: flex;
     flex-direction: row;
-    font-weight: 500;
     margin: auto;
     margin-left: 0;
     margin-bottom: 1em;
@@ -372,16 +368,14 @@ header li + li a {
   
 .info-card p {
     text-align: left;
-    margin-top: 1vw;
     font-size: 1.5em;
     line-height: 1.8em;
-    margin-inline: 2vw;
 }
   
 .info-hook {
     cursor: default;
     font-size: 2em;
-    min-width: max-content;
+    /* min-width: max-content; */
     margin-right: 1vw;
     font-style: italic;
     text-decoration: underline;
@@ -419,6 +413,7 @@ header li + li a {
 .footer-content p {
   text-align: left;
   margin-left: 0;
+  text-shadow: none;
 }
 
 .footer-content a:link {
@@ -480,7 +475,7 @@ h1, h2, h3, h4, h5, h6, .info-hook {
 p {
     line-height: 1.5em;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 0 0 1em rgb(255, 216, 0);
+    text-shadow: 0 0 .5em rgb(255, 216, 0);
 }
 
 /* vvv If you want boxes around paragraphs vvv */
@@ -492,7 +487,14 @@ p {
     box-shadow: inset 0 0 .5em .5em rgb(107, 43, 0), 0 0 .3em .5em rgb(158, 66, 15);
 }
 
+.summary-content p {
+    padding-inline: 2vw;
+    padding-block: 2vw;
+    margin-inline: 13vw;
+}
+
 .info-card p {
+    margin-inline: 2vw;
     padding-inline: 1vw;
     padding-block: 1vw;
 }
@@ -505,7 +507,8 @@ p {
 
     .info-hook {
         margin:auto;
-        margin-block: 2vw;
+        margin-top: 2vw;
+        margin-bottom: 5vw;
     }
 }
 
@@ -549,15 +552,8 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
 }
 
 .summary-content ul li {
-    display: flex;
-    flex-direction: row;
     font-weight: 500;
-    margin: auto;
-    margin-left: 0;
-    margin-bottom: 1em;
-    text-align: left;
-    justify-self: left;
-    text-shadow: 0 0 1em rgb(44, 112, 17);
+    text-shadow: 0 0 .5em rgb(255, 216, 0);
 }
 
 .summary-content ul li strong{
@@ -679,6 +675,10 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
         font-size: 2vw;
     }
 
+    .summary-content {
+        font-size: 2em;
+    }
+
     .summary-content p {
         padding-inline: 3.5vw;
         margin-inline: 9vw;
@@ -715,9 +715,16 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
     }
     
     .info-card p {
+        font-size: 2em;
         margin-block: 5vw;
         display: flex;
         flex-direction: column;
+    }
+
+    .info-hook {
+        font-size: 2.5em;
+        line-height: 1.2em;
+        text-align: center;
     }
 
     .footer {
