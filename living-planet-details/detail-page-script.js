@@ -257,4 +257,4 @@ zoomContainer.addEventListener('touchmove', (event) => {
 //     }
 // });
 
-zoomContainer.addEventListener('touchend', endDrag);
+// zoomContainer.addEventListener('touchend', endDrag); // Temporarily disabling this to test something.
