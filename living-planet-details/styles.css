@@ -219,7 +219,7 @@ header li + li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 5vw;
+    padding-block: 5vw;
 }
 
 .summary-section h2 {
@@ -228,22 +228,13 @@ header li + li a {
     transition: all 0.3s ease-in-out;
 }
 
-.summary-section h2:hover {
-  cursor: default;
-  font-size: 4.2em;
-  text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 1);
-
-  transition: all 0.3s ease-in-out;
-}
-
 .summary-content {
     font-size: 1.4em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-block: 7vw;
-    gap: 7vw;
+    gap: 5vw;
 }
 
 .summary-content p {
@@ -488,6 +479,10 @@ p {
 
 /* vvv If you want boxes around paragraphs vvv */
 
+.summary-content {
+    margin-top: 5vw;
+}
+
 .summary-content p, .info-card p {
     /* border: 0.3em solid rgb(158, 66, 15); */
     background: rgb(127, 51, 0);
@@ -532,7 +527,7 @@ header a:hover {
 
 .preview-image-section h1 {
     color: rgb(255, 216, 0);
-    text-shadow: 0 0 1em rgb(255, 216, 0);
+    text-shadow: 0 0 .5em rgb(255, 216, 0);
     font-size: 6vw;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 100;
@@ -632,6 +627,13 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
 @media (min-width: 769px) {
     .info-content {
         margin-left: 2vw;
+    }
+
+    .summary-section h2:hover {
+        cursor: default;
+        font-size: 4.2em;
+
+        transition: all 0.3s ease-in-out;
     }
 
     .info-hook:hover {

@@ -222,7 +222,7 @@ header li + li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 5vw;
+    padding-block: 5vw;
 }
 
 .summary-section h2 {
@@ -231,22 +231,13 @@ header li + li a {
     transition: all 0.3s ease-in-out;
 }
 
-.summary-section h2:hover {
-  cursor: default;
-  font-size: 4.2em;
-  text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 1);
-
-  transition: all 0.3s ease-in-out;
-}
-
 .summary-content {
     font-size: 1.4em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-block: 7vw;
-    gap: 7vw;
+    gap: 5vw;
 }
 
 .summary-content p {
@@ -488,6 +479,10 @@ p {
 
 /* vvv Without boxes around paragraphs this styling is better vvv*/
 
+.summary-content {
+    margin-top: 2vw;
+}
+
 .summary-content p {
     padding-inline: 2vw;
     padding-block: 2vw;
@@ -613,6 +608,13 @@ header a:hover {
 @media (min-width: 769px) {
     .info-content {
         margin-left: 2vw;
+    }
+
+    .summary-section h2:hover {
+        cursor: default;
+        font-size: 4.2em;
+
+        transition: all 0.3s ease-in-out;
     }
 
     .info-hook:hover {
