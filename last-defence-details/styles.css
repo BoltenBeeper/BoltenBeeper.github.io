@@ -329,9 +329,8 @@ header li + li a {
     display: flex;
     flex-direction: row;
     text-align: center;
-    width: 90%;
+    width: 90vw;
     margin-top: 0%;
-    padding: 1vw;
     margin-bottom: 7.5vw;;
 }
   
@@ -609,8 +608,12 @@ header a:hover {
 
 /* ANYTHING LARGER THAN PHONE */
 @media (min-width: 769px) {
-    .info-content {
+    .info-card.right .info-content {
         margin-left: 2vw;
+    }
+
+    .info-card.left .info-content {
+        margin-right: 2vw;
     }
 
     .summary-section h2:hover {
@@ -705,7 +708,7 @@ header a:hover {
     }
   
     .image {
-        width: 75vw;
+        width: 100%;
         max-height: fit-content;
     }
     
