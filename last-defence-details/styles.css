@@ -443,7 +443,36 @@ header li + li a {
   border: white 0.2vw solid;
 }
 
-  /* QUICK COLOR PALETTE AND FONT CUSTOMIZATION FOR ALL DETAILS PAGES */
+/* WITHOUT BOXES AROUND PARAGRAPHS THIS STYLING IS BETTER */
+
+.summary-content {
+    margin-top: 2vw;
+}
+
+.summary-content p {
+    padding-inline: 2vw;
+    padding-block: 2vw;
+    margin-inline: 13vw;
+}
+
+.info-card p {
+    margin-inline: 2vw;
+}
+
+@media (max-width: 768px) {
+
+    .summary-content {
+        gap: 10vw;
+    }
+
+    .info-hook {
+        margin:auto;
+        margin-top: 0vw;
+        margin-bottom: 5vw;
+    }
+}
+
+/* QUICK COLOR PALETTE AND FONT CUSTOMIZATION FOR ALL DETAILS PAGES */
 
 * {
     font-family: 'Orbitron', sans-serif;
@@ -476,32 +505,6 @@ p {
     font-family: 'Orbitron', sans-serif;
     text-shadow: 0 0 1em rgb(255, 255, 255);
 }
-
-/* vvv Without boxes around paragraphs this styling is better vvv*/
-
-.summary-content {
-    margin-top: 2vw;
-}
-
-.summary-content p {
-    padding-inline: 2vw;
-    padding-block: 2vw;
-    margin-inline: 13vw;
-}
-
-.info-card p {
-    margin-inline: 2vw;
-}
-
-@media (max-width: 768px) {
-    .info-hook {
-        margin:auto;
-        margin-top: 0vw;
-        margin-bottom: 5vw;
-    }
-}
-
-/* ^^^ End of paragraph box special styles ^^^ */
 
 header a:hover {
     color: rgb(248, 205, 12);

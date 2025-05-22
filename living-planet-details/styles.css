@@ -440,7 +440,49 @@ header li + li a {
   border: white 0.2vw solid;
 }
 
-  /* QUICK COLOR PALETTE AND FONT CUSTOMIZATION FOR ALL DETAILS PAGES */
+/* WITH BOXES AROUND PARAGRAPHS THIS STYLING IS BETTER */
+
+.summary-content {
+    margin-top: 5vw;
+}
+
+.summary-content p, .info-card p {
+    /* border: 0.3em solid rgb(158, 66, 15); */
+    background: rgb(127, 51, 0);
+    border-radius: 25px;
+    box-shadow: inset 0 0 .5em .5em rgb(107, 43, 0), 0 0 .3em .5em rgb(158, 66, 15);
+}
+
+.summary-content p {
+    padding-inline: 2vw;
+    padding-block: 2vw;
+    margin-inline: 13vw;
+}
+
+.info-card p {
+    margin-inline: 2vw;
+    padding-inline: 1vw;
+    padding-block: 1vw;
+}
+
+@media (max-width: 768px) {
+    .summary-content {
+        gap: 12vw;
+    }
+
+    .info-card p {
+        padding-inline: 3.5vw;
+        padding-block: 2vw;
+    }
+
+    .info-hook {
+        margin:auto;
+        margin-top: 2vw;
+        margin-bottom: 5vw;
+    }
+}
+
+/* QUICK COLOR PALETTE AND FONT CUSTOMIZATION FOR ALL DETAILS PAGES */
 
 * {
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -476,46 +518,6 @@ p {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-shadow: 0 0 .5em rgb(255, 216, 0);
 }
-
-/* vvv If you want boxes around paragraphs vvv */
-
-.summary-content {
-    margin-top: 5vw;
-}
-
-.summary-content p, .info-card p {
-    /* border: 0.3em solid rgb(158, 66, 15); */
-    background: rgb(127, 51, 0);
-    border-radius: 25px;
-    box-shadow: inset 0 0 .5em .5em rgb(107, 43, 0), 0 0 .3em .5em rgb(158, 66, 15);
-}
-
-.summary-content p {
-    padding-inline: 2vw;
-    padding-block: 2vw;
-    margin-inline: 13vw;
-}
-
-.info-card p {
-    margin-inline: 2vw;
-    padding-inline: 1vw;
-    padding-block: 1vw;
-}
-
-@media (max-width: 768px) {
-    .info-card p {
-        padding-inline: 3.5vw;
-        padding-block: 2vw;
-    }
-
-    .info-hook {
-        margin:auto;
-        margin-top: 2vw;
-        margin-bottom: 5vw;
-    }
-}
-
-/* ^^^ End of paragraph box special styles ^^^ */
 
 header a:hover {
     color: rgb(44, 112, 17);

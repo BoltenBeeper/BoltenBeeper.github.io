@@ -1,3 +1,5 @@
+// Any unused code that was commented out to possibly be used in the future is stored in living-planet-details/detail-page-script.js
+
 document.querySelector('.preview-image-section').addEventListener('mouseenter', () => {
     document.querySelector('.preview-image').style.filter = 'blur(1vw)';
     document.querySelector('.preview-image').style.transition = 'all 0.5s ease-in-out';
@@ -54,16 +56,6 @@ function constrainTranslation() {
     
     let maxTranslateX = Math.max(0, (imageWidth - zoomContainer.offsetWidth));
     let maxTranslateY = Math.max(0, (imageHeight - zoomContainer.offsetHeight));
-
-    // I never really figured out this out but it was here because for some reason draggin the image can can ignore the border snapping rule. I may come back to it later. I'm too tired.
-
-    // if (isDragging) {
-    //     maxTranslateX = Math.max(0, (imageWidth - zoomContainer.offsetWidth) / (2 * imageWidth));
-    //     maxTranslateY = Math.max(0, (imageHeight - zoomContainer.offsetHeight) / (2 * imageHeight));
-    // } else {
-    //     maxTranslateX = Math.max(0, (imageWidth - zoomContainer.offsetWidth));
-    //     maxTranslateY = Math.max(0, (imageHeight - zoomContainer.offsetHeight));
-    // }
 
     translateX = Math.min(Math.max(translateX, 0.5 - maxTranslateX), 0.5 + maxTranslateX);
     translateY = Math.min(Math.max(translateY, 0.5 - maxTranslateY), 0.5 + maxTranslateY);
@@ -170,3 +162,52 @@ function endDrag() {
 zoomContainer.addEventListener('mousedown', startDrag);
 zoomContainer.addEventListener('mousemove', dragImage);
 document.addEventListener('mouseup', endDrag); // Use document to ensure drag ends even if the cursor leaves the container
+
+
+
+// vvv GALLAY CONTROL FOR TOUCH DEVICES vvv //
+
+// Prevents default touch behavior to avoid scrolling
+zoomContainer.addEventListener('touchmove', (event) => {
+    if (isDragging) {
+        event.preventDefault();
+    }
+});
+
+zoomContainer.addEventListener('touchstart', (event) => {
+    if (event.touches.length === 1) {
+        startDrag(event.touches[0]);
+    }
+});
+
+zoomContainer.addEventListener('touchmove', (event) => {
+    if (event.touches.length === 1) {
+        dragImage(event.touches[0]);
+    }
+});
+
+zoomContainer.addEventListener('touchstart', (event) => {
+    if (event.touches.length === 2) {
+        event.preventDefault();
+        const touch1 = event.touches[0];
+        const touch2 = event.touches[1];
+        const distance = Math.sqrt(Math.pow(touch2.clientX - touch1.clientX, 2) + Math.pow(touch2.clientY - touch1.clientY, 2));
+        zoomContainer.dataset.initialDistance = distance;
+    }
+});
+
+zoomContainer.addEventListener('touchmove', (event) => {
+    if (event.touches.length === 2) {
+        event.preventDefault();
+        const touch1 = event.touches[0];
+        const touch2 = event.touches[1];
+        const distance = Math.sqrt(Math.pow(touch2.clientX - touch1.clientX, 2) + Math.pow(touch2.clientY - touch1.clientY, 2));
+        const initialDistance = parseFloat(zoomContainer.dataset.initialDistance);
+        const scaleChange = distance / initialDistance;
+        scale *= scaleChange;
+        scale = Math.min(Math.max(scale, 1), 3); // Clamps scale between 1 and 3
+        zoomContainer.dataset.initialDistance = distance; // Updates initial distance for next move
+    }
+});
+
+zoomContainer.addEventListener('touchend', endDrag);

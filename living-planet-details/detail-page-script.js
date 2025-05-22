@@ -1,3 +1,5 @@
+// This script file may contain unused code and should not be used as a document to fully copy and paste for reuse. For copy and pasting for new details pages use a different detail-page-script.js file.
+
 // Old code for the hover effect, need to decide if I like this or the new one better.
 
 // document.querySelector('.preview-image-section').addEventListener('mouseenter', () => {
@@ -201,3 +203,58 @@ function endDrag() {
 zoomContainer.addEventListener('mousedown', startDrag);
 zoomContainer.addEventListener('mousemove', dragImage);
 document.addEventListener('mouseup', endDrag); // Use document to ensure drag ends even if the cursor leaves the container
+
+
+
+// vvv GALLAY CONTROL FOR TOUCH DEVICES vvv //
+
+// Prevents default touch behavior to avoid scrolling
+zoomContainer.addEventListener('touchmove', (event) => {
+    if (isDragging) {
+        event.preventDefault();
+    }
+});
+
+zoomContainer.addEventListener('touchstart', (event) => {
+    if (event.touches.length === 1) {
+        startDrag(event.touches[0]);
+    }
+});
+
+zoomContainer.addEventListener('touchmove', (event) => {
+    if (event.touches.length === 1) {
+        dragImage(event.touches[0]);
+    }
+});
+
+zoomContainer.addEventListener('touchstart', (event) => {
+    if (event.touches.length === 2) {
+        event.preventDefault();
+        const touch1 = event.touches[0];
+        const touch2 = event.touches[1];
+        const distance = Math.sqrt(Math.pow(touch2.clientX - touch1.clientX, 2) + Math.pow(touch2.clientY - touch1.clientY, 2));
+        zoomContainer.dataset.initialDistance = distance;
+    }
+});
+
+zoomContainer.addEventListener('touchmove', (event) => {
+    if (event.touches.length === 2) {
+        event.preventDefault();
+        const touch1 = event.touches[0];
+        const touch2 = event.touches[1];
+        const distance = Math.sqrt(Math.pow(touch2.clientX - touch1.clientX, 2) + Math.pow(touch2.clientY - touch1.clientY, 2));
+        const initialDistance = parseFloat(zoomContainer.dataset.initialDistance);
+        const scaleChange = distance / initialDistance;
+        scale *= scaleChange;
+        scale = Math.min(Math.max(scale, 1), 3); // Clamps scale between 1 and 3
+        zoomContainer.dataset.initialDistance = distance; // Updates initial distance for next move
+    }
+});
+
+// zoomContainer.addEventListener('touchend', (event) => {
+//     if (event.touches.length < 2) {
+//         resetZoom();
+//     }
+// });
+
+zoomContainer.addEventListener('touchend', endDrag);
