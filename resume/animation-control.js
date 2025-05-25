@@ -6,13 +6,21 @@ function startAnimation() {
     // waiting 1 second before applying the "animating" class
     setTimeout(function() {
         portrait.classList.add('animating');
-        logo.classList.add('animating');
+        logo.classList.add('animating1');
     }, 500);
 
     // Remove "animating" class after 2 seconds
     setTimeout(function() {
+        logo.classList.remove('animating1');
+        logo.classList.add('animating2');
+    }, 1000);
+
+    
+
+    // Remove "animating" class after 2 seconds
+    setTimeout(function() {
         portrait.classList.remove('animating');
-        logo.classList.remove('animating');
+        logo.classList.remove('animating2');
         portrait.classList.add('idle');
         logo.classList.add('idle');
     }, 2000);
