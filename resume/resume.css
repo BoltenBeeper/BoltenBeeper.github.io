@@ -73,7 +73,7 @@ header li + li a {
     background-size: 50%;
     display: grid;
     grid-template-columns: 50% 50%;
-    background-color: #000;
+    z-index: -1;
 }
 
 .portrait-box {
@@ -89,6 +89,7 @@ header li + li a {
     background-clip: content-box;
     aspect-ratio: 3 / 1; /* Maintains aspect ratio so background image never leaks over borders */
     transition: all .2s ease-in-out;
+    z-index: 0;
 }
 
 .portrait-box:hover {
@@ -97,16 +98,47 @@ header li + li a {
 }
 
 .portrait {
-    border: inset .5vw rgb(200, 0, 0);
-    box-shadow: 0px 0px 3vw rgba(128, 16, 16);
-    margin: auto;
     width: 13vw;
     height: 13vw;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    margin: auto;
+    position: absolute;
+    border: inset .5vw rgb(200, 0, 0);
     border-radius: 50%;
-    background-image: url(https://yt3.ggpht.com/ytc/AKedOLSbYr8DEIDl5FPpz3uPrCMItkI6QSgTlY3cyDt0ww=s900-c-k-c0x00ffffff-no-rj); /* My Logo as a fallback */
+    box-shadow: 0px 0px 3vw rgba(128, 16, 16);
+    background-image: url(https://yt3.ggpht.com/ytc/AKedOLSbYr8DEIDl5FPpz3uPrCMItkI6QSgTlY3cyDt0ww=s900-c-k-c0x00ffffff-no-rj); /* My MC Logo as a fallback */
+    z-index: 1; /* Change this number to cotrol whether the portrait or the logo appears first before the animation starts */
+}
+
+.portrait.animating {
+    translate: 75% 0vw;
+    rotate: 360deg;
+    transition: all 1.5s ease-in-out;
+}
+
+.portrait.idle{
+    translate: 75% 0vw;
+}
+
+.logo {
+    width: 13vw;
+    height: 13vw;
+    margin: auto;
+    position: absolute;
+    border: inset .5vw rgb(200, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 3vw rgba(128, 16, 16);
+    background-image: url(https://yt3.ggpht.com/ytc/AKedOLSbYr8DEIDl5FPpz3uPrCMItkI6QSgTlY3cyDt0ww=s900-c-k-c0x00ffffff-no-rj); /* My MC Logo as a fallback */
+    z-index: 2;
+}
+
+.logo.animating {
+    translate: -75% 0vw;
+    rotate: -360deg;
+    transition: all 1.5s ease-in-out;
+}
+
+.logo.idle{
+    translate: -75% 0vw;
 }
 
 .profile-box {
@@ -602,6 +634,12 @@ header li + li a {
     }
 
     .portrait {
+        width: 25vw;
+        height: 25vw;
+        border: inset 1vw rgb(200, 0, 0);
+    }
+
+    .logo {
         width: 25vw;
         height: 25vw;
         border: inset 1vw rgb(200, 0, 0);

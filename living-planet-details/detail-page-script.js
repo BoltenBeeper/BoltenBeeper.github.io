@@ -251,10 +251,10 @@ zoomContainer.addEventListener('touchmove', (event) => {
     }
 });
 
-// zoomContainer.addEventListener('touchend', (event) => {
-//     if (event.touches.length < 2) {
-//         resetZoom();
-//     }
-// });
+zoomContainer.addEventListener('touchend', (event) => {
+    if (event.touches.length < 2) {
+        resetZoom();
+    }
+});
 
-// zoomContainer.addEventListener('touchend', endDrag); // Temporarily disabling this to test something.
+zoomContainer.addEventListener('touchend', endDrag); // Temporarily disabling this to test something.
