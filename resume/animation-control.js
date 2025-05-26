@@ -1,8 +1,8 @@
+// Get the animation container
+const portrait = document.querySelector('.portrait');
+const logo = document.querySelector('.logo');
+
 function startAnimation() {
-    // Get the animation container
-    const portrait = document.querySelector('.portrait');
-    const logo = document.querySelector('.logo');
-    
     // waiting 1 second before applying the "animating" class
     setTimeout(function() {
         portrait.classList.add('animating');
@@ -23,24 +23,31 @@ function startAnimation() {
         logo.classList.remove('animating2');
         portrait.classList.add('idle');
         logo.classList.add('idle');
+
+        // When the page loads
+        logo.addEventListener('mouseenter', function() {
+            logo.classList.remove('mouseleave');
+            logo.classList.remove('idle');
+            logo.classList.add('mouseenter');
+        });
+
+        // When the page loads
+        logo.addEventListener('mouseleave', function() {
+            logo.classList.remove('mouseenter');
+            logo.classList.add('mouseleave');
+            setTimeout(function() {
+                logo.classList.remove('mouseleave');
+                logo.classList.add('idle');
+            }, 100);
+        });
     }, 2000);
 }
+
+document.querySelector('.profile').addEventListener('mouseeneter', function() {
+    document.querySelector('.profile').classList.add('testing');
+});
 
 // When the page loads
 window.addEventListener('load', function() {
     startAnimation();
 });
-
-// Function to handle the click event on the logo
-// function handleLogoClick() {
-//     startAnimation();
-    // const logo = document.querySelector('.portrait-box');
-    // const portrait = document.querySelector('.portrait');
-
-    // // Toggle the "animating" class on click
-    // logo.classList.toggle('animating');
-    // portrait.classList.toggle('animating');
-// }
-
-// Add click event listener to the portrait-box"
-// document.querySelector('.profile"').addEventListener('click', startAnimation);
