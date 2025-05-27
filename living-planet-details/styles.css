@@ -371,7 +371,6 @@ header li + li a {
     text-decoration: underline;
     text-align: left;
 
-    text-shadow: 0vw 1vw 1vw rgba(0, 0, 0, 0);
     transition: all 0.3s ease-in-out;
 }
 
@@ -535,16 +534,16 @@ header a:hover {
 }
 
 .below-preview {
-  background-color: rgb(0, 6, 41);
-  background-image:
-      radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
-      radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
-      radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
-      radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px),
-      linear-gradient(180deg, rgba(0, 6, 41, 1) 0%, rgb(0, 4, 32) 100%);
-  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
-  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
+    background-color: rgb(0, 6, 41);
+    background-image:
+        radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
+        radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px),
+        linear-gradient(180deg, rgba(0, 6, 41, 1) 0%, rgb(0, 4, 32) 100%);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
 }
 
 .summary-section h2 {
@@ -567,6 +566,15 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
 .image {
     box-shadow: 0 0 1.5em .1em rgb(255, 255, 255);
 }
+
+@media (min-width: 769px) {
+    .info-hook:hover {
+        text-shadow: 0 0 .5em rgb(255, 213, 0);
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+
 
 /* Media Queries for smaller screens */
 
@@ -638,11 +646,6 @@ box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
         cursor: default;
         font-size: 4.2em;
 
-        transition: all 0.3s ease-in-out;
-    }
-
-    .info-hook:hover {
-        text-shadow: 0 0 .5em rgb(255, 213, 0);
         transition: all 0.3s ease-in-out;
     }
 }

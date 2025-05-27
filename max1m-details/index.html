@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Living Planet</title>
+    <link rel="stylesheet" href="styles.css?v=1.0"> <!-- The ?v=1.0 ensures the latest version of the css file is used when updated. This is to solve an issue I was having with the CSS not rendering when reloading the html or the page. -->
+</head>
+<body>
+
+    <div id="image-overlay" class="hidden">
+        <div class="overlay-content">
+            <h3>Scroll to sooom and click and hold to drag image around.</h3>
+            <button id="prev-image" class="nav-arrow">&lt;</button>
+            <div id="zoom-container">
+                <img id="overlay-image" src="" alt="Enlarged Preview">
+            </div>
+            <button id="next-image" class="nav-arrow">&gt;</button>
+        </div>
+        <button id="close-overlay" class="close-button" style="background-color: rgba(0, 0, 0, 0); background-image: url(../images/X_Icon.png);"></button>
+    </div>
+    
+    <main>
+
+        <!-- Header Section -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../portfolio/index.html">Home</a></li>
+                    <li><a href="../resume/index.html">Resume</a></li>
+                    <li><a href="../media-queries/index.html">My Work</a></li>
+                    <li><a href="../contact-me/index.html">Reach Me</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="preview-image-section">
+            <div class="preview-image" style="background-image: url('../images/MM_Face_Loop.gif');"></div>
+            <h1 class="project-name">Max-a-Million</h1>
+        </section>
+        <div class="below-preview">
+            <!-- <div class="video-container">
+                <h2>Gameplay Video</h2>
+                <iframe class="video" src="https://www.youtube.com/watch?v=GOS2eFsTccw" title="YouTube video player" frameborder="0" allowfullscreen></iframe> -->
+            <section class="summary-section">
+                <h2>Project Summary</h2>
+                    <div class="summary-content">
+                        <p>Living Planet is a platforming game built from scratch using my own engine, art, animation, music, and level design format. This game only ever reached the demo phase for my highschool final project but I always saw myself coming back to this game as there was so much potential and storytelling I wanted to do with it.<br><br>
+                            What makes me especially proud of this project, despite only being a demo, is that everything from the engine, to the way the levels are rendered, to the lighting all came from my brain. I didn't follow a single tutorial, start from a partially made game, or use an external engine. It was all thought up and developed by me with some occasional help from a classmate or my teacher.<br><br>
+                            I was heavily inspired to make this game after hearing an album by <a href="https://open.spotify.com/artist/6fZ3VIwNE4hwtg5UfNMFNd?si=6ieKn23lQ3amRBTHFgRqtg" target="_blank" style="color: rgb(0, 255, 0);">Kid2Will</a> on Spotify by the same name as this game. <a href="https://open.spotify.com/album/1KyufhpxtuW3GgiST3SXEu?si=b7RsWZNBRVifg2oKcQOmpA" target="_blank" style="color: rgb(0, 255, 0);">The album</a> sparked my creativity so hard that I actually reached out to Kid2Will to ask for permission to use his tracks in the game to which he agreed.<br><br>
+                            In the current <a class="project-button" href="https://drive.google.com/drive/folders/1ekfa3e28i71Sx7S_ZWL_NFcDGnzh68DD?usp=drive_link" target="_blank" style="color: rgb(0, 255, 0);">previews of the game</a> (available via my google drive link) two of his songs can be heard. One on the <a href="https://open.spotify.com/track/7Ho5tLH4FkjgmrljCbqTVP?si=5167effe97ba4634" target="_blank" style="color: rgb(0, 255, 0);">title screen</a>, the other on the <a href="https://open.spotify.com/track/1syDyKZDJYJyrlBd5zNFfy?si=5f3fbd14d4d0438b" target="_blank" style="color: rgb(0, 255, 0);">test level</a> shown in one of the game play videos. The other song in the game, used for the first level, was made by me.<br><br>
+                            Now, the game stands as a reminder to me of what I am capable of when given room to explore my creativity and relate my other passions in life in a way that helps me fully realise the world in my head.
+                        </p>
+                        <div class="details-lists">
+                            <ul class="details-list left">
+                                <li><strong>LANGUAGES USED</strong>:
+                                    <ul>
+                                        <li>Python [<span><div class="listed-project-language-logo" style="background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg)"></div></span>]</li>
+                                    </ul>
+                                </li>
+                                <li><strong>ENGINE</strong>: Custom Engine</li>
+                                <li><strong>GENRE</strong>:
+                                    <ul>
+                                        <li>AI Companion</li>
+                                    </ul>
+                                </li>
+                                <li><strong>PLATFORMS</strong>:
+                                    <ul>
+                                        <li>PC,</li>
+                                        <li>Mac</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="details-list right">
+                                <li><strong>Code</strong>:
+                                    <ul>
+                                        <li>Riley Underwood</li>
+                                        <li>ChatGPT</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Design</strong>:
+                                    <ul>
+                                        <li>Riley Underwood</li>
+                                    </ul>
+                                </li>
+                                <li><strong>LLM Model</strong>:
+                                    <ul>
+                                        <li>GPT-4.1</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+            </section>
+    
+            <section class="details-section">
+                <div class="info-card left">
+                    <div class="image-container">
+                        <img class="image one" src="../images/MM_Grid.png"></img>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-description"><span class="info-hook">My Custom Engine</span>Since this game was created from scratch that means I had to build the engine for this game from the ground up. Things like collision on walls, floors and ceilings, how levels load in, how the lighting works and how the background renders in were all coded by me from scratch.</p>
+                    </div>
+                </div>
+                <div class="info-card right">
+                    <div class="info-content">
+                        <p class="info-description"><span class="info-hook">Lighting Simulation</span>This game uses a system for lighting by my design which plays a role in gameplay. Light sources light up caves and dark structures, but if an area is too dark, the light won't illuminate everything. This creates a mechanic where the player can see that there is light in the distance, but must get closer to see what the light covers.</p>
+                    </div>
+                    <div class="image-container">
+                        <img class="image two" src="../images/MM_Setup_Dark.jpg"></img>
+                    </div>
+                </div>
+                <div class="info-card left">
+                    <div class="image-container">
+                        <img class="image three" src="../images/MM_Face_Tracker.png"></img>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-description"><span class="info-hook">My Animations</span>Fun fact: This is only a placeholder character, but it's modeled after me. Since I'm not exactly an artist I used photo references of me and videos of me running to better capture the animations for the player character. I found it particularly fun tweaking the small details of the animation frames to make as smooth of an animation as possible, such as how before the running animation loop starts playing there is a frame where the character leans forward. Unfortunately, the running animation came near the very end of the project so it was rather rushed.</p>
+                    </div>
+                </div>
+                <div class="info-card right">
+                    <div class="info-content">
+                        <p class="info-description"><span class="info-hook">New File Type</span>The maps in this game use a text file format I invented which means I can create levels in any text editor if necessary. If you look closely at the text file, you'll see it's made up of tons of bracket squares '[ ]' that make up a grid. The filled in grid spaces make up an image of the stage.</p>
+                    </div>
+                    <div class="image-container">
+                        <img class="image four" src="../images/Raspberry_Pi.jpg"></img>
+                    </div>
+                </div>
+                <div class="info-card left">
+                    <div class="image-container">
+                        <img class="image five" src="../images/MM_Erase_Board.jpg"></img>
+                    </div>
+                    <div class="info-content">
+                        <p class="info-description"><span class="info-hook">Level Generation</span>The game reads this file to know how to construct each level of the game. Each different character that occupies a space correlates to a different block sprite to render in that space. The game first reads the file to know where to place each block and what kind. To save resources, the game creates a new, temporary image composed of all needed blocks that becomes the stage we see. This image shows how the same part of the level looks both in the map file and in game.</p>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="contact-info">
+                        <p class="centered-text">Contact me! You know you want to.</p>
+                        <ul>
+                            <li>Phone: (512) 949-8243</li>
+                            <li>Email: <a href="mailto:rileybusinesswood@gmail.com">rileybusinesswood@gmail.com</a></li>
+                            <li>LinkedIn: <a href="https://www.linkedin.com/in/riguy/" target="_blank">Riley Underwood</a></li>
+                        </ul>
+                    </div>
+                    <div class="resume-button">
+                        <a href="../images/Riley Underwood Resume.pdf" target="_blank">
+                            <img src="../images/Resume_Icon.png" alt="Resume Icon" class="resume-icon">
+                        </a>
+                        <p>Resume PDF</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- JavaScript for the page -->
+    <script src="detail-page-script.js"></script>
+
+</body>
+</html>
