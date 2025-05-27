@@ -106,7 +106,7 @@ header li + li a {
     margin: auto;
     position: absolute;
     border: inset .5vw rgb(200, 0, 0);
-    /* border-radius: 50%; */
+    border-radius: 50%;
     box-shadow: 0px 0px 3vw rgba(128, 16, 16);
     background-image: url(https://yt3.ggpht.com/ytc/AKedOLSbYr8DEIDl5FPpz3uPrCMItkI6QSgTlY3cyDt0ww=s900-c-k-c0x00ffffff-no-rj); /* My MC Logo as a fallback */
     z-index: 1; /* Change this number to cotrol whether the portrait or the logo appears first before the animation starts */
@@ -114,7 +114,6 @@ header li + li a {
 
 .portrait.animating {
     translate: 75% 0vw;
-    /* rotate: 360deg; */
     transition: all .5s ease-in-out;
 }
 
@@ -139,22 +138,20 @@ header li + li a {
 
 .logo.animating1 {
     translate: 75% 0vw;
-    /* rotate: -90deg; */
-    /* border-radius: 50%; */
     transition: all .5s ease-in-out;
 }
 
 .logo.animating2 {
     translate: -75% 0vw;
     rotate: -360deg;
-    /* border-radius: 50%; */
+    border-radius: 50%;
     transition: all 1s ease-in-out;
 }
 
 .logo.idle {
     translate: -75% 0vw;
     rotate: -360deg;
-    /* border-radius: 50%; */
+    border-radius: 50%;
 }
 
 .logo.mouseenter {

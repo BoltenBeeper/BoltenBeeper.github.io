@@ -257,4 +257,4 @@ zoomContainer.addEventListener('touchend', (event) => {
     }
 });
 
-zoomContainer.addEventListener('touchend', endDrag); // Temporarily disabling this to test something.
+zoomContainer.addEventListener('touchend', endDrag);

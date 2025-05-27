@@ -208,26 +208,24 @@ document.addEventListener('mouseup', endDrag); // Use document to ensure drag en
 
 // vvv GALLAY CONTROL FOR TOUCH DEVICES vvv //
 
-// Prevents default touch behavior to avoid scrolling
 zoomContainer.addEventListener('touchmove', (event) => {
+// Prevents default touch behavior to avoid scrolling
     if (isDragging) {
         event.preventDefault();
     }
-});
 
-zoomContainer.addEventListener('touchstart', (event) => {
     if (event.touches.length === 1) {
-        startDrag(event.touches[0]);
-    }
-});
-
-zoomContainer.addEventListener('touchmove', (event) => {
-    if (event.touches.length === 1) {
+        // isDragging = true;
         dragImage(event.touches[0]);
     }
 });
 
 zoomContainer.addEventListener('touchstart', (event) => {
+    if (event.touches.length === 1) {
+        // isDragging = true;
+        startDrag(event.touches[0]);
+    }
+    
     if (event.touches.length === 2) {
         event.preventDefault();
         const touch1 = event.touches[0];
@@ -251,10 +249,10 @@ zoomContainer.addEventListener('touchmove', (event) => {
     }
 });
 
-zoomContainer.addEventListener('touchend', (event) => {
-    if (event.touches.length < 2) {
-        resetZoom();
-    }
-});
+// zoomContainer.addEventListener('touchend', (event) => {
+//     if (event.touches.length < 2) {
+//         resetZoom();
+//     }
+// });
 
-zoomContainer.addEventListener('touchend', endDrag); // Temporarily disabling this to test something.
+// zoomContainer.addEventListener('touchend', endDrag); // Temporarily disabling this to test something.
