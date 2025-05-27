@@ -9,3 +9,5 @@ This is my personal, official portfolio website. This site is a place for anyone
  Please feel free to reach out with offers, collaboration requests, or any suggestions on how I can improve this page. I welcome new connections!
 
  I look forward to hearing from you! :]
+
+ IF YOU ARE VIEWING THIS IN BROWSER CLICK HERE TO VISIT THE WEBSITE: boltenbeeper.github.io/portfolio
