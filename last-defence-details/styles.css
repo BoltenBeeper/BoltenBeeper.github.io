@@ -191,6 +191,8 @@ header li + li a {
     height: 100%;
     position: fixed;
     top: 0;
+
+    background-image: url('../images/LD_Gameplay_Loop.gif');
     background-size: cover;
     background-position: center 0vw;
     background-repeat: no-repeat;
@@ -705,7 +707,7 @@ header a:hover {
     .image-container {
         max-width: 75vw;
         height: 75vw;
-        max-height: fit-content;
+        min-height: fit-content;
         margin-block: 5vw;
     }
   

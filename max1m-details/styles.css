@@ -191,6 +191,8 @@ header li + li a {
     height: 100%;
     position: fixed;
     top: 0;
+
+    background-image: url('../images/MM_Face_Loop.gif');
     background-size: cover;
     background-position: center 0vw;
     background-repeat: no-repeat;
@@ -490,7 +492,7 @@ header li + li a {
 
 body {
     font-family: 'Orbitron', sans-serif;
-    color: green;
+    color: rgb(0, 182, 0);
     /* color: rgb(255, 220, 50); */
     background-color: black;
     /* background-image:
@@ -515,6 +517,7 @@ h1, h2, h3, h4, h5, h6, .info-hook {
 
 p {
     line-height: 1.5em;
+    font-weight: 600;
     font-family: 'Orbitron', sans-serif;
     /* text-shadow: 0 0 .5em green; */
 }
@@ -571,6 +574,13 @@ header a:hover {
 .image {
     box-shadow: 0 0 1.5em .1em rgb(0, 255, 0);
 }
+
+@media (max-width: 1200px) { /* Different preview image on phone */
+    .preview-image {
+        background-image: url('../images/MM_FL_Phone_Alt.gif');
+    }
+}
+
 
 @media (min-width: 769px) {
     .info-hook:hover {
@@ -728,7 +738,7 @@ header a:hover {
     .image-container {
         max-width: 75vw;
         height: 75vw;
-        max-height: fit-content;
+        min-height: fit-content;
         margin-block: 5vw;
     }
   

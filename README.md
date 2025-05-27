@@ -10,4 +10,4 @@ This is my personal, official portfolio website. This site is a place for anyone
 
  I look forward to hearing from you! :]
 
- IF YOU ARE VIEWING THIS IN BROWSER CLICK HERE TO VISIT THE WEBSITE: boltenbeeper.github.io/portfolio
+ IF YOU ARE VIEWING THIS IN BROWSER USE THIS LINK TO VISIT THE WEBSITE: boltenbeeper.github.io/portfolio
