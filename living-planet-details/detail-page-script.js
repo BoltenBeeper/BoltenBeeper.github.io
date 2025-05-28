@@ -212,6 +212,8 @@ let pinchStartScale = 1;
 let pinchStartDistance = 0;
 let pinchStartCenter = { x: 0, y: 0 };
 let pinchStartTranslate = { x: 0.5, y: 0.5 };
+let lastPinchTime = 0;
+const DRAG_AFTER_PINCH_DELAY = 150; // ms
 
 zoomContainer.addEventListener('touchstart', (event) => {
     if (event.touches.length === 1) {
@@ -233,11 +235,14 @@ zoomContainer.addEventListener('touchstart', (event) => {
             x: ((touch1.clientX + touch2.clientX) / 2 - rect.left) / rect.width,
             y: ((touch1.clientY + touch2.clientY) / 2 - rect.top) / rect.height
         };
+        lastPinchTime = Date.now();
     }
 });
 
 zoomContainer.addEventListener('touchmove', (event) => {
     if (event.touches.length === 1) {
+        // Prevent drag if within delay after pinch
+        if (Date.now() - lastPinchTime < DRAG_AFTER_PINCH_DELAY) return;
         if (isDragging) event.preventDefault();
         dragImage(event.touches[0]);
     }
