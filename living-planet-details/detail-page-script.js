@@ -208,51 +208,65 @@ document.addEventListener('mouseup', endDrag); // Use document to ensure drag en
 
 // vvv GALLAY CONTROL FOR TOUCH DEVICES vvv //
 
-zoomContainer.addEventListener('touchmove', (event) => {
-// Prevents default touch behavior to avoid scrolling
-    if (isDragging) {
-        event.preventDefault();
-    }
-
-    if (event.touches.length === 1) {
-        // isDragging = true;
-        dragImage(event.touches[0]);
-    }
-});
+let pinchStartScale = 1;
+let pinchStartDistance = 0;
+let pinchStartCenter = { x: 0, y: 0 };
+let pinchStartTranslate = { x: 0.5, y: 0.5 };
 
 zoomContainer.addEventListener('touchstart', (event) => {
     if (event.touches.length === 1) {
-        // isDragging = true;
         startDrag(event.touches[0]);
     }
-    
     if (event.touches.length === 2) {
         event.preventDefault();
         const touch1 = event.touches[0];
         const touch2 = event.touches[1];
-        const distance = Math.sqrt(Math.pow(touch2.clientX - touch1.clientX, 2) + Math.pow(touch2.clientY - touch1.clientY, 2));
-        zoomContainer.dataset.initialDistance = distance;
+        pinchStartDistance = Math.hypot(
+            touch2.clientX - touch1.clientX,
+            touch2.clientY - touch1.clientY
+        );
+        pinchStartScale = scale;
+        pinchStartTranslate = { x: translateX, y: translateY };
+        // Center between two touches, normalized to container
+        const rect = zoomContainer.getBoundingClientRect();
+        pinchStartCenter = {
+            x: ((touch1.clientX + touch2.clientX) / 2 - rect.left) / rect.width,
+            y: ((touch1.clientY + touch2.clientY) / 2 - rect.top) / rect.height
+        };
     }
 });
 
 zoomContainer.addEventListener('touchmove', (event) => {
+    if (event.touches.length === 1) {
+        if (isDragging) event.preventDefault();
+        dragImage(event.touches[0]);
+    }
     if (event.touches.length === 2) {
         event.preventDefault();
         const touch1 = event.touches[0];
         const touch2 = event.touches[1];
-        const distance = Math.sqrt(Math.pow(touch2.clientX - touch1.clientX, 2) + Math.pow(touch2.clientY - touch1.clientY, 2));
-        const initialDistance = parseFloat(zoomContainer.dataset.initialDistance);
-        const scaleChange = distance / initialDistance;
-        scale *= scaleChange;
-        scale = Math.min(Math.max(scale, 1), 3); // Clamps scale between 1 and 3
-        zoomContainer.dataset.initialDistance = distance; // Updates initial distance for next move
+        const newDistance = Math.hypot(
+            touch2.clientX - touch1.clientX,
+            touch2.clientY - touch1.clientY
+        );
+        let newScale = pinchStartScale * (newDistance / pinchStartDistance);
+        newScale = Math.min(Math.max(newScale, 1), 3);
+
+        // Center between two touches, normalized to container
+        const rect = zoomContainer.getBoundingClientRect();
+        const newCenter = {
+            x: ((touch1.clientX + touch2.clientX) / 2 - rect.left) / rect.width,
+            y: ((touch1.clientY + touch2.clientY) / 2 - rect.top) / rect.height
+        };
+
+        // Adjust translation to keep zoom centered on pinch center
+        const scaleRatio = newScale / pinchStartScale;
+        translateX = (pinchStartTranslate.x - pinchStartCenter.x) * scaleRatio + newCenter.x;
+        translateY = (pinchStartTranslate.y - pinchStartCenter.y) * scaleRatio + newCenter.y;
+
+        scale = newScale;
+        constrainTranslation();
+
+        overlayImage.style.transform = `translate(${(translateX - 0.5) * 100}%, ${(translateY - 0.5) * 100}%) scale(${scale})`;
     }
 });
-
-// zoomContainer.addEventListener('touchend', (event) => {
-//     if (event.touches.length < 2) {
-//         resetZoom();
-//     }
-// });
-
-// zoomContainer.addEventListener('touchend', endDrag); // Temporarily disabling this to test something.
