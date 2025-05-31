@@ -507,9 +507,9 @@ body {
 
 h1, h2, h3, h4, h5, h6, .info-hook {
     font-family: 'Orbitron', sans-serif;
-    color: rgb(0, 255, 0);
+    color: rgb(125, 255, 125);
     /* color: rgb(64, 135, 64); */
-    text-shadow: 0 0 1em rgb(0, 255, 0);
+    text-shadow: 0 0 .5em rgb(125, 255, 125);
     /* color: rgb(94, 58, 18);
     text-shadow: 0 0 1em rgb(94, 58, 18); */
     font-weight: 600;
@@ -523,11 +523,11 @@ p {
 }
 
 header a:hover {
-    color: rgb(0, 255, 0);
+    color: rgb(125, 255, 125);
 }
 
 .preview-image-section {
-    box-shadow: inset 0px 0px 10vw 3vw rgba(0, 255, 0, .1);
+    box-shadow: inset 0px 0px 10vw 3vw rgba(0, 125, 0, 0.15);
 }
 
 .preview-image-section h1 {
@@ -556,7 +556,7 @@ header a:hover {
 }
 
 .summary-section h2:hover {
-  text-shadow: 0 0 1em rgb(0, 255, 0), 0 1em 1em rgba(0, 0, 0, 1);
+  text-shadow: 0 0 1em rgb(125, 255, 125), 0 1em 1em rgba(0, 0, 0, 1);
 }
 
 .summary-content ul li {
@@ -567,12 +567,12 @@ header a:hover {
 
 .summary-content ul li strong{
     font-weight: 800;
-    color: rgb(0, 255, 0);
+    color: rgb(125, 255, 125);
     /* text-shadow: 0 0 .5em rgb(0, 255, 0); */
 }
 
 .image {
-    box-shadow: 0 0 1.5em .1em rgb(0, 255, 0);
+    box-shadow: 0 0 1.5em .1em rgb(125, 255, 125);
 }
 
 @media (max-width: 1200px) { /* Different preview image on phone */
