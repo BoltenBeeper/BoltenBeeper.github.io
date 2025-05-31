@@ -213,7 +213,7 @@ let pinchStartDistance = 0;
 let pinchStartCenter = { x: 0, y: 0 };
 let pinchStartTranslate = { x: 0.5, y: 0.5 };
 let lastPinchTime = 0;
-const DRAG_AFTER_PINCH_DELAY = 1000; // ms
+const DRAG_AFTER_PINCH_DELAY = 100; // ms
 
 zoomContainer.addEventListener('touchstart', (event) => {
     if (Date.now() - lastPinchTime < DRAG_AFTER_PINCH_DELAY) return;
