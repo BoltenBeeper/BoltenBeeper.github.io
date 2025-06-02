@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 /* GLOBAL STYLES */
 
@@ -190,8 +191,7 @@ header li + li a {
     height: 100%;
     position: fixed;
     top: 0;
-    
-    background-image: url('../images/LP_Gameplay_Loop.gif');
+
     background-size: cover;
     background-position: center 0vw;
     background-repeat: no-repeat;
@@ -199,6 +199,8 @@ header li + li a {
 }
 
 .preview-image-section h1 {
+    font-size: 6vw;
+
     cursor: default;
     z-index: 1;
 }
@@ -440,17 +442,10 @@ header li + li a {
   border: white 0.2vw solid;
 }
 
-/* WITH BOXES AROUND PARAGRAPHS THIS STYLING IS BETTER */
+/* WITHOUT BOXES AROUND PARAGRAPHS THIS STYLING IS BETTER */
 
 .summary-content {
-    margin-top: 5vw;
-}
-
-.summary-content p, .info-card p {
-    /* border: 0.3em solid rgb(158, 66, 15); */
-    background: rgb(127, 51, 0);
-    border-radius: 25px;
-    box-shadow: inset 0 0 .5em .5em rgb(107, 43, 0), 0 0 .3em .5em rgb(158, 66, 15);
+    margin-top: 2vw;
 }
 
 .summary-content p {
@@ -461,23 +456,17 @@ header li + li a {
 
 .info-card p {
     margin-inline: 2vw;
-    padding-inline: 1vw;
-    padding-block: 1vw;
 }
 
 @media (max-width: 768px) {
-    .summary-content {
-        gap: 12vw;
-    }
 
-    .info-card p {
-        padding-inline: 3.5vw;
-        padding-block: 2vw;
+    .summary-content {
+        gap: 10vw;
     }
 
     .info-hook {
         margin:auto;
-        margin-top: 2vw;
+        margin-top: 0vw;
         margin-bottom: 5vw;
     }
 }
@@ -485,80 +474,72 @@ header li + li a {
 /* QUICK COLOR PALETTE AND FONT CUSTOMIZATION FOR ALL DETAILS PAGES */
 
 * {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Orbitron', sans-serif;
 }
 
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: rgb(255, 216, 0);
-    /* color: rgb(255, 220, 50); */
-    background-color: rgb(0, 6, 41);
+    font-family: 'Poppins', sans-serif;
+    color: rgb(255, 255, 255);
+
+    background-color: rgb(0, 0, 0);
     background-image:
         radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
         radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
         radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
         radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px),
-        linear-gradient(180deg, rgba(0, 6, 41, 1) 0%, rgb(0, 4, 32) 100%);
+        linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
     background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
     background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }
 
 h1, h2, h3, h4, h5, h6, .info-hook {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: rgb(44, 112, 17);
-    /* color: rgb(64, 135, 64); */
-    text-shadow: 0 0 1em rgb(44, 112, 17);
-    /* color: rgb(94, 58, 18);
-    text-shadow: 0 0 1em rgb(94, 58, 18); */
-    font-weight: 600;
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(248, 205, 12);
+    text-shadow: 0 0 1em rgb(248, 205, 12);
+    font-weight: 800;
 }
 
 p {
     line-height: 1.5em;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 0 0 .5em rgb(255, 216, 0);
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 1em rgb(255, 255, 255);
 }
 
 header a:hover {
-    color: rgb(44, 112, 17);
+    color: rgb(248, 205, 12);
 }
 
 .preview-image-section {
-    box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
+    box-shadow: inset 0px 0px 10vw 3vw rgb(0, 0, 0);
 }
 
 .preview-image-section h1 {
-    color: rgb(255, 216, 0);
-    text-shadow: 0 0 .5em rgb(255, 216, 0);
-    font-size: 6vw;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 100;
+    color: white;
+    text-shadow: 0 0 1em white;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
 }
 
 .below-preview {
-    background-color: rgb(0, 6, 41);
+    background-color: rgb(0, 0, 0);
     background-image:
         radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
         radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
         radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
         radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px),
-        linear-gradient(180deg, rgba(0, 6, 41, 1) 0%, rgb(0, 4, 32) 100%);
+        linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
     background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
     background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-    box-shadow: inset 0px 0px 10vw 3vw rgba(30, 40, 75, 1);
-}
-
-.summary-section h2 {
-    font-style: italic;
+    box-shadow: inset 0px 0px 10vw 3vw rgb(0, 0, 0);
 }
 
 .summary-section h2:hover {
-  text-shadow: 0 0 1em rgb(255, 216, 0), 0 1em 1em rgba(0, 0, 0, 1);
+    text-shadow: 0 0 1em rgb(248, 205, 12), 0 1em 1em rgba(0, 0, 0, 1);
 }
 
 .summary-content ul li {
     font-weight: 500;
-    text-shadow: 0 0 .5em rgb(255, 216, 0);
+    text-shadow: 0 0 1em rgb(255, 255, 255);
 }
 
 .summary-content ul li strong{
@@ -566,7 +547,7 @@ header a:hover {
 }
 
 .image {
-    box-shadow: 0 0 1.5em .1em rgb(255, 255, 255);
+    box-shadow: 0 0 2.5em .3em rgb(255, 255, 255);
 }
 
 @media (min-width: 769px) {

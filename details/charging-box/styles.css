@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 /* GLOBAL STYLES */
 
@@ -192,7 +192,6 @@ header li + li a {
     position: fixed;
     top: 0;
 
-    background-image: url('../images/LD_Gameplay_Loop.gif');
     background-size: cover;
     background-position: center 0vw;
     background-repeat: no-repeat;
@@ -200,8 +199,6 @@ header li + li a {
 }
 
 .preview-image-section h1 {
-    font-size: 6vw;
-
     cursor: default;
     z-index: 1;
 }
@@ -443,10 +440,26 @@ header li + li a {
   border: white 0.2vw solid;
 }
 
-/* WITHOUT BOXES AROUND PARAGRAPHS THIS STYLING IS BETTER */
+/* WITH BOXES AROUND PARAGRAPHS THIS STYLING IS BETTER */
 
 .summary-content {
-    margin-top: 2vw;
+    margin-top: 5vw;
+}
+
+.summary-content p, .info-card p {
+    /* border: 0.3em solid rgb(158, 66, 15); */
+    background-color: #fff;
+    background-image:
+    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    linear-gradient(#eee .1em, transparent .15em);
+    background-size: 100% 1.8em;
+    background-position: 0 -.95em;
+    border-radius: 5px;
+    box-shadow: .2em .4em .4em .3em rgba(0, 0, 0, 0.5);
+}
+
+.info-card p {
+    background-position: 0 -1.5em;
 }
 
 .summary-content p {
@@ -457,17 +470,23 @@ header li + li a {
 
 .info-card p {
     margin-inline: 2vw;
+    padding-inline: 1vw;
+    padding-block: 1vw;
 }
 
 @media (max-width: 768px) {
-
     .summary-content {
-        gap: 10vw;
+        gap: 12vw;
+    }
+
+    .info-card p {
+        padding-inline: 3.5vw;
+        padding-block: 2vw;
     }
 
     .info-hook {
         margin:auto;
-        margin-top: 0vw;
+        margin-top: 2vw;
         margin-bottom: 5vw;
     }
 }
@@ -475,85 +494,95 @@ header li + li a {
 /* QUICK COLOR PALETTE AND FONT CUSTOMIZATION FOR ALL DETAILS PAGES */
 
 * {
-    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    font-family: 'Indie Flower', sans-serif;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    color: rgb(255, 255, 255);
-
-    background-color: rgb(0, 0, 0);
-    background-image:
-        radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
-        radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
-        radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
-        radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px),
-        linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
-    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
-    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    font-family: 'Indie Flower', sans-serif;
+    color: rgb(80, 80, 80);
+    background-color:#269;
+    background-image: linear-gradient(white 2px, transparent 2px),
+    linear-gradient(90deg, white 2px, transparent 2px),
+    linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
 h1, h2, h3, h4, h5, h6, .info-hook {
-    font-family: 'Orbitron', sans-serif;
-    color: rgb(248, 205, 12);
-    text-shadow: 0 0 1em rgb(248, 205, 12);
-    font-weight: 800;
+    font-family: 'Indie Flower', sans-serif;
+    color: rgb(236, 156, 8);
+    text-shadow: 0 .2em .5em rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.info-hook {
+    color: rgb(0, 0, 0);
+    text-shadow: none;
 }
 
 p {
-    line-height: 1.5em;
-    font-family: 'Orbitron', sans-serif;
-    text-shadow: 0 0 1em rgb(255, 255, 255);
-}
-
-header a:hover {
-    color: rgb(248, 205, 12);
+    line-height: 1em;
+    font-weight: 600;
+    font-family: 'Indie Flower', sans-serif;
 }
 
 .preview-image-section {
-    box-shadow: inset 0px 0px 10vw 3vw rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10vw 3vw rgba(255, 255, 255, 0.15);
 }
 
 .preview-image-section h1 {
-    color: white;
-    text-shadow: 0 0 1em white;
-    font-family: 'Orbitron', sans-serif;
+    color: rgb(236, 156, 8);
+    text-shadow: 0 0 .5em rgb(255, 255, 255);
+    font-size: 6vw;
+    font-family: 'Indie Flower', sans-serif;
     font-weight: 800;
 }
 
 .below-preview {
-    background-color: rgb(0, 0, 0);
-    background-image:
-        radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
-        radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
-        radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px),
-        radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 2px, transparent 30px),
-        linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
-    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 100% 100%;
-    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-    box-shadow: inset 0px 0px 10vw 3vw rgb(0, 0, 0);
+    background-color: black;
+    background-color:#269;
+    background-image: linear-gradient(white 2px, transparent 2px),
+    linear-gradient(90deg, white 2px, transparent 2px),
+    linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+    box-shadow: inset 0px 0px 10vw 3vw rgba(0, 0, 0, 0.5);
+}
+
+.summary-section h2 {
+    font-style: italic;
 }
 
 .summary-section h2:hover {
-    text-shadow: 0 0 1em rgb(248, 205, 12), 0 1em 1em rgba(0, 0, 0, 1);
+    text-shadow: 0 1em 1em rgba(0, 0, 0, 1);
 }
 
 .summary-content ul li {
-    font-weight: 500;
-    text-shadow: 0 0 1em rgb(255, 255, 255);
+    color: black;
+    font-weight: 600;
 }
 
 .summary-content ul li strong{
     font-weight: 800;
+    color: rgb(236, 156, 8);
 }
 
 .image {
-    box-shadow: 0 0 2.5em .3em rgb(255, 255, 255);
+    box-shadow: 0 0 1.5em .1em rgb(255, 255, 255);
 }
+
+@media (max-width: 1200px) { /* Different preview image on phone */
+    .preview-image {
+        background-image: url('../images/MM_FL_Phone_Alt.gif');
+    }
+}
+
 
 @media (min-width: 769px) {
     .info-hook:hover {
-        text-shadow: 0 0 .5em rgb(255, 213, 0);
         transition: all 0.3s ease-in-out;
     }
 }

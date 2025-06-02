@@ -192,7 +192,6 @@ header li + li a {
     position: fixed;
     top: 0;
 
-    background-image: url('../images/MM_Face_Loop.gif');
     background-size: cover;
     background-position: center 0vw;
     background-repeat: no-repeat;
@@ -556,7 +555,7 @@ header a:hover {
 }
 
 .summary-section h2:hover {
-  text-shadow: 0 0 1em rgb(125, 255, 125), 0 1em 1em rgba(0, 0, 0, 1);
+    text-shadow: 0 0 1em rgb(125, 255, 125), 0 1em 1em rgba(0, 0, 0, 1);
 }
 
 .summary-content ul li {
