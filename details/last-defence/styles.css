@@ -243,7 +243,6 @@ header li + li a {
 
 .summary-content p {
     margin: 0;
-    line-height: 1.8em;
 }
 
 .details-lists {
@@ -363,7 +362,6 @@ header li + li a {
 .info-card p {
     text-align: left;
     font-size: 1.5em;
-    line-height: 1.8em;
 }
   
 .info-hook {
@@ -500,7 +498,7 @@ h1, h2, h3, h4, h5, h6, .info-hook {
 }
 
 p {
-    line-height: 1.5em;
+    line-height: 1.8em;
     font-family: 'Orbitron', sans-serif;
     text-shadow: 0 0 1em rgb(255, 255, 255);
 }

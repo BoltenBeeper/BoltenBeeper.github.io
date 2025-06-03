@@ -241,7 +241,6 @@ header li + li a {
 
 .summary-content p {
     margin: 0;
-    line-height: 1.8em;
 }
 
 .details-lists {
@@ -361,7 +360,6 @@ header li + li a {
 .info-card p {
     text-align: left;
     font-size: 1.5em;
-    line-height: 1.8em;
 }
   
 .info-hook {
@@ -452,14 +450,10 @@ header li + li a {
     background-image:
     linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
     linear-gradient(#eee .1em, transparent .15em);
-    background-size: 100% 1.8em;
-    background-position: 0 -.95em;
+    background-size: 100% 1.4em;
+    background-position: 0 -.7em;
     border-radius: 5px;
     box-shadow: .2em .4em .4em .3em rgba(0, 0, 0, 0.5);
-}
-
-.info-card p {
-    background-position: 0 -1.5em;
 }
 
 .summary-content p {
@@ -472,6 +466,7 @@ header li + li a {
     margin-inline: 2vw;
     padding-inline: 1vw;
     padding-block: 1vw;
+    background-position: 0 -.9em;
 }
 
 @media (max-width: 768px) {
@@ -517,13 +512,8 @@ h1, h2, h3, h4, h5, h6, .info-hook {
     font-weight: 600;
 }
 
-.info-hook {
-    color: rgb(0, 0, 0);
-    text-shadow: none;
-}
-
 p {
-    line-height: 1em;
+    line-height: 1.4em;
     font-weight: 600;
     font-family: 'Indie Flower', sans-serif;
 }
@@ -560,6 +550,10 @@ p {
     text-shadow: 0 1em 1em rgba(0, 0, 0, 1);
 }
 
+.summary-content {
+    font-size: 1.8em;
+}
+
 .summary-content ul li {
     color: black;
     font-weight: 600;
@@ -570,16 +564,10 @@ p {
     color: rgb(236, 156, 8);
 }
 
-.image {
-    box-shadow: 0 0 1.5em .1em rgb(255, 255, 255);
+.info-hook {
+    color: rgb(0, 0, 0);
+    text-shadow: none;
 }
-
-@media (max-width: 1200px) { /* Different preview image on phone */
-    .preview-image {
-        background-image: url('../images/MM_FL_Phone_Alt.gif');
-    }
-}
-
 
 @media (min-width: 769px) {
     .info-hook:hover {
@@ -587,7 +575,39 @@ p {
     }
 }
 
+/* OTHER UNIQUE STYLES */
 
+.image {
+    z-index: 1;
+}
+
+.info-content {
+    z-index: 1;
+}
+
+.image-frame {
+    position: absolute;
+    width: 55vw;
+    height: 55vw;
+    background-image: url(/images/Sticky_Note.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background-color: rgb(233, 212, 24); */
+    /* box-shadow: inset 0px 0px 10vw 3vw rgba(255, 255, 255, 0.15); */
+
+    /* translate: -12vw -13vw; */
+    z-index: 0;
+}
+
+.info-card.left .image-frame {
+    translate: -12vw -13vw;
+}
+
+
+.info-card.right .image-frame {
+    translate: 45vw -13vw;
+}
 
 /* Media Queries for smaller screens */
 

@@ -241,7 +241,6 @@ header li + li a {
 
 .summary-content p {
     margin: 0;
-    line-height: 1.8em;
 }
 
 .details-lists {
@@ -361,7 +360,6 @@ header li + li a {
 .info-card p {
     text-align: left;
     font-size: 1.5em;
-    line-height: 1.8em;
 }
   
 .info-hook {
@@ -515,7 +513,7 @@ h1, h2, h3, h4, h5, h6, .info-hook {
 }
 
 p {
-    line-height: 1.5em;
+    line-height: 1.8em;
     font-weight: 600;
     font-family: 'Orbitron', sans-serif;
     /* text-shadow: 0 0 .5em green; */
@@ -574,17 +572,22 @@ header a:hover {
     box-shadow: 0 0 1.5em .1em rgb(125, 255, 125);
 }
 
-@media (max-width: 1200px) { /* Different preview image on phone */
-    .preview-image {
-        background-image: url('../images/MM_FL_Phone_Alt.gif');
-    }
-}
-
-
 @media (min-width: 769px) {
     .info-hook:hover {
         text-shadow: 0 0 .5em rgb(255, 255, 255);
         transition: all 0.3s ease-in-out;
+    }
+}
+
+/* OTHER UNIQUE STYLES */
+
+.preview-image {
+    background-image: url('/images/MM_Face_Loop.gif');
+}
+
+@media (max-width: 1200px) { /* Different preview image on phone */
+    .preview-image {
+        background-image: url('/images/MM_FL_Phone_Alt.gif');
     }
 }
 
