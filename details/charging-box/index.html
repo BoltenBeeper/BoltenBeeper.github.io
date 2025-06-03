@@ -44,49 +44,38 @@
             <section class="summary-section">
                 <h2>Project Summary</h2>
                     <div class="summary-content">
-                        <p>Max1M (short for Max-a-Million) is a personal project I started with the goal of creating my own AI companion which something I’ve dreamed of making for as long as we've had Siri on our IPhones. It’s designed to be an digital assistant like an Amazon Alexa or Apple's Siri but with a face that look back at you as it talks back and a much more vibrant personality that adapts with me. In other words, bringing a lot more personality to robotic virtual assitants.<br><br> 
-                            The plan is for Max to sit on a screen, which can either be on a personal computer or in my case a monitor mounted on a wall, follow who ever is talking with his eyes, and respond in real time by reacting to audio and movement, and later developing its own voice and personality. I want Max to eventually be fully capable of replacing my Amazon Alexa in terms of interactions and control over smart home products.<br><br>
-                            The name comes from a mix of things. “Max” represents my goal of reaching the max of my potential, and “a-Million” adds a kind of futuristic charm that felt right for a project like this. Like how a character in a show might name their latest invention the incinerator 2000. A big number following the name to give it some power. It was exactly the kind of scheesy charm I was looking for for this digital buddy.<br><br> 
-                            In this case, 1,000,000 felt like a big enough number for a project that's supposed to be about breaking my own expectations and pushing my liments. I also like the idea of a million being a lot of something, like a million stars to see, or a million grains of sand to wander, amillion possibilities to explore. It gives the name a sense of wonder and possibility, which is what I hope this project will inspire in others.
-                            <!-- The project is still in its early stages, but I’m excited to see where it goes. I hope to continue developing Max1M into a fully functional AI companion that can help people with their daily tasks, provide entertainment, and even become a friend. I believe that AI companions have the potential to change the way we interact with technology and each other, and I’m excited to be a part of that change. -->
+                        <p>This charging box is one of the projects assigned to me during my time as an Intern with Chaparral Star Academy. The project was given to me and a team of three other people with one month to complete it. Our task was to create some form of secure cabinet or box that only select students, who couldn't take their school-issued tablets home, could access to store and charge their Chromebooks overnight.<br><br>
+                            In the end, what we had created was an electronically accessed box that stays locked via a stepper motor, in which the students can set their Chromebooks in and connect them to the chargers readily available and pre-installed inside. The user may access the inside contents of this box by inputting their student IDs (issued by the school for every student) and pass-codes (issued by our team) through a number keypad small monitor.<br><br>
+                            What makes me so proud of this project is that it was my first time working with a team to create a physical, mechanical product. I had never worked with the hardware side of electronics to this degree before, so this experience taught me a lot about how software and hardware have to work together just as the people responsible for each do.<br><br>
+                            I haven't been able to keep up with what has become of the box now but I do know it was used for at least the rest of the school year without much issue. Unfortunately, after that was about when the pandemic hit and I wasn't able to return to that school but I have faith that it continued to be of use for years after.
                         </p>
                         <div class="details-lists">
                             <ul class="details-list left">
                                 <div class="thumb-tack"></div>
-                                <li><strong>LANGUAGES USED</strong>:
+                                <li><strong>Languages Used</strong>:
                                     <ul>
                                         <li>Python [<span><div class="listed-project-language-logo" style="background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg)"></div></span>]</li>
                                     </ul>
                                 </li>
-                                <li><strong>ENGINE</strong>: Built From Scratch</li>
-                                <li><strong>GENRE</strong>:
+                                <li><strong>Engine</strong>: Built From Scratch</li>
+                                <li><strong>Genre</strong>:
                                     <ul>
-                                        <li>AI Companion</li>
-                                    </ul>
-                                </li>
-                                <li><strong>PLATFORMS</strong>:
-                                    <ul>
-                                        <li>PC,</li>
-                                        <li>Mac</li>
+                                        <li>Electronic Storage</li>
                                     </ul>
                                 </li>
                             </ul>
                             <ul class="details-list right">
                                 <div class="thumb-tack"></div>
-                                <li><strong>Code</strong>:
+                                <li><strong>Front End Team</strong>:
                                     <ul>
-                                        <li>Riley Underwood</li>
-                                        <li>ChatGPT</li>
+                                        <li>Jacob Meadows</li>
+                                        <li>Gregory Clarke</li>
                                     </ul>
                                 </li>
-                                <li><strong>Design</strong>:
+                                <li><strong>Back End Team</strong>:
                                     <ul>
                                         <li>Riley Underwood</li>
-                                    </ul>
-                                </li>
-                                <li><strong>LLM Model</strong>:
-                                    <ul>
-                                        <li>GPT-4.1</li>
+                                        <li>Ammaar Siddiqui</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -101,30 +90,43 @@
                         <img class="image one" src="/images/CB_Whole.jpg"></img>
                     </div>
                     <div class="info-content">
-                        <p class="info-description"><span class="info-hook">Interface with a Face</span>The main idea of Max1M is to not only be a more advanced replacement for smart assistants, but to make interactions more friendly and personal by adding a face for expression and connection. This is a look at what the basic face looks like without animation. In the future I'd like to add all kind of expression ability but for now I've chosen to stick with a simple face design and light animation.</p>
+                        <p class="info-description"><span class="info-hook">Assembly</span>Gregory Clarke was in charge of making all the components the cabinet fit together and allowing the components to work in the most efficient manner possible. This involved drilling holes in strategic locations and placing components where they fit best. 
+                            Special attention was paid to the motor/locking mechanism. Other problems included the the placement of the Raspberry Pi and the power strip so as not to impede the sliding mechanism of the cabinet. 
+                            These parts were placed onto a cardboard shelf and attached to the top of the cabinet just above where the drawer would slide. All space was utilized in order to complete this project.
+                        </p>
                     </div>
                 </div>
                 <div class="info-card right">
                     <div class="info-content">
-                        <p class="info-description"><span class="info-hook">What Max Sees</span>Like a person, Max1M can look back at whoever is talking to him. He can make use of an installed camera to track human faces, using the camera's data along with coordinates from his face tracking software to calculate where to animate the eyes. The hope for this is to make interactions with max feel more natural.</p>
+                        <p class="info-description"><span class="info-hook">User Interface</span>Jacob Meadows oversaw the createion of the GUI which was created in Pygame with no additional modules dedicated to graphics. This code was hosted on an independant Raspberry Pi and displayed on a UOTOO 7 inch Small Portable HDMI Monitor. 
+                            Over development, we ran into issues with the GUI, such as the cursor remaining on screen when unnecessary, inputted digits not deleting after user input, and many others. 
+                            After the Charging Station was able to properly unlock, lock, open, and close, I focused my attention to those previously stated issues. As of version 1.0, all recognized issues have been dealt with.
+                        </p>
                     </div>
                     <div class="image-container">
                         <div class="thumb-tack"></div>
-                        <img class="image two" src="/images/CB_Motor.jpg"></img>
+                        <img class="image two" src="/images/CB_GUI_Loop.gif"></img>
                     </div>
                 </div>
                 <div class="info-card left">
                     <div class="image-container">
                         <div class="thumb-tack"></div>
-                        <img class="image three" src="/images/CB_Screens.jpg"></img>
+                        <img class="image three" src="/images/CB_Motor.jpg"></img>
                     </div>
                     <div class="info-content">
-                        <p class="info-description"><span class="info-hook">Install Anywhere</span>Max's program can be installed on pretty much any computer that supports running python applications. Complete installation involes downloading the Max1M program, downloading python and pygame, an attatched camera and microphone, and an internet connection for AI responses. I always want Max's code to be free to download and use and I do my best to make sure anyone with the minimum requirements can make a new friend with Max.</p>
+                        <p class="info-description"><span class="info-hook">Motor Control</span>Ammaar Siddiqui's main focus was the locking mechanism of the cabinet. The idea was to lock and unlock the cabinet using a motor attached to the locking system inside the cabinet. Luckily for us, the lock could be turned from inside without the key being inserted. 
+                            The motor didn't come with a lever and we had to make the lever length the perfect size. We ended up using a thick metal clip and shaping it to match the size of the motor and used heat shrink to attach the lever to the motor. This alone, however, wasn't strong enough to lift the heavy bar that kept the cabinet locked on the inside. 
+                            To adress this, Gregory had the idea to employ a bit of phisics and use a rubber band to help the motor lift the bar. The rubber band was attached to the top of the cabinet and the lever, giving the small motor extra strength to lift the bar.
+                        </p>
                     </div>
                 </div>
                 <div class="info-card right">
                     <div class="info-content">
-                        <p class="info-description"><span class="info-hook">Raspberry Pi</span>Though Max1M can be installed on most computers, Max is built to run on a Raspberry Pi, a small computer a fraction of the size and computing power of a normal PC. This, coupled with the fact that I want the Max1M to be accessable to as many people means a big focus for me on this project is making the program as optimised and user friendly as possible.</p>
+                        <p class="info-description"><span class="info-hook">Data Storage</span>My primary contribution to the making of this project was the code for confirming if the user was valid. When the student enters their ID, unique to the school, and their password, my code runs through a list on a CSV file checking if both the student ID and the password are valid (in the file). 
+                            If either the student ID or the password are not found in the file, the screen will return to the menu. The code also featured an option to add a new user to the list by manually inputting their student IDs while the system generates a password for them randomly and automatically. 
+                            The part of the code for adding new users was easily my greatest challenge with the code specifically because I have never worked with CSV files (writing and reading) until this point. Part of my task was to make my code work with my colleague, Jacob Meadows' GUI code, made in Pygame. 
+                            The user uses the keypad and interface to enter their data which my code varifies and returns the result to the GUI and allows the motor to turn, unlocking the cabinet.
+                        </p>
                     </div>
                     <div class="image-container">
                         <div class="thumb-tack"></div>
@@ -137,7 +139,9 @@
                         <img class="image five" src="/images/Raspberry_Pi.jpg"></img>
                     </div>
                     <div class="info-content">
-                        <p class="info-description"><span class="info-hook">Extra Information</span>In addition to personal interactions Max1M will be cabable of controlling smarthome products like smart lights and plugs, eliminating the need for products like Google home or Amazon Alexa. In the furture I may continue adding quality of life abilities like telling time, setting alarms, sending messages, etc. If you have any ideas or suggestions you'd like to see turned in to features of Max1M, please feel free to reach out to me using my contact information below!</p>
+                        <p class="info-description"><span class="info-hook">Extra Info</span>I also made the code for turning the motor and made sure it turned enough for both opening and closing the machine. Once the code was ready, my colleague, Ammaar Siddiqui worked to connect the motor to the Raspberry Pi. 
+                            Finally, I made some minor additions by making two jingles for both when the cabinet opens and when it closes.
+                        </p>
                     </div>
                 </div>
             </section>
