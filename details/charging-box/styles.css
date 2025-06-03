@@ -574,13 +574,14 @@ p {
     border: rgb(249, 229, 123) 1em solid;
     border-top: rgb(249, 229, 123) 2em solid;
     border-bottom: rgb(249, 229, 123) 0em solid;
+    box-shadow: .1em .3em .2em .1em rgba(0, 0, 0, 0.5);
 }
 
 .image {
     border: #eee 2em solid;
     border-top: #eee 6em solid;
     border-radius: 4px;
-    box-shadow: .3em .5em .4em .3em rgba(0, 0, 0, 0.5);
+    box-shadow: .3em .5em .3em .2em rgba(0, 0, 0, 0.5);
 }
 
 .info-hook {
@@ -617,16 +618,16 @@ p {
 
 .details-list.left .thumb-tack {
     transform: scaleX(-1);
-    translate: 8.5vw -9vw;
+    translate: 7.5vw -9vw;
 }
 
 .details-list.right .thumb-tack {
     transform: scaleX(-1);
-    translate: 5vw -9vw;
+    translate: 9vw -9vw;
 }
 
 .info-card .thumb-tack {
-    translate: 9vw -5vw;
+    translate: 8.5vw -4.5vw;
 }
 
 @media (max-width: 768px) {
@@ -636,15 +637,15 @@ p {
     }
 
     .details-list.left .thumb-tack {
-        translate: 22vw -18vw;
+        translate: 18vw -18vw;
     }
 
     .details-list.right .thumb-tack {
-        translate: 13vw -18vw;
+        translate: 21.5vw -18vw;
     }
 
     .info-card .thumb-tack {
-        translate: 27vw -10vw;
+        translate: 25.5vw -7.5vw;
     }
 }
 

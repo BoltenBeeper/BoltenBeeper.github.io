@@ -45,9 +45,9 @@
                 <h2>Project Summary</h2>
                     <div class="summary-content">
                         <p>This charging box is one of the projects assigned to me during my time as an Intern with Chaparral Star Academy. The project was given to me and a team of three other people with one month to complete it. Our task was to create some form of secure cabinet or box that only select students, who couldn't take their school-issued tablets home, could access to store and charge their Chromebooks overnight.<br><br>
-                            In the end, what we had created was an electronically accessed box that stays locked via a stepper motor, in which the students can set their Chromebooks in and connect them to the chargers readily available and pre-installed inside. The user may access the inside contents of this box by inputting their student IDs (issued by the school for every student) and pass-codes (issued by our team) through a number keypad small monitor.<br><br>
-                            What makes me so proud of this project is that it was my first time working with a team to create a physical, mechanical product. I had never worked with the hardware side of electronics to this degree before, so this experience taught me a lot about how software and hardware have to work together just as the people responsible for each do.<br><br>
-                            I haven't been able to keep up with what has become of the box now but I do know it was used for at least the rest of the school year without much issue. Unfortunately, after that was about when the pandemic hit and I wasn't able to return to that school but I have faith that it continued to be of use for years after.
+                            In the end, what we had created was an electronically accessed box that stays locked via a stepper motor in which the students can set their Chromebooks in and connect them to the chargers readily available and pre-installed inside. The user may access the contents of this box by inputting their student IDs (issued by the school for every student) and pass-codes (issued by our team) through a number keypad and small monitor.<br><br>
+                            What makes me so proud of this project is that it was my first time working with a team to create a physical, mechanical product. I had never worked with the hardware side of electronics to this degree before, so this experience taught me a lot about how software and hardware have to work together just as the people responsible for both sides do.<br><br>
+                            I don’t know what has become of the box now but I do know it was used for at least that entire school year without much issue. Unfortunately, after that was about when the pandemic hit and I wasn't able to return to that school but I have faith that it continued to be of use for years after.
                         </p>
                         <div class="details-lists">
                             <ul class="details-list left">
@@ -90,17 +90,17 @@
                         <img class="image one" src="/images/CB_Whole.jpg"></img>
                     </div>
                     <div class="info-content">
-                        <p class="info-description"><span class="info-hook">Assembly</span>Gregory Clarke was in charge of making all the components the cabinet fit together and allowing the components to work in the most efficient manner possible. This involved drilling holes in strategic locations and placing components where they fit best. 
-                            Special attention was paid to the motor/locking mechanism. Other problems included the the placement of the Raspberry Pi and the power strip so as not to impede the sliding mechanism of the cabinet. 
-                            These parts were placed onto a cardboard shelf and attached to the top of the cabinet just above where the drawer would slide. All space was utilized in order to complete this project.
+                        <p class="info-description"><span class="info-hook">Assembly</span>Gregory Clarke was in charge of making all of the components of the cabinet fit together and allowing the components to work in the most efficient manner possible. This involved drilling holes in strategic locations, placing components where they fit best and physically modifying the metal cabinet to suit our needs.
+                            Special attention was paid to the motor/locking mechanism. Other problems included the placement of the Raspberry Pi and the power strip so as not to impede the sliding mechanism of the cabinet.
+                            These parts were placed onto a cardboard shelf and attached to the top of the cabinet just above where the drawer would slide. All available space was utilized in order to complete this project.
                         </p>
                     </div>
                 </div>
                 <div class="info-card right">
                     <div class="info-content">
-                        <p class="info-description"><span class="info-hook">User Interface</span>Jacob Meadows oversaw the createion of the GUI which was created in Pygame with no additional modules dedicated to graphics. This code was hosted on an independant Raspberry Pi and displayed on a UOTOO 7 inch Small Portable HDMI Monitor. 
-                            Over development, we ran into issues with the GUI, such as the cursor remaining on screen when unnecessary, inputted digits not deleting after user input, and many others. 
-                            After the Charging Station was able to properly unlock, lock, open, and close, I focused my attention to those previously stated issues. As of version 1.0, all recognized issues have been dealt with.
+                        <p class="info-description"><span class="info-hook">User Interface</span>Jacob Meadows oversaw the creation of the GUI which was created in Pygame with no additional modules dedicated to graphics. This code was hosted independently on a Raspberry Pi programmable computer and displayed on a UOTOO 7 inch Small Portable HDMI Monitor.
+                            Over development, we ran into issues with the GUI, such as the cursor remaining on screen unnecessarily, inputted digits not deleting after the user's input, and many others.
+                            After the Charging Station was able to properly unlock, lock, open, and close, attention was shifted to those previously stated issues. As of version 1.0, all recognized issues have been dealt with.
                         </p>
                     </div>
                     <div class="image-container">
@@ -114,18 +114,17 @@
                         <img class="image three" src="/images/CB_Motor.jpg"></img>
                     </div>
                     <div class="info-content">
-                        <p class="info-description"><span class="info-hook">Motor Control</span>Ammaar Siddiqui's main focus was the locking mechanism of the cabinet. The idea was to lock and unlock the cabinet using a motor attached to the locking system inside the cabinet. Luckily for us, the lock could be turned from inside without the key being inserted. 
-                            The motor didn't come with a lever and we had to make the lever length the perfect size. We ended up using a thick metal clip and shaping it to match the size of the motor and used heat shrink to attach the lever to the motor. This alone, however, wasn't strong enough to lift the heavy bar that kept the cabinet locked on the inside. 
-                            To adress this, Gregory had the idea to employ a bit of phisics and use a rubber band to help the motor lift the bar. The rubber band was attached to the top of the cabinet and the lever, giving the small motor extra strength to lift the bar.
+                        <p class="info-description"><span class="info-hook">Motor Control</span>Ammaar Siddiqui's main focus was the locking mechanism of the cabinet. The idea was to lock and unlock the cabinet using a motor attached to the locking system inside the cabinet. Luckily for us, the lock could be turned from inside without the key being inserted.
+                            The motor didn't come with a lever and we had to ensure the lever length was perfect. We ended up using a thick metal clip and shaping it to match the size of the motor and used heat shrink to attach the lever to the motor. This alone, however, wasn't strong enough to lift the heavy bar that kept the cabinet locked on the inside.
+                            To address this issue, Gregory had the idea to employ a bit of physics and use a rubber band to help the motor lift the bar. The rubber band was attached to the top of the cabinet and the lever, giving the small motor extra strength to lift the bar.
                         </p>
                     </div>
                 </div>
                 <div class="info-card right">
                     <div class="info-content">
-                        <p class="info-description"><span class="info-hook">Data Storage</span>My primary contribution to the making of this project was the code for confirming if the user was valid. When the student enters their ID, unique to the school, and their password, my code runs through a list on a CSV file checking if both the student ID and the password are valid (in the file). 
-                            If either the student ID or the password are not found in the file, the screen will return to the menu. The code also featured an option to add a new user to the list by manually inputting their student IDs while the system generates a password for them randomly and automatically. 
-                            The part of the code for adding new users was easily my greatest challenge with the code specifically because I have never worked with CSV files (writing and reading) until this point. Part of my task was to make my code work with my colleague, Jacob Meadows' GUI code, made in Pygame. 
-                            The user uses the keypad and interface to enter their data which my code varifies and returns the result to the GUI and allows the motor to turn, unlocking the cabinet.
+                        <p class="info-description"><span class="info-hook">Data Storage</span>My primary contribution to the making of this project was the code for confirming if the user was valid. Part of that task involved making compatible code with my colleague, Jacob’s interface. When the student enters their ID (unique to the school) and their password, my code runs through a list on a CSV file checking if both the student ID and the password are valid and unlocking the cabinet if so.
+                            If either the student ID or the password are not found in the file, the screen will return to the menu. The code also featured an option to add a new user to the list by manually inputting their student IDs while the system randomly and automatically generates a password for them.
+                            The part of the code for adding new users was easily my greatest challenge with the code, specifically because I have never worked with CSV files (writing and reading) using code until this point.
                         </p>
                     </div>
                     <div class="image-container">
