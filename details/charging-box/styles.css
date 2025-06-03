@@ -448,7 +448,6 @@ header li + li a {
     /* border: 0.3em solid rgb(158, 66, 15); */
     background-color: #fff;
     background-image:
-    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
     linear-gradient(#eee .1em, transparent .15em);
     background-size: 100% 1.4em;
     background-position: 0 -.7em;
@@ -472,6 +471,10 @@ header li + li a {
 @media (max-width: 768px) {
     .summary-content {
         gap: 12vw;
+    }
+
+    .summary-content p {
+        background-position: 0 .05em;
     }
 
     .info-card p {
@@ -508,7 +511,7 @@ body {
 h1, h2, h3, h4, h5, h6, .info-hook {
     font-family: 'Indie Flower', sans-serif;
     color: rgb(236, 156, 8);
-    text-shadow: 0 .2em .5em rgb(0, 0, 0);
+    text-shadow: 0 .2em .3em rgb(0, 0, 0);
     font-weight: 600;
 }
 
@@ -524,8 +527,8 @@ p {
 
 .preview-image-section h1 {
     color: rgb(236, 156, 8);
-    text-shadow: 0 0 .5em rgb(255, 255, 255);
-    font-size: 6vw;
+    text-shadow: 0 0 .3em rgb(255, 255, 255);
+    font-size: 9vw;
     font-family: 'Indie Flower', sans-serif;
     font-weight: 800;
 }
@@ -547,7 +550,7 @@ p {
 }
 
 .summary-section h2:hover {
-    text-shadow: 0 1em 1em rgba(0, 0, 0, 1);
+    text-shadow: 0 .4em .5em rgb(0, 0, 0);
 }
 
 .summary-content {
@@ -557,11 +560,24 @@ p {
 .summary-content ul li {
     color: black;
     font-weight: 600;
+    text-shadow: none;
 }
 
 .summary-content ul li strong{
     font-weight: 800;
     color: rgb(236, 156, 8);
+    text-shadow: none;
+}
+
+.details-list {
+    background-color: rgb(249, 229, 123);
+    border: rgb(249, 229, 123) 1em solid;
+    border-top: rgb(249, 229, 123) 2em solid;
+    border-bottom: rgb(249, 229, 123) 0em solid;
+}
+
+.image {
+    box-shadow: .3em .5em .4em .3em rgba(0, 0, 0, 0.5);
 }
 
 .info-hook {
@@ -577,19 +593,15 @@ p {
 
 /* OTHER UNIQUE STYLES */
 
-.image {
-    z-index: 1;
-}
-
 .info-content {
     z-index: 1;
 }
 
-.image-frame {
+.thumb-tack {
     position: absolute;
-    width: 55vw;
-    height: 55vw;
-    background-image: url(/images/Sticky_Note.png);
+    width: 10vw;
+    height: 10vw;
+    background-image: url(/images/Thumb_Tack.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -597,16 +609,40 @@ p {
     /* box-shadow: inset 0px 0px 10vw 3vw rgba(255, 255, 255, 0.15); */
 
     /* translate: -12vw -13vw; */
-    z-index: 0;
+    z-index: 2;
 }
 
-.info-card.left .image-frame {
-    translate: -12vw -13vw;
+.details-list.left .thumb-tack {
+    transform: scaleX(-1);
+    translate: 8.5vw -9vw;
 }
 
+.details-list.right .thumb-tack {
+    transform: scaleX(-1);
+    translate: 5vw -9vw;
+}
 
-.info-card.right .image-frame {
-    translate: 45vw -13vw;
+.info-card .thumb-tack {
+    translate: 9vw -5vw;
+}
+
+@media (max-width: 768px) {
+    .thumb-tack {
+        width: 18vw;
+        height: 18vw;
+    }
+
+    .details-list.left .thumb-tack {
+        translate: 22vw -18vw;
+    }
+
+    .details-list.right .thumb-tack {
+        translate: 13vw -18vw;
+    }
+
+    .info-card .thumb-tack {
+        translate: 27vw -10vw;
+    }
 }
 
 /* Media Queries for smaller screens */
@@ -719,7 +755,7 @@ p {
     }
 
     .preview-image-section h1 {
-        font-size: 12vw;
+        font-size: 15vw;
     }
 
     .summary-section {
