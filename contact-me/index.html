@@ -4,18 +4,124 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Portfolio - Reach Me</title>
+    <title>Contact Me - Riley Underwood</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../images/BB_Logo.ico" />
 </head>
 <body>
-    <div id="overlay">
-        <h1 class="overlay-header">!!!UNDER CONSTRUCTION!!!</h1>
-        <p>For now, you'll have to go back to the <a href="../portfolio/index.html">landing page</a>. :[</p>
-        <ul>
-            <li>Check out my <span class="underline"><a href="../resume/index.html">resume</a></span> for information about me and my work history.</li>
-            <li>Feel free to reach out with questions, offers, or notes on how I could improve this page.</li>
-        </ul>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../portfolio/index.html">Home</a></li>
+                <li><a href="../resume/index.html">Resume</a></li>
+                <li><a href="../my-work/index.html">My Work</a></li>
+                <li><a href="../contact-me/index.html">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="background-video-container">
+        <iframe
+            class="background-video"
+            title="YouTube video player"
+            src="https://www.youtube.com/embed/j3MwnJIClvc?autoplay=1&mute=1&loop=1&playlist=j3MwnJIClvc&controls=0&showinfo=0&modestbranding=1&rel=0"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            aria-hidden="true"
+            tabindex="-1"
+        ></iframe>
+        <div class="video-cover"></div>
     </div>
-    
+
+        <div class="contact-page-header">
+            <h1 class="main-contact-title">Let's Get In Touch</h1>
+            <p class="main-contact-intro">I love meeting new people and I'm always excited to hear about an oprotunity to collaborate. Please don't hesitate to reach out!</p>
+        </div>
+        <hr class="contact-divider" />
+        <section class="contact-section contact-flex">
+            <div class="contact-box contact-column">
+                <h1>Send a Message</h1>
+                <p>(This will send a direct email to my professional inbox.)</p>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="user_name">Name</label>
+                        <input type="text" id="user_name" name="user_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email">Email</label>
+                        <input type="email" id="user_email" name="user_email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="contact-submit">Send Message</button>
+                    <div id="form-status"></div>
+                </form>
+            </div>
+            <div class="contact-info-list contact-column">
+                <h1>Other Ways to Reach Me:</h1>
+                <ul>
+                    <li>
+                        <span class="contact-icon phone" aria-label="Phone"></span>
+                        <a href="tel:5129498243" aria-label="Call Riley">(512) 949-8243</a>
+                    </li>
+                    <li>
+                        <span class="contact-icon email" aria-label="Email"></span>
+                        <a href="mailto:rileybusinesswood@gmail.com" aria-label="Email Riley">rileybusinesswood@gmail.com</a>
+                        <button class="copy-btn" type="button" data-copy="rileybusinesswood@gmail.com" aria-label="Copy email to clipboard" title="Copy email">
+                            📋
+                        </button>
+                    </li>
+                    <li>
+                        <span class="contact-icon linkedin" aria-label="LinkedIn"></span>
+                        <a href="https://www.linkedin.com/in/riguy/" target="_blank" aria-label="LinkedIn Profile">LinkedIn: Riley Underwood</a>
+                    </li>
+                    <li>
+                        <span class="contact-icon github" aria-label="GitHub"></span>
+                        <a href="https://github.com/BoltenBeeper" target="_blank" aria-label="GitHub Profile">BoltenBeeper</a>
+                    </li>
+                    <li>
+                        <span class="contact-icon discord" aria-label="Discord"></span>
+                        <span class="discord-tag" id="discordTag">BoltenBeeper</span>
+                        <button class="copy-btn" type="button" data-copy="BoltenBeeper" aria-label="Copy Discord tag to clipboard" title="Copy Discord tag">
+                            📋
+                        </button>
+                    </li>
+                </ul>
+                <div id="copy-status" aria-live="polite"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <p class="centered-text">Contact me! You know you want to.</p>
+                <ul>
+                    <li>Phone: (512) 949-8243</li>
+                    <li>Email: <a href="mailto:rileybusinesswood@gmail.com">rileybusinesswood@gmail.com</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/riguy/" target="_blank">Riley Underwood</a></li>
+                </ul>
+            </div>
+            <div class="resume-button">
+                <a href="../images/Riley Underwood Resume.pdf" target="_blank">
+                    <img src="../images/Resume_Icon.png" alt="Resume Icon" class="resume-icon">
+                </a>
+                <p>Resume PDF</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="contact-me.js"></script>
 </body>
 </html>

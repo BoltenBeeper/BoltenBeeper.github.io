@@ -46,7 +46,17 @@ header {
   z-index: 1001;
 }
 
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
 header li {
+  min-width: fit-content;
   text-decoration: none;
   color: white;
   list-style: none;
@@ -61,6 +71,7 @@ header li {
 header a {
   text-align: center;
   text-decoration: none;
+  letter-spacing: 0.1em;
   color: white;
   transition: all 0.2s ease-in-out;
 }

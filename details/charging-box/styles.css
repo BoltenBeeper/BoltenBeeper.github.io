@@ -146,8 +146,18 @@ header {
     justify-content: center;
     z-index: 1001;
 }
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
   
 header li {
+    min-width: fit-content;
     text-decoration: none;
     color: white;
     list-style: none;
@@ -162,6 +172,7 @@ header li {
 header a {
     text-align: center;
     text-decoration: none;
+    letter-spacing: 0.1em;
     color: white;
     transition: all 0.2s ease-in-out;
 }
@@ -519,6 +530,10 @@ p {
     line-height: 1.4em;
     font-weight: 600;
     font-family: 'Indie Flower', sans-serif;
+}
+
+header a:hover {
+    color: rgb(236, 156, 8)
 }
 
 .preview-image-section {
