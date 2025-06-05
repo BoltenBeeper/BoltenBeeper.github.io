@@ -177,6 +177,7 @@ header li + li a {
 
 /* PAGE HEADER & DIVIDER */
 .contact-page-header {
+  font-size: 1vw;
   width: 100%;
   text-align: center;
   margin-top: 3vw;
@@ -184,7 +185,7 @@ header li + li a {
 }
 
 .main-contact-title {
-  font-size: 3vw;
+  font-size: 3em;
   font-style: italic;
   color: #ffb101;
   letter-spacing: 0.05em;
@@ -198,7 +199,7 @@ header li + li a {
 .main-contact-intro {
   width: 50vw;
   margin-inline: auto;
-  font-size: 1.3vw;
+  font-size: 1.3em;
   color: #fff;
   margin-bottom: 1vw;
   font-weight: 300;
@@ -225,7 +226,7 @@ header li + li a {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  padding: 4em 0;
+  padding: 4vw 0;
 }
 
 .contact-box {
@@ -546,14 +547,20 @@ input:focus, textarea:focus {
         font-size: 2vw;
     }
 
-  .contact-flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    place-items: center;
-    gap: 50px;
-  }
+    .contact-page-header {
+      font-size: 1.5vw;
+    }
+
+    .main-contact-intro {
+      width: 75vw;
+    }
+
+    .contact-flex {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 50px;
+    }
 
     .footer {
         font-size: 1.5vw;
@@ -594,6 +601,28 @@ input:focus, textarea:focus {
 
     header a:hover {
         font-size: 3.5vw;
+    }
+
+    .contact-page-header {
+      font-size: 2vw;
+    }
+
+    .contact-column {
+      width: 71.7vw;
+      min-width: 71.7vw;
+      max-width: 71.7vw;
+    }
+
+    .contact-flex {
+      gap: 6vw;
+    }
+
+    .contact-box {
+      font-size: 2.6vw;
+    }
+
+    .contact-info-list {
+      font-size: 2.6vw;
     }
 
     .footer {
