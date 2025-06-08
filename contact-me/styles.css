@@ -7,6 +7,8 @@
     color: rgb(255, 255, 255);
     letter-spacing: 0.1em;
     font-weight: 300;
+    margin: 0;
+    padding: 0;
 }
 
 /* OVERLAY */
@@ -121,7 +123,7 @@ header a {
 header a:hover {
   font-size: 1.75vw;
   text-decoration: underline;
-  color: rgb(200, 64, 64);
+  color: #ffb101;
   transition: all 0.2s ease-in-out;
 }
 
@@ -463,9 +465,12 @@ input:focus, textarea:focus {
   gap: 5vw;
 }
 
-.footer{
+/* FOOTER */
+
+.footer {
+  position: relative;
   margin: auto;
-  padding-top: 8%;
+  padding-top: 25%;
   padding-bottom: 2%;
   display: flex;
   flex-direction: column;
@@ -474,6 +479,7 @@ input:focus, textarea:focus {
   background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png);
   background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
   color: white;
+  z-index: 1001;
 }
 
 .footer-content {
@@ -487,8 +493,7 @@ input:focus, textarea:focus {
 
 .footer-content p {
   text-align: left;
-  margin: auto;
-  padding: 0;
+  margin-left: 0;
 }
 
 .footer-content a:link {
@@ -509,21 +514,17 @@ input:focus, textarea:focus {
 
 .contact-info {
   margin: auto;
-  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 1vw;
 }
 
 .resume-button {
-  text-align: center;
   margin: auto;
-  padding: 0;
+  text-align: center;
 }
 
 .resume-icon {
-  margin: auto;
-  padding: 0;
   width: 7vw;
   height: 7vw;
   border-radius: 25%;
@@ -553,6 +554,11 @@ input:focus, textarea:focus {
 
     .main-contact-intro {
       width: 75vw;
+    }
+
+    .contact-divider {
+      border-top: 0.4vw solid #ffb101;
+      width: 40vw;
     }
 
     .contact-flex {
@@ -607,6 +613,11 @@ input:focus, textarea:focus {
       font-size: 2vw;
     }
 
+    .contact-divider {
+      border-top: 0.5vw solid #ffb101;
+      width: 50vw;
+    }
+
     .contact-column {
       width: 71.7vw;
       min-width: 71.7vw;
@@ -627,6 +638,13 @@ input:focus, textarea:focus {
 
     .footer {
         font-size: 2.5vw;
+    }
+
+    .resume-icon {
+        width: 15vw;
+        height: 15vw;
+        border-radius: 25%;
+        border: white .5vw solid;
     }
 }
 
