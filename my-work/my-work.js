@@ -35,6 +35,58 @@ if (window.matchMedia('(max-width: 768px)').matches) {
     });
 }
 
+// Fade/slide-in animation for project cards on scroll
+function animateProjectsOnScroll() {
+    const projects = document.querySelectorAll('.listed-project');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('hide')) {
+                entry.target.classList.add('visible');
+            } else if (!entry.target.classList.contains('hide')) {
+                // entry.target.classList.remove('visible'); // Uncomment to make cards disappear when out of view even if they were visible before
+            }
+        });
+    }, { threshold: 0.15 });
+
+    // Remove .visible from all cards initially
+    projects.forEach(proj => {
+        proj.classList.remove('visible');
+        observer.observe(proj);
+    });
+
+    // On load, manually check which cards are in viewport and add .visible only to those
+    setTimeout(() => {
+        projects.forEach(proj => {
+            if (!proj.classList.contains('hide') && isElementInViewport(proj)) {
+                proj.classList.add('visible');
+            }
+        });
+    }, 10);
+}
+
+// Checks if element is in viewport
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top < window.innerHeight &&
+        rect.bottom > 0
+    );
+}
+
+// Re-runs observer when filtering (to animate newly shown cards)
+function refreshProjectAnimations() {
+    document.querySelectorAll('.listed-project').forEach(proj => {
+        if (!proj.classList.contains('hide')) {
+            proj.classList.remove('visible');
+            // Force reflow to restart animation
+            void proj.offsetWidth;
+            proj.classList.add('visible');
+        } else {
+            proj.classList.remove('visible');
+        }
+    });
+}
+
 // Project filtering logic
 document.querySelectorAll('.project-tab').forEach(tab => {
     tab.addEventListener('click', function() {
@@ -48,5 +100,41 @@ document.querySelectorAll('.project-tab').forEach(tab => {
                 proj.classList.add('hide');
             }
         });
+
+        // Nav map list filtering
+        document.querySelectorAll('.nav-map-list li').forEach(li => {
+            if (li.classList.contains('NM0')) {
+                li.style.display = '';
+                return;
+            }
+            
+            const mapClass = li.classList[0]; // Gets the corresponding project class name
+            let projectSelector = '';
+            if (mapClass === 'NM1') projectSelector = '.living-planet';
+            if (mapClass === 'NM2') projectSelector = '.max1m';
+            if (mapClass === 'NM3') projectSelector = '.last-defence';
+            if (mapClass === 'NM4') projectSelector = '.charging-box';
+            if (!projectSelector) {
+                li.style.display = 'none';
+                return;
+            }
+            const project = document.querySelector(projectSelector);
+            if (project && !project.classList.contains('hide')) {
+                li.style.display = '';
+            } else {
+                li.style.display = 'none';
+            }
+        });
+        // Refresh animations for visible cards
+        refreshProjectAnimations();
+
+        // Remove .visible from all cards so observer can re-trigger animation (COMMENTED OUT TO KEEP CARDS FROM DISSAPPEARING WHEN SWITCHING TABS)
+        // document.querySelectorAll('.listed-project').forEach(proj => {
+        //     proj.classList.remove('visible');
+        // });
     });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    animateProjectsOnScroll();
 });
