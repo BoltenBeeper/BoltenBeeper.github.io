@@ -372,7 +372,7 @@ background-size: 100px 100px;
 .seemless-background-transition {
   font-size: 1vw;
   position: relative;
-  padding-bottom: 40rem;
+  padding-bottom: 33rem;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 1) 100%);
 }
 
@@ -411,6 +411,51 @@ background-size: 100px 100px;
   color: rgb(255, 255, 255, .75);
 }
 
+/* TABS STYLES */
+
+.project-tabs {
+  font-size: 1.2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin: 2em 0 0 0;
+}
+
+.project-tab {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 1em 1em 0 0;
+  padding: 0.7em 2.5em;
+  font-size: 1.2em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 0.2em 0.5em rgba(0,0,0,0.2);
+  outline: none;
+}
+
+.project-tab.selected,
+.project-tab:focus {
+  background: #c84040;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 0.4em 1em rgba(200,64,64,0.2);
+}
+
+.project-tab:hover:not(.selected) {
+  background: #333;
+}
+
+.listed-project.hide {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.98);
+}
+
 .listed-projects {
   display: flex;
   flex-direction: column;
@@ -418,16 +463,22 @@ background-size: 100px 100px;
   justify-content: space-around;
   align-items: center;
   font-size: 1.4vw;
+
+  /* For the tabs */
+  padding-top: 5vw;
+  margin-inline: 6.25vw;
+  border-radius: 5vw;
+  border-top: rgb(122, 122, 122) 6px solid;
 }
 
 .listed-project {
   display: flex;
   flex-direction: row;
   text-align: center;
-  width: 75%;
+  width: 88.5%;
   height: min-content;
   padding: 1vw;
-  padding-top: 7.5vw;
+  padding-top: 10vw;
   margin-bottom: 7.5vw;;
 }
 
@@ -540,8 +591,8 @@ background-size: 100px 100px;
 .listed-project-description {
   padding: 2%;
   padding-left: 5%;
-  border-right:rgb(150, 8, 8) .5em double;
-  border-top: rgb(150, 8, 8) .5em double;
+  border-right:rgb(150, 8, 8) 12px double;
+  border-top: rgb(150, 8, 8) 12px double;
   border-top-left-radius: 2em;
   border-bottom-right-radius: 2em;
 }
@@ -1024,9 +1075,8 @@ background-size: 100px 100px;
 
   .listed-project-description {
     padding: 4% 0% 4% 4%;  /* top right bottom left */
-    border-left:rgb(150, 8, 8) .4em double;
+    border-left:rgb(150, 8, 8) 12px double;
     border-right:none;
-    border-top: rgb(150, 8, 8) .4em double;
     border-top-right-radius: 1em;
     border-top-left-radius: 0;
     border-bottom-left-radius: 2em;

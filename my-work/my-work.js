@@ -34,3 +34,19 @@ if (window.matchMedia('(max-width: 768px)').matches) {
         navMap.classList.toggle('hover-simulated');
     });
 }
+
+// Project filtering logic
+document.querySelectorAll('.project-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        document.querySelectorAll('.project-tab').forEach(t => t.classList.remove('selected')); // unselects all other tabs
+        this.classList.add('selected');
+        const filter = this.getAttribute('data-filter');
+        document.querySelectorAll('.listed-project').forEach(proj => {
+            if (filter === 'all' || proj.classList.contains(filter)) {
+                proj.classList.remove('hide');
+            } else {
+                proj.classList.add('hide');
+            }
+        });
+    });
+});
