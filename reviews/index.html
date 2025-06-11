@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letters & Reviews - Riley Underwood</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/BB_Logo.ico" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../resume/resume.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../portfolio/index.html">Home</a></li>
+                <li><a href="../resume/index.html">Resume</a></li>
+                <li><a href="../my-work/index.html">My Work</a></li>
+                <li><a href="../reviews/index.html">Reviews</a></li>
+                <li><a href="../contact-me/index.html">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reviews-header-section">
+            <h1 class="reviews-title">Letters & Reviews</h1>
+            <p class="reviews-subtitle">Browse my letters of recommendation, references, reviews, and cover letters.</p>
+        </section>
+
+        <section class="reviews-tabs-section">
+            <div class="reviews-tabs">
+                <button class="reviews-tab selected" data-tab="recommendations">Recommendations</button>
+                <button class="reviews-tab" data-tab="reviews">Reviews</button>
+                <button class="reviews-tab" data-tab="coverletters">Cover Letter</button>
+            </div>
+        </section>
+
+        <section class="reviews-viewer-section">
+            <div class="reviews-viewer-controls">
+                <button class="reviews-arrow left" aria-label="Previous Letter">&#8592;</button>
+                <div class="reviews-scrollbar-container">
+                    <div class="reviews-scrollbar"></div>
+                </div>
+                <button class="reviews-arrow right" aria-label="Next Letter">&#8594;</button>
+            </div>
+
+            <div class="reviews-letter-viewer"> <!-- Now handled by JS, HTML embeds not necessary. -->
+                <!-- <embed class="reviews-pdf" src="../images/Riley Underwood Resume.pdf#toolbar=0" type="application/pdf" /> -->
+            </div>
+
+            <div class="reviews-download-link">
+                <a id="reviews-download-btn"download>Download PDF</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <p class="centered-text">Contact me! You know you want to.</p>
+                <ul>
+                    <li>Phone: (512) 949-8243</li>
+                    <li>Email: <a href="mailto:rileybusinesswood@gmail.com">rileybusinesswood@gmail.com</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/riguy/" target="_blank">Riley Underwood</a></li>
+                </ul>
+            </div>
+            <div class="resume-button">
+                <a href="../images/Riley Underwood Resume.pdf" target="_blank">
+                    <img src="../images/Resume_Icon.png" alt="Resume Icon" class="resume-icon">
+                </a>
+                <p>Downloadable PDF</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="reviews.js"></script>
+    
+</body>
+</html>

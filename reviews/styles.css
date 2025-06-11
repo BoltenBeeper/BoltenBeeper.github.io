@@ -1,0 +1,232 @@
+.reviews-header-section {
+    margin-top: 3vw;
+    text-align: center;
+}
+
+.reviews-title {
+    font-size: 3vw;
+    margin-bottom: 0.5vw;
+    color: #fff;
+    text-shadow: 0vw -.1vw .1vw rgba(158, 12, 12, 0.623);
+    font-style: italic;
+}
+
+.reviews-subtitle {
+    font-size: 1.3vw;
+    color: #ccc;
+    margin-bottom: 2vw;
+}
+
+.reviews-tabs-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vw;
+}
+
+.reviews-tabs {
+    display: flex;
+    gap: 2vw;
+    background: linear-gradient(0deg, rgba(40,8,8,1) 0%, rgba(80,8,8,1) 70%, rgba(100,8,8,1) 100%);
+    border-radius: 2vw;
+    padding: 0.5vw 2vw;
+    box-shadow: 0vw 1vw 1vw rgba(0, 0, 0, .2);
+}
+
+.reviews-tab {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.3vw;
+    font-style: italic;
+    font-weight: 500;
+    padding: 1vw 2vw;
+    border-radius: 1vw;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.reviews-tab.selected,
+.reviews-tab:hover {
+    background: rgb(150, 8, 8);
+    color: #fff;
+}
+
+.reviews-viewer-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 4vw auto;
+    background: linear-gradient(0deg, rgba(117,8,8,1) 0%, rgba(37,3,3,1) 100%);
+    border-radius: 2vw;
+    box-shadow: 0px 0px 3vw rgba(128, 16, 16, 0.5);
+    padding: 2vw 2vw 1vw 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-viewer-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1vw;
+    gap: 1vw;
+}
+
+.reviews-arrow {
+    background: rgb(40,8,8);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 2.5vw;
+    height: 2.5vw;
+    font-size: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.reviews-arrow:hover {
+    background: rgb(150, 8, 8);
+}
+
+.reviews-scrollbar-container {
+    flex: 1;
+    overflow-x: auto;
+    padding: 0 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviews-scrollbar {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    min-width: 0;
+}
+
+.reviews-scrollbar-dot {
+    width: 1vw;
+    height: 1vw;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity 0.2s, background 0.2s;
+    border: 0.15vw solid #a00;
+}
+.reviews-scrollbar-dot.active {
+    opacity: 1;
+    background: #a00;
+}
+
+.reviews-letter-viewer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    min-height: unset;
+    max-height: unset;
+    height: auto;
+    background: #000;
+    border-radius: 1vw;
+    box-shadow: 0 0 1vw rgba(0,0,0,0.5);
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-pdf {
+    width: 100%;
+    height: 100vh;
+    min-height: 0;
+    max-height: none;
+    border: none;
+    background: #222;
+    border-radius: 1vw;
+    display: block;
+}
+
+.reviews-empty {
+    color: #fff;
+    font-size: 2vw;
+    text-align: center;
+    padding: 5vw;
+}
+
+.reviews-download-link {
+    text-align: center;
+    margin-block: 2vw;
+}
+.reviews-download-link a {
+    color: #fff;
+    background: rgb(100, 8, 8);
+    padding: 0.7vw 2vw;
+    border-radius: 1vw;
+    text-decoration: none;
+    font-size: 1.2vw;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.reviews-download-link a:hover {
+    background: rgb(150, 8, 8);
+}
+
+@media (max-width: 900px) {
+    .reviews-viewer-section {
+        max-width: 98vw;
+        padding: 2vw 1vw 1vw 1vw;
+    }
+    .reviews-letter-viewer {
+        min-height: unset;
+        max-height: unset;
+        height: auto;
+    }
+    .reviews-pdf {
+        height: 100vw;
+        min-height: 0;
+        max-height: none;
+    }
+    .reviews-title {
+        font-size: 6vw;
+    }
+    .reviews-tab {
+        font-size: 2.5vw;
+        padding: 2vw 4vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .reviews-title {
+        font-size: 8vw;
+    }
+    .reviews-subtitle {
+        font-size: 3vw;
+    }
+    .reviews-tabs {
+        gap: 1vw;
+        padding: 1vw 1vw;
+    }
+    .reviews-tab {
+        font-size: 3vw;
+        padding: 2vw 3vw;
+    }
+    .reviews-viewer-section {
+        padding: 2vw 0.5vw 1vw 0.5vw;
+    }
+    .reviews-letter-viewer {
+        min-height: unset;
+        max-height: unset;
+        height: auto;
+    }
+    .reviews-pdf {
+        height: 120vw;
+        min-height: 0;
+        max-height: none;
+    }
+    .reviews-download-link a {
+        font-size: 3vw;
+        padding: 1vw 4vw;
+    }
+}

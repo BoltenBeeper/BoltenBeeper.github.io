@@ -493,7 +493,7 @@ background-size: 100px 100px;
   padding-top: 5vw;
   margin-inline: 6.25vw;
   border-radius: 5vw;
-  border-block: rgb(150, 8, 8) .25em solid;
+  border-block: rgb(150, 8, 8) .5em double;
 }
 
 .listed-project {
