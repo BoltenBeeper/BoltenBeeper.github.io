@@ -6,6 +6,7 @@ const letters = {
     ],
     reviews: [
         // { src: "...", label: "Review 1" }
+        { src: "../images/Riley Underwood Recommendation - Howard Davis.pdf", label: "Howard Davis Recommendation" },
     ],
     coverletters: [
         // { src: "...", label: "Cover Letter 1" }
@@ -14,6 +15,30 @@ const letters = {
 
 let currentTab = "recommendations";
 let currentIndex = 0;
+
+function updatePdfSize() {
+    const viewer = document.querySelector('.reviews-letter-viewer');
+    const pdf = viewer ? viewer.querySelector('.reviews-pdf') : null;
+    if (pdf && viewer) {
+        const aspect = 8.5 / 11;
+        const width = viewer.clientWidth;
+        const src = pdf.getAttribute('src'); // Forces the pdf to rerender to keep size scalability.
+        const newPdf = document.createElement('embed');
+        newPdf.className = 'reviews-pdf';
+        newPdf.type = 'application/pdf';
+        newPdf.src = src;
+        newPdf.style.width = width + "px";
+        newPdf.style.height = (width / aspect) + "px";
+        pdf.replaceWith(newPdf);
+    }
+}
+
+// Debounce updatePdfSize so it only runs after resizing stops for 0.5s
+let pdfResizeTimeout = null;
+function debounceUpdatePdfSize() {
+    if (pdfResizeTimeout) clearTimeout(pdfResizeTimeout);
+    pdfResizeTimeout = setTimeout(updatePdfSize, 500);
+}
 
 function updateViewer() {
     const viewer = document.querySelector('.reviews-letter-viewer');
@@ -24,9 +49,39 @@ function updateViewer() {
         downloadBtn.style.display = "none";
         return;
     }
-    viewer.innerHTML = `<embed class="reviews-pdf" src="${letter.src}#toolbar=0" type="application/pdf" />`;
-    downloadBtn.href = letter.src;
-    downloadBtn.style.display = "";
+
+    // Determine file type
+    let src = letter.src || "";
+    let ext = src.split('.').pop().toLowerCase();
+    let html = "";
+
+    if (letter.type === "text" && letter.content) {
+        html = `<div class="reviews-text-content"><p>${letter.content}</p></div>`;
+        downloadBtn.style.display = "none";
+    } else if (["webp", "jpg", "jpeg", "png"].includes(ext)) {
+        html = `<div class="reviews-image-wrapper"><img class="reviews-image" src="${src}" alt="${letter.label || ''}"></div>`;
+        // Download PDF with same base name if available
+        let pdfPath = src.replace(/\.(webp|jpg|jpeg|png)$/i, ".pdf");
+        let pdfName = pdfPath.split('/').pop();
+        downloadBtn.href = pdfPath;
+        downloadBtn.setAttribute('download', pdfName);
+        downloadBtn.style.display = "";
+    } else if (ext === "pdf") {
+        html = `<embed class="reviews-pdf" src="${src}#toolbar=0" type="application/pdf" />`;
+        downloadBtn.href = src;
+        downloadBtn.setAttribute('download', src.split('/').pop());
+        downloadBtn.style.display = "";
+    } else {
+        html = `<div class='reviews-empty'>Unsupported file type.</div>`;
+        downloadBtn.style.display = "none";
+    }
+
+    viewer.innerHTML = html;
+
+    // If PDF, update size after rendering
+    if (ext === "pdf") {
+        setTimeout(updatePdfSize, 0);
+    }
 }
 
 function updateScrollbar() {
@@ -72,4 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setupTabsAndArrows();
     updateViewer();
     updateScrollbar();
+
+    // Use debounced resize/orientation handler
+    window.addEventListener('resize', debounceUpdatePdfSize);
+    window.addEventListener('orientationchange', debounceUpdatePdfSize);
 });
