@@ -102,24 +102,26 @@
 
 .reviews-scrollbar {
     display: flex;
-    gap: 1vw;
+    gap: 10px;
     align-items: center;
     min-width: 0;
 }
 
 .reviews-scrollbar-dot {
-    width: 1vw;
-    height: 1vw;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background: #fff;
-    opacity: 0.4;
+    background: #5c0000;
+    opacity: 0.8;
     cursor: pointer;
-    transition: opacity 0.2s, background 0.2s;
-    border: 0.15vw solid #a00;
+    transition: all 0.2s;
+    border: 2px double rgb(32, 0, 0);
 }
 .reviews-scrollbar-dot.active {
     opacity: 1;
     background: #a00;
+    border: 5px solid rgb(32, 0, 0);
+    transition: all 0.2s;
 }
 
 .reviews-letter-viewer {
@@ -164,10 +166,16 @@
     padding: 2vw;
 }
 
-.reviews-text-content p {
+.reviews-text-content p.text {
     color: #fff;
     font-size: 2vw;
     text-align: center;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.reviews-text-content p.text-file {
+    font-size: 1.2vw;
     margin: 0;
     line-height: 1.5;
 }
