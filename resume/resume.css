@@ -463,7 +463,6 @@ header li + li a {
 .education-proof {
     display: grid;
     grid-template-columns: 50% 50%;
-    margin-bottom: 5vw;
 }
 
 .education, .proof-of-work {
@@ -472,6 +471,7 @@ header li + li a {
     margin-top: 0;
     margin-left: 3vw;
     margin-right: 3vw;
+    margin-bottom: 0;
     font-size: 1.2vw;
 }
 
@@ -606,66 +606,6 @@ header li + li a {
     background-color: rgb(0, 0, 0, 0);
 }
 
-.footer{
-    margin: auto;
-    padding-top: 8%;
-    padding-bottom: 2%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1.2vw;
-    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/837a1803-80cd-4dbf-b208-83c76f787602/ddwmxvk-ff6e8828-5de3-41b3-a340-31b01f181c81.png/v1/fill/w_1686,h_474,strp/binary_red___4k___dual_wallpaper_by_paintevil_ddwmxvk-pre.png);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-    color: white;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin: auto;
-    gap: auto;
-}
-
-.footer-content p {
-  text-align: left;
-  margin-left: 0;
-}
-
-.footer-content a:link {
-  color: white;
-}
-
-.footer-content a:active {
-  color: red;
-}
-
-.footer-content a:visited {
-  color: white;
-}
-
-.footer-content a:hover {
-  color: red;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-}
-
-.resume-button {
-    text-align: center;
-}
-
-.resume-icon {
-    width: 7vw;
-    height: 7vw;
-    border-radius: 25%;
-    border: white 0.2vw solid;
-}
-
 /* Media Queries for smaller screens */
 
 /* TABLET FORMAT */
@@ -748,10 +688,6 @@ header li + li a {
     .summary-text {
         font-size: 2vw;
     }
-
-    .footer {
-        font-size: 1.5vw;
-    }
 }
 
 @media (max-width: 992px) {
@@ -787,10 +723,6 @@ header li + li a {
     }
 
     .box2-0 {
-        font-size: 1.8vw;
-    }
-
-    .footer {
         font-size: 1.8vw;
     }
 }
@@ -853,14 +785,13 @@ header li + li a {
     .experience-skills {
         grid-template-columns: 1fr;
         margin-top: 10vw;
-        margin-bottom: 10vw;
+        margin-bottom: 0vw;
     }
 
     .experience, .skills {
         grid-template-columns: 1fr;
         height: auto;
         margin-top: 10vw;
-        margin-bottom: 10vw;
     }
 
     .card-type1{
@@ -1011,17 +942,6 @@ header li + li a {
             #ffb101 4vw,
             #ffb101 8vw
         ) 16;
-    }
-
-    .footer {
-        font-size: 2.5vw;
-    }
-
-    .resume-icon {
-        width: 15vw;
-        height: 15vw;
-        border-radius: 25%;
-        border: white .5vw solid;
     }
 }
 

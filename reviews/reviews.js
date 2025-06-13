@@ -5,13 +5,10 @@ const letters = {
         { src: "../images/Riley Underwood Recommendation - Emily Moses.pdf", label: "Emily Moses Recommendation" },
     ],
     reviews: [
-        // { src: "...", label: "Review 1" }
-        { src: "../images/Riley Underwood Recommendation - Emily Moses.txt", label: "Emily Moses Recommendation Text" },
+        // Use same format as recommendations
+        // { src: "...", label: "Label 1" }
     ],
     coverletters: [
-        // { src: "...", label: "Cover Letter 1" }
-        { type: "text", content: "This is a sample text content for Emily Moses' recommendation." },
-        { type: "text-file", content: "I am pleased to recommend Riley as he embarks on his career in software development. Though early in his journey, Riley has already demonstrated the qualities that make for a great developer: creativity, dedication, and a strong work ethic. His passion for learning is evident in his willingness to take on new challenges, and I have no doubt that he will quickly adapt and grow in a professional development environment.<br><br>Beyond his technical potential, Riley is a fantastic person to work with. He is kind, collaborative, and has a great sense of humor—qualities that make him a positive presence in any team setting. His ability to juggle multiple jobs while pursuing his goals speaks to his perseverance and determination.<br><br>I believe Riley would be an asset to any software development team. He approaches problems with a can-do attitude, is eager to learn from those around him, and brings a creative perspective to his work. I have no doubt that, given the opportunity, he will excel and contribute meaningfully to any project he takes on.<br><br>Please feel free to reach out if you’d like to discuss Riley further—I’d be happy to elaborate on why I believe he has a bright future in software development.<br><br>Best,<br><br>Emily Moses" },
     ]
 };
 
@@ -47,7 +44,7 @@ function updateViewer() {
     const downloadBtn = document.getElementById('reviews-download-btn');
     let letter = letters[currentTab][currentIndex];
     if (!letter) {
-        viewer.innerHTML = "<div class='reviews-empty'>No letters available.</div>";
+        viewer.innerHTML = "<div class='reviews-text-content reviews-empty'><p class='text'>No letters available.</p></div>";
         downloadBtn.style.display = "none";
         return;
     }
@@ -82,7 +79,7 @@ function updateViewer() {
                     letter._mobileTxtLoaded = true;
                     updateViewer();
                 });
-            viewer.innerHTML = "<div class='reviews-empty'>Loading...</div>";
+            viewer.innerHTML = "<div class='reviews-text-content reviews-empty'><p class='text'>Loading...</p></div>";
             downloadBtn.style.display = "none";
             return;
         }
@@ -111,11 +108,11 @@ function updateViewer() {
                 updateViewer();
             })
             .catch(() => {
-                viewer.innerHTML = "<div class='reviews-empty'>Unable to load text file.</div>";
+                viewer.innerHTML = "<div class='reviews-text-content reviews-empty'><p class='text'>Unable to load text file.</p></div>";
                 downloadBtn.style.display = "none";
             });
         // Show loading state
-        viewer.innerHTML = "<div class='reviews-empty'>Loading...</div>";
+        viewer.innerHTML = "<div class='reviews-text-content reviews-empty'><p class='text'>Loading...</p></div>";
         downloadBtn.style.display = "none";
         return;
     }
@@ -140,7 +137,7 @@ function updateViewer() {
         downloadBtn.setAttribute('download', src.split('/').pop());
         downloadBtn.style.display = "";
     } else {
-        html = `<div class='reviews-empty'>Unsupported file type.</div>`;
+        html = `<div class='reviews-text-content reviews-empty'><p class='text'>Unsupported file type.</p></div>`;
         downloadBtn.style.display = "none";
     }
 
