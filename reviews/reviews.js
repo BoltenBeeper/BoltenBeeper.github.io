@@ -1,12 +1,12 @@
 const letters = {
     recommendations: [
+        // FORMAT: { src: "...", label: "Label 1" }
         { src: "../images/Riley Underwood Recommendation - Howard Davis.pdf", label: "Howard Davis Recommendation" },
         { src: "../images/Riley Underwood Recommendation - Clint Hance.pdf", label: "Clint Hance Recommendation" },
         { src: "../images/Riley Underwood Recommendation - Emily Moses.pdf", label: "Emily Moses Recommendation" },
     ],
     reviews: [
-        // Use same format as recommendations
-        // { src: "...", label: "Label 1" }
+        { type: "text", content: "Riley truly cares about the customers. He makes sure they are taken care of every day he works. He goes above and beyond for them. He has purchased groceries for customers when he notices they aren't eating. Riley makes everyone smile.<br><br> - HEB eStore Team Lead", label: "Customer Service Award Nomination" },
     ],
     coverletters: [
     ]
@@ -42,11 +42,36 @@ function debounceUpdatePdfSize() {
 function updateViewer() {
     const viewer = document.querySelector('.reviews-letter-viewer');
     const downloadBtn = document.getElementById('reviews-download-btn');
+    const labelHeader = document.getElementById('reviews-label-header');
+    // Hide/show arrows based on letter count
+    const leftArrow = document.querySelector('.reviews-arrow.left');
+    const rightArrow = document.querySelector('.reviews-arrow.right');
+    const letterCount = letters[currentTab]?.length || 0;
+    if (leftArrow && rightArrow) {
+        if (letterCount <= 1) {
+            leftArrow.style.display = "none";
+            rightArrow.style.display = "none";
+        } else {
+            leftArrow.style.display = "";
+            rightArrow.style.display = "";
+        }
+    }
     let letter = letters[currentTab][currentIndex];
     if (!letter) {
         viewer.innerHTML = "<div class='reviews-text-content reviews-empty'><p class='text'>No letters available.</p></div>";
         downloadBtn.style.display = "none";
+        if (labelHeader) labelHeader.style.display = "none";
         return;
+    }
+
+    // Set label header
+    if (labelHeader) {
+        if (letter.label) {
+            labelHeader.textContent = letter.label;
+            labelHeader.style.display = "";
+        } else {
+            labelHeader.style.display = "none";
+        }
     }
 
     // Determine file type
@@ -69,6 +94,7 @@ function updateViewer() {
                     // Mark as loaded so we don't loop
                     letter._mobileTxtLoaded = true;
                     letter.type = "text-file";
+                    // console.log(letter.type);
                     letter.content = text.replace(/\n/g, "<br>");
                     letter._originalSrc = letter.src;
                     letter.src = txtSrc;
@@ -80,20 +106,8 @@ function updateViewer() {
                     updateViewer();
                 });
             viewer.innerHTML = "<div class='reviews-text-content reviews-empty'><p class='text'>Loading...</p></div>";
-            downloadBtn.style.display = "none";
+            downloadBtn.style.display = "";
             return;
-        }
-        // If we already tried loading txt and failed, fall through to PDF logic
-        if (letter.type === "text-file" && letter.content) {
-            html = `<div class="reviews-text-content"><p class="text-file">${letter.content}</p></div>`;
-            downloadBtn.style.display = "none";
-            viewer.innerHTML = html;
-            return;
-        }
-        // If txt failed, restore original src for PDF
-        if (letter._originalSrc) {
-            letter.src = letter._originalSrc;
-            ext = "pdf";
         }
     }
 
@@ -122,7 +136,12 @@ function updateViewer() {
         downloadBtn.style.display = "none";
     } else if (letter.type === "text-file" && letter.content) {
         html = `<div class="reviews-text-content"><p class="text-file">${letter.content}</p></div>`;
-        downloadBtn.style.display = "none";
+        let pdfPath = letter._originalSrc || src.replace(/\.txt$/i, ".pdf");
+        let pdfName = pdfPath.split('/').pop();
+        downloadBtn.href = pdfPath;
+        downloadBtn.setAttribute('download', pdfName);
+        downloadBtn.style.display = "";
+        viewer.innerHTML = html;
     } else if (["webp", "jpg", "jpeg", "png"].includes(ext)) {
         html = `<div class="reviews-image-wrapper"><img class="reviews-image" src="${src}" alt="${letter.label || ''}"></div>`;
         // Download PDF with same base name if available
