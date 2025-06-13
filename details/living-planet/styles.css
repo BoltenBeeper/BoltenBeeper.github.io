@@ -20,13 +20,6 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-/* p {
-    cursor: default;
-    font-size: 1.2vw;
-    font-weight: 600;
-    text-align: left;
-} */
-
 /* OVERLAY STYLES */
 
 #image-overlay {
@@ -128,62 +121,6 @@ h1, h2, h3, h4, h5, h6 {
     /* transition: transform 0.2s ease; */
     user-select: none;
     -webkit-user-drag: none;
-}
-
-/* HEADER */
-
-header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--header-height);
-    background-color: black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    z-index: 1001;
-}
-
-header ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-}
-  
-header li {
-    min-width: fit-content;
-    text-decoration: none;
-    color: white;
-    list-style: none;
-    display: inline-block;
-    font-size: 1.5vw;
-    font-style: italic;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0.1rem;
-}
-  
-header a {
-    text-align: center;
-    text-decoration: none;
-    letter-spacing: 0.1em;
-    color: white;
-    transition: all 0.2s ease-in-out;
-}
-
-header a:hover {
-    font-size: 1.75vw;
-    text-decoration: underline;
-    transition: all 0.2s ease-in-out;
-}
-  
-header li + li a {
-    margin-left: 4vw;
 }
 
 /* PREVIEW IMAGE SECTION */
@@ -525,7 +462,6 @@ header a:hover {
 /* Media Queries for smaller screens */
 
 @media (max-aspect-ratio: 1.4 / 1) {
-
     .preview-image-section {
         height: 40vw;
     }
@@ -537,36 +473,10 @@ header a:hover {
 
 /* TABLET FORMAT */
 
-@media (max-width: 1200px) {
-    body {
-        --header-height: 6vw;
-    }
-
-    header li {
-        font-size: 1.8vw;
-    }
-
-    header a:hover {
-        font-size: 2vw;
-    }
-}
-
 @media (max-width: 992px) {
-    body {
-        --header-height: 7vw;
-    }
-    
     #image-overlay h3 {
         top: calc((50vh - 2.3em) - 40vw);
         font-size: 2.3em;
-    }
-
-    header li {
-        font-size: 2vw;
-    }
-
-    header a:hover {
-        font-size: 2.2vw;
     }
 }
 
@@ -590,10 +500,6 @@ header a:hover {
 
 /* PHONE FORMAT */
 @media (max-width: 768px) {
-    body {
-        --header-height: 10vw;
-    }
-    
     #image-overlay h3 {
         top: 2em;
         font-size: 3em;
@@ -613,14 +519,6 @@ header a:hover {
         bottom: 10vh;
         right: 50%;
         transform: translateX(50%) rotate(90deg);
-    }
-
-    header li {
-        font-size: 3vw;
-    }
-
-    header a:hover {
-        font-size: 3.5vw;
     }
 
     .preview-image-section h1 {
@@ -681,33 +579,5 @@ header a:hover {
         font-size: 2.5em;
         line-height: 1.2em;
         text-align: center;
-    }
-}
-
-@media (max-width: 576px) {
-    body {
-        --header-height: 12vw;
-    }
-
-    header li {
-        font-size: 3.5vw;
-    }
-
-    header a:hover {
-        font-size: 4vw;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        --header-height: 14vw;
-    }
-
-    header li {
-        font-size: 3.8vw;
-    }
-
-    header a:hover {
-        font-size: 4.5vw;
     }
 }

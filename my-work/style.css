@@ -26,67 +26,13 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+header a:hover {
+  color: rgb(200, 45, 45);
+}
+
 .underline {
   text-decoration: underline;
 }
-
-/* HEADER */
-
-header {
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4vw;
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  z-index: 1001;
-}
-
-header ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-}
-
-header li {
-  min-width: fit-content;
-  text-decoration: none;
-  color: white;
-  list-style: none;
-  display: inline-block;
-  font-size: 1.5vw;
-  font-style: italic;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.1rem;
-}
-
-header a {
-  text-align: center;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: white;
-  transition: all 0.2s ease-in-out;
-}
-
-header a:hover {
-  font-size: 1.75vw;
-  text-decoration: underline;
-  color: rgb(200, 45, 45);
-  transition: all 0.2s ease-in-out;
-}
-
-header li + li a {
-  margin-left: 4vw;
-}
-
 
 /* Nav map icon and animations are all scalable. The only thing that needs to be adjusted is the "top", "right", and "font-size" properties under the .nav-map class to move the icon around and change the size. */
 .nav-map {
@@ -293,7 +239,6 @@ header li + li a {
   font-size: 2.5em;
   font-weight: 500;
   width: max-content;
-  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 }
 
 .introduction-section p {
@@ -307,7 +252,6 @@ header li + li a {
   padding: 0;
   padding-bottom: 3rem;
   text-shadow: .3vw -.3vw .5vw rgba(0, 0, 0, 1);
-  /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
 }
 
 p .emphasise {
@@ -318,7 +262,6 @@ p .emphasise {
 
 .introduction-section .stack-container {
   max-width: 1000px;
-  /* min-width: 350px; */
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -691,12 +634,6 @@ background-size: 100px 100px;
   align-content: space-between;
   padding-inline: 1em;
   gap: 1em;
-  
-  /* padding: 2%;
-  border-left:rgb(150, 8, 8) .4em double;
-  border-top: rgb(150, 8, 8) .4em double;
-  border-top-right-radius: 10%;
-  border-bottom-left-radius: 10%; */
 }
   
 .project-button-container {
@@ -719,7 +656,6 @@ background-size: 100px 100px;
   text-decoration: none;
   text-align: center;
   text-shadow: none;
-  /* box-shadow: -.4em .6em 1em 0 rgba(0, 0, 0, .25) inset, .2em -.3em .5em .1em rgba(0, 0, 0, .25); */
   box-shadow: -.4em .6em .5em 0 rgba(0, 0, 0, .25) inset, .4em -.6em .5em 0 rgba(70, 70, 70, 0.25) inset, .1em -.15em .5em .1em rgba(0, 0, 0, .40);
   transition: all 0.2s ease-in-out;
 }
@@ -727,7 +663,6 @@ background-size: 100px 100px;
 .project-button:hover {
   font-size: .78em;
   box-shadow: -.4em .6em .3em 0 rgba(0, 0, 0, .25) inset, .4em -.6em .3em 0 rgba(0, 0, 0, .25) inset, 0 0 .2em .1em rgba(0, 0, 0, .40);
-  /* background-color: rgb(7, 158, 39); */
   transition: all 0.3s ease-in-out;
 }
 
@@ -736,8 +671,6 @@ background-size: 100px 100px;
 .project-button-glow, .project-button-container-glow {
   overflow: hidden;
   border-radius: 0.5em;
-  /* box-shadow: 0 0 .2em .1em rgba(0, 0, 0, .25); */
-  /* z-index: 0; */
 }
 
 .project-button-container-glow {
@@ -745,7 +678,6 @@ background-size: 100px 100px;
   height: 2.025em;
   background-color: rgb(25, 8, 8);
   box-shadow: -.4em .6em .5em 0 rgba(0, 0, 0, .25) inset, .4em -.6em .5em 0 rgba(70, 70, 70, 0.25) inset, .1em -.15em .5em .1em rgba(0, 0, 0, .40);
-  /* Glow Blur */
   filter: blur(0px);
   transition: all 0.2s ease-in-out;
 }
@@ -773,12 +705,10 @@ background-size: 100px 100px;
   text-decoration: none;
   text-align: center;
   text-shadow: none;
-  /* box-shadow: -.4em .6em 1em 0 rgba(0, 0, 0, .25) inset, .2em -.3em .5em .1em rgba(0, 0, 0, .25); */
 }
 
 .project-button-glow:before, .project-button-container-glow:before {
   content: '';
-  /* z-index: -2; */
   text-align: center;
 	top: 50%;
 	left: 50%;
@@ -788,22 +718,17 @@ background-size: 100px 100px;
 	height: 999px;
 	background-repeat: no-repeat;
 	background-position: 0 0;
-  /*border color, change middle color*/
 	background-image: conic-gradient(rgba(0,0,0,0), #ff0000, rgba(0,0,0,0) 25%);
-  /* change speed here */
 	animation: rotate 3s linear infinite;
 }
 
 .project-button-glow:after {
 	content: 'Read More';
-  /* z-index: -1; */
   text-align: center;
   font-weight: 200;
   font-style: italic;
   align-content: center;
 	position: absolute;
-	/* z-index: -1; */
-  /* border width */
 	left: .195em; /* 5px on a 2k screen */
 	top: .195em;
   /* double the px from the border width left */
@@ -836,18 +761,6 @@ background-size: 100px 100px;
 /* TABLET FORMAT */
 
 @media (max-width: 1200px) {
-  header {
-    height: 6vw;
-  }
-
-  header li {
-    font-size: 1.8vw;
-  }
-
-  header a:hover {
-    font-size: 2vw;
-  }
-
   .seemless-background-transition {
     padding-bottom: 55em;
   }
@@ -879,18 +792,6 @@ background-size: 100px 100px;
 }
 
 @media (max-width: 992px) {
-  header {
-    height: 7vw;
-  }
-
-  header li {
-    font-size: 2vw;
-  }
-
-  header a:hover {
-    font-size: 2.2vw;
-  }
-
   .stack-container {
     width: 92vw;
   }
@@ -949,18 +850,6 @@ background-size: 100px 100px;
 
 /* PHONE FORMAT */
 @media (max-width: 768px) {
-  header {
-    height: 10vw;
-  }
-
-  header li {
-    font-size: 3vw;
-  }
-
-  header a:hover {
-    font-size: 3.5vw;
-  }
-
   .nav-map {
     font-size: 3vw;
     bottom: 0vw;
@@ -1143,18 +1032,6 @@ background-size: 100px 100px;
 }
 
 @media (max-width: 576px) {
-  header {
-    height: 12vw;
-  }
-
-  header li {
-    font-size: 3.5vw;
-  }
-
-  header a:hover {
-    font-size: 4vw;
-  }
-  
   .introduction-section .stack-container {
     font-size: 10px;
     gap: 0;
@@ -1167,19 +1044,5 @@ background-size: 100px 100px;
 
   .devicon-github-original {
     font-size: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  header {
-    height: 14vw;
-  }
-
-  header li {
-    font-size: 3.8vw;
-  }
-
-  header a:hover {
-    font-size: 4.5vw;
   }
 }
