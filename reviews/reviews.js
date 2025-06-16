@@ -9,6 +9,7 @@ const letters = {
         { type: "text", content: "Riley truly cares about the customers. He makes sure they are taken care of every day he works. He goes above and beyond for them. He has purchased groceries for customers when he notices they aren't eating. Riley makes everyone smile.<br><br> - J. F., HEB eStore Manager", label: "Customer Service Award Nomination" },
     ],
     coverletters: [
+        { src: "../images/General Cover Letter.pdf", label: "Cover Letter" },
     ]
 };
 

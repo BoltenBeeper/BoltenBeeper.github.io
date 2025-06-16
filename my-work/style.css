@@ -411,7 +411,7 @@ background-size: 100px 100px;
   background: rgb(150, 8, 8);
   color: white;
   font-weight: 700;
-  box-shadow: 0 0.4em 1em rgba(200,64,64,0.2);
+  box-shadow: 0 0.4em 1em rgba(200,64,64,0.2), inset 0 0.3em 0.5em rgba(0,0,0,0.4);
 }
 
 .project-tab:hover:not(.selected) {
