@@ -138,3 +138,19 @@ document.querySelectorAll('.project-tab').forEach(tab => {
 window.addEventListener('DOMContentLoaded', () => {
     animateProjectsOnScroll();
 });
+
+// iOS detection and fallback for project-button-glow
+function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+
+if (isIOS()) {
+    document.querySelectorAll('.project-button-glow').forEach(btn => {
+        btn.classList.remove('project-button-glow');
+        btn.classList.add('project-button');
+    });
+    document.querySelectorAll('.project-button-container-glow').forEach(container => {
+        container.classList.remove('project-button-container-glow');
+        container.classList.add('project-button-container');
+    });
+}
