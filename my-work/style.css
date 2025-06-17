@@ -517,9 +517,10 @@ background-size: 100px 100px;
   height: 8.3em;
   aspect-ratio: 1 / 1;
   position: absolute;
-  top: -8.81em;
+  top: -8.5em;
   translate: -50% 0;
   transform: rotate(45deg);
+  z-index: -1;
 }
 
 /* Nail */
@@ -532,7 +533,7 @@ background-size: 100px 100px;
     height: .6em;
     aspect-ratio: 1 / 1;
     position: absolute;
-    top: -10.7em;
+    top: -10.5em;
     translate: -50% 0;
 }
 
