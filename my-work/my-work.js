@@ -144,10 +144,15 @@ function isIOS() {
     return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 }
 
+// If using iOS, change glow buttons that break only on apple phones to normal buttons
 if (isIOS()) {
     document.querySelectorAll('.project-button-glow').forEach(btn => {
         btn.classList.remove('project-button-glow');
         btn.classList.add('project-button');
+        // Adds "Read More" text if button is empty
+        if (!btn.textContent.trim()) {
+            btn.textContent = 'Read More';
+        }
     });
     document.querySelectorAll('.project-button-container-glow').forEach(container => {
         container.classList.remove('project-button-container-glow');
