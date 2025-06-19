@@ -44,7 +44,6 @@ header a {
 
 header a:hover {
     font-size: 1.75vw;
-    text-decoration: underline;
     transition: all 0.2s ease-in-out;
 }
 

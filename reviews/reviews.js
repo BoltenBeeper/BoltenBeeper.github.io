@@ -1,19 +1,21 @@
 const letters = {
+    reviews: [
+        { type: "text", content: "Riley truly cares about the customers. He makes sure they are taken care of every day he works. He goes above and beyond for them. He has purchased groceries for customers when he notices they aren't eating. Riley makes everyone smile.<br><br> - J. F., HEB eStore Manager", label: "Customer Service Award Nomination" },
+    ],
     recommendations: [
-        // FORMAT: { src: "...", label: "Label 1" }
+        // FORMAT 1 (Plain text): { type: "text", content: "Any Text", label: "Any Label" }
+        // FORMAT 2 (TXT files): { type: "text-file", src: "...", label: "Any Label" }
+        // FORMAT 3 (PDFs and images): { src: "...", label: "Any label" }
         { src: "../images/Riley Underwood Recommendation - Howard Davis.pdf", label: "Howard Davis Recommendation" },
         { src: "../images/Riley Underwood Recommendation - Clint Hance.pdf", label: "Clint Hance Recommendation" },
         { src: "../images/Riley Underwood Recommendation - Emily Moses.pdf", label: "Emily Moses Recommendation" },
-    ],
-    reviews: [
-        { type: "text", content: "Riley truly cares about the customers. He makes sure they are taken care of every day he works. He goes above and beyond for them. He has purchased groceries for customers when he notices they aren't eating. Riley makes everyone smile.<br><br> - J. F., HEB eStore Manager", label: "Customer Service Award Nomination" },
     ],
     coverletters: [
         { src: "../images/General Cover Letter.pdf", label: "Cover Letter" },
     ]
 };
 
-let currentTab = "recommendations";
+let currentTab = "reviews"; // Default tab
 let currentIndex = 0;
 
 function updatePdfSize() {

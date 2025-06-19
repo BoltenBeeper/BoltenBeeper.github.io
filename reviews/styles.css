@@ -69,7 +69,7 @@ hr {
 .reviews-tabs-section {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-block: 2rem;
 }
 
 .reviews-tabs {
@@ -77,16 +77,16 @@ hr {
     gap: 3rem;
     width: 100%;
     max-width: 1200px;
-    background: linear-gradient(0deg, rgba(20, 8, 8, 1) 30%, rgba(100, 8, 8, 1) 100%);
+    /* background: linear-gradient(0deg, rgba(20, 8, 8, 1) 30%, rgba(100, 8, 8, 1) 100%); */
     border-radius: 3rem;
     padding: 1rem 3rem;
-    box-shadow: 0vw -1vw 2vw rgba(200, 8, 8, .5);
+    /* box-shadow: 0vw -1vw 2vw rgba(200, 8, 8, .5); */
 }
 
 .reviews-tab {
     background: none;
     border: none;
-    color: #fff;
+    color: rgb(127, 127, 127);
     font-size: 2.2rem;
     font-style: italic;
     font-weight: 500;
@@ -97,12 +97,12 @@ hr {
 }
 
 .reviews-tab:hover {
-    background: rgba(20, 8, 8, 0.5);
-    /* color: #ffb101; */
-    box-shadow: inset 0 0 1vw rgba(50, 8, 8, .5), 0 0 1vw rgba(50, 8, 8, .5);
+    background: rgba(0,0, 0, 0.5);
+    /* box-shadow: inset 0 0 1vw rgba(50, 8, 8, .5), 0 0 1vw rgba(50, 8, 8, .5); */
 }
 
 .reviews-tab.selected {
+    color: rgb(255, 255, 255);
     /* background: rgb(150, 8, 8); */
     box-shadow: inset 0 0 1vw rgba(150, 8, 8, 1), 0 0 1vw rgba(150, 8, 8, 1);
 }
@@ -112,7 +112,7 @@ hr {
     max-width: 1200px;
     margin: 0 auto 4vw auto;
     /* background: linear-gradient(135deg, rgba(40, 4, 4, 1) 0%, rgba(80, 8, 8, 1) 100%); */
-    background: linear-gradient(90deg, rgb(36, 36, 36) 0%, rgb(146, 146, 146) 60%,rgb(196, 196, 196) 70%, rgb(36, 36, 36) 100%);
+    background: rgb(150, 8, 8);
     border-radius: 2vw;
     box-shadow: 0vw 0vw 2vw rgb(0, 0, 0), inset 0vw 0vw 5vw 3vw rgba(0, 0, 0, .5);
     padding: 1rem 5rem 1rem;
@@ -125,13 +125,13 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    min-width: 50%;
     min-height: 65px;
-    gap: 1vw;
+    gap: 5vw;
 }
 
 .reviews-arrow {
-    color: #c40000;
+    color: #ffffff;
     text-shadow: #6d0000 .1rem .1rem 0;
     border: none;
     border-radius: 50%;
@@ -143,22 +143,14 @@ hr {
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0);
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
     box-shadow: inset 0 0 .2rem rgb(0, 0, 0);
     cursor: pointer;
     user-select: none;
     transition: all 0.2s ease-in-out;
 }
 .reviews-arrow.right {
-    color: #eb0000;
+    color: #ffffff;
     text-shadow: #8f0000 .1rem .1rem 0;
-}
-.reviews-arrow:hover {
-    display: flex;
-    background: rgb(0, 0, 0, 0);
-    box-shadow: inset 0 0 .5rem rgb(0, 0, 0);
-    font-size: 2.8rem;
-    transition: all 0.2s ease-in-out;
 }
 
 .reviews-scrollbar-container {
@@ -186,13 +178,13 @@ hr {
     cursor: pointer;
     transition: all 0.2s;
     opacity: 1;
-    background: rgb(150, 8, 8);
+    background: rgb(255, 255, 255);
     border: 8px solid rgb(15, 0, 0);
 }
 .reviews-scrollbar-dot.active {
     background: rgb(15, 0, 0);
-    border: 8px double rgb(150, 8, 8);
-    box-shadow: 0rem 0rem 1rem rgba(150, 8, 8, 1);
+    border: 8px double rgb(255, 255, 255);
+    box-shadow: 0rem 0rem 1rem rgb(255, 255, 255);
     transition: all 0.2s;
 }
 
@@ -203,31 +195,18 @@ hr {
     min-height: fit-content;
     margin: 1rem 0 2rem 0;
     padding: 0.5rem 1rem;
-    background: linear-gradient(90deg, #3B3B3B 0%, rgb(146, 146, 146) 65%, rgb(196, 196, 196) 75%, #666666 100%);
+    /* background: linear-gradient(90deg, #3B3B3B 0%, rgb(146, 146, 146) 65%, rgb(196, 196, 196) 75%, #666666 100%); */
     /* box-shadow: inset 0 0 1rem .2rem rgb(41, 41, 41); */
     box-shadow: inset 0 0 1rem rgb(41, 41, 41);
     border-radius: 1rem;
 }
 
 .reviews-label-header {
-    color: #333333;
+    color: #ffffff;
     font-size: 2.5rem;
     font-weight: 600;
     text-align: center;
     letter-spacing: 0.01em;
-    /* Engraved effect using multiple text-shadows */
-    text-shadow:
-        1px 1px 0 rgba(129, 129, 129, 0.5),          /* highlight */
-        -1px -1px 1px rgba(0, 0, 0, 0.5),           /* shadow */
-        0 2px 0 rgba(175, 175, 175, 0.5),         /* soft shadow */
-        0 1px 0 rgba(129, 129, 129, 0.5),              /* inner highlight */
-        0 -1px 1px rgba(0, 0, 0, 0.5);                /* inner shadow */
-    text-decoration: underline;
-    /* background: linear-gradient(90deg, #3B3B3B 0%, rgb(88, 88, 88) 65%, rgb(104, 104, 104) 75%, #666666 100%); */
-    background: linear-gradient(90deg, #3B3B3B 0%, rgb(146, 146, 146) 65%, rgb(196, 196, 196) 75%, #666666 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .reviews-letter-viewer {
@@ -367,19 +346,12 @@ hr {
         min-height: fit-content;
         margin: 1em 0 2em 0;
         padding: 0.5em 1em;
-        background: linear-gradient(90deg, #3B3B3B 0%, rgb(146, 146, 146) 65%, rgb(196, 196, 196) 75%, #666666 100%);
         box-shadow: inset 0 0 1em rgb(41, 41, 41);
         border-radius: 1.2vw;
     }
 
     .reviews-label-header {
         font-size: 2.5vw;
-        text-shadow:
-            .05vw .05vw 0 rgba(129, 129, 129, 0.5),         /* highlight */
-            -.05vw -.05vw .05vw rgba(0, 0, 0, 0.5),         /* shadow */
-            0 .1vw 0 rgba(175, 175, 175, 0.5),              /* soft shadow */
-            0 .05vw 0 rgba(129, 129, 129, 0.5),             /* inner highlight */
-            0 -.05vw .05vw rgba(0, 0, 0, 0.5);              /* inner shadow */
     }
     
     .reviews-letter-viewer {
@@ -425,6 +397,14 @@ hr {
         font-size: 2.5vw;
         padding: 1vw 4vw;
         border-radius: 1vw;
+    }
+}
+
+@media (min-width: 869px) {
+    .reviews-arrow:hover {
+        box-shadow: inset 0 0 .5rem rgb(0, 0, 0);
+        font-size: 2.8rem;
+        transition: all 0.2s ease-in-out;
     }
 }
 

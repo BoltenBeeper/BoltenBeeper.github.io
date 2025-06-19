@@ -166,7 +166,7 @@ header a:hover {
   border: none;
   border-top: 0.2vw solid #ffb101;
   width: 30vw;
-  margin: 0 auto 2vw auto;
+  margin: 0 auto 4vw auto;
   opacity: 0.5;
 }
 
@@ -183,7 +183,7 @@ header a:hover {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  padding: 4vw 0;
+  padding: 0 0 4vw;
 }
 
 .contact-box {
