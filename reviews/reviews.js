@@ -11,7 +11,7 @@ const letters = {
         { src: "../images/Riley Underwood Recommendation - Emily Moses.pdf", label: "Emily Moses Recommendation" },
     ],
     coverletters: [
-        { src: "../images/General Cover Letter.pdf", label: "Cover Letter" },
+        { src: "../images/Cover Letter.pdf", label: "Cover Letter" },
     ]
 };
 
