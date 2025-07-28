@@ -240,6 +240,7 @@ header a:hover {
 }
 
 .summary-box{
+    font-size: 1.2vw;
     position: relative;
     border-radius: 5vw;
     width: 90%;
@@ -247,7 +248,6 @@ header a:hover {
     padding-inline: 5vw;
     margin: auto;
     margin-top: 8vw;
-    font-size: 1.2vw;
     background: rgb(117,8,8);
     background: linear-gradient(0deg, rgba(150,8,8,1) 0%, rgba(37,3,3,1) 60%, rgba(0,0,0,1) 100%);
 }
@@ -775,12 +775,12 @@ header a:hover {
     }
 
     .summary-header {
-        font-size: 3vw;
-        top: -6vw;
+        font-size: 4.5vw;
+        top: -8vw;
     }
 
     .summary-text {
-        font-size: 2.5vw;
+        font-size: 3.5vw;
         line-height: 1.6;
     }
 
@@ -818,7 +818,7 @@ header a:hover {
     }
 
     .card-type1 p {
-        font-size: 2.5vw;
+        font-size: 3.5vw;
     }
 
     .skills-lists {
