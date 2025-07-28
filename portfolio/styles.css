@@ -367,6 +367,7 @@ header {
 /* PREVIEW ICON ANIMATIONS */
 
 .center-art {
+  display: flex;
   height: 40vw;
   width: 40vw;
   margin: auto;
@@ -387,7 +388,6 @@ header {
   align-self: center;
   opacity: 0;
   margin-left: 2.5vw;
-  margin-top: 15vw;
   animation-duration: var(--animation-duration);
   animation-timing-function: ease-in-out;
   animation-direction: forwards;
