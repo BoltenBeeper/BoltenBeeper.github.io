@@ -74,6 +74,27 @@ header a:hover {
     transition: all .2s ease-in-out;
 } */
 
+.darkened-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    background: radial-gradient(circle,rgba(63, 94, 251, 0) 0%, rgba(0, 0, 0, 1) 1%);
+    background-size: cover;
+    z-index: 1; /* Ensures the darkened background is behind the portrait and logo */
+}
+
+.darkened-background.animating1 {
+    transform: scale(1500%);
+    translate: 18.75% 0vw;
+    transition: all .5s ease-in-out;
+}
+
+.darkened-background.animating2 {
+    transform: scale(15000%);
+    transition: all 1s ease-in-out;
+}
+
 .portrait {
     width: 13vw;
     height: 13vw;
@@ -519,20 +540,16 @@ header a:hover {
     height: 120%;
     top: -10%;
     left: -10%;
-    border-radius: 25%;
-    transition: 0s linear; /* Defines how long the button effect will take place for. */
-    z-index: -2;
-    filter:blur(.5vw);
-  }
-  
-.project-image::after {
+    border-radius: 100%;
+    transition: 0s ease-out; /* Defines how long the button effect will take place for. */
     z-index: -1;
-  }   
+    filter: blur(.5vw);
+  } 
   
 .project-image:hover::before {
-    filter:blur(100vw);
-    background:linear-gradient(45deg, #ff0707, #ff920c,#ffee00);
-    transform: rotate(-4deg);
+    filter: blur(2vw);
+    background: linear-gradient(45deg, #ff0707, #ff920c,#ffee00);
+    transform: rotate(-900deg);
     transition: 2s ease-out;
   }
 
@@ -908,8 +925,12 @@ header a:hover {
         box-shadow: 0px 0px 10vw rgba(128, 16, 16);
     }
 
+    .project-image::before {
+        filter: blur(.5vh);
+    } 
+
     .project-image:hover::before {
-        filter:blur(300vh);
+        filter:blur(2vh);
      }
 
     .project-language-logo {

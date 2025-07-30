@@ -1,16 +1,21 @@
 // Get the animation container
+const background = document.querySelector('.darkened-background');
 const portrait = document.querySelector('.portrait');
 const logo = document.querySelector('.logo');
 
 function startAnimation() {
+
     // waiting 1 second before applying the "animating" class
     setTimeout(function() {
+        background.classList.add('animating1');
         portrait.classList.add('animating');
         logo.classList.add('animating1');
     }, 500);
 
     // Remove "animating" class after 2 seconds
     setTimeout(function() {
+        background.classList.remove('animating1');
+        background.classList.add('animating2');
         logo.classList.remove('animating1');
         logo.classList.add('animating2');
     }, 1000);
