@@ -29,7 +29,6 @@ function updateAnimatingElementClass() { // Removes all animation classes from i
   for (i = 0; i < buttonsList.length; i++) {
     targetElement = document.getElementById("icon-" + buttonsList[i])
     targetElement.classList.remove("entering", "idle", "exiting"); // Remove all animation classes for all icons
-    // console.log(String(targetElement.classList))
   }
   
   // Regulates elements so that any given element can only have one animating class in case of accidental breaking (Keeps latest stage of animation)
@@ -43,15 +42,12 @@ function updateAnimatingElementClass() { // Removes all animation classes from i
   // Add classes to elements one by one to ensure only one can have each class at any givent time
   if (enteringElement != null) {
     enteringElement.classList.add("entering")
-    // console.log(enteringElement.classList)
   }
   if (idleElement != null) {
     idleElement.classList.add("idle")
-    // console.log(idleElement.classList)
   }
   if (exitingElement != null) {
     exitingElement.classList.add("exiting")
-    // console.log(exitingElement.classList)
   }
 }
 
@@ -90,9 +86,9 @@ function buttonStopHover() {
 
 // [FOUR] activation points
 // 1: Right when button is hovered over (buttonHover())
-// 2: Right as exiting animation starts (makeIconExit())
-// 3: Right at end of entering animation if no button is hovered over and queue has items (makeIconIdle())
-// 4: Right at end of entering animation if different is hovered over and queue has items (makeIconIdle())
+// 2: Right at end of ENTERING animation if no button or a different button is hovered over and queue has items (makeIconIdle())
+// 3: Right as EXITING animation starts (makeIconExit())
+// 4: Right at end of EXITING animation if queue has items (makeIconExit())
 function makeIconEnter() {
   if (animationQueue.length > 0 && onScreenList.length < 2 && enteringElement == null && !enteringLock) { // If there are less than two icons on screen and no other element is entering
     enteringLock = true
@@ -113,40 +109,23 @@ function makeIconEnter() {
 // [ONE] activation point
 // 1: At the end of the enter animation (makeIconEnter())
 function makeIconIdle() {
-  // console.log("IDLING")
   idleElement = enteringElement;
   enteringElement = null;
   updateAnimatingElementClass();
   
   removedId = animationQueue.shift()
   
-  if (!buttonHovered) { // If no button is hovered over by this point, instantly move on to exiting animating
-    console.log("CHECK: 1")
-    makeIconExit()
-    if (animationQueue.length > 0) {
-      makeIconEnter()
-    } else {
-      console.log("CHECK: 2")
-    }
-    
-  // If any button is being hovered
-  } else if (removedId != undefined && currentleyHovered != removedId) { // If NEW button is hovered
-    console.log("buttonClass: " + currentleyHovered + ", removedID: " + removedId)
+  if (!buttonHovered || (removedId != undefined && currentleyHovered != removedId)) { // If no button is hovered over by this point, or a new button is hovered, instantly move on to exiting animation
     makeIconExit()
     if (animationQueue.length > 0) {
       makeIconEnter()
     }
-   updateAnimatingElementClass();
-  } else { // If SAME button is hovered
-    console.log("SAME BUTTON")
   }
 }
 
-// [FOUR] activation points
-// 1: At the end of the enter animation (makeIconIdle())
-// 2: Right when a button stops being hovered over (buttonStopHover())
-// 3: Right at end of entering animation if no button is hovered over (makeIconIdle())
-// 4: Right at end of entering animation if different is hovered over (makeIconIdle())
+// [TWO] activation points
+// 1: Right when a button stops being hovered over (buttonStopHover())
+// 2: Right at end of ENTERING animation if no button is hovered over and queue has items (makeIconIdle())
 function makeIconExit() {
   if (idleElement != null && !exitingLock) {
     exitingLock = true
@@ -162,13 +141,10 @@ function makeIconExit() {
       findTrueOnScreenList() // Using this as a replacement for onScreenList.shift() for now
     //   displayOnScreenList.innerHTML = ("On Screen: " + onScreenList) // For debugging
       exitingLock = false
-      setTimeout(function(){ // Tiny buffer: vvv
-        if (animationQueue.length > 0) {
-          console.log("WOOHOO")
-          makeIconEnter()
+      if (animationQueue.length > 0) {
+        makeIconEnter()
         }
-      }, 20)
-    }, 490)
+    }, 500)
 
     makeIconEnter() // If necessary/possible, start next icon enter animation (necessary checks already exist in the function)
   }
@@ -180,7 +156,6 @@ function findTrueOnScreenList() { // Will update animation queue and on screen l
     targetElement = document.getElementById("icon-" + buttonsList[i])
     if (String(targetElement.classList).includes("entering") || String(targetElement.classList).includes("idle") || String(targetElement.classList).includes("exiting")) {
       onScreenList.push(buttonsList[i])
-      // console.log("true list found")
     }
   }
 }
