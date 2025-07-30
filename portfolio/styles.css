@@ -399,12 +399,25 @@ header {
   opacity: 1;
 }
 
-.preview-icon.fading-in { /* This class is added to the icon when the user hovers over the button */
+.preview-icon.entering, .preview-icon.idle { /* This class is added to the icon when the user hovers over the button */
   animation-name: fading-in;
 }
 
-.preview-icon.fading-out { /* This class is added to the icon when the user hovers over the button */
+.preview-icon.exiting { /* This class is added to the icon when the user hovers over the button */
   animation-name: fading-out;
+}
+
+.preview-icon.entering, .preview-icon.idle, .preview-icon.exiting {
+  /* display: flex; */
+  /* transition: all .5s ease-in-out; */
+}
+
+.preview-icon.exiting {
+  opacity: 0;
+}
+
+.preview-icon.entering, .preview-icon.idle {
+  opacity: 1;
 }
 
 @keyframes fading-in {

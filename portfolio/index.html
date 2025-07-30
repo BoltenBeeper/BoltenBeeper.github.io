@@ -41,12 +41,12 @@
                     <h1 class="name">Riley Underwood</h1>
                 </div>
                 <div class="center-art icon-container" data-duration="500">
-                    <div id="resume" class="preview-icon resume-icon" style="background-image: url('../images/Resume_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
-                    <div id="my-work" class="preview-icon my-work-icon" style="background-image: url('../images/Nega_Player_Idle_Loop.gif'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
-                    <div id="blog" class="preview-icon blog-icon" style="background-image: url('../images/Blog_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
-                    <div id="contact" class="preview-icon contact-icon" style="background-image: url('../images/Mail_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
+                    <div id="icon-resume" class="preview-icon resume-icon" style="background-image: url('../images/Resume_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
+                    <div id="icon-my-work" class="preview-icon my-work-icon" style="background-image: url('../images/Nega_Player_Idle_Loop.gif'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
+                    <div id="icon-reviews" class="preview-icon blog-icon" style="background-image: url('../images/Blog_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
+                    <div id="icon-connect" class="preview-icon contact-icon" style="background-image: url('../images/Mail_Icon.png'); background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
                 </div>
-                <div class="journey-button button-container-one" data-destination="resume">
+                <div class="journey-button button-container-one" id="resume" data-destination="resume">
                     <div id="fire-container-one"></div>
                     <a class="button one" href="../resume/index.html">Resume</a>
                     <audio id="fire-sound-loop" loop preload="auto">
@@ -55,15 +55,15 @@
                         Your browser does not support the audio element.
                     </audio>
                 </div>
-                <div class="journey-button button-container-two" data-destination="my-work">
+                <div class="journey-button button-container-two" id="my-work" data-destination="my-work">
                     <div id="fire-container-two"></div>
                     <a class="button two" href="../my-work/index.html">My Work</a>
                 </div>
-                <div class="journey-button button-container-three" data-destination="blog" >
+                <div class="journey-button button-container-three" id="reviews" data-destination="blog">
                     <div id="fire-container-three"></div>
                     <a class="button three" href="../reviews/index.html">Reviews</a>
                 </div>
-                <div class="journey-button button-container-four" data-destination="contact">
+                <div class="journey-button button-container-four" id="connect" data-destination="contact">
                     <div id="fire-container-four"></div>
                     <a class="button four" href="../contact-me/index.html">Connect</a>
                 </div>
@@ -85,7 +85,7 @@
     </div>
 
     <script src="portfolio.js"></script>
-    <script src="handleHover.js"></script>
+    <script src="newIconLogic.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 </html>
