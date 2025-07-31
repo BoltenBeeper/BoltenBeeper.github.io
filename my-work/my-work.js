@@ -149,9 +149,9 @@ if (isIOS()) {
     document.querySelectorAll('.project-button-glow').forEach(btn => {
         btn.classList.remove('project-button-glow');
         btn.classList.add('project-button');
-        // Adds "Read More" text if button is empty
+        // Adds "View Project" text if button is empty
         if (!btn.textContent.trim()) {
-            btn.textContent = 'Read More';
+            btn.textContent = 'View Project';
         }
     });
     document.querySelectorAll('.project-button-container-glow').forEach(container => {

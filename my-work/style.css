@@ -236,6 +236,7 @@ header a:hover {
 }
 
 .introduction-section h3 {
+  color: #ffb101;
   font-size: 2.5em;
   font-weight: 500;
   width: max-content;
@@ -575,6 +576,7 @@ background-size: 100px 100px;
 }
 
 .listed-project-name {
+  color: #ffb101;
   font-size: 1.9em;
   font-weight: 500;
   font-style: italic;
@@ -724,7 +726,7 @@ background-size: 100px 100px;
 }
 
 .project-button-glow:after {
-	content: 'Read More';
+	content: 'View Project';
   text-align: center;
   font-weight: 200;
   font-style: italic;

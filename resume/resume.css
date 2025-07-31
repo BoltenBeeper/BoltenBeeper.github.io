@@ -263,7 +263,8 @@ header a:hover {
 .summary-box{
     font-size: 1.2vw;
     position: relative;
-    border-radius: 5vw;
+    border-radius: 2.5vw;
+    border-top-left-radius: 0;
     width: 90%;
     padding: 3vw;
     padding-inline: 5vw;
@@ -274,6 +275,7 @@ header a:hover {
 }
 
 .summary-header {
+    color: #ffb101;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -416,6 +418,7 @@ header a:hover {
 }
 
 .card-type1-title {
+    color: #ffb101;
     margin-left: 0;
 }
 
@@ -463,6 +466,10 @@ header a:hover {
     margin-top: 3%;
     text-align: left;
     font-size: 1.5vw;
+}
+
+.skills-list h3 {
+    color: #ffb101;
 }
 
 .education-proof {
@@ -567,6 +574,7 @@ header a:hover {
 }
 
 .project h3 {
+    color: #ffb101;
     text-align: left;
     margin-top: 1vw;
     margin-bottom: 1vw;

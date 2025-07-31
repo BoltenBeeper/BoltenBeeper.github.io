@@ -6,9 +6,9 @@ const letters = {
         // FORMAT 1 (Plain text): { type: "text", content: "Any Text", label: "Any Label" }
         // FORMAT 2 (TXT files): { type: "text-file", src: "...", label: "Any Label" }
         // FORMAT 3 (PDFs and images): { src: "...", label: "Any label" }
-        { src: "../images/Riley Underwood Recommendation - Howard Davis.pdf", label: "Howard Davis Recommendation" },
-        { src: "../images/Riley Underwood Recommendation - Clint Hance.pdf", label: "Clint Hance Recommendation" },
-        { src: "../images/Riley Underwood Recommendation - Emily Moses.pdf", label: "Emily Moses Recommendation" },
+        { src: "../images/Riley Underwood Recommendation - Howard Davis.pdf", label: "Howard Davis (Teacher)" },
+        { src: "../images/Riley Underwood Recommendation - Clint Hance.pdf", label: "Clint Hance (Teacher)" },
+        { src: "../images/Riley Underwood Recommendation - Emily Moses.pdf", label: "Emily Moses (Teacher)" },
     ],
     coverletters: [
         { src: "../images/Cover Letter.pdf", label: "Cover Letter" },
