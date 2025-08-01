@@ -3,7 +3,6 @@ document.querySelector('.NM0').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Function to handle the click event on the "Read More" button
 document.querySelector('.NM1').addEventListener('click', () => {
     document.querySelector('.living-planet').scrollIntoView({ behavior: 'smooth' });
 });
@@ -18,6 +17,10 @@ document.querySelector('.NM3').addEventListener('click', () => {
 
 document.querySelector('.NM4').addEventListener('click', () => {
     document.querySelector('.charging-box').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.querySelector('.NM5').addEventListener('click', () => {
+    document.querySelector('.mean-it').scrollIntoView({ behavior: 'smooth' });
 });
 
 window.addEventListener('load', () => { // Handles nav map text disappearing after a few seconds
@@ -87,7 +90,8 @@ function refreshProjectAnimations() {
     });
 }
 
-// Project filtering logic
+// ============== Project filtering logic ==================
+
 document.querySelectorAll('.project-tab').forEach(tab => {
     tab.addEventListener('click', function() {
         document.querySelectorAll('.project-tab').forEach(t => t.classList.remove('selected')); // unselects all other tabs
@@ -114,6 +118,7 @@ document.querySelectorAll('.project-tab').forEach(tab => {
             if (mapClass === 'NM2') projectSelector = '.max1m';
             if (mapClass === 'NM3') projectSelector = '.last-defence';
             if (mapClass === 'NM4') projectSelector = '.charging-box';
+            if (mapClass === 'NM5') projectSelector = '.mean-it';
             if (!projectSelector) {
                 li.style.display = 'none';
                 return;

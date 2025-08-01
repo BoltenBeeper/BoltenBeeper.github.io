@@ -257,9 +257,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 1.4em;
   aspect-ratio: 1 / 1;
   margin: 0;
+  margin-left: .5em;
   background-size: contain;
   background-repeat: no-repeat;
-  border-radius: 50%;
 }
 
 /* DETAILS SECTION */
