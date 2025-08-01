@@ -607,7 +607,6 @@ header {
       position: absolute;
       top: calc((30vh + 10vw) - 100vw);
       left: 0vw;
-      /* background-image: url(https://64.media.tumblr.com/44364f0340c92c70fdff257a202cb373/0457d04d130e4332-8e/s500x750/2b283a0af6b008bd951be0a88ad6aa712ba41835.gif); */
       background-image: radial-gradient(rgba(73, 73, 73, 0.9), rgba(0, 0, 0, 0) 50vw, transparent 50vw);
       background-size: cover;
       background-repeat: no-repeat;
@@ -689,10 +688,10 @@ header {
       background-position: center center; */
   }
 
-  #resume,
-  #my-work,
-  #blog,
-  #contact {
+  #icon-resume,
+  #icon-my-work,
+  #icon-reviews,
+  #icon-connect {
       display: none;
   }
 

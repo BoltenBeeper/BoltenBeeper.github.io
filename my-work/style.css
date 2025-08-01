@@ -761,6 +761,13 @@ background-size: 100px 100px;
 
 /* Media Queries for smaller screens */
 
+@media (max-width: 1400px) {
+  .introduction-section p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+  }
+}
+
 /* TABLET FORMAT */
 
 @media (max-width: 1200px) {
