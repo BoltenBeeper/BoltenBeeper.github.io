@@ -446,6 +446,33 @@ header a:hover {
     border-radius: 100%;
 }
 
+.temporary-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    text-align: center;
+}
+
+.temporary-overlay h1 {
+    font-size: 8vw;
+    color: white;
+    margin-bottom: 2vw;
+}
+
+.temporary-overlay h3 {
+    font-size: 3vw;
+    color: white;
+    width: 50vw;
+}
+
 
 
 /* Media Queries for smaller screens */
