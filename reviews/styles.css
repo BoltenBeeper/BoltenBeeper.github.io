@@ -218,7 +218,7 @@ hr {
     height: auto;
     background: rgba(20, 8, 8, 1);
     border-radius: 1vw;
-    box-shadow: inset 0 0 1vw rgba(150, 8, 8, 1);
+    box-shadow: inset 0 0 4rem rgba(150, 8, 8, 1);
     overflow: hidden;
     position: relative;
 }
@@ -251,7 +251,7 @@ hr {
     justify-content: center;
     align-items: center;
     min-height: 40vh;
-    padding: 2.5rem;
+    padding: 3.5rem;
 }
 
 .reviews-text-content p.text, .reviews-text-content p.text-file {
@@ -361,10 +361,11 @@ hr {
         max-height: unset;
         height: auto;
         max-width: 70vw;
+        box-shadow: inset 0 0 6vw rgba(150, 8, 8, 1);
     }
 
     .reviews-text-content {
-        padding: 2.5vw;
+        padding: 5vw;
     }
 
     .reviews-text-content p {
