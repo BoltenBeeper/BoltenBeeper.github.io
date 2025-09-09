@@ -14,6 +14,10 @@ body {
     min-height: 100vh;
 }
 
+header {
+  border-bottom: grey 0.2vw solid;
+}
+
 main {
     min-height: 100vh;
 }
