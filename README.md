@@ -12,7 +12,7 @@ This is my personal, official portfolio website. This site is a place for anyone
 
  IF YOU ARE VIEWING THIS IN BROWSER USE THIS LINK TO VISIT THE WEBSITE: boltenbeeper.github.io/portfolio
 
-====================== Next part is just for me or anyone who would like to use thissite as a template for their own work: ======================
+======= Next part is just for me or anyone who would like to use this site as a template for their own work: =======
 
 To add a new project to the My Work page:
 
