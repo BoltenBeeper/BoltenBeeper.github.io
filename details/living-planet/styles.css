@@ -297,6 +297,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: auto;
     background-size: cover;
     background-position: center;
+    cursor: pointer;
 }
   
 .info-content {
@@ -435,6 +436,10 @@ header a:hover {
 
 .summary-section h2:hover {
     text-shadow: 0 0 1em rgb(255, 216, 0), 0 1em 1em rgba(0, 0, 0, 1);
+}
+
+.summary-content a {
+    color: rgb(205, 166, 0);
 }
 
 .summary-content ul li {
