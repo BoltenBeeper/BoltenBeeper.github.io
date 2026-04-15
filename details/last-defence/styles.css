@@ -440,6 +440,12 @@ header a:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .summary-content {
+        font-size: 2em;
+    }
+}
+
 
 
 /* Media Queries for smaller screens */
@@ -510,10 +516,6 @@ header a:hover {
 
     .summary-section {
         font-size: 2vw;
-    }
-
-    .summary-content {
-        font-size: 2em;
     }
 
     .summary-content p {

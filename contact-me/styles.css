@@ -70,7 +70,7 @@
 /* PAGE BACKGROUND */
 body {
   background: rgb(0,0,0);
-  background-image: linear-gradient(0deg, rgba(30, 10, 10, .5) 0%, rgba(40, 10, 10, 1) 50%, rgba(30, 10, 10, .3) 100%);
+  background-image: linear-gradient(0deg, rgba(5, 0, 0, .3) 25%, rgba(50, 8, 8, 1) 50%, rgba(5, 0, 0, .3) 75%);
   overflow-x: hidden;
   min-height: 100vh;
   max-width: 100vw;
@@ -115,7 +115,7 @@ header a:hover {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 1);
-  background-image: linear-gradient(0deg, rgba(40, 8, 8, .5) 0%, rgba(60, 8, 8, 1) 50%, rgba(40, 8, 8, .3) 100%);
+  background-image: linear-gradient(0deg, rgba(5, 0, 0, .3) 25%, rgba(50, 8, 8, 1) 50%, rgba(5, 0, 0, .3) 75%);
   pointer-events: none;
   transition: opacity 1s linear;
   opacity: 1;

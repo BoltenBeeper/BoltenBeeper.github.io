@@ -484,6 +484,14 @@ header a:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .summary-content {
+        font-size: 2em;
+    }
+}
+
+
+
 /* OTHER UNIQUE STYLES */
   
 header li {
@@ -630,10 +638,6 @@ header li {
 
     .summary-section {
         font-size: 2vw;
-    }
-
-    .summary-content {
-        font-size: 2em;
     }
 
     .summary-content p {

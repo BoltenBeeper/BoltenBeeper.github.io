@@ -437,6 +437,12 @@ header a:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .summary-content {
+        font-size: 1.5em;
+    }
+}
+
 /* OTHER UNIQUE STYLES */
 
 .preview-image {
@@ -544,10 +550,6 @@ header a:hover {
 
     .summary-section {
         font-size: 2vw;
-    }
-
-    .summary-content {
-        font-size: 2em;
     }
 
     .summary-content p {
