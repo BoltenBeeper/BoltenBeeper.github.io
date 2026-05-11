@@ -445,10 +445,6 @@ header a:hover {
 
 /* OTHER UNIQUE STYLES */
 
-.preview-image {
-    background-image: url('/images/Mean_It_Preview.png');
-}
-
 .image.one {
     border-radius: 100%;
 }
