@@ -1,0 +1,31 @@
+/* WITHOUT BOXES AROUND PARAGRAPHS THIS STYLING IS BETTER */
+
+.summary-content {
+    margin-top: 2vw;
+}
+
+.summary-content p {
+    padding-inline: 2vw;
+    padding-block: 2vw;
+    margin-inline: 13vw;
+}
+
+.info-card p {
+    margin-inline: 2vw;
+}
+
+@media (max-width: 768px) {
+    .summary-content {
+        gap: 10vw;
+    }
+    
+    .summary-content p {
+      margin-inline: 10.5vw;
+    }
+
+    .info-hook {
+        margin:auto;
+        margin-top: 0vw;
+        margin-bottom: 5vw;
+    }
+}

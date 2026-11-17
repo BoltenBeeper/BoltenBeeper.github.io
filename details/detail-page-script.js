@@ -1,36 +1,3 @@
-// This script file may contain unused code and should not be used as a document to fully copy and paste for reuse. For copy and pasting for new details pages use a different detail-page-script.js file.
-
-// Old code for the hover effect, need to decide if I like this or the new one better.
-
-// document.querySelector('.preview-image-section').addEventListener('mouseenter', () => {
-//     document.querySelector('.preview-image').style.filter = 'blur(0vw)';
-//     document.querySelector('.preview-image').style.transition = 'all 0.5s ease-in-out';
-
-//     document.querySelector('.project-name').style.color = 'rgb(255, 220, 50, 0.3)';
-//     document.querySelector('.project-name').style.transition = 'all 0.5s ease-in-out';
-// });
-
-// document.querySelector('.preview-image-section').addEventListener('mouseleave', () => {
-//     document.querySelector('.project-name').style.color = 'rgb(255, 220, 50, 1)';
-//     document.querySelector('.project-name').style.transition = 'all 0.5s ease-in-out';
-// });
-
-// document.querySelector('.project-name').addEventListener('mouseenter', () => {
-//     document.querySelector('.preview-image').style.filter = 'blur(1vw)';
-//     document.querySelector('.preview-image').style.transition = 'all 0.5s ease-in-out';
-
-//     document.querySelector('.project-name').style.color = 'rgb(255, 220, 50, 1)';
-//     document.querySelector('.project-name').style.transition = 'all 0.5s ease-in-out';
-// });
-
-// document.querySelector('.project-name').addEventListener('mouseleave', () => {
-//     document.querySelector('.preview-image').style.filter = 'blur(0vw)';
-//     document.querySelector('.preview-image').style.transition = 'all 0.5s ease-in-out';
-    
-//     document.querySelector('.project-name').style.color = 'rgb(255, 220, 50, 0.3)';
-//     document.querySelector('.project-name').style.transition = 'all 0.5s ease-in-out';
-// });
-
 document.querySelector('.preview-image-section').addEventListener('mouseenter', () => {
     document.querySelector('.preview-image').style.filter = 'blur(1vw)';
     document.querySelector('.preview-image').style.transition = 'all 0.5s ease-in-out';
@@ -87,16 +54,6 @@ function constrainTranslation() {
     
     let maxTranslateX = Math.max(0, (imageWidth - zoomContainer.offsetWidth));
     let maxTranslateY = Math.max(0, (imageHeight - zoomContainer.offsetHeight));
-
-    // I never really figured out this out but it was here because for some reason draggin the image can can ignore the border snapping rule. I may come back to it later. I'm too tired.
-
-    // if (isDragging) {
-    //     maxTranslateX = Math.max(0, (imageWidth - zoomContainer.offsetWidth) / (2 * imageWidth));
-    //     maxTranslateY = Math.max(0, (imageHeight - zoomContainer.offsetHeight) / (2 * imageHeight));
-    // } else {
-    //     maxTranslateX = Math.max(0, (imageWidth - zoomContainer.offsetWidth));
-    //     maxTranslateY = Math.max(0, (imageHeight - zoomContainer.offsetHeight));
-    // }
 
     translateX = Math.min(Math.max(translateX, 0.5 - maxTranslateX), 0.5 + maxTranslateX);
     translateY = Math.min(Math.max(translateY, 0.5 - maxTranslateY), 0.5 + maxTranslateY);
